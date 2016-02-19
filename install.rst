@@ -99,7 +99,7 @@ pandas packageがない場合は次のコマンドでインストールしてく
   # サーバの場合
   python setup.py build install --user
 
-インストールが終わったら、:ref:`quick_start` をお試しください。
+インストールが終わったら、:doc:`quick_start` をお試しください。
 
 
   
