@@ -58,13 +58,12 @@ paplotによるグラフ作成
 
 次の場所にHTMLファイルが2つできていますか？
 
-.. code-block:: bash
 
   {paplot をインストールしたディレクトリ}
     └ tmp
         ├ DUMMY
-        │   ├ <font color=red>graph_qc.html</font>
-        │   └ <font color=red>graph_sv.html</font>
+        │   ├ <font color="red">graph_qc.html</font>
+        │   └ <font color="red">graph_sv.html</font>
         │
         ├ js
         ├ lib
