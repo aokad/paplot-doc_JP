@@ -1,12 +1,12 @@
 # paplot documentation
 
-Welcome to paplotfs documentation!
+Welcome to paplot documentation!
 
-[³®”Å]
+[]
 
 http://genomon.readthedocs.org/ja/master/
 
-[ŠJ”­”Å]
+[]
 
 http://genomon.readthedocs.org/ja/latest/
 
