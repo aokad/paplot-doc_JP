@@ -33,5 +33,5 @@ Javascript Libraries
 
 paplot は次のjavascript パッケージを使用しています。
 
-* :ref:`https://d3js.org/<D3.js>`
-* :ref:`https://dc-js.github.io/dc.js/<dc.js>`
+* :ref:`D3.js<https://d3js.org/>`
+* :ref:`dc.js<https://dc-js.github.io/dc.js/>`
