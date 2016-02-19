@@ -9,7 +9,7 @@ quick start
 0. python環境を用意
 
 | すでに持っている方は次へ進んでください。
-| 持っていない方はこちらを参照してください。
+| 持っていない方は :ref:`install` を参照してください。
 
 1. paplotをインストール
 ^^^^^^^^
@@ -19,7 +19,11 @@ quick start
 
   git clone https://github.com/Genomon-Project/paplot.git
   cd paplot
+  
+  # 通常のパソコンの場合
+  python setup.py build install
 
+  # サーバの場合
   python setup.py build install --user
 
 | installの確認
