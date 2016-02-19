@@ -1,15 +1,21 @@
 # paplot documentation
 
-Welcome to paplot documentation!
+[日本語版]
 
-[]
-
-http://genomon.readthedocs.org/ja/master/
-
-[]
+ - 公開版
 
 http://genomon.readthedocs.org/ja/latest/
 
-[read the docs]
+ - 開発用
 
-https://readthedocs.org/projects/genomon/
+https://readthedocs.org/projects/paplot-jp/
+
+[英語版]
+
+ - public documents
+
+http://paplot-doc.readthedocs.org/en/latest/
+
+ - read the docs
+
+https://readthedocs.org/projects/paplot-doc/
