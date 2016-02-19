@@ -8,7 +8,7 @@ paplotによるグラフ作成
 
 1. paplotをインストール
 ^^^^^^^^
-| HGCスパコンで使用される場合、事前に :qlogin: してください。
+| HGCスパコンで使用される場合、事前に :command: `qlogin` してください。
 |
 
 .. code-block:: bash
@@ -58,6 +58,7 @@ paplotによるグラフ作成
 
 次の場所にHTMLファイルが2つできていますか？
 
+.. code-block:: bash
 
   {paplot をインストールしたディレクトリ}
     └ tmp
