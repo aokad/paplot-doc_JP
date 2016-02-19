@@ -8,7 +8,7 @@ paplotによるグラフ作成
 
 1. paplotをインストール
 ^^^^^^^^
-| HGCスパコンで使用される場合、事前に :command: `qlogin` してください。
+| HGCスパコンで使用される場合、事前に :command:`qlogin` してください。
 |
 
 .. code-block:: bash
@@ -63,16 +63,16 @@ paplotによるグラフ作成
   {paplot をインストールしたディレクトリ}
     └ tmp
         ├ DUMMY
-        │   ├ <font color="red">graph_qc.html</font>
-        │   └ <font color="red">graph_sv.html</font>
+        │   ├ graph_qc.html     <--- qc グラフ 
+        │   └ graph_sv.html     <--- sv グラフ
         │
-        ├ js
+        ├ js          <--- この3つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
         ├ lib
         └ style
 
 
 | web ブラウザで開いてください。
-| ※HGCスパコン等、サーバ上で実行した場合はファイルをローカルに転送するか、サーバ上の仮想ウィンドウ(NoMachime等)で表示してください。
+| ※HGCスパコン等、サーバ上で実行した場合はファイルをローカルに転送するか、サーバ上の仮想ウィンドウ(NoMachime等)で表示してください。ローカルに転送する場合は、[tmp]ディレクトリを丸ごとコピーしてください。
 | 
 | 次のように見えていますか?
 
