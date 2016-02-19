@@ -58,19 +58,25 @@ paplotによるグラフ作成
 
 次の場所にHTMLファイルが2つできていますか？
 
-<pre>
-{paplot をインストールしたディレクトリ}
-  └ tmp
-      ├ DUMMY
-      │   ├ <font color=red>graph_qc.html</font>
-      │   └ <font color=red>graph_sv.html</font>
-      │
-      ├ js
-      ├ lib
-      └ style
-</pre>
+.. code-block:: bash
+  {paplot をインストールしたディレクトリ}
+    └ tmp
+        ├ DUMMY
+        │   ├ <font color=red>graph_qc.html</font>
+        │   └ <font color=red>graph_sv.html</font>
+        │
+        ├ js
+        ├ lib
+        └ style
 
 
+| web ブラウザで開いてください。
+| ※HGCスパコン等、サーバ上で実行した場合はファイルをローカルに転送するか、サーバ上の仮想ウィンドウ(NoMachime等)で表示してください。
+| 
+| 次のように見えていますか?
+
+.. image:: image/genomon_kun.png
+.. image:: image/logo.png
 
 
 
