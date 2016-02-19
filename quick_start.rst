@@ -75,13 +75,6 @@ paplotによるグラフ作成
 | 
 | 次のように見えていますか?
 
-.. image:: image/genomon_kun.png
-.. image:: image/logo.png
-
-
-
-
-
-
-
+.. image:: image/qc_dummy.png
+.. image:: image/sv_dummy.png
 
