@@ -28,3 +28,10 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
+Javascript Libraries
+====================
+
+paplot は次のjavascript パッケージを使用しています。
+
+* :ref:`https://d3js.org/<D3.js>`
+* :ref:`https://dc-js.github.io/dc.js/<dc.js>`
