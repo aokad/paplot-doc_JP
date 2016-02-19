@@ -18,7 +18,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
    
-   dna_quick_start.rst
+   quick_start.rst
    install.rst
 
 Indices and tables
