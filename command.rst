@@ -57,14 +57,14 @@ pa_plot コマンド
 
 .. code-block:: bash
 
-{output_dir}
-  ├ {project_name}
-  │   ├ graph_qc.html     <--- qc グラフ 
-  │   └ graph_sv.html     <--- sv グラフ
-  │
-  ├ js          <--- この3つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
-  ├ lib
-  └ style
+  {output_dir}
+    ├ {project_name}
+    │   ├ graph_qc.html     <--- qc グラフ 
+    │   └ graph_sv.html     <--- sv グラフ
+    │
+    ├ js          <--- この3つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
+    ├ lib
+    └ style
 
 
 出力ファイルを移動する場合は{output_dir}ごと移動してください。
