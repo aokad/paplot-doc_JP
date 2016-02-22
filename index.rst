@@ -10,8 +10,8 @@
 
 |
 
-Welcome to Genomon's documentation!
-=============================================
+paplot documantation
+========================
 
 Contents:
 
@@ -19,7 +19,10 @@ Contents:
    :maxdepth: 2
    
    quick_start.rst
-   install.rst
+   command.rst
+   install.rst   
+   config.rst
+   style.rst
 
 Indices and tables
 ==================
@@ -33,5 +36,5 @@ Javascript Libraries
 
 paplot は次のjavascript パッケージを使用しています。
 
-* D3.js <https://d3js.org/>
-* dc.js <https://dc-js.github.io/dc.js/>
+* `D3.js <https://d3js.org/>`_
+* `dc.js <https://dc-js.github.io/dc.js/>`_

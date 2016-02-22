@@ -10,7 +10,8 @@ quick start
 -----------------------
 
 | すでに持っている方は次へ進んでください。
-| 持っていない方は :doc:`install` を参照してください。
+| 持っていない方、確認したい方は :doc:`install` を参照してください。
+|
 
 1. paplotをインストール
 ---------------------------
@@ -87,5 +88,8 @@ quick start
 | 次のように見えていますか?
 
 .. image:: image/qc_dummy.png
+  :scale: 100%
+  
 .. image:: image/sv_dummy.png
+  :scale: 100%
 
