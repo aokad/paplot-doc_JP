@@ -80,17 +80,24 @@ pythonで使用するパッケージの確認をします。
 install後、:ref:`1. 環境の確認 <python>` のコマンドを入力して、環境を確認してください。
 
 -----------------------
-2.2 HGCスパコンの場合
+2.2 Linux系サーバの場合
 -----------------------
 
-# python 2.7以外の場合は以下をExportしてください
+* python 2.7以外の場合は以下をExportしてください
 
 .. code-block:: bash
-  
+
   export PYTHONHOME=/usr/local/package/python/2.7.10
-  export PATH=${PYTHONHOME}/bin:$PATH
+  export PATH=${PYTHONHOME}/bin:~/.local/bin/:$PATH
   export LD_LIBRARY_PATH=${PYTHONHOME}/lib:${LD_LIBRARY_PATH}
   export PYTHONPATH=~/.local/lib/python2.7/site-packages
+
+* python 2.7の場合は以下をExportしてください
+
+.. code-block:: bash
+
+  export PATH=~/.local/bin/:$PATH
+
 
 .. _package:
 
@@ -133,6 +140,7 @@ pandas packageがない場合は次のコマンドでインストールしてく
   python setup.py build install
   
   # サーバの場合
+  export PATH=~/.local/bin/:$PATH
   python setup.py build install --user
 
 インストールが終わったら、:doc:`quick_start` をお試しください。
