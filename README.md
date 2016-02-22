@@ -4,7 +4,7 @@
 
  - 公開版
 
-http://genomon.readthedocs.org/ja/latest/
+http://paplot-jp.readthedocs.org/ja/latest/
 
  - 開発用
 
