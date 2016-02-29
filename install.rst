@@ -13,79 +13,17 @@ install
 | (python 2.6 は未検証)
 |
 
- * :ref:`Linux系の場合 (MacOS X, HGCスパコン, cygwin含) <linux>`
+ * :ref:`Linux系の場合 (HGCスパコン, cygwin含) <linux>`
+ * :ref:`MacOS Xの場合 <linux>`
  * :ref:`Windowsの場合 <windows>`
 
 .. _linux:
 
 ================================================
-Linux系の場合 (MacOS X, HGCスパコン, cygwin含)
+Linux系の場合 (HGCスパコン, cygwin含)
 ================================================
 
-1. PATHの設定 (サーバのみ)
------------------------------
-
-* 以下をExportしてください
-
-.. code-block:: bash
-
-  export PATH=~/.local/bin/:$PATH
-
-
-2. python packageの確認, install
------------------------------------
-
-| MacとLinuxであればデフォルトでpythonがインストールされていると思います。
-| 次のコマンドで使用するパッケージがインストールされているか確認してください。
-|
-| macの場合はターミナル画面に入力してください。
-| ターミナルはアプリケーションフォルダ -> ユーティリティフォルダ-> ターミナル.appから起動できます。
-|
-| pythonで使用するパッケージの確認をします。
-
-.. code-block:: bash
-  
-  python
-  >>> import pandas
-
-| ここで何も表示されなければOKです。
-
-.. code-block:: bash
-  
-  >>> exit()
-
-| と入力してpythonから抜けてください。
-
-.. code-block:: bash
-  
-  >>> import pandas
-  Traceback (most recent call last):
-    File "<stdin>", line 1, in <module>
-  ImportError: No module named pandas
-
-| このようなエラーが表示される場合は次のコマンドでインストールしてください。
-
-.. code-block:: bash
-  
-  >>> exit()
-  
-  # パソコンの場合
-  $ pip install pandas
-  # サーバの場合
-  $ pip install pandas --user
-
-
-| インストール後、正しくインストールされたか確認してください。
-
-.. code-block:: bash
-
-  $ python
-  >>> import pandas        # <--- エラーが出ないのでOK
-  >>> exit()               # <--- pythonから抜ける
-  $
-
-
-3. paplot のインストール
+1. paplot のインストール
 --------------------------
 
 .. code-block:: bash
@@ -93,14 +31,18 @@ Linux系の場合 (MacOS X, HGCスパコン, cygwin含)
   cd {install したいディレクトリ}
   git clone https://github.com/Genomon-Project/paplot.git
   cd paplot
-  
-  # パソコンの場合
+
   python setup.py build install
   
-  # サーバの場合
+  # 上のコマンドでエラーが出る場合
   export PATH=~/.local/bin/:$PATH
   python setup.py build install --user
-  
+
+| 正しくインストールされたか確認します。
+|
+
+.. code-block:: bash
+
   pa_plot conf
   **********************
      hello paplot !!!
@@ -109,9 +51,114 @@ Linux系の場合 (MacOS X, HGCスパコン, cygwin含)
   (デフォルト設定値が表示される)
 
 | このような表示が出れば成功です。
-
+| 
 | インストールが終わったら、:doc:`quick_start` をお試しください。
 | 
+
+
+================================================
+MacOS Xの場合
+================================================
+
+1. ソースファイルのダウンロード
+------------------------------------
+
+| paplotのサイトからDownloadZIP ボタンを押して、zipファイルをダウンロードします。
+|
+
+https://github.com/Genomon-Project/paplot
+
+| :command:`git` コマンドが使える方は :command:`git clone https://github.com/Genomon-Project/paplot.git` でもよいです。
+|
+
+2. paplot のインストール
+--------------------------
+
+| ターミナルを起動してダウンロードしたディレクトリに移動します。
+| 
+| ターミナル.appがDockの中にない場合、次からたどることができます。
+| Finder → 「移動」メニュー → 「アプリケーション」を選択 → 「ユーティリティ」ディレクトリを開く → 「ターミナル」を起動
+| 
+| <user name>は自分のユーザ名です。
+| :command:`whoami` コマンドを入力しても確認できます。
+|
+
+.. code-block:: bash
+
+  cd {downloadしたディレクトリ}
+  # 大抵は以下でOKです。
+  # cd /Users/<user name>/Downloads/paplot-devel
+
+
+| インストールします。
+|
+
+.. code-block:: bash
+  
+  python setup.py build install --user
+
+3. PATHの設定
+----------------
+
+| このままではpa_plotがどこにあるかわからないので、インストールされているところにPATHを通します。
+| 大抵、ここにあります。
+|
+
+:doc:`/Users/<user name>/Library/Python/2.7/bin`
+
+| ここにない場合は :command:`find / -name pa_plot` とコマンドを入力してインストールされているところを探します。
+|
+
+.. code-block:: bash
+
+  export PATH={installしたディレクトリ}:$PATH
+  # 大抵は以下でOKです。
+  # export PATH=/Users/<user name>/Library/Python/2.7/bin:$PATH
+
+
+| 正しくインストールされたか確認します。
+|
+
+.. code-block:: bash
+
+  pa_plot conf
+  **********************
+     hello paplot !!!
+  **********************
+
+  (デフォルト設定値が表示される)
+
+| このような表示が出れば成功です。
+|
+| インストールが終わったら、:doc:`quick_start` をお試しください。
+| 
+
+4. 補足：PATH設定を忘れないようにする
+---------------------------------------
+
+| ↑で設定したPATHは再起動すると忘れてしまうので、
+| 起動するたびに :command:`export PATH={installしたディレクトリ}:$PATH` コマンドを入力する必要があります。
+| ここでは、起動しても自動的に再設定されるようにします。
+|
+| 設定ファイルを作成します。
+|
+
+.. code-block:: bash
+
+  vi ~/.bash_profile
+
+| ファイルが開いたら :command:`i` と入力して編集モードにします。
+| ファイルにすでに何か記入されていたら、↓キーで最後の行に移動します。
+| 
+| <user name>は自分のユーザ名です。
+|
+
+.. code-block:: bash
+
+  export PATH=/Users/<user name>/Library/Python/2.7/bin:$PATH
+
+| 入力したら :command:`ESC` キーを押して、編集モードから抜けます。その後、 :command:`:wq` と入力して保存して終了します。
+|
 
 .. _windows:
 
@@ -124,7 +171,7 @@ Windows系の場合
 
 | winPython もしくはPython(x,y)をインストールするのが手軽だと思います。
 | cygwinでも動きます。
-| cygwinの場合は :ref:`Linux系の場合 (MacOS X, HGCスパコン, cygwin含) <linux>` を参照してください。
+| cygwinの場合は :ref:`Linux系の場合 (HGCスパコン, cygwin含) <linux>` を参照してください。
 |
 
  * winPython http://winpython.github.io/
