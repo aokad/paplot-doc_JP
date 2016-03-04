@@ -6,7 +6,7 @@ configファイルを編集することで自分のデータを使用できま�
 
 configファイルのサンプルは以下にあります。
 
-:doc:`{paplotをインストールしたディレクトリ}/example/example.cfg`
+``{paplotをインストールしたディレクトリ}/example/example.cfg``
 
 .. code-block:: cfg
 
@@ -119,7 +119,7 @@ col_pos_ratio_30x         0.0～1.0       coverage (depth=30)
 ========================  =============  =============================
 
 
-作成したconfigファイルはpa_plot コマンドの--config_file オプションで指定します。
+作成したconfigファイルは ``pa_plot`` コマンドの ``--config_file`` オプションで指定します。
 
 実行例
 

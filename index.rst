@@ -15,14 +15,36 @@ paplot documantation
 
 Contents:
 
-.. toctree::
+.. toctree:: 
    :maxdepth: 2
+   :caption: quick start
+   :name: quick_start_toc
    
    quick_start.rst
+
+.. toctree:: 
+   :maxdepth: 2
+   :caption: how to use graphs
+   :name: how_to_toc
+   
+   use_graph.rst
+
+.. toctree:: 
+   :maxdepth: 2
+   :caption: install & setting
+   :name: install_toc
+   
+   install.rst
    command.rst
-   install.rst   
    config.rst
    style.rst
+
+.. toctree:: 
+   :maxdepth: 2
+   :caption: Q & A
+   :name: qa_toc
+   
+   qa.rst
 
 Indices and tables
 ==================

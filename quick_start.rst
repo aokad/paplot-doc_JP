@@ -6,27 +6,19 @@ quick start
 #. testサンプルでコマンドを実行
 #. 結果ファイルを表示
 
-0. python環境を用意
------------------------
-
-
-
 1. paplotをインストール
 ---------------------------
 
-| ここでうまくいかない方は :doc:`install` を参照してください。
+| ここでうまくいかない方、個人のPCにインストールする方は :doc:`install` を参照してください。
 |
-| HGCスパコンで使用する場合、事前に :command:`qlogin` してください。
+| HGCスパコンで使用する場合、事前に ``qlogin`` してください。
+|
 
 .. code-block:: bash
 
   git clone https://github.com/Genomon-Project/paplot.git
   cd paplot
   
-  # 通常のパソコンの場合
-  python setup.py build install
-
-  # サーバの場合
   python setup.py build install --user
 
 | installの確認
@@ -36,13 +28,22 @@ quick start
 
   pa_plot conf
 
-| 次の内容が表示されればインストール成功です。
+| このように表示されればインストール成功です。
 
 .. code-block:: bash
 
   **********************
      hello paplot !!!
   **********************
+  
+  config file:/usr/lib/python2.7/site-packages/paplot-0.2.6devel-py2.7.egg/config/paplot.cfg
+  [genome]
+  ('path', '')
+  [style]
+  ('path', '')
+  [sv]
+  ('use_chrs', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X,Y')
+  ('snippet_threshold', '1000')
   (このあとにデフォルト設定の内容が表示されます)
 
 
@@ -93,3 +94,5 @@ quick start
 .. image:: image/sv_dummy.png
   :scale: 100%
 
+| それぞれのグラフの使い方は :doc:`How to use<use_graph>` を参照してください。
+|

@@ -68,7 +68,7 @@ MacOS Xの場合
 
 https://github.com/Genomon-Project/paplot
 
-| :command:`git` コマンドが使える方は :command:`git clone https://github.com/Genomon-Project/paplot.git` でもよいです。
+| ``git`` コマンドが使える方は ``git clone https://github.com/Genomon-Project/paplot.git`` でもよいです。
 |
 
 2. paplot のインストール
@@ -80,7 +80,7 @@ https://github.com/Genomon-Project/paplot
 | Finder → 「移動」メニュー → 「アプリケーション」を選択 → 「ユーティリティ」ディレクトリを開く → 「ターミナル」を起動
 | 
 | <user name>は自分のユーザ名です。
-| :command:`whoami` コマンドを入力しても確認できます。
+| ``whoami`` コマンドで確認できます。
 |
 
 .. code-block:: bash
@@ -100,13 +100,13 @@ https://github.com/Genomon-Project/paplot
 3. PATHの設定
 ----------------
 
-| このままではpa_plotがどこにあるかわからないので、インストールされているところにPATHを通します。
+| このままでは ``pa_plot`` がどこにあるかわからないので、インストールされているところにPATHを通します。
 | 大抵、ここにあります。
 |
 
-:doc:`/Users/<user name>/Library/Python/2.7/bin`
+``/Users/<user name>/Library/Python/2.7/bin``
 
-| ここにない場合は :command:`find / -name pa_plot` とコマンドを入力してインストールされているところを探します。
+| ここにない場合は ``find / -name pa_plot`` とコマンドを入力してインストールされているところを探します。
 |
 
 .. code-block:: bash
@@ -137,7 +137,7 @@ https://github.com/Genomon-Project/paplot
 ---------------------------------------
 
 | ↑で設定したPATHは再起動すると忘れてしまうので、
-| 起動するたびに :command:`export PATH={installしたディレクトリ}:$PATH` コマンドを入力する必要があります。
+| 起動するたびに ``export PATH={installしたディレクトリ}:$PATH`` コマンドを入力する必要があります。
 | ここでは、起動しても自動的に再設定されるようにします。
 |
 | 設定ファイルを作成します。
@@ -147,7 +147,7 @@ https://github.com/Genomon-Project/paplot
 
   vi ~/.bash_profile
 
-| ファイルが開いたら :command:`i` と入力して編集モードにします。
+| ファイルが開いたら ``i`` と入力して編集モードにします。
 | ファイルにすでに何か記入されていたら、↓キーで最後の行に移動します。
 | 
 | <user name>は自分のユーザ名です。
@@ -157,7 +157,7 @@ https://github.com/Genomon-Project/paplot
 
   export PATH=/Users/<user name>/Library/Python/2.7/bin:$PATH
 
-| 入力したら :command:`ESC` キーを押して、編集モードから抜けます。その後、 :command:`:wq` と入力して保存して終了します。
+| 入力したら ``ESC`` キーを押して、編集モードから抜けます。その後、``:wq`` と入力して保存して終了します。
 |
 
 .. _windows:
@@ -192,19 +192,22 @@ https://github.com/Genomon-Project/paplot
 | インストールしたフォルダにコマンドプロンプトがありますので、起動します。
 | WinPython-64bit-3.5.1.2 を標準でインストールした場合、ここにあります。
 | 
-:doc:`C:\\Program Files\\WinPython-64bit-3.5.1.2\\WinPython Command Prompt.exe`
+
+``C:\\Program Files\\WinPython-64bit-3.5.1.2\\WinPython Command Prompt.exe``
 
 | 起動した画面に以下を入力します。
 | 
+
 .. code-block:: bash
 
   cd {zipを解凍したフォルダ}
   python setup.py build install
 
 
-| Windowsの場合、 :command:`pa_plot` コマンドにパスが通っていないのでバッチファイルを使用します。
-| zipを解凍したフォルダに :doc:`pa_plot.cmd` がありますので、ノートパッド等テキストエディタで開いて編集します。
+| Windowsの場合、 ``pa_plot`` コマンドにパスが通っていないのでバッチファイルを使用します。
+| zipを解凍したフォルダに ``pa_plot.cmd`` がありますので、ノートパッド等テキストエディタで開いて編集します。
 | 
+
 .. code-block:: bash
 
   set pa_plot="C:\Program Files\WinPython-64bit-3.5.1.2\python-3.5.1.amd64\Scripts\pa_plot"
@@ -230,7 +233,7 @@ https://github.com/Genomon-Project/paplot
 | **注意：Windows標準のコマンドプロンプトでは動作しません。**
 | **必ずPythonのコマンドプロンプトを使用してください。**
 | 
-| 以降、 :command:`pa_plot` コマンドは :command:`pa_plot.cmd` と読み替えてください。
+| 以降、``pa_plot`` コマンドは ``pa_plot.cmd`` と読み替えてください。
 | 
 | インストールが終わったら、:doc:`quick_start` をお試しください。
 | 
