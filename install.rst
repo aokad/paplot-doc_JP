@@ -36,6 +36,7 @@ Linux系の場合 (HGCスパコン, cygwin含)
   
   # 上のコマンドでエラーが出る場合
   export PATH=~/.local/bin/:$PATH
+  export LD_LIBRARY_PATH=~/.local/lib/:$LD_LIBRARY_PATH
   python setup.py build install --user
 
 | 正しくインストールされたか確認します。
@@ -54,6 +55,20 @@ Linux系の場合 (HGCスパコン, cygwin含)
 | 
 | インストールが終わったら、:doc:`quick_start` をお試しください。
 | 
+
+.. note::
+  
+  PATH設定を忘れないようにする
+  
+  | ↑で設定したPATHは再ログイン時に再設定されるよう設定ファイルに記入しておくことをお勧めします。
+  | ``~/.bash_rc`` もしくは ``~/.bash_profile`` に次の2行を記入してください。
+  |
+
+  .. code-block:: bash
+  
+    export PATH=~/.local/bin/:$PATH
+    export LD_LIBRARY_PATH=~/.local/lib/:$LD_LIBRARY_PATH
+  
 
 
 ================================================
@@ -106,14 +121,30 @@ https://github.com/Genomon-Project/paplot
 
 ``/Users/<user name>/Library/Python/2.7/bin``
 
-| ここにない場合は ``find / -name pa_plot`` とコマンドを入力してインストールされているところを探します。
-|
+.. note::
+
+  | ここにない場合は ``find / -name pa_plot`` とコマンドを入力してインストールされているところを探します。
+  |
+  | 4つ見つかるはずです。
+  | このうち、downloadしたディレクトリは使用しません。
+  | 
+
+  .. code-block:: bash
+    
+    {installしたディレクトリ}/bin/pa_plot               <--- ココです
+    {installしたディレクトリ}/lib/python2.7/site-packages/paplot-0.2.6devel-py2.7.egg/EGG-INFO/scripts/pa_plot
+    {downloadディレクトリ}/paplot-devel/pa_plot
+    {downloadディレクトリ}/paplot-devel/build/scripts-2.7/pa_plot
+  
 
 .. code-block:: bash
 
-  export PATH={installしたディレクトリ}:$PATH
+  export PATH={installしたディレクトリ}/bin:$PATH
+  export LD_LIBRARY_PATH={installしたディレクトリ}/lib:$LD_LIBRARY_PATH
+  
   # 大抵は以下でOKです。
   # export PATH=/Users/<user name>/Library/Python/2.7/bin:$PATH
+  # export LD_LIBRARY_PATH=/Users/<user name>/Library/Python/2.7/lib:$LD_LIBRARY_PATH
 
 
 | 正しくインストールされたか確認します。
@@ -133,32 +164,36 @@ https://github.com/Genomon-Project/paplot
 | インストールが終わったら、:doc:`quick_start` をお試しください。
 | 
 
-4. 補足：PATH設定を忘れないようにする
----------------------------------------
-
-| ↑で設定したPATHは再起動すると忘れてしまうので、
-| 起動するたびに ``export PATH={installしたディレクトリ}:$PATH`` コマンドを入力する必要があります。
-| ここでは、起動しても自動的に再設定されるようにします。
-|
-| 設定ファイルを作成します。
-|
-
-.. code-block:: bash
-
-  vi ~/.bash_profile
-
-| ファイルが開いたら ``i`` と入力して編集モードにします。
-| ファイルにすでに何か記入されていたら、↓キーで最後の行に移動します。
-| 
-| <user name>は自分のユーザ名です。
-|
-
-.. code-block:: bash
-
-  export PATH=/Users/<user name>/Library/Python/2.7/bin:$PATH
-
-| 入力したら ``ESC`` キーを押して、編集モードから抜けます。その後、``:wq`` と入力して保存して終了します。
-|
+.. note::
+  
+  PATH設定を忘れないようにする
+  
+  | ↑で設定したPATHは再起動すると忘れてしまうので、
+  | 起動するたびに ``export PATH=...`` コマンドを入力する必要があります。
+  | ここでは、起動しても自動的に再設定されるようにします。
+  |
+  | 設定ファイルを作成します。
+  |
+  
+  .. code-block:: bash
+  
+    vi ~/.bash_profile
+  
+  | ファイルが開いたら ``i`` と入力して編集モードにします。
+  | ファイルにすでに何か記入されていたら ``↓`` キーで最後の行に移動します。
+  | 
+  | <user name>は自分のユーザ名です。
+  |
+  
+  .. code-block:: bash
+  
+    export PATH=/Users/<user name>/Library/Python/2.7/bin:$PATH
+    export LD_LIBRARY_PATH=/Users/<user name>/Library/Python/2.7/lib:$LD_LIBRARY_PATH
+  
+  | PATHの設定で入力したものと同じパスを入力してください。
+  | 入力したら ``ESC`` キーを押して、編集モードから抜けます。その後、``:wq`` と入力して保存して終了します。
+  |
+  
 
 .. _windows:
 
