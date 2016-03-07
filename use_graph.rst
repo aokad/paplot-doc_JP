@@ -1,4 +1,4 @@
-1. QC グラフ
+QC グラフ
 ---------------
 
 | qcグラフではbamファイルの品質をグラフに表示します。
@@ -11,7 +11,7 @@
 .. image:: image/qc_operation.PNG
   :scale: 100%
 
-2. SV グラフ
+SV グラフ
 ---------------
 
 | svグラフでは検出したstructural variation (SV) について棒グラフと円形のグラフで表示します。
