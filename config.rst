@@ -82,41 +82,54 @@ suffixとID
   :scale: 100%
   
 
-** SVの場合 **
+**SVの場合**
 
-====================  ===============  =============================
-name                  input type       description
-====================  ===============  =============================
-col_pos_ID            text             サンプルを識別できる名称
-col_pos_chr1          text             chromosome of break point 1
-col_pos_start         numeric          position of break point 1
-col_pos_dir1          text             direction of break point 1
-col_pos_chr2          text             chromosome of break point 2
-col_pos_end           numeric          position of break point 2
-col_pos_dir2          text             direction of break point 2
-col_pos_type          text             type of variation
-col_pos_gene_name1    text             gene name of break point 1
-col_pos_gene_name2    text             gene name of break point 2
-====================  ===============  =============================
+====================  ===============  ==========  =============================
+name                  input type       required    description
+====================  ===============  ==========  =============================
+col_pos_ID            text             x           サンプルを識別できる名称
+col_pos_chr1          text             o           chromosome of break point 1
+col_pos_start         numeric          o           position of break point 1
+col_pos_dir1          text             x           direction of break point 1
+col_pos_chr2          text             o           chromosome of break point 2
+col_pos_end           numeric          o           position of break point 2
+col_pos_dir2          text             x           direction of break point 2
+col_pos_type          text             x           type of variation
+col_pos_gene_name1    text             x           gene name of break point 1
+col_pos_gene_name2    text             x           gene name of break point 2
+====================  ===============  ==========  =============================
 
-** QCの場合 **
+.. note::
+  
+  任意設定の5項目はポップアップでの詳細表示にのみ使用されます。
+  
+   - col_pos_dir1
+   - col_pos_dir2
+   - col_pos_gene_name1
+   - col_pos_gene_name2
+   - col_pos_type
+   
+   .. image:: image/option_sv.PNG
+     :scale: 100%
+   
+**QCの場合**
 
-========================  =============  =============================
-name                      input type     description
-========================  =============  =============================
-col_pos_ID                text           サンプルを識別できる名称
-col_pos_total_reads       numeric        number of total reads
-col_pos_mapped_reads      numeric        number of mapped reads
-col_pos_duplicate_reads   numeric        number of duplicate reads
-col_pos_mean_insert_size  numeric        mean of insert size
-col_pos_average_depth     numeric        average of depth
-col_pos_read_length_r1    numeric        number of read_length_r1
-col_pos_read_length_r2    numeric        number of read_length_r2
-col_pos_ratio_2x          0.0～1.0       coverage (depth=2)
-col_pos_ratio_10x         0.0～1.0       coverage (depth=10)
-col_pos_ratio_20x         0.0～1.0       coverage (depth=20)
-col_pos_ratio_30x         0.0～1.0       coverage (depth=30)
-========================  =============  =============================
+========================  =============  ==========  =============================
+name                      input type     required    description
+========================  =============  ==========  =============================
+col_pos_ID                text           o           サンプルを識別できる名称
+col_pos_total_reads       numeric        o           number of total reads
+col_pos_mapped_reads      numeric        o           number of mapped reads
+col_pos_duplicate_reads   numeric        o           number of duplicate reads
+col_pos_mean_insert_size  numeric        o           mean of insert size
+col_pos_average_depth     numeric        o           average of depth
+col_pos_read_length_r1    numeric        o           number of read_length_r1
+col_pos_read_length_r2    numeric        o           number of read_length_r2
+col_pos_ratio_2x          0.0～1.0       o           coverage (depth=2)
+col_pos_ratio_10x         0.0～1.0       o           coverage (depth=10)
+col_pos_ratio_20x         0.0～1.0       o           coverage (depth=20)
+col_pos_ratio_30x         0.0～1.0       o           coverage (depth=30)
+========================  =============  ==========  =============================
 
 
 作成したconfigファイルは ``pa_plot`` コマンドの ``--config_file`` オプションで指定します。

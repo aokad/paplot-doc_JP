@@ -41,20 +41,29 @@
     "#330066", // ratio_2x
   ],
 
+.. note::
 
-----
-
-補足
-
-色の指定はRGBもしくは色名で指定することができます。
-
-.. code-block:: javascript
-
-  // RGBで指定する場合
-  bar_select_color: "#1F77B4",
-  // color nameで指定する場合
-  bar_select_color: "red",
-
+  色の指定はRGBもしくは色名で指定することができます。
+  
+  .. code-block:: javascript
+  
+    // RGBで指定する場合
+    bar_select_color: "#1F77B4",
+    // color nameで指定する場合
+    bar_select_color: "red",
+  
+  **RGBで指定する場合**
+  
+  | Red → Green → Blueの順に ``00～FF`` まで、6桁の16進表記で指定し、先頭に ``#`` をつけてください。
+  |
+  
+  **色名(カラーネーム)について**
+  
+  | UNIX X11カラーといい、わかりやすくするために140色に名称がついています。
+  | ここで定義されている色名であれば、RGB値の代わりに指定することができます。
+  | 
+  | https://www.w3.org/TR/css3-color/#svg-color
+  
 
 1-2. 設定ファイルを編集する
 ---------------------------------
@@ -142,4 +151,12 @@ linkの透過度について、設定値と見た目は次の通りです。
 スタイルの対応は次の通りです。
 
 .. image:: image/style-sv-detail.PNG
+  :scale: 100%
+
+5. sv (グラフ)
+=======================
+
+スタイルの対応は次の通りです。
+
+.. image:: image/style-sv-bar.PNG
   :scale: 100%

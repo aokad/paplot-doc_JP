@@ -16,7 +16,7 @@ quick start
 
 .. code-block:: bash
 
-  git clone https://github.com/Genomon-Project/paplot.git
+  git clone -b master https://github.com/Genomon-Project/paplot.git
   cd paplot
   
   python setup.py build install --user

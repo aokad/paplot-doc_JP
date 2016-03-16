@@ -46,13 +46,6 @@ Contents:
    
    qa.rst
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
 Javascript Libraries
 ====================
 

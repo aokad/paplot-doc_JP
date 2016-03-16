@@ -29,7 +29,7 @@ Linux系の場合 (HGCスパコン, cygwin含)
 .. code-block:: bash
 
   cd {install したいディレクトリ}
-  git clone https://github.com/Genomon-Project/paplot.git
+  git clone -b master https://github.com/Genomon-Project/paplot.git
   cd paplot
 
   python setup.py build install
@@ -61,7 +61,7 @@ Linux系の場合 (HGCスパコン, cygwin含)
   PATH設定を忘れないようにする
   
   | ↑で設定したPATHは再ログイン時に再設定されるよう設定ファイルに記入しておくことをお勧めします。
-  | ``~/.bash_rc`` もしくは ``~/.bash_profile`` に次の2行を記入してください。
+  | ``~/.bashrc`` もしくは ``~/.bash_profile`` ファイルに次の2行を記入してください。
   |
 
   .. code-block:: bash
@@ -78,12 +78,12 @@ MacOS Xの場合
 1. ソースファイルのダウンロード
 ------------------------------------
 
-| paplotのサイトからDownloadZIP ボタンを押して、zipファイルをダウンロードします。
+| paplotのサイトから最新版の ``Source code (zip)`` をダウンロードします。
 |
 
-https://github.com/Genomon-Project/paplot
+https://github.com/Genomon-Project/paplot/releases/
 
-| ``git`` コマンドが使える方は ``git clone https://github.com/Genomon-Project/paplot.git`` でもよいです。
+| ``git`` コマンドが使える方は ``git clone -b master https://github.com/Genomon-Project/paplot.git`` でもよいです。
 |
 
 2. paplot のインストール
@@ -218,11 +218,11 @@ Windows系の場合
 2. paplot のインストール
 -----------------------------
 
-| paplotのサイトからDownloadZIP ボタンを押して、zipファイルをダウンロードします。
+| paplotのサイトから最新版の ``Source code (zip)`` をダウンロードします。
 | ダウンロードしたファイルは適当なフォルダに解凍します。
-| 
+|
 
-https://github.com/Genomon-Project/paplot
+https://github.com/Genomon-Project/paplot/releases/
 
 | インストールしたフォルダにコマンドプロンプトがありますので、起動します。
 | WinPython-64bit-3.5.1.2 を標準でインストールした場合、ここにあります。
