@@ -8,7 +8,7 @@ pa_plot コマンド
 
 .. code-block:: bash
 
-  pa_plot {qc, sv} [-h] [--version] [--config_file CONFIG_FILE] input output_dir project_name
+  pa_plot {qc, sv} [-h] [--version] [--config_file CONFIG_FILE] [--remarks REMARKS] input output_dir project_name
 
 |
 
@@ -35,6 +35,10 @@ pa_plot コマンド
 * ``--config_file``
 
   設定ファイルです。未指定の場合、デフォルトを使用します。
+
+* ``--remarks``
+
+  index.htmlの備考欄に出力するテキストです。未指定の場合、設定ファイルの値を使用します。
 
 **その他**
 
@@ -64,7 +68,9 @@ pa_plot コマンド
     │
     ├ js          <--- この3つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
     ├ lib
-    └ style
+    ├ style
+    │
+    └ index.html             <--- index このファイルをブラウザで開いてください。
 
 
 出力ファイルを移動する場合は ``{output_dir}`` ごと移動してください。

@@ -60,7 +60,8 @@ Linux系の場合 (HGCスパコン, cygwin含)
   
   PATH設定を忘れないようにする
   
-  | ↑で設定したPATHは再ログイン時に再設定されるよう設定ファイルに記入しておくことをお勧めします。
+  | ↑でexport設定したPATHとLD_LIBRARY_PATHはログアウトすると忘れてしまいます。
+  | 再ログイン時に再設定されるよう設定ファイルに記入しておくことをお勧めします。
   | ``~/.bashrc`` もしくは ``~/.bash_profile`` ファイルに次の2行を記入してください。
   |
 
@@ -91,7 +92,7 @@ https://github.com/Genomon-Project/paplot/releases/
 
 | ターミナルを起動してダウンロードしたディレクトリに移動します。
 | 
-| ターミナル.appがDockの中にない場合、次からたどることができます。
+| 「ターミナル.app」がDockの中にない場合、次からたどることができます。
 | Finder → 「移動」メニュー → 「アプリケーション」を選択 → 「ユーティリティ」ディレクトリを開く → 「ターミナル」を起動
 | 
 | <user name>は自分のユーザ名です。
@@ -115,7 +116,7 @@ https://github.com/Genomon-Project/paplot/releases/
 3. PATHの設定
 ----------------
 
-| このままでは ``pa_plot`` がどこにあるかわからないので、インストールされているところにPATHを通します。
+| このままではターミナルは ``pa_plot`` がどこにあるかわからないので、インストールされているところにPATHを通します。
 | 大抵、ここにあります。
 |
 
@@ -143,6 +144,7 @@ https://github.com/Genomon-Project/paplot/releases/
   export LD_LIBRARY_PATH={installしたディレクトリ}/lib:$LD_LIBRARY_PATH
   
   # 大抵は以下でOKです。
+  # <user name>は自分のユーザ名に置き換えてください。
   # export PATH=/Users/<user name>/Library/Python/2.7/bin:$PATH
   # export LD_LIBRARY_PATH=/Users/<user name>/Library/Python/2.7/lib:$LD_LIBRARY_PATH
 

@@ -2,7 +2,7 @@
 自分のデータを使用する
 **************************
 
-configファイルを編集することで自分のデータを使用できます。
+自分のデータを使用するにはconfigファイルを編集して自分のファイルフォーマットを指定します。
 
 configファイルのサンプルは以下にあります。
 
@@ -25,6 +25,9 @@ configファイルのサンプルは以下にあります。
   # ~/tmp/paplot/style/rainbow.js
   path = 
   
+  # index.html の備考欄に出力するテキスト(HTMLタブ使用可)
+  remarks = 
+  
   [sv]
   # 使用するchromosomes (,で区切る)
   use_chrs = 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X,Y
@@ -41,7 +44,7 @@ configファイルのサンプルは以下にあります。
   [result_format_sv]
   # sv の入力ファイルフォーマット
   
-  # suffix (col_pos_IDが指定されていない場合、suffix以前をIDとする)
+  # suffix (col_pos_IDが指定されていない場合、ファイル名のsuffixより前をIDとする)
   suffix = .result.txt
 
   # データ区切り(タブ区切りの場合)
@@ -54,17 +57,25 @@ configファイルのサンプルは以下にあります。
   # 先頭1行がヘッダかどうか (先頭行がヘッダの場合はTrue)
   header = False
   
-  # データ列の位置
-  #col_pos_ID =
-  col_pos_chr1 = 0
-  col_pos_start = 1
-  col_pos_dir1 = 2
-  col_pos_chr2 = 3
-  col_pos_end = 4
-  col_pos_dir2 = 5
-  col_pos_type = 8
-  col_pos_gene_name1 = 9
-  col_pos_gene_name2 = 10
+  # 先頭に指定文字がある行は飛ばす
+  comment = #
+  
+  ##### データ列の位置
+  # ヘッダ行がある場合、カラム名 (テキスト) を入力する
+  # ヘッダ行がない場合、カラムインデックス (数値) を入力する
+  
+  # 必須
+  col_chr1 = Chr_1
+  col_break1 = Pos_1
+  col_chr2 = Chr_2
+  col_break2 = Pos_2
+
+  # 任意
+  col_opt_dir1 = Dir_1
+  col_opt_dir2 = Dir_2
+  col_opt_type = Variant_Type
+  col_opt_gene_name1 = Gene_1
+  col_opt_gene_name2 = Gene_2
   
   [result_format_qc]
   # qc の入力ファイルフォーマット
@@ -87,27 +98,27 @@ suffixとID
 ====================  ===============  ==========  =============================
 name                  input type       required    description
 ====================  ===============  ==========  =============================
-col_pos_ID            text             x           サンプルを識別できる名称
-col_pos_chr1          text             o           chromosome of break point 1
-col_pos_start         numeric          o           position of break point 1
-col_pos_dir1          text             x           direction of break point 1
-col_pos_chr2          text             o           chromosome of break point 2
-col_pos_end           numeric          o           position of break point 2
-col_pos_dir2          text             x           direction of break point 2
-col_pos_type          text             x           type of variation
-col_pos_gene_name1    text             x           gene name of break point 1
-col_pos_gene_name2    text             x           gene name of break point 2
+col_chr1              text             o           chromosome of break point 1
+col_break1            numeric          o           position of break point 1
+col_chr2              text             o           chromosome of break point 2
+col_break2            numeric          o           position of break point 2
+col_opt_ID            text             x           サンプルを識別できる名称
+col_opt_dir1          text             x           direction of break point 1
+col_opt_dir2          text             x           direction of break point 2
+col_opt_type          text             x           type of variation
+col_opt_gene_name1    text             x           gene name of break point 1
+col_opt_gene_name2    text             x           gene name of break point 2
 ====================  ===============  ==========  =============================
 
 .. note::
   
   任意設定の5項目はポップアップでの詳細表示にのみ使用されます。
   
-   - col_pos_dir1
-   - col_pos_dir2
-   - col_pos_gene_name1
-   - col_pos_gene_name2
-   - col_pos_type
+   - col_opt_dir1
+   - col_opt_dir2
+   - col_opt_gene_name1
+   - col_opt_gene_name2
+   - col_opt_type
    
    .. image:: image/option_sv.PNG
      :scale: 100%
@@ -117,18 +128,18 @@ col_pos_gene_name2    text             x           gene name of break point 2
 ========================  =============  ==========  =============================
 name                      input type     required    description
 ========================  =============  ==========  =============================
-col_pos_ID                text           o           サンプルを識別できる名称
-col_pos_total_reads       numeric        o           number of total reads
-col_pos_mapped_reads      numeric        o           number of mapped reads
-col_pos_duplicate_reads   numeric        o           number of duplicate reads
-col_pos_mean_insert_size  numeric        o           mean of insert size
-col_pos_average_depth     numeric        o           average of depth
-col_pos_read_length_r1    numeric        o           number of read_length_r1
-col_pos_read_length_r2    numeric        o           number of read_length_r2
-col_pos_ratio_2x          0.0～1.0       o           coverage (depth=2)
-col_pos_ratio_10x         0.0～1.0       o           coverage (depth=10)
-col_pos_ratio_20x         0.0～1.0       o           coverage (depth=20)
-col_pos_ratio_30x         0.0～1.0       o           coverage (depth=30)
+col_total_reads           numeric        o           number of total reads
+col_mapped_reads          numeric        o           number of mapped reads
+col_duplicate_reads       numeric        o           number of duplicate reads
+col_mean_insert_size      numeric        o           mean of insert size
+col_average_depth         numeric        o           average of depth
+col_read_length_r1        numeric        o           number of read_length_r1
+col_read_length_r2        numeric        o           number of read_length_r2
+col_ratio_2x              0.0～1.0       o           coverage (depth=2)
+col_ratio_10x             0.0～1.0       o           coverage (depth=10)
+col_ratio_20x             0.0～1.0       o           coverage (depth=20)
+col_ratio_30x             0.0～1.0       o           coverage (depth=30)
+col_opt_ID                text           x           サンプルを識別できる名称
 ========================  =============  ==========  =============================
 
 

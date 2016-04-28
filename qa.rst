@@ -88,7 +88,7 @@ SVで表示するchromosomeを限定するにはどうしたらよいか
 
 configファイルで次の項目を編集してください。
 
-.. code-block:: config
+.. code-block:: cfg
 
   [sv]
   # 使用するchromosomes (,で区切る)
