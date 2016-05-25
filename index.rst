@@ -10,7 +10,7 @@
 
 |
 
-paplot documantation
+paplot documentation
 ========================
 
 Contents:
