@@ -8,7 +8,6 @@
 |
 
 .. image:: image/genomon_kun.png
-.. image:: image/logo.png
 
 |
 
@@ -37,8 +36,8 @@ Contents:
    :name: install_toc
    
    install.rst
-   command.rst
    config.rst
+   command.rst
    style.rst
 
 .. toctree:: 

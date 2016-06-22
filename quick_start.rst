@@ -62,23 +62,27 @@ quick start
   # create bundle graphs of Structural Variation (SV)
   pa_plot sv "example/sv/*.txt" ./tmp DUMMY --config_file example/example.cfg
 
+  # create bundle graphs of Structural Variation (mutation-matrix)
+  pa_plot mutation example/mutation/sample_merge.csv ./tmp DUMMY --config_file example/example.cfg
 
 3. 結果ファイルを表示
 ------------------------
 
-次の場所にHTMLファイルが2つできていますか？
+HTMLファイルができていますか？
 
 .. code-block:: bash
 
   {paplot をインストールしたディレクトリ}
     └ tmp
         ├ DUMMY
-        │   ├ graph_qc.html     <--- qc グラフ 
+        │   ├ graph_mut.html    <--- mutation-matrix グラフ
+        │   ├ graph_qc.html     <--- qc グラフ
         │   └ graph_sv.html     <--- sv グラフ
         │
         ├ js          <--- この3つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
         ├ lib
-        └ style
+        ├ style
+        └ index.html             <--- このファイルを web ブラウザで開いてください。
 
 
 | HTMLファイルを web ブラウザで開いてください。
@@ -87,11 +91,20 @@ quick start
 |   ローカルに転送する場合は、:file:`tmp` ディレクトリを丸ごとコピーしてください。
 | 
 | 次のように見えていますか?
+| 
+| **QC グラフ**
 
 .. image:: image/qc_dummy.png
   :scale: 100%
-  
+
+| **SV グラフ**
+
 .. image:: image/sv_dummy.png
+  :scale: 100%
+
+| **mutation-matrix グラフ**
+
+.. image:: image/mut_dummy.png
   :scale: 100%
 
 | それぞれのグラフの使い方は :doc:`How to use<use_graph>` を参照してください。
