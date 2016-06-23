@@ -24,20 +24,20 @@
 
 bamファイルの品質をグラフに表示します。
 
-.. image:: image/qc_dummy.PNG
+.. image:: image/qc_dummy.png
   :scale: 100%
 
 2. SV グラフ
 
 検出したstructural variation (SV) について棒グラフと円形のグラフで表示します。
 
-.. image:: image/sv_dummy.PNG
+.. image:: image/sv_dummy.png
   :scale: 100%
 
 3. mutation-matrix グラフ
 
 検出したmutation について縦軸を遺伝子(Gene), 横軸をサンプル(Sample) として、変異タイプ別に表示します。
 
-.. image:: image/mut_dummy.PNG
+.. image:: image/mut_dummy.png
   :scale: 100%
 
