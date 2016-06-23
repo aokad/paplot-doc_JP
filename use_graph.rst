@@ -87,12 +87,12 @@ mutation-matrix グラフでは検出したmutation について縦軸を遺伝�
 :SampleID: サンプルの名前順
 :Mutation num.: サンプルごとのmutation数
 :Genes: 遺伝子ごとの変異数　ASC/DESCどちらかを選択したのち、横のリストボックスからGene名を選択し、[add sort key] ボタンをクリックしてください。
-:automatic water-fall:
-  自動的にwater-fallを行います。
-  使用する遺伝子の数を横のエディットボックスに入力したのち、[water-fall] ボタンをクリックしてください。
-  water-fallについては、次で説明します。
+:automatic Gantt-chart:
+  自動的にGantt-chartを作成します。
+  と、いっても技術者におなじみのガントチャートではありません。次で説明します。
+  使用する遺伝子の数を横のエディットボックスに入力したのち、[Gantt-chart] ボタンをクリックしてください。
 
-**water-fall**
+**Gantt-chart**
 
 | 縦軸を遺伝子(Gene)の変異数の多い順に並べ、横軸をその遺伝子の変異を持っているかどうかで並び替えます。
 | まず、先頭の遺伝子から並べ、指定された遺伝子の数だけ繰り返します。

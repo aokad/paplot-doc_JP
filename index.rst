@@ -21,6 +21,7 @@ Contents:
    :caption: quick start
    :name: quick_start_toc
    
+   about.rst
    quick_start.rst
 
 .. toctree:: 
