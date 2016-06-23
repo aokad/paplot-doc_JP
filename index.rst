@@ -36,6 +36,7 @@ Contents:
    :name: install_toc
    
    install.rst
+   genomon.rst
    config.rst
    command.rst
    style.rst
