@@ -62,6 +62,7 @@ about graphs
 
  - firefox ... Screengrab
  - chrome ... Full Page Screen Capture
+ - IE ... `Snapcrab for IE <http://www.fenrir-inc.com/jp/snapcrab/plugin.html>`_
 
 * 2. OS 標準アプリケーション
 
