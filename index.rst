@@ -1,14 +1,11 @@
 .. image:: https://img.shields.io/badge/python-2.7-blue.svg
     :target: https://img.shields.io/badge/python-2.7-blue.svg
-.. image:: https://img.shields.io/badge/python-3.4-blue.svg
-    :target: https://img.shields.io/badge/python-3.4-blue.svg
 .. image:: https://img.shields.io/badge/license-GPL--3-blue.svg
     :target: https://img.shields.io/badge/license-GPL--3-blue.svg
 
 |
 
 .. image:: image/genomon_kun.png
-.. image:: image/logo.png
 
 |
 
@@ -22,6 +19,7 @@ Contents:
    :caption: quick start
    :name: quick_start_toc
    
+   about.rst
    quick_start.rst
 
 .. toctree:: 
@@ -37,8 +35,9 @@ Contents:
    :name: install_toc
    
    install.rst
-   command.rst
+   genomon.rst
    config.rst
+   command.rst
    style.rst
 
 .. toctree:: 

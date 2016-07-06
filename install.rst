@@ -9,7 +9,7 @@ install
  * MacOS X
  * Windows
 
-| paplotを実行するにはpython 2.7 もしくはpython 3 が必要です。
+| paplotを実行するにはpython 2.7が必要です。
 | (python 2.6 は未検証)
 |
 
@@ -214,7 +214,7 @@ Windows系の場合
  * winPython http://winpython.github.io/
  * Python(x,y) http://python-xy.github.io/
 
-| python 2.7.10 と python 3.5.1 は動作確認済みです。
+| python 2.7.10 で動作確認済みです。
 | 
 
 2. paplot のインストール
@@ -230,7 +230,7 @@ https://github.com/Genomon-Project/paplot/releases/
 | WinPython-64bit-3.5.1.2 を標準でインストールした場合、ここにあります。
 | 
 
-``C:\\Program Files\\WinPython-64bit-3.5.1.2\\WinPython Command Prompt.exe``
+``C:\\Program Files\\\WinPython-64bit-2.7.10.2\\WinPython Command Prompt.exe``
 
 | 起動した画面に以下を入力します。
 | 
@@ -247,7 +247,7 @@ https://github.com/Genomon-Project/paplot/releases/
 
 .. code-block:: bash
 
-  set pa_plot="C:\Program Files\WinPython-64bit-3.5.1.2\python-3.5.1.amd64\Scripts\pa_plot"
+  set pa_plot="C:\Program Files\WinPython-64bit-2.7.10.2\python-2.7.10.amd64\Scripts\pa_plot"
 
 | pa_plotの実際の場所を記入してください。
 | 数字はインストールしたpythonのバージョンにより変化します。
