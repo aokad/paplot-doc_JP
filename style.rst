@@ -5,11 +5,25 @@
 1. 変更方法
 =======================
 
-色やテキストなど、グラフの見た目はある程度変更することができます。
+| 色やテキストなど、グラフの見た目はある程度変更することができます。
+| グラフの見た目は2つのファイルで設定します。
+| 
+| 1つ目はconfigファイルです。
+| 入力データに依存する要素 （グラフのバーの色や凡例、ポップアップウィンドウの文字列など）はconfigファイルで設定します。
+| configファイルの記入例は以下を参照ください。
+|
 
-サンプルデータを用意していますので変更してみます。
+ - :doc:`config`
+ - :doc:`config_qc` 
+ - :doc:`config_sv` 
+ - :doc:`config_mut` 
 
-1-1. スタイルファイルを編集する
+| 2つ目はstyleファイルです。
+| 入力データに依存しない要素を設定します。
+| ここでは、styleファイルについて記載します。
+|
+
+1-1. styleファイルを編集する
 ---------------------------------
 
 ``{paplotをインストールしたディレクトリ}/example/default.js``
@@ -18,28 +32,7 @@
 
 ※ファイル名は任意ですが、拡張子は ``.js`` にしてください。
 
-作成したファイルを開いて次の箇所を変更します。
-
-今回はqcグラフのcoverage グラフの色を変更します。
-
-.. code-block:: javascript
-
-  // 7行目
-  // 変更前
-  bar_coverage_color: [
-    "#1F77B4", // ratio_30x
-    "#FF7F0E", // ratio_20x
-    "#2CA02C", // ratio_10x
-    "#D62728", // ratio_2x
-  ],
-  
-  // 変更後
-   bar_coverage_color: [
-    "blue",    // ratio_30x
-    "pink",    // ratio_20x
-    "#CCFF66", // ratio_10x
-    "#330066", // ratio_2x
-  ],
+作成したファイルを開いて変更します。
 
 .. note::
 
@@ -91,12 +84,6 @@
   cd {paplotをインストールしたディレクトリ}
   pa_plot qc "example/qc/*.csv" ./tmp STYLE --config_file example/example.cfg
 
-作成されたHTMLファイルをブラウザで開いてください。
-
-次のようにQCのcoverageグラフの色が変更されていますか？
-
-.. image:: image/style-qc_change.PNG
-
 
 1-4. 出力されたファイルを変更する
 --------------------------------------
@@ -119,44 +106,83 @@
         └ mystyle.js     <--- 今回作成したファイル
 
 
-2. qcグラフ
+2. 設定項目
 =======================
 
-スタイルの対応は次の通りです。
+.. code-block:: javascript
 
-.. image:: image/style-qc.PNG
-  :scale: 100%
+  (function(){
+  style_general = {
+      font_family: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+  }
+      
+  // style of quality check graphs
+  style_qc = {
+  };
 
-3. sv (サムネイル)
-=======================
+  // style of genome-wide bar plot
+  style_sv_bar = {
+      // title's text options
+      title_top: "Genome-wide SVs identify",
+      title_y: "samples with SV breakp.",
+      title_x: "Chromosome",
+  };
 
-スタイルの対応は次の通りです。
+  // style of thumbnails
+  style_sv_thumb = {
+      // circular sector's color options
+      arc_fill_opacity: 1.0,
+      arc_stroke_opacity: 1.0,
+      
+      // link options
+      link_width: "1px",
+      link_opacity: 1.0,
+  };
 
-.. image:: image/style-sv-thumb.PNG
-  :scale: 100%
+  // style of detail image (on click)
+  style_sv_detail = {
+      // windows header
+      win_header_text_color: "#000000",
+      win_header_background_color: "#CFCFCF",
+      win_border_color: "#D3D3D3",
+      win_border_width: "1px",
+      win_background_color: "white",
+      
+      // circular sector's color options
+      arc_fill_opacity: 1.0,
+      arc_stroke_opacity: 1.0,
+      
+      // circular sector's label options
+      arc_label_fontsize: "10px",
+      arc_label_color: "#333333",
+      
+      // link options
+      link_width: "2px",
+      link_opacity: 1.0,
+      
+      // link(on mouse) options
+      link_select_color: "#d62728",
+      link_select_width: "3px",
+      link_select_opacity: 1.0,
+  };
+
+  // style of mutaion-matrix
+  style_mut = {
+      // title's text options
+      title_sample: "Sample",
+      title_sample_y: "Number of mutation",
+      
+      title_gene: "Genes",
+      title_gene_y1: "% Samples",
+      title_gene_y2: "with mutation",
+      
+      func_title: "functions",
+  };
+  })();
+
   
-linkのテンション(張り具合)について、設定値と見た目は次の通りです。
-
-.. image:: image/link-tension.PNG
-  :scale: 100%
-  
-linkの透過度について、設定値と見た目は次の通りです。
+透過度(opacity) について、設定値と見た目は次の通りです。
 
 .. image:: image/link-opacity.PNG
   :scale: 100%
   
-4. sv (詳細表示)
-=======================
-
-スタイルの対応は次の通りです。
-
-.. image:: image/style-sv-detail.PNG
-  :scale: 100%
-
-5. sv (グラフ)
-=======================
-
-スタイルの対応は次の通りです。
-
-.. image:: image/style-sv-bar.PNG
-  :scale: 100%

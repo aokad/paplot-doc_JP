@@ -107,5 +107,5 @@ HTMLファイルができていますか？
 .. image:: image/mut_dummy.png
   :scale: 100%
 
-| それぞれのグラフの使い方は :doc:`How to use<use_graph>` を参照してください。
+| それぞれのグラフの使い方は :doc:`how to use graphs<use_graph>` を参照してください。
 |

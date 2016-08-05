@@ -4,7 +4,7 @@ QC グラフ
 
 | qcグラフではbamファイルの品質をグラフに表示します。
 |
-| 先頭の背の低いグラフはbamファイルごとのdepth 平均です。
+| 先頭の背の低いグラフはbamファイルごとのdepth 平均値です。
 | このグラフを範囲選択することで他のグラフの拡大ができます。
 | それぞれのグラフではマウスを乗せると詳細を表示します。
 
@@ -72,7 +72,10 @@ mutation-matrix グラフでは検出したmutation について縦軸を遺伝�
 
 .. image:: image/mut_operation2.PNG
   :scale: 100%
-  
+
+.. image:: image/mut_operation2_2.PNG
+  :scale: 100%
+
 1. axis-X sort 
 ---------------
 
