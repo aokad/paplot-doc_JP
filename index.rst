@@ -38,6 +38,15 @@ Contents:
    genomon.rst
    config.rst
    command.rst
+
+.. toctree:: 
+   :maxdepth: 2
+   :caption: for advance
+   :name: advance_toc
+   
+   config_qc.rst
+   config_sv.rst
+   config_mut.rst
    style.rst
 
 .. toctree:: 
@@ -53,4 +62,4 @@ Javascript Libraries
 paplot は次のjavascript パッケージを使用しています。
 
 * `D3.js <https://d3js.org/>`_
-* `dc.js <https://dc-js.github.io/dc.js/>`_
+* `d3-legend <http://d3-legend.susielu.com>`_

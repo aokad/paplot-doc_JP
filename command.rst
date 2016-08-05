@@ -8,7 +8,7 @@ pa_plot コマンド
 
 .. code-block:: bash
 
-  pa_plot {qc, sv} [-h] [--version] [--config_file CONFIG_FILE] [--remarks REMARKS] input output_dir project_name
+  pa_plot {qc, sv, mutation} [-h] [--version] [--config_file CONFIG_FILE] [--remarks REMARKS] input output_dir project_name
 
 |
 
@@ -57,5 +57,5 @@ pa_plot コマンド
 
 出力ファイルを移動する場合は ``{output_dir}`` ごと移動してください。
 
-出力ファイルの操作方法は :doc:`use_graph` を参照してください。
+出力ファイルの操作方法は :doc:`how to use graphs<use_graph>` を参照してください。
 
