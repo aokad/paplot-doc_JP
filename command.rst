@@ -15,10 +15,22 @@ pa_plot コマンド
 **必須**
 
 :{qc, sv, mutation}:
-  paplotのサブコマンドです。どちらかを選択します。
+  paplotのサブコマンドです。どれか1つを選択します。
 
 :input:
-  入力ファイルです。ワイルドカード (``*``) を使用して複数指定することができます。最初と最後に ``"`` をつけてください。
+  入力ファイルです。ワイルドカード (``*``, ``?``) を使用して複数指定することができます。その場合、最初と最後に ``"`` をつけてください。
+
+.. code-block:: bash
+
+  # 1ファイルだけ入力する場合
+  pa_plot qc example/qc/SAMPLE1.qc ./test multi1 --config_file example/example.cfg
+  
+  # 複数ファイルを入力する場合 (, で区切る)
+  pa_plot qc "example/qc/SAMPLE1.qc.csv,example/qc/SAMPLE2.qc.csv" ./test multi1 --config_file example/example.cfg
+  
+  # 複数ファイルを入力する場合 (* 使用)
+  pa_plot qc "example/qc/*.csv" ./multi multi1 --config_file example/example.cfg
+
 
 :output_dir:
   出力ディレクトリを指定します。ディレクトリ構成は :ref:`2. 出力ディレクトリ <output>` を参照してください。
@@ -49,9 +61,11 @@ pa_plot コマンド
     │   ├ graph_qc.html     <--- qc グラフ
     │   └ graph_sv.html     <--- sv グラフ
     │
-    ├ js          <--- この3つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
+    ├ js          <--- この4つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
+    ├ layout
     ├ lib
     ├ style
+    |
     └ index.html             <--- このファイルを web ブラウザで開いてください。
 
 

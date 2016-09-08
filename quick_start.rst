@@ -9,6 +9,7 @@ quick start
 1. paplotをインストール
 ---------------------------
 
+| ここではサーバサイドでのインストールを記載しています。
 | ここでうまくいかない方、個人のPCにインストールする方は :doc:`install` を参照してください。
 |
 | HGCスパコンで使用する場合、事前に ``qlogin`` してください。
@@ -21,7 +22,8 @@ quick start
   
   python setup.py build install --user
 
-| installの確認
+**installの確認**
+
 | 以下を入力してください。
 
 .. code-block:: bash
@@ -36,14 +38,7 @@ quick start
      hello paplot !!!
   **********************
   
-  config file:/usr/lib/python2.7/site-packages/paplot-0.2.6devel-py2.7.egg/config/paplot.cfg
-  [genome]
-  ('path', '')
-  [style]
-  ('path', '')
-  [sv]
-  ('use_chrs', '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X,Y')
-  ('snippet_threshold', '1000')
+  config file:/usr/lib/python2.7/site-packages/{paplot-versoion}-py2.7.egg/config/paplot.cfg
   (このあとにデフォルト設定の内容が表示されます)
 
 
@@ -79,9 +74,11 @@ HTMLファイルができていますか？
         │   ├ graph_qc.html     <--- qc グラフ
         │   └ graph_sv.html     <--- sv グラフ
         │
-        ├ js          <--- この3つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
+        ├ js          <--- この4つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
+        ├ layout
         ├ lib
         ├ style
+        │
         └ index.html             <--- このファイルを web ブラウザで開いてください。
 
 
