@@ -82,7 +82,7 @@
 .. code-block:: bash
 
   cd {paplotをインストールしたディレクトリ}
-  pa_plot qc "example/qc/*.csv" ./tmp STYLE --config_file example/example.cfg
+  pa_plot qc "example/qc/*.csv" ./tmp style_test --config_file example/example.cfg
 
 
 1-4. 出力されたファイルを変更する
@@ -95,11 +95,11 @@
 .. code-block:: bash
 
   ./tmp
-    ├ STYLE
-    │   ├ graph_qc.html
-    │   └ graph_sv.html
+    ├ style_test
+    │   └ graph_qc.html
     │
     ├ js
+    ├ layout
     ├ lib
     └ style
         ├ default.js     <--- デフォルト
@@ -127,8 +127,8 @@
   // style of genome-wide bar plot
   style_sv_bar = {
       // title's text options
-      title_top: "Genome-wide SVs identify",
-      title_y: "samples with SV breakp.",
+      title_top: "Genome-wide CAs identify",
+      title_y: "samples with CA breakp.",
       title_x: "Chromosome",
       
       border_x_main_color: "#E0E0E0",

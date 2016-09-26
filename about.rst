@@ -20,16 +20,16 @@
 作成できるグラフ
 -------------------
 
-1. QC グラフ
+1. QC (Quality Control) グラフ
 
 bamファイルの品質をグラフに表示します。
 
 .. image:: image/qc_dummy.png
   :scale: 100%
 
-2. SV グラフ
+2. CA (Chromosomal Aberration) グラフ
 
-検出したstructural variation (SV) について棒グラフと円形のグラフで表示します。
+Structural Variation (SV) 等、Chromosome間の変異を円形のplotで可視化し、棒グラフでその分布を表示します。
 
 .. image:: image/sv_dummy.png
   :scale: 100%

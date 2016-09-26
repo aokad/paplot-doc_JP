@@ -15,7 +15,7 @@ pa_plot コマンド
 **必須**
 
 :{qc, sv, mutation}:
-  paplotのサブコマンドです。どちらかを選択します。
+  paplotのサブコマンドです。いづれかを選択します。(svはCAグラフを出力します)
 
 :input:
   入力ファイルです。ワイルドカード (``*``) を使用して複数指定することができます。最初と最後に ``"`` をつけてください。
@@ -47,7 +47,7 @@ pa_plot コマンド
     ├ {project_name}
     │   ├ graph_mut.html    <--- mutation-matrix グラフ
     │   ├ graph_qc.html     <--- qc グラフ
-    │   └ graph_sv.html     <--- sv グラフ
+    │   └ graph_ca.html     <--- ca グラフ
     │
     ├ js          <--- この3つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
     ├ lib

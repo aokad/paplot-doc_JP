@@ -38,10 +38,12 @@ Genomonデータを使用する場合は各バージョンの設定ファイル�
   # index.html の備考欄に出力するテキスト(HTMLタブ使用可, 半角英数字のみ)
   remarks = 
 
+.. _conf_qc:
+
 2. QC
 ------------
 
-記述方法詳細は :doc:`config_qc` を参照してください。
+QCグラフ固有の設定記載方法について、詳細は :doc:`config_qc` に記載しています。
 
 .. code-block:: cfg
   :linenos:
@@ -106,11 +108,12 @@ Genomonデータを使用する場合は各バージョンの設定ファイル�
   tooltip_format4 = ratio_20x: {ratio_20x:.2}
   tooltip_format5 = ratio_30x: {ratio_30x:.2}
 
+.. _conf_ca:
 
-3. SV
+3. CA
 --------------
 
-記述方法詳細は :doc:`config_sv` を参照してください。
+CAグラフ固有の設定記載方法について、詳細は :doc:`config_sv` に記載しています。
 
 .. code-block:: cfg
   :linenos:
@@ -133,6 +136,9 @@ Genomonデータを使用する場合は各バージョンの設定ファイル�
   
   # if setting label-text & color
   # use_chrs = 1:Chr1:crimson, 2:Chr2:lightpink, 3:Chr3:mediumvioletred, 4:Chr4:violet, 5:Chr5:darkmagenta, 6:Chr6:mediumpurple
+  
+  # 積み上げグラフのchromosome分割サイズ (bps)
+  selector_split_size = 5000000
   
   # 入力されていた場合、そのgroupのみ出力する
   # 未入力の場合、検出されたgroupすべて出力する
@@ -180,10 +186,12 @@ Genomonデータを使用する場合は各バージョンの設定ファイル�
   lack_column_complement = NA
   sept = ,
 
+.. _conf_mm:
+
 4. mutation-matrix
 ----------------------
 
-記述方法詳細は :doc:`config_mut` を参照してください。
+mutation-matrixグラフ固有の設定記載方法について、詳細は :doc:`config_mut` に記載しています。
 
 .. code-block:: cfg
   :linenos:
@@ -392,7 +400,7 @@ configファイル中、[result_format_*] というセクションでは入力�
 | デフォルトで設定しているのは下記ですが、任意で増やすことができます。
 | その場合は、```col_opt_{任意の名前}``` として追加し、実際のデータの列名を指定してください。
 |
-| ``col_opt_new_option = columun_name``
+| ``col_opt_new_option = column_name``
 | 
 
 ** mutation **
@@ -410,7 +418,7 @@ col_opt_alt   {alt}
 col_opt_id    {id}
 ============= ==========
 
-** sv **
+** ca **
 
 ==================== ===============
 option名             キーワード

@@ -77,11 +77,13 @@ HTMLファイルができていますか？
         ├ DUMMY
         │   ├ graph_mut.html    <--- mutation-matrix グラフ
         │   ├ graph_qc.html     <--- qc グラフ
-        │   └ graph_sv.html     <--- sv グラフ
+        │   └ graph_ca.html     <--- ca グラフ
         │
-        ├ js          <--- この3つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
+        ├ js          <--- この4つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
+        ├ layout
         ├ lib
         ├ style
+        |
         └ index.html             <--- このファイルを web ブラウザで開いてください。
 
 
@@ -97,7 +99,7 @@ HTMLファイルができていますか？
 .. image:: image/qc_dummy.png
   :scale: 100%
 
-| **SV グラフ**
+| **CA グラフ**
 
 .. image:: image/sv_dummy.png
   :scale: 100%

@@ -1,6 +1,8 @@
 *******************************
-Config 記述方法(SV)
+Config 記述方法(CA)
 *******************************
+
+全設定項目は `こちら <./config.html#ca>`_ 
 
 列と設定の対応
 -----------------------------
@@ -23,7 +25,7 @@ col_opt_group         text             ×           grouping of mutaions
 
 .. note::
   
-  col_opt_groupはSVのグルーピングに使用します。
+  col_opt_groupはstackのグルーピングに使用します。
   
   未指定の場合、intra/inter chromosomeでグルーピングします。
   
@@ -59,7 +61,7 @@ col_opt_group         text             ×           grouping of mutaions
 | 
 
 
-SVで表示するchromosomeを限定する
+表示するchromosomeを限定する
 ---------------------------------
 
 configファイルで次の項目を編集してください。
@@ -79,7 +81,7 @@ configファイルで次の項目を編集してください。
 ``pa_plot {input files} {output directory} {title} --config_file {config file}``
 
 
-SVでヒト以外のゲノムを使用する
+ヒト以外のゲノムを使用する
 -------------------------------
 
 genomeサイズが入力されたファイルが必要です。

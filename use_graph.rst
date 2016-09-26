@@ -2,7 +2,7 @@
 QC グラフ
 ==============
 
-| qcグラフではbamファイルの品質をグラフに表示します。
+| QC (Quality Control) グラフではbamファイルの品質をグラフに表示します。
 |
 | 先頭の背の低いグラフはbamファイルごとのdepth 平均値です。
 | このグラフを範囲選択することで他のグラフの拡大ができます。
@@ -13,14 +13,14 @@ QC グラフ
   :scale: 100%
 
 ==============
-SV グラフ
+CA グラフ
 ==============
 
-| svグラフでは検出したstructural variation (SV) について棒グラフと円形のグラフで表示します。
+| CA (Chromosomal Aberration) グラフではStructural Variation (SV) 等、Chromosome間の変異を円形のplotで可視化し、棒グラフでその分布を表示します。
 | 
 
 * 棒グラフでは全サンプルでbreakpointを集計した数を表示します。
-* 円形のグラフでは、サンプルごとにbreakpoint1と2を線でつないで表示します。
+* 円形のplotでは、サンプルごとにbreakpoint1と2を線でつないで表示します。
 
 | 棒グラフを選択すると選択されたgenome領域にbreakpointを持つサンプルが選択されます。
 | 選択方法は「ハイライト」と「選択したもののみ表示（他を隠す）」の2とおりあり、先頭のオプションボタンで選択できます。
@@ -30,7 +30,7 @@ SV グラフ
   :scale: 100%
 
 
-| 棒グラフを構成する要素は2つあり、SV が chromosome を超えて発生しているか、もしくは同一 chromosome 内で発生しているかで色を分けています。
+| 棒グラフのstackは2つあり、2つのbreak pointがchromosome を超えているか、もしくは同一 chromosome 内かで色を分けています。
 | チェックを外すと、その要素は表示されません。
 |
 
@@ -89,7 +89,7 @@ mutation-matrix グラフでは検出したmutation について縦軸を遺伝�
 
 :SampleID: サンプルの名前順
 :Mutation num.: サンプルごとのmutation数
-:Genes: 遺伝子ごとの変異数　ASC/DESCどちらかを選択したのち、横のリストボックスからGene名を選択し、[add sort key] ボタンをクリックしてください。
+:Genes: 遺伝子ごとの変異数。ASC/DESCどちらかを選択したのち、横のリストボックスからGene名を選択し、[add sort key] ボタンをクリックしてください。
 :automatic Gantt-chart:
   自動的にGantt-chartを作成します。
   と、いっても技術者におなじみのガントチャートではありません。次で説明します。
