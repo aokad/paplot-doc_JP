@@ -2,7 +2,7 @@
 about install
 ***************************
 
-``pa_plot conf`` でエラー
+``paplot conf`` でエラー
 ---------------------------
 
 | ``PATH`` もしくは ``LD_LIBRARY_PATH`` の設定が不足しているときにおこります。
@@ -12,21 +12,21 @@ about install
 
 .. code-block:: bash
 
-  $ pa_plot conf
-  -bash: /usr/bin/pa_plot: No such file or directory
+  $ paplot conf
+  -bash: /usr/bin/paplot: No such file or directory
 
 | このようなエラーの場合、``LD_LIBRARY_PATH`` の設定が正しくありません。
 
 .. code-block:: bash
 
-  $ pa_plot conf
+  $ paplot conf
   Traceback (most recent call last):
-    File "/usr/bin/pa_plot", line 4, in <module>
-      __import__('pkg_resources').run_script('paplot===0.2.7devel', 'pa_plot')
+    File "/usr/bin/paplot", line 4, in <module>
+      __import__('pkg_resources').run_script('paplot===0.2.7devel', 'paplot')
   (省略)
   pkg_resources.DistributionNotFound: The 'paplot===0.2.7devel' distribution was not found and is required by the application
 
-| ``pa_plot`` ファイルがない場合はインストールが成功していない可能性があります。
+| ``paplot`` ファイルがない場合はインストールが成功していない可能性があります。
 | 成功した場合は最後の3行がこのように表示されます。
 | paplot-0.2.7の数字はバージョンによって変化します。
 |
@@ -117,3 +117,4 @@ Safariの場合
 |   Safari→環境設定→セキュリティ→Webコンテンツ→「ポップアップウィンドウを開かない」チェックを外す
 |
 
+.. |new| image:: image/tab_001.gif

@@ -15,13 +15,13 @@ Genomonデータを使用する場合は各バージョンの設定ファイル�
   | 必須項目はハイライトで示しています。正しく設定してください。
   | サンプル名の指定方法については、 :ref:`suffixとID<suffix>` も参照してください。
 
-作成したconfigファイルは ``pa_plot`` コマンドの ``--config_file`` オプションで指定します。
+作成したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
 
 実行例
 
 .. code-block:: bash
 
-  pa_plot qc "example/qc/*.csv" ./tmp DUMMY --config_file example/example.cfg
+  paplot qc "example/qc/*.csv" ./tmp DUMMY --config_file example/example.cfg
 
 1. 全般
 ------------
@@ -113,7 +113,7 @@ QCグラフ固有の設定記載方法について、詳細は :doc:`config_qc` 
 3. CA
 --------------
 
-CAグラフ固有の設定記載方法について、詳細は :doc:`config_sv` に記載しています。
+CAグラフ固有の設定記載方法について、詳細は :doc:`config_ca` に記載しています。
 
 .. code-block:: cfg
   :linenos:
@@ -473,3 +473,4 @@ col_opt_id               {id}
   表示例：
   3.33%
 
+.. |new| image:: image/tab_001.gif

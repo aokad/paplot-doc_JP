@@ -78,7 +78,7 @@ configファイルで次の項目を編集してください。
 
 編集したconfigファイルは次のようにしてコマンドから指定します。
 
-``pa_plot {input files} {output directory} {title} --config_file {config file}``
+``paplot {input files} {output directory} {title} --config_file {config file}``
 
 
 ヒト以外のゲノムを使用する
@@ -129,3 +129,5 @@ configファイルで用意したゲノムサイズのファイルを指定し�
 | SVにはmutation-matrixのような特殊キーワードはありません。
 |
 
+
+.. |new| image:: image/tab_001.gif

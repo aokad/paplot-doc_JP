@@ -1,5 +1,5 @@
 ************************
-pa_plot コマンド
+paplot コマンド
 ************************
 
 ------------------------
@@ -8,7 +8,7 @@ pa_plot コマンド
 
 .. code-block:: bash
 
-  pa_plot {qc, sv, mutation} [-h] [--version] [--config_file CONFIG_FILE] [--remarks REMARKS] input output_dir project_name
+  paplot {qc, sv, mutation} [-h] [--version] [--config_file CONFIG_FILE] [--remarks REMARKS] input output_dir project_name
 
 |
 
@@ -23,13 +23,13 @@ pa_plot コマンド
 .. code-block:: bash
 
   # 1ファイルだけ入力する場合
-  pa_plot qc example/qc/SAMPLE1.qc ./test multi1 --config_file example/example.cfg
+  paplot qc example/qc/SAMPLE1.qc ./test multi1 --config_file example/example.cfg
   
   # 複数ファイルを入力する場合 (, で区切る)
-  pa_plot qc "example/qc/SAMPLE1.qc.csv,example/qc/SAMPLE2.qc.csv" ./test multi1 --config_file example/example.cfg
+  paplot qc "example/qc/SAMPLE1.qc.csv,example/qc/SAMPLE2.qc.csv" ./test multi1 --config_file example/example.cfg
   
   # 複数ファイルを入力する場合 (* 使用)
-  pa_plot qc "example/qc/*.csv" ./multi multi1 --config_file example/example.cfg
+  paplot qc "example/qc/*.csv" ./multi multi1 --config_file example/example.cfg
 
 
 :output_dir:
@@ -73,3 +73,4 @@ pa_plot コマンド
 
 出力ファイルの操作方法は :doc:`how to use graphs<use_graph>` を参照してください。
 
+.. |new| image:: image/tab_001.gif

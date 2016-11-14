@@ -15,7 +15,7 @@
 
  - :doc:`config`
  - :doc:`config_qc` 
- - :doc:`config_sv` 
+ - :doc:`config_ca` 
  - :doc:`config_mut` 
 
 | 2つ目はstyleファイルです。
@@ -82,7 +82,7 @@
 .. code-block:: bash
 
   cd {paplotをインストールしたディレクトリ}
-  pa_plot qc "example/qc/*.csv" ./tmp style_test --config_file example/example.cfg
+  paplot qc "example/qc/*.csv" ./tmp style_test --config_file example/example.cfg
 
 
 1-4. 出力されたファイルを変更する
@@ -211,3 +211,4 @@
 .. image:: image/link-opacity.PNG
   :scale: 100%
   
+.. |new| image:: image/tab_001.gif

@@ -177,3 +177,5 @@ titleとnameset
 
 .. image:: image/conf_mut3.PNG
   :scale: 100%
+
+.. |new| image:: image/tab_001.gif

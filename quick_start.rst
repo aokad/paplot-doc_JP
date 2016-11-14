@@ -28,7 +28,7 @@ quick start
 
 .. code-block:: bash
 
-  pa_plot conf
+  paplot conf
 
 | このように表示されればインストール成功です。
 
@@ -42,23 +42,30 @@ quick start
   (このあとにデフォルト設定の内容が表示されます)
 
 
-2. testサンプルでコマンドを実行
+2. サンプルデータでコマンドを実行
 ---------------------------------
 
-テストサンプルを用意していますので実行します。
+サンプルデータを用意していますので実行します。
 
 .. code-block:: bash
 
   cd {paplotをインストールしたディレクトリ}
 
   # create bar graphs of qc
-  pa_plot qc "example/qc/*.csv" ./tmp DUMMY --config_file example/example.cfg
+  paplot qc "example/qc/*.csv" ./tmp demo --config_file example/example.cfg
 
   # create bundle graphs of Structural Variation (SV)
-  pa_plot sv "example/sv/*.txt" ./tmp DUMMY --config_file example/example.cfg
+  paplot sv "example/sv/*.txt" ./tmp demo --config_file example/example.cfg
 
-  # create bundle graphs of Structural Variation (mutation-matrix)
-  pa_plot mutation example/mutation/sample_merge.csv ./tmp DUMMY --config_file example/example.cfg
+  # create matrix graphs of mutation
+  paplot mutation example/mutation/sample_merge.csv ./tmp demo --config_file example/example.cfg
+
+  # create signature graphs
+  paplot signature ./example/signature/pmsignature_full3.json ./tmp demo 3
+
+  # create signature graphs (pmsignature)
+  paplot pmsignature ./example/pmsignature/pmsignature_ind3.json ./demo demo 3
+
 
 3. 結果ファイルを表示
 ------------------------
@@ -69,16 +76,18 @@ HTMLファイルができていますか？
 
   {paplot をインストールしたディレクトリ}
     └ tmp
-        ├ DUMMY
-        │   ├ graph_mut.html    <--- mutation-matrix グラフ
-        │   ├ graph_qc.html     <--- qc グラフ
-        │   └ graph_ca.html     <--- ca グラフ
+        ├ demo
+        │   ├ graph_ca.html            <--- ca グラフ
+        │   ├ graph_mut.html           <--- mutation-matrix グラフ
+        │   ├ graph_pmsignature3.html   <--- pmsignature グラフ
+        │   ├ graph_qc.html            <--- qc グラフ
+        │   └ graph_signature3.html     <--- signature グラフ
         │
         ├ js          <--- この4つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
         ├ layout
         ├ lib
         ├ style
-        |
+        │
         └ index.html             <--- このファイルを web ブラウザで開いてください。
 
 
@@ -104,5 +113,17 @@ HTMLファイルができていますか？
 .. image:: image/mut_dummy.png
   :scale: 100%
 
+| **signature グラフ** |new|
+
+.. image:: image/sig_dummy.PNG
+  :scale: 100%
+
+| **pmsignature グラフ** |new|
+
+.. image:: image/pmsig_dummy.PNG
+  :scale: 100%
+
 | それぞれのグラフの使い方は :doc:`how to use graphs<use_graph>` を参照してください。
 |
+
+.. |new| image:: image/tab_001.gif
