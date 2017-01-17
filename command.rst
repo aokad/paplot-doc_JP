@@ -14,8 +14,8 @@ paplot コマンド
 
 **必須**
 
-:{qc, sv, mutation}:
-  paplotのサブコマンドです。いづれかを選択します。(svはCAグラフを出力します)
+:{qc, ca, mutation, signature, pmsignature}:
+  paplotのサブコマンドです。いづれかを選択します。
 
 :input:
   入力ファイルです。ワイルドカード (``*``, ``?``) を使用して複数指定することができます。その場合、最初と最後に ``"`` をつけてください。
@@ -65,12 +65,12 @@ paplot コマンド
     ├ layout
     ├ lib
     ├ style
-    |
+    │
     └ index.html             <--- このファイルを web ブラウザで開いてください。
 
 
 出力ファイルを移動する場合は ``{output_dir}`` ごと移動してください。
 
-出力ファイルの操作方法は :doc:`how to use graphs<use_graph>` を参照してください。
+それぞれのグラフの使い方は `how to use graphs <./index.html#how-to-toc>`_ を参照してください。
 
 .. |new| image:: image/tab_001.gif

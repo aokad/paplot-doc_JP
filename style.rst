@@ -16,7 +16,7 @@
  - :doc:`config`
  - :doc:`config_qc` 
  - :doc:`config_ca` 
- - :doc:`config_mut` 
+ - :doc:`config_mat` 
 
 | 2つ目はstyleファイルです。
 | 入力データに依存しない要素を設定します。

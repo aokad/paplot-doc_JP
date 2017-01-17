@@ -1,49 +1,3 @@
-==============
-QC グラフ
-==============
-
-| QC (Quality Control) グラフではbamファイルの品質をグラフに表示します。
-|
-| 先頭の背の低いグラフはbamファイルごとのdepth 平均値です。
-| このグラフを範囲選択することで他のグラフの拡大ができます。
-| それぞれのグラフではマウスを乗せると詳細を表示します。
-|
-
-.. image:: image/qc_operation.PNG
-  :scale: 100%
-
-==============
-CA グラフ
-==============
-
-| CA (Chromosomal Aberration) グラフではStructural Variation (SV) 等、Chromosome間の変異を円形のplotで可視化し、棒グラフでその分布を表示します。
-| 
-
-* 棒グラフでは全サンプルでbreakpointを集計した数を表示します。
-* 円形のplotでは、サンプルごとにbreakpoint1と2を線でつないで表示します。
-
-| 棒グラフを選択すると選択されたgenome領域にbreakpointを持つサンプルが選択されます。
-| 選択方法は「ハイライト」と「選択したもののみ表示（他を隠す）」の2とおりあり、先頭のオプションボタンで選択できます。
-|
-
-.. image:: image/sv_operation1.PNG
-  :scale: 100%
-
-
-| 棒グラフのstackは2つあり、2つのbreak pointがchromosome を超えているか、もしくは同一 chromosome 内かで色を分けています。
-| チェックを外すと、その要素は表示されません。
-|
-
-.. image:: image/sv_operation2.PNG
-  :scale: 100%
-
-| サンプルごとの円形のグラフをクリックすると拡大表示します。
-| breakpointをつなぐ線の上にマウスを乗せると詳細を表示します。
-|
-
-.. image:: image/sv_operation3.PNG
-  :scale: 100%
-
 ========================
 mutation-matrix グラフ
 ========================
@@ -148,25 +102,3 @@ mutation-matrix グラフでは検出したmutation について縦軸を遺伝�
 :Display maximum: 表示する遺伝子の最大数。
 
 いずれも横のエディットボックスに入力したのち、[update filter] ボタンをクリックしてください。
-
-========================
-signature グラフ |new|
-========================
-
-signature グラフでは検出したmutation についてsignatureとその集積グラフを表示します。
-
-:signature:
-  signatureを表示します。
-
-:縦長の棒グラフ:
-  サンプルごとmutationについて、signatureの割合を表示します。
-
-.. image:: image/sig_dummy.PNG
-  :scale: 100%
-
-pmsignatureについても同様です。
-
-.. image:: image/pmsig_dummy.PNG
-  :scale: 100%
-
-.. |new| image:: image/tab_001.gif

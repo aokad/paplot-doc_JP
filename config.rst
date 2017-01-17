@@ -191,7 +191,7 @@ CAグラフ固有の設定記載方法について、詳細は :doc:`config_ca` 
 4. mutation-matrix
 ----------------------
 
-mutation-matrixグラフ固有の設定記載方法について、詳細は :doc:`config_mut` に記載しています。
+mutation-matrixグラフ固有の設定記載方法について、詳細は :doc:`config_mat` に記載しています。
 
 .. code-block:: cfg
   :linenos:

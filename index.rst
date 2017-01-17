@@ -1,11 +1,11 @@
 .. image:: https://img.shields.io/badge/python-2.7-blue.svg
     :target: https://img.shields.io/badge/python-2.7-blue.svg
+.. image:: https://img.shields.io/badge/python-3.5-blue.svg
+    :target: https://img.shields.io/badge/python-3.5-blue.svg
 
-|
+https://img.shields.io/badge/python-3.5-blue.svg
 
-.. image:: image/genomon_kun.png
-
-|
+.. image:: image/genomon_kun.PNG
 
 paplot documentation
 ========================
@@ -25,7 +25,10 @@ Contents:
    :caption: how to use graphs
    :name: how_to_toc
    
-   use_graph.rst
+   howto_qc.rst
+   howto_ca.rst
+   howto_mat.rst
+   howto_signature.rst
 
 .. toctree:: 
    :maxdepth: 2
@@ -44,21 +47,21 @@ Contents:
    
    config_qc.rst
    config_ca.rst
-   config_mut.rst
+   config_mat.rst
    config_signature.rst
    style.rst
 
 .. toctree:: 
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Q & A
    :name: qa_toc
    
    qa.rst
 
 .. toctree:: 
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: infomation
-   :name: advance_toc
+   :name: info_toc
    
    info.rst
    
