@@ -155,24 +155,18 @@ signature グラフ |new|
 
 signature グラフでは検出したmutation についてsignatureとその集積グラフを表示します。
 
-:横長の棒グラフ(Sample):
-  サンプルごとに検出されたmutationの数を表示します。
+:signature:
+  signatureを表示します。
 
-:縦長の棒グラフ(Gene):
-  遺伝子ごとのmutation数をサンプル数における割合(%)で表示します。
+:縦長の棒グラフ:
+  サンプルごとmutationについて、signatureの割合を表示します。
 
-  - 同一のサンプルが同じ遺伝子に対して複数のmutationを持っていた場合、mutation数を1としてカウントします。
-  - 同一のサンプルが同じ遺伝子に対して複数の変異タイプを持っていた場合、優先順位の高い変異タイプにカウントします。
-
-.. image:: image/mut_operation1.PNG
+.. image:: image/sig_dummy.PNG
   :scale: 100%
 
-**操作方法**
+pmsignatureについても同様です。
 
-.. image:: image/mut_operation2.PNG
-  :scale: 100%
-
-.. image:: image/mut_operation2_2.PNG
+.. image:: image/pmsig_dummy.PNG
   :scale: 100%
 
 .. |new| image:: image/tab_001.gif
