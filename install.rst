@@ -44,7 +44,7 @@ Linux系の場合 (HGCスパコン, cygwin含)
 
 .. code-block:: bash
 
-  pa_plot conf
+  paplot conf
   **********************
      hello paplot !!!
   **********************
@@ -116,7 +116,7 @@ https://github.com/Genomon-Project/paplot/releases/
 3. PATHの設定
 ----------------
 
-| このままではターミナルは ``pa_plot`` がどこにあるかわからないので、インストールされているところにPATHを通します。
+| このままではターミナルは ``paplot`` がどこにあるかわからないので、インストールされているところにPATHを通します。
 | 大抵、ここにあります。
 |
 
@@ -124,7 +124,7 @@ https://github.com/Genomon-Project/paplot/releases/
 
 .. note::
 
-  | ここにない場合は ``find / -name pa_plot`` とコマンドを入力してインストールされているところを探します。
+  | ここにない場合は ``find / -name paplot`` とコマンドを入力してインストールされているところを探します。
   |
   | 4つ見つかるはずです。
   | このうち、downloadしたディレクトリは使用しません。
@@ -132,10 +132,10 @@ https://github.com/Genomon-Project/paplot/releases/
 
   .. code-block:: bash
     
-    {installしたディレクトリ}/bin/pa_plot               <--- ココです
-    {installしたディレクトリ}/lib/python2.7/site-packages/paplot-0.2.6devel-py2.7.egg/EGG-INFO/scripts/pa_plot
-    {downloadディレクトリ}/paplot-devel/pa_plot
-    {downloadディレクトリ}/paplot-devel/build/scripts-2.7/pa_plot
+    {installしたディレクトリ}/bin/paplot               <--- ココです
+    {installしたディレクトリ}/lib/python2.7/site-packages/paplot-0.2.6devel-py2.7.egg/EGG-INFO/scripts/paplot
+    {downloadディレクトリ}/paplot-devel/paplot
+    {downloadディレクトリ}/paplot-devel/build/scripts-2.7/paplot
   
 
 .. code-block:: bash
@@ -154,7 +154,7 @@ https://github.com/Genomon-Project/paplot/releases/
 
 .. code-block:: bash
 
-  pa_plot conf
+  paplot conf
   **********************
      hello paplot !!!
   **********************
@@ -241,15 +241,15 @@ https://github.com/Genomon-Project/paplot/releases/
   python setup.py build install
 
 
-| Windowsの場合、 ``pa_plot`` コマンドにパスが通っていないのでバッチファイルを使用します。
-| zipを解凍したフォルダに ``pa_plot.cmd`` がありますので、ノートパッド等テキストエディタで開いて編集します。
+| Windowsの場合、 ``paplot`` コマンドにパスが通っていないのでバッチファイルを使用します。
+| zipを解凍したフォルダに ``paplot.cmd`` がありますので、ノートパッド等テキストエディタで開いて編集します。
 | 
 
 .. code-block:: bash
 
-  set pa_plot="C:\Program Files\WinPython-64bit-2.7.10.2\python-2.7.10.amd64\Scripts\pa_plot"
+  set paplot="C:\Program Files\WinPython-64bit-2.7.10.2\python-2.7.10.amd64\Scripts\paplot"
 
-| pa_plotの実際の場所を記入してください。
+| paplotの実際の場所を記入してください。
 | 数字はインストールしたpythonのバージョンにより変化します。
 | 
 | 編集したバッチファイルをpythonコマンドプロンプトと同じフォルダにコピーします。
@@ -258,7 +258,7 @@ https://github.com/Genomon-Project/paplot/releases/
 
 .. code-block:: bash
 
-  >pa_plot.cmd conf
+  >paplot.cmd conf
   **********************
      hello paplot !!!
   **********************
@@ -270,8 +270,9 @@ https://github.com/Genomon-Project/paplot/releases/
 | **注意：Windows標準のコマンドプロンプトでは動作しません。**
 | **必ずPythonのコマンドプロンプトを使用してください。**
 | 
-| 以降、``pa_plot`` コマンドは ``pa_plot.cmd`` と読み替えてください。
+| 以降、``paplot`` コマンドは ``paplot.cmd`` と読み替えてください。
 | 
 | インストールが終わったら、:doc:`quick_start` をお試しください。
 | 
 
+.. |new| image:: image/tab_001.gif

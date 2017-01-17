@@ -2,7 +2,7 @@
 about install
 ***************************
 
-``pa_plot conf`` でエラー
+``paplot conf`` でエラー
 ---------------------------
 
 | ``PATH`` もしくは ``LD_LIBRARY_PATH`` の設定が不足しているときにおこります。
@@ -12,21 +12,21 @@ about install
 
 .. code-block:: bash
 
-  $ pa_plot conf
-  -bash: /usr/bin/pa_plot: No such file or directory
+  $ paplot conf
+  -bash: /usr/bin/paplot: No such file or directory
 
 | このようなエラーの場合、``LD_LIBRARY_PATH`` の設定が正しくありません。
 
 .. code-block:: bash
 
-  $ pa_plot conf
+  $ paplot conf
   Traceback (most recent call last):
-    File "/usr/bin/pa_plot", line 4, in <module>
-      __import__('pkg_resources').run_script('paplot===0.2.7devel', 'pa_plot')
+    File "/usr/bin/paplot", line 4, in <module>
+      __import__('pkg_resources').run_script('paplot===0.2.7devel', 'paplot')
   (省略)
   pkg_resources.DistributionNotFound: The 'paplot===0.2.7devel' distribution was not found and is required by the application
 
-| ``pa_plot`` ファイルがない場合はインストールが成功していない可能性があります。
+| ``paplot`` ファイルがない場合はインストールが成功していない可能性があります。
 | 成功した場合は最後の3行がこのように表示されます。
 | paplot-0.2.7の数字はバージョンによって変化します。
 |
@@ -60,21 +60,28 @@ about graphs
 
  - SVG ... タグで記載されたテキストファイルです。SVG対応の画像編集ソフトウェアのほか、各種ブラウザでも表示できます。
  - PNG ... 画像ファイルです。背景透過処理を施しています。
-
-| ※この機能は以下のブラウザで確認しています。うまく動かない場合は、最新のバージョンにアップデートするか、別のブラウザをお試しください。
+ 
+| なお、1プロットのみ保存したい場合は、それぞれのプロットの上で右クリックで保存することも可能です。
 |
 
- + Windows
- 
-  - Firefox (47.0)
-  - Chrome (51.0)
-  - Internet Explorer11 (11.0)
+.. image:: image/qa_export2.PNG
 
- + Mac
- 
-  - Firefox (45.2)
-  - Chrome (52.0)
-  - Safari (9.1.2)
+.. note::
+
+  この機能は以下のブラウザで確認しています。うまく動かない場合は、最新のバージョンにアップデートするか、別のブラウザをお試しください。
+  
+  + Windows
+  
+    - Firefox (47.0)
+    - Chrome (51.0)
+    - Internet Explorer11 (11.0)
+   
+  + Mac
+   
+    - Firefox (45.2)
+    - Chrome (52.0)
+    - Safari (9.1.2)
+
 
 Chromeの場合
 +++++++++++++++++++++++++++
@@ -110,23 +117,4 @@ Safariの場合
 |   Safari→環境設定→セキュリティ→Webコンテンツ→「ポップアップウィンドウを開かない」チェックを外す
 |
 
-| なお、1プロットのみ保存したい場合は、それぞれのプロットの上で右クリックで保存することも可能です。
-|
-
-.. image:: image/qa_export2.PNG
-
-グラフの色が黒くなる
-----------------------------
-
-| 設定が不足していると黒色で表示されます。
-| styleファイルで該当する項目を設定してください。
-|
-|
-| デフォルトのままであれば、styleファイルは ``{html出力ディレクトリ}/style/default.js`` にあります。
-| 該当する項目は :doc:`style` で確認してください。
-| 
-
-svでchr10の設定が不足している例。
-
-.. image:: image/qa_lack_color.PNG
-
+.. |new| image:: image/tab_001.gif

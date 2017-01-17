@@ -1,7 +1,5 @@
 .. image:: https://img.shields.io/badge/python-2.7-blue.svg
     :target: https://img.shields.io/badge/python-2.7-blue.svg
-.. image:: https://img.shields.io/badge/license-GPL--3-blue.svg
-    :target: https://img.shields.io/badge/license-GPL--3-blue.svg
 
 |
 
@@ -45,8 +43,9 @@ Contents:
    :name: advance_toc
    
    config_qc.rst
-   config_sv.rst
+   config_ca.rst
    config_mut.rst
+   config_signature.rst
    style.rst
 
 .. toctree:: 
@@ -56,6 +55,13 @@ Contents:
    
    qa.rst
 
+.. toctree:: 
+   :maxdepth: 2
+   :caption: infomation
+   :name: advance_toc
+   
+   info.rst
+   
 Javascript Libraries
 ====================
 
@@ -63,3 +69,5 @@ paplot は次のjavascript パッケージを使用しています。
 
 * `D3.js <https://d3js.org/>`_
 * `d3-legend <http://d3-legend.susielu.com>`_
+
+.. |new| image:: image/tab_001.gif

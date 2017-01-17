@@ -7,7 +7,7 @@ QC グラフ
 | 先頭の背の低いグラフはbamファイルごとのdepth 平均値です。
 | このグラフを範囲選択することで他のグラフの拡大ができます。
 | それぞれのグラフではマウスを乗せると詳細を表示します。
-
+|
 
 .. image:: image/qc_operation.PNG
   :scale: 100%
@@ -63,7 +63,7 @@ mutation-matrix グラフでは検出したmutation について縦軸を遺伝�
   変異タイプ(func)別に色分けして表示します。表示したくない変異タイプがある場合、functions のチェックボックスからチェックを外すことで除外できます。
 
 :sub plot:
-  mutationとは別にサンプルに対するデータがある場合、subplotとして表示することができます。このファイルは ``pa_plot`` コマンド実行前に設定ファイルに記入しておく必要があります。
+  mutationとは別にサンプルに対するデータがある場合、subplotとして表示することができます。このファイルは ``paplot`` コマンド実行前に設定ファイルに記入しておく必要があります。
 
 .. image:: image/mut_operation1.PNG
   :scale: 100%
@@ -149,3 +149,30 @@ mutation-matrix グラフでは検出したmutation について縦軸を遺伝�
 
 いずれも横のエディットボックスに入力したのち、[update filter] ボタンをクリックしてください。
 
+========================
+signature グラフ |new|
+========================
+
+signature グラフでは検出したmutation についてsignatureとその集積グラフを表示します。
+
+:横長の棒グラフ(Sample):
+  サンプルごとに検出されたmutationの数を表示します。
+
+:縦長の棒グラフ(Gene):
+  遺伝子ごとのmutation数をサンプル数における割合(%)で表示します。
+
+  - 同一のサンプルが同じ遺伝子に対して複数のmutationを持っていた場合、mutation数を1としてカウントします。
+  - 同一のサンプルが同じ遺伝子に対して複数の変異タイプを持っていた場合、優先順位の高い変異タイプにカウントします。
+
+.. image:: image/mut_operation1.PNG
+  :scale: 100%
+
+**操作方法**
+
+.. image:: image/mut_operation2.PNG
+  :scale: 100%
+
+.. image:: image/mut_operation2_2.PNG
+  :scale: 100%
+
+.. |new| image:: image/tab_001.gif

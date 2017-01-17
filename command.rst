@@ -1,5 +1,5 @@
 ************************
-pa_plot コマンド
+paplot コマンド
 ************************
 
 ------------------------
@@ -8,7 +8,7 @@ pa_plot コマンド
 
 .. code-block:: bash
 
-  pa_plot {qc, sv, mutation} [-h] [--version] [--config_file CONFIG_FILE] [--remarks REMARKS] input output_dir project_name
+  paplot {qc, sv, mutation} [-h] [--version] [--config_file CONFIG_FILE] [--remarks REMARKS] input output_dir project_name
 
 |
 
@@ -18,7 +18,19 @@ pa_plot コマンド
   paplotのサブコマンドです。いづれかを選択します。(svはCAグラフを出力します)
 
 :input:
-  入力ファイルです。ワイルドカード (``*``) を使用して複数指定することができます。最初と最後に ``"`` をつけてください。
+  入力ファイルです。ワイルドカード (``*``, ``?``) を使用して複数指定することができます。その場合、最初と最後に ``"`` をつけてください。
+
+.. code-block:: bash
+
+  # 1ファイルだけ入力する場合
+  paplot qc example/qc/SAMPLE1.qc ./test multi1 --config_file example/example.cfg
+  
+  # 複数ファイルを入力する場合 (, で区切る)
+  paplot qc "example/qc/SAMPLE1.qc.csv,example/qc/SAMPLE2.qc.csv" ./test multi1 --config_file example/example.cfg
+  
+  # 複数ファイルを入力する場合 (* 使用)
+  paplot qc "example/qc/*.csv" ./multi multi1 --config_file example/example.cfg
+
 
 :output_dir:
   出力ディレクトリを指定します。ディレクトリ構成は :ref:`2. 出力ディレクトリ <output>` を参照してください。
@@ -49,9 +61,11 @@ pa_plot コマンド
     │   ├ graph_qc.html     <--- qc グラフ
     │   └ graph_ca.html     <--- ca グラフ
     │
-    ├ js          <--- この3つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
+    ├ js          <--- この4つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
+    ├ layout
     ├ lib
     ├ style
+    |
     └ index.html             <--- このファイルを web ブラウザで開いてください。
 
 
@@ -59,3 +73,4 @@ pa_plot コマンド
 
 出力ファイルの操作方法は :doc:`how to use graphs<use_graph>` を参照してください。
 
+.. |new| image:: image/tab_001.gif

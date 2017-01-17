@@ -15,13 +15,13 @@ col_opt_mapped_reads       numeric        ×           number of mapped reads
 col_opt_total_reads        numeric        ×           number of duplicate reads
 col_opt_average_depth      numeric        ×           mean of insert size
 col_opt_mean_insert_size   numeric        ×           average of depth
-col_opt_ratio_2x           numeric        ×           number of read_length_r1
-col_opt_ratio_10x          numeric        ×           number of read_length_r2
-col_opt_ratio_20x          0.0～1.0       ×           coverage (depth=2)
-col_opt_ratio_30x          0.0～1.0       ×           coverage (depth=10)
-col_opt_read_length_r1     0.0～1.0       ×           coverage (depth=20)
-col_opt_read_length_r2     0.0～1.0       ×           coverage (depth=30)
-col_opt_id                 text           x           サンプルを識別できる名称
+col_opt_read_length_r1     numeric        ×           number of read_length_r1
+col_opt_read_length_r2     numeric        ×           number of read_length_r2
+col_opt_ratio_2x           0.0～1.0       ×           coverage (depth=2)
+col_opt_ratio_10x          0.0～1.0       ×           coverage (depth=10)
+col_opt_ratio_20x          0.0～1.0       ×           coverage (depth=20)
+col_opt_ratio_30x          0.0～1.0       ×           coverage (depth=30)
+col_opt_id                 text           ×           サンプルを識別できる名称
 =========================  =============  ==========  =============================
 
 | 列の指定方法方法については、 :ref:`列の指定方法<column>` を参照してください。
@@ -79,3 +79,4 @@ name_set(色指定なし)
 .. image:: image/default_color.PNG
   :scale: 100%
 
+.. |new| image:: image/tab_001.gif
