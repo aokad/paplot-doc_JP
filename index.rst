@@ -3,8 +3,6 @@
 .. image:: https://img.shields.io/badge/python-3.5-blue.svg
     :target: https://img.shields.io/badge/python-3.5-blue.svg
 
-https://img.shields.io/badge/python-3.5-blue.svg
-
 .. image:: image/genomon_kun.PNG
 
 paplot documentation

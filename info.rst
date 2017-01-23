@@ -11,6 +11,7 @@ v0.5.0
 
 | グラフ追加
 | ● signature graph
+| ● pmsignature graph
 
 | サブコマンド変更
 | ● sv -> ca

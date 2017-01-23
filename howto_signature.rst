@@ -2,18 +2,18 @@
 signature グラフ |new|
 ========================
 
-signature グラフでは検出したmutation についてsignatureとその集積グラフを表示します。
+signature グラフでは検出したmutation についてsignatureとその集積を積み上げグラフで表示します。
 
 :signature:
   signatureを表示します。
 
-:縦長の棒グラフ:
+:積み上げグラフ:
   サンプルごとmutationについて、signatureの割合を表示します。
 
 .. image:: image/sig_dummy.PNG
   :scale: 100%
 
-また、積算グラフの下のリストボックスにより表示モードを切り替えることができます。
+また、積み上げグラフの下のリストボックスにより表示モードを切り替えることができます。
 
 :view mode:
   - rate ... 100%表示します。

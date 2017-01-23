@@ -118,7 +118,7 @@ Safariの場合
 |
 
 *********************************
-about GenomonPipeline
+with GenomonPipeline
 *********************************
 
 mutation matrixが表示されない
