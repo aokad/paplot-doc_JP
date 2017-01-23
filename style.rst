@@ -17,6 +17,8 @@
  - :doc:`config_qc` 
  - :doc:`config_ca` 
  - :doc:`config_mat` 
+ - :doc:`config_signature` 
+ - :doc:`config_pmsignature` 
 
 | 2つ目はstyleファイルです。
 | 入力データに依存しない要素を設定します。
@@ -200,6 +202,29 @@
       sub_border_color: "#FFFFFF",
       sub_border_width: "1px",
       
+  };
+  // style of signature
+  style_signature = {
+      title_integral: "Signature integral",
+      title_integral_y: "membership",
+      title_signature_y: "probaility",
+      title_rate: "Signature rate",
+      title_rate_y: "membership",
+      title_rate_y: "probaility",
+      border_y_color: "#DDDDCC",
+      border_y_opacity: 0.5,
+      plot_border_y_color: "#DDDDCC",
+      plot_border_y_opacity: 0.5,
+  };
+  
+  // style of pmsignature
+  style_pmsignature = {
+      title_integral: "Signature integral",
+      title_integral_y: "membership",
+      title_rate: "Signature rate",
+      title_rate_y: "membership",
+      plot_border_y_color: "#DDDDCC",
+      plot_border_y_opacity: 0.5,
   };
   })();
 

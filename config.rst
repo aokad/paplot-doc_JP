@@ -284,7 +284,107 @@ mutation-matrixグラフ固有の設定記載方法について、詳細は :doc
   lack_column_complement = NA
   sept = ,
 
-5. 共通項目
+5. signature
+---------------------------
+
+signatureデータ準備方法およびjsonファイルフォーマットについては :doc:`config_signature` に記載しています。
+
+:doc:`config_signature` の順に実行する場合、configファイルの変更は必要ありません。
+
+.. code-block:: cfg
+  :linenos:
+  
+  ###################### signature
+  [signature]
+
+  # ポップアップウィンドウの表示内容
+  tooltip_format_signature_title = {sig}
+  tooltip_format_signature_partial = {route}: {#sum_item_value:6.2}
+  tooltip_format_mutation_title = {id}
+  tooltip_format_mutation_partial = {sig}: {#sum_item_value:.2}
+  
+  # signatureのY軸最大値 (-1の場合、それぞれのデータの最大値を使用する)
+  signature_y_max = -1
+  
+  # signatureのbarの色
+  alt_color_CtoA = #1BBDEB
+  alt_color_CtoG = #211D1E
+  alt_color_CtoT = #E62623
+  alt_color_TtoA = #CFCFCF
+  alt_color_TtoC = #ACD577
+  alt_color_TtoG = #EDC7C4
+  
+  # 入力フォーマット (自分のデータに合わせて変更する)
+  [result_format_signature]
+
+  # 入力形式 (現在はjsonのみ)
+  format = json
+
+  # background を使用しているかどうか
+  background = True
+  
+  # jsonファイルのkey名
+  key_id = id
+  key_mutation = mutation
+  key_signature = signature
+  key_mutation_count = mutation_count
+  
+
+6. pmsignature
+---------------------------
+
+pmsignatureデータ準備方法およびjsonファイルフォーマットについては :doc:`config_pmsignature` に記載しています。
+
+:doc:`config_pmsignature` の順に実行する場合、configファイルの変更は必要ありません。
+
+.. code-block:: cfg
+  :linenos:
+  
+  ###################### pmsignature
+  [pmsignature]
+
+  # ポップアップウィンドウの表示内容
+  tooltip_format_ref1 = A: {a:.2}
+  tooltip_format_ref2 = C: {c:.2}
+  tooltip_format_ref3 = G: {g:.2}
+  tooltip_format_ref4 = T: {t:.2}
+  tooltip_format_alt1 = C -> A: {ca:.2}
+  tooltip_format_alt2 = C -> G: {cg:.2}
+  tooltip_format_alt3 = C -> T: {ct:.2}
+  tooltip_format_alt4 = T -> A: {ta:.2}
+  tooltip_format_alt5 = T -> C: {tc:.2}
+  tooltip_format_alt6 = T -> G: {tg:.2}
+  tooltip_format_strand = + {plus:.2} - {minus:.2}
+  tooltip_format_mutation_title = {id}
+  tooltip_format_mutation_partial = {sig}: {#sum_item_value:.2}
+  
+  # pmsignatureのboxの色
+  color_A = #06B838
+  color_C = #609CFF
+  color_G = #B69D02
+  color_T = #F6766D
+  color_plus = #00BEC3
+  color_minus = #F263E2
+  
+  # 入力フォーマット (自分のデータに合わせて変更する)
+  [result_format_pmsignature]
+
+  # 入力形式 (現在はjsonのみ)
+  format = json
+
+  # background を使用しているかどうか
+  background = True
+
+  # jsonファイルのkey名
+  key_id = id
+  key_mutation = mutation
+  key_ref = ref
+  key_alt = alt
+  key_strand = strand
+  key_mutation_count = mutation_count
+
+
+7. 共通項目
 ---------------
 
 .. _suffix:

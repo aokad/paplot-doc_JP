@@ -3,19 +3,28 @@ paplot コマンド
 ************************
 
 ------------------------
-1. コマンドオプション 
+1. 基本的な使い方
 ------------------------
 
 .. code-block:: bash
 
-  paplot {qc, sv, mutation} [-h] [--version] [--config_file CONFIG_FILE] [--remarks REMARKS] input output_dir project_name
+  paplot subcommand [--config_file CONFIG_FILE] [--title TITLE]
+                    [--ellipsis ELLIPSIS] [--overview OVERVIEW]
+                    [--remarks REMARKS]
+                    input output_dir project_name
 
 |
 
 **必須**
 
-:{qc, ca, mutation, signature, pmsignature}:
+:subcommand:
   paplotのサブコマンドです。いづれかを選択します。
+  
+  - qc
+  - ca
+  - mutation
+  - signature
+  - pmsignature
 
 :input:
   入力ファイルです。ワイルドカード (``*``, ``?``) を使用して複数指定することができます。その場合、最初と最後に ``"`` をつけてください。
@@ -38,17 +47,34 @@ paplot コマンド
 :project_name:
   プロジェクト名です。出力ファイルのタイトルに使用します。
 
-**任意**
+------------------------
+2. コマンドオプション 
+------------------------
+
+次の項目をオプションで変更することができます。
 
 --config_file        設定ファイルです。未指定の場合、デフォルトを使用します。
---remarks            index.htmlの備考欄に出力するテキストです。未指定の場合、設定ファイルの値を使用します。
--h                   ヘルプを表示します。
---version            バージョンを表示します。
+--title              グラフのタイトル
+--ellipsis           グラフの短縮名。グラフのファイル名になるため、同一ディレクトリに複数ファイルを出力する際に設定すると便利です。
+--overview           index.htmlに表示するグラフの概要。
+--remarks            index.htmlの備考欄に出力するテキストです。未指定の場合、設定ファイル ([style] remarks) の値を使用します。
+
+デフォルト値は次の通りです。
+
+=============== =================== ============ ============================================= ==============
+subcommand      title               ellipsis     overview                                      remarks
+=============== =================== ============ ============================================= ==============
+qc              QC graphs           qc           Quality Control of bam.                       なし
+ca              CA graphs           ca           Chromosomal Aberration.                       なし
+mutation        Mutation matrix     mutation     Gene-sample mutational profiles.              なし
+signature       Signature           signature    Mutational signatures.                        なし
+pmsignature     PMSignature         pmsignature  Express mutational signatures in pmsignature. なし
+=============== =================== ============ ============================================= ==============
 
 .. _output:
 
 ---------------------
-2. 出力ディレクトリ
+3. 出力ディレクトリ
 ---------------------
 
 ``output_dir`` オプションで指定した場所に次の構成でファイルを出力します。
@@ -57,9 +83,7 @@ paplot コマンド
 
   {output_dir}
     ├ {project_name}
-    │   ├ graph_mut.html    <--- mutation-matrix グラフ
-    │   ├ graph_qc.html     <--- qc グラフ
-    │   └ graph_ca.html     <--- ca グラフ
+    │   └ graph_*.html      <--- 各グラフ
     │
     ├ js          <--- この4つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
     ├ layout

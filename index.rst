@@ -49,6 +49,7 @@ Contents:
    config_ca.rst
    config_mat.rst
    config_signature.rst
+   config_pmsignature.rst
    style.rst
 
 .. toctree:: 
