@@ -14,7 +14,7 @@ install
 |
 
  * :ref:`Linux系の場合 (HGCスパコン, cygwin含) <linux>`
- * :ref:`MacOS Xの場合 <linux>`
+ * :ref:`MacOS Xの場合 <macosx>`
  * :ref:`Windowsの場合 <windows>`
 
 .. _linux:
@@ -71,6 +71,7 @@ Linux系の場合 (HGCスパコン, cygwin含)
     export LD_LIBRARY_PATH=~/.local/lib/:$LD_LIBRARY_PATH
   
 
+.. _macosx:
 
 ================================================
 MacOS Xの場合

@@ -55,16 +55,16 @@ quick start
   paplot qc "example/qc/*.csv" ./tmp demo --config_file example/example.cfg
 
   # create bundle graphs of Structural Variation (SV)
-  paplot sv "example/sv/*.txt" ./tmp demo --config_file example/example.cfg
+  paplot ca "example/sv/*.txt" ./tmp demo --config_file example/example.cfg
 
   # create matrix graphs of mutation
   paplot mutation example/mutation/sample_merge.csv ./tmp demo --config_file example/example.cfg
 
   # create signature graphs
-  paplot signature ./example/signature/pmsignature_full3.json ./tmp demo 3
+  paplot signature "example/signature/Nik_Zainal_2012.full.*.json" ./tmp demo --config_file ./example/example.cfg
 
   # create signature graphs (pmsignature)
-  paplot pmsignature ./example/pmsignature/pmsignature_ind3.json ./demo demo 3
+  paplot pmsignature "example/pmsignature/Nik_Zainal_2012.ind.*.json" ./tmp demo --config_file ./example/example.cfg
 
 
 3. 結果ファイルを表示
@@ -79,9 +79,17 @@ HTMLファイルができていますか？
         ├ demo
         │   ├ graph_ca.html            <--- ca グラフ
         │   ├ graph_mut.html           <--- mutation-matrix グラフ
-        │   ├ graph_pmsignature3.html   <--- pmsignature グラフ
+        │   ├ graph_pmsignature2.html  <--- pmsignature グラフ (数字はsignature数)
+        │   ├ graph_pmsignature3.html
+        │   ├ graph_pmsignature4.html
+        │   ├ graph_pmsignature5.html
+        │   ├ graph_pmsignature6.html
         │   ├ graph_qc.html            <--- qc グラフ
-        │   └ graph_signature3.html     <--- signature グラフ
+        │   ├ graph_signature2.html    <--- signature グラフ (数字はsignature数)
+        │   ├ graph_signature3.html
+        │   ├ graph_signature4.html
+        │   ├ graph_signature5.html
+        │   └ graph_signature6.html
         │
         ├ js          <--- この4つのディレクトリはHTMLファイルを表示するために必要です。消さないでください。
         ├ layout
@@ -100,17 +108,17 @@ HTMLファイルができていますか？
 | 
 | **QC グラフ**
 
-.. image:: image/qc_dummy.png
+.. image:: image/qc_dummy.PNG
   :scale: 100%
 
 | **CA グラフ**
 
-.. image:: image/sv_dummy.png
+.. image:: image/sv_dummy.PNG
   :scale: 100%
 
 | **mutation-matrix グラフ**
 
-.. image:: image/mut_dummy.png
+.. image:: image/mut_dummy.PNG
   :scale: 100%
 
 | **signature グラフ** |new|
@@ -123,7 +131,7 @@ HTMLファイルができていますか？
 .. image:: image/pmsig_dummy.PNG
   :scale: 100%
 
-| それぞれのグラフの使い方は :doc:`how to use graphs<use_graph>` を参照してください。
+| それぞれのグラフの使い方は `how to use graphs <./index.html#how-to-toc>`_ を参照してください。
 |
 
 .. |new| image:: image/tab_001.gif
