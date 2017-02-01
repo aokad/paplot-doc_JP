@@ -48,6 +48,8 @@ Contents:
    config_mat.rst
    config_signature.rst
    config_pmsignature.rst
+   exec_signature.rst
+   exec_pmsignature.rst
    style.rst
 
 .. toctree:: 

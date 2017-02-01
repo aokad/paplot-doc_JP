@@ -1,8 +1,8 @@
 *******************************
-Config 記述方法(CA)
+Config 記述方法 (CA)
 *******************************
 
-全設定項目は `こちら <./config.html#ca>`_ 
+全設定項目は :ref:`こちら<conf_ca>`
 
 列と設定の対応
 -----------------------------
@@ -20,7 +20,7 @@ col_opt_dir2          text             x           direction of break point 2
 col_opt_type          text             x           type of variation
 col_opt_gene_name1    text             x           gene name of break point 1
 col_opt_gene_name2    text             x           gene name of break point 2
-col_opt_group         text             ×           grouping of mutaions
+col_opt_group         text             x           grouping of mutaions
 ====================  ===============  ==========  =============================
 
 .. note::
@@ -56,7 +56,7 @@ col_opt_group         text             ×           grouping of mutaions
    .. image:: image/option_sv.PNG
      :scale: 100%
 
-| 列の指定方法方法については、 :ref:`列の指定方法<column>` を参照してください。
+| 列の指定方法については、 :ref:`列の指定方法<column>` を参照してください。
 | suffixとIDの指定方法および、サンプル名の指定方法については、 :ref:`suffixとID<suffix>` を参照してください。
 | 
 
@@ -68,7 +68,7 @@ configファイルで次の項目を編集してください。
 
 .. code-block:: cfg
 
-  [sv]
+  [ca]
   # 使用するchromosomes (,で区切る)
   # default
   # use_chrs = 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X,Y
@@ -107,7 +107,7 @@ chromosome名は分析したいファイルのChr1, Chr2で使用されている
 
 .. image:: image/qa_genome_size.PNG
 
-configファイルで用意したゲノムサイズのファイルを指定してください。
+用意したゲノムサイズのファイルをconfig fileに指定してください。
 
 .. code-block:: cfg
 

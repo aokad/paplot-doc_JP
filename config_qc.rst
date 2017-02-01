@@ -1,8 +1,8 @@
 *******************************
-Config 記述方法(QC)
+Config 記述方法 (QC)
 *******************************
 
-全設定項目は `こちら <./config.html#qc>`_ 
+全設定項目は :ref:`こちら<conf_qc>`
 
 列と設定の対応
 -----------------------------
@@ -10,21 +10,21 @@ Config 記述方法(QC)
 =========================  =============  ==========  =============================
 name                       input type     required    description
 =========================  =============  ==========  =============================
-col_opt_duplicate_reads    numeric        ×           number of total reads
-col_opt_mapped_reads       numeric        ×           number of mapped reads
-col_opt_total_reads        numeric        ×           number of duplicate reads
-col_opt_average_depth      numeric        ×           mean of insert size
-col_opt_mean_insert_size   numeric        ×           average of depth
-col_opt_read_length_r1     numeric        ×           number of read_length_r1
-col_opt_read_length_r2     numeric        ×           number of read_length_r2
-col_opt_ratio_2x           0.0～1.0       ×           coverage (depth=2)
-col_opt_ratio_10x          0.0～1.0       ×           coverage (depth=10)
-col_opt_ratio_20x          0.0～1.0       ×           coverage (depth=20)
-col_opt_ratio_30x          0.0～1.0       ×           coverage (depth=30)
-col_opt_id                 text           ×           サンプルを識別できる名称
+col_opt_duplicate_reads    numeric        x           number of total reads
+col_opt_mapped_reads       numeric        x           number of mapped reads
+col_opt_total_reads        numeric        x           number of duplicate reads
+col_opt_average_depth      numeric        x           mean of insert size
+col_opt_mean_insert_size   numeric        x           average of depth
+col_opt_read_length_r1     numeric        x           number of read_length_r1
+col_opt_read_length_r2     numeric        x           number of read_length_r2
+col_opt_ratio_2x           0.0～1.0       x           coverage (depth=2)
+col_opt_ratio_10x          0.0～1.0       x           coverage (depth=10)
+col_opt_ratio_20x          0.0～1.0       x           coverage (depth=20)
+col_opt_ratio_30x          0.0～1.0       x           coverage (depth=30)
+col_opt_id                 text           x           サンプルを識別できる名称
 =========================  =============  ==========  =============================
 
-| 列の指定方法方法については、 :ref:`列の指定方法<column>` を参照してください。
+| 列の指定方法については、 :ref:`列の指定方法<column>` を参照してください。
 | suffixとIDの指定方法および、サンプル名の指定方法については、 :ref:`suffixとID<suffix>` を参照してください。
 | 
 
