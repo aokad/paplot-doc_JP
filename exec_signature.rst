@@ -70,7 +70,6 @@ https://github.com/Genomon-Project/genomon_Rscripts/releases
 [補足] jsonフォーマット
 -----------------------------
 
-
 | `example/signature/Nik_Zainal_2012.full.3.json` ファイルをテキストエディタで開くと次のようになっています。
 | (長いため一部省略しています)
 |

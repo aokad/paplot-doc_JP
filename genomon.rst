@@ -2,7 +2,7 @@
 Genomon データを使用する
 **************************
 
-Genomo-pipeline に関しては、各バージョンの設定ファイルを用意しています。
+`Genomon-pipeline <https://github.com/Genomon-Project/GenomonPipeline/>`_ の解析結果に関して、各バージョンの設定ファイルを用意しています。
 
 ※カスタマイズする場合は :doc:`config` を参照して変更してください。
 
@@ -39,7 +39,7 @@ Genomon 2.2.0                 ヘッダあり         ヘッダあり        結
 .. code-block:: bash
 
   genomon_root={Genomonを実行したディレクトリ}
-  sample={Genomon実行時のサンプルファイル名のディレクトリ}
+  sample={Genomon実行時のサンプルファイル名}
   output_dir={paplotの出力ディレクトリ}
   project_name={プロジェクト名}
   paplot_install_dir={paplotをインストールしたディレクトリ}

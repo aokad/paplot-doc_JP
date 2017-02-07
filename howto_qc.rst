@@ -11,3 +11,5 @@ QC グラフ
 
 .. image:: image/qc_operation.PNG
   :scale: 100%
+
+.. |new| image:: image/tab_001.gif

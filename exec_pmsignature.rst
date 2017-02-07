@@ -46,14 +46,12 @@ pmsignatureを ``type="independent"`` (default) で実行したのち、パラ�
 
 https://github.com/Genomon-Project/genomon_Rscripts/releases
 
-
 入力ファイル, 出力したいファイル名の順に引数を渡します。
 
 .. code-block:: bash
 
   R --vanilla --slave --args ./pmsignature_ind3.Rdata ./pmsignature_ind3.json < {path to genomon_Rscripts}/pmsignature/convert_toJson_ind.R
 
-ここで作成した "pmsignature_ind3.json" ファイルをpaplotに入力します。
 
 3. paplotの実行
 -----------------------------

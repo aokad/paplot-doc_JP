@@ -16,7 +16,7 @@ signature グラフでは検出したmutation についてsignatureとその集�
 また、積み上げグラフの下のリストボックスにより表示モードを切り替えることができます。
 
 :view mode:
-  - rate ... 100%表示します。
+  - rate ... mutationの数を1としたときのsignatureの割合を % で表示します。
   - integral ... 実際のmutation数に対する割合を表示します。
 
 :sort by:
