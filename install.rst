@@ -26,11 +26,17 @@ Linux系の場合 (HGCスパコン, cygwin含)
 1. paplot のインストール
 --------------------------
 
+| paplotのサイトから最新版の ``Source code (zip)`` をダウンロードします。
+| https://github.com/Genomon-Project/paplot/releases/
+|
+
 .. code-block:: bash
 
   cd {install したいディレクトリ}
-  git clone -b master https://github.com/Genomon-Project/paplot.git
-  cd paplot
+  # v0.5.3の場合
+  wget https://github.com/Genomon-Project/paplot/archive/v0.5.3.zip
+  unzip v0.5.3.zip
+  cd paplot-0.5.3/
 
   python setup.py build install
   
