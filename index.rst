@@ -34,10 +34,10 @@ Contents:
    :name: install_toc
    
    install.rst
-   genomon.rst
-   config.rst
+   dataformat.rst
    command.rst
-
+   config.rst
+   
 .. toctree:: 
    :maxdepth: 2
    :caption: for advance

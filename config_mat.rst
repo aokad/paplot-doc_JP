@@ -43,8 +43,6 @@ col_opt_id                 text           x           サンプルを識別で�
 :{#sum_item_value}: 積み上げグラフの合計値
 
 | mutationの集計について、使用しなかったmutationはカウントしていません。
-| Genomonでは、functionが次の場合のmutationを除外していますので、それぞれの項目の値は全検出結果からこれらの数を引いた値になります。
-|   nouse_funcs = _blank_,unknown,synonymous_SNV
 |
 
 **デフォルトでの設定内容と表示との対応**

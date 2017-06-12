@@ -117,18 +117,4 @@ Safariの場合
 |   Safari→環境設定→セキュリティ→Webコンテンツ→「ポップアップウィンドウを開かない」チェックを外す
 |
 
-*********************************
-with GenomonPipeline
-*********************************
-
-mutation matrixが表示されない
----------------------------------
-
-annovar設定をOFFにしていると表示されません。（Gene情報とfunction情報が取得できないため）
-Genomon設定ファイルをご確認ください。
-
-.. code-block:: cfg
-
-  [annotation] active_annovar_flag = False
-
 .. |new| image:: image/tab_001.gif

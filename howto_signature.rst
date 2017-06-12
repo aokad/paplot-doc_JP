@@ -1,8 +1,8 @@
 ========================
-signature グラフ |new|
+signature レポート |new|
 ========================
 
-signature グラフでは検出したmutation についてsignatureとその集積を積み上げグラフで表示します。
+signature レポートでは検出したmutation についてsignatureとその集積を積み上げグラフで表示します。
 
 :signature:
   signatureを表示します。

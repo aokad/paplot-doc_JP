@@ -1,8 +1,8 @@
 ========================
-mutation-matrix グラフ
+mutation-matrix レポート
 ========================
 
-mutation-matrix グラフでは検出したmutation について縦軸を遺伝子(Gene), 横軸をサンプル(Sample) として、変異タイプ別に表示します。
+mutation-matrix レポートでは検出したmutation について縦軸を遺伝子(Gene), 横軸をサンプル(Sample) として、変異タイプ別に表示します。
 
 :横長の棒グラフ(Sample):
   サンプルごとに検出されたmutationの数を表示します。
