@@ -24,12 +24,11 @@ exampleデータ
     padding: 8px; 
     border: 1px solid #AAA; 
     background-color:#FFF; 
-    font-size: small;"
+    font-size: small;
   }
   p {
     margin-top: 2px; 
     margin-bottom: 2px; 
-//    font-size: small;"
   }
   </style>
   
