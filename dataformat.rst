@@ -16,7 +16,7 @@ exampleデータ
 `example/mutation/sample_merge.csv` 
 
 .. raw:: html
-  
+  <div style="margin: 5px; padding: 5px; border: 1px solid #AAA; background-color:#FFF; font-size: small;">
   <font color="red">ID,Chr</font>,Start,End,Ref,Alt,<font color="red">func,gene</font>
   <font color="red">SAMPLE00,chr10</font>,8114472,8114474,A,C,<font color="red">intronic,GATA3</font>
   <font color="red">SAMPLE00,chr13</font>,28644892,28644901,G,-,<font color="red">intronic,FLT3</font>
@@ -26,6 +26,7 @@ exampleデータ
   <font color="red">SAMPLE00,chr3</font>,178906688,178906688,G,A,<font color="red">intronic,PIK3CA</font>
   <font color="red">SAMPLE00,chr13</font>,28603715,28603715,G,-,<font color="red">intergenic,FLT3</font>
   <font color="red">SAMPLE00,chr14</font>,103368263,103368270,G,C,<font color="red">intronic,TRAF3</font>
+  </div>
 
 赤字が必須項目です。
 
@@ -37,7 +38,6 @@ mutation-matrixグラフ固有の設定記載方法について、詳細は :doc
 
 .. code-block:: cfg
   :linenos:
-  :emphasize-lines: 50,51,52,53,56,58,65,68,75,77,79,81,83,85
 
   ###################### mutation
   [mutation]
@@ -89,9 +89,6 @@ mutation-matrixグラフ固有の設定記載方法について、詳細は :doc
 
 
 最小データセット
-
-
-
 
 configファイルを編集して自分のファイルフォーマットを指定します。
 
