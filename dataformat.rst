@@ -31,16 +31,14 @@ exampleデータ
   <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE03</font>,chr14,103368263,103368270,G,C,<font color="red">intronic,TRAF3</font></p>
   </div>
 
-::
-
-  exampleデータでは変異ファイルの例として、上記のデータを用意しています。
-  このうち<font color="red">赤字</font>で記載したサンプルid(ID), func(変異タイプ), gene(遺伝子名）の3つが必須項目です。
-  configファイルでは、[result_format_mutation]セクションで変異ファイルのヘッダ名を指定します。
+|
+|  exampleデータでは変異ファイルの例として、上記のデータを用意しています。
+|  このうち<font color="red">赤字</font>で記載したサンプルid(ID), func(変異タイプ), gene(遺伝子名）の3つが必須項目です。
+|  configファイルでは、[result_format_mutation]セクションで変異ファイルのヘッダ名を指定します。
 
 `example/paplot.cfg` 
 
 .. code-block:: cfg
-  :linenos:
 
   ###################### mutation
   # 入力フォーマット (自分のデータに合わせて変更する)
@@ -78,7 +76,7 @@ exampleデータ
 最小データセット
 ==========================
 
-paplotに最低限必要な項目のみで構成した、以下のようなデータがあるとします。
+| paplotに最低限必要な項目のみで構成した、以下のようなデータがあるとします。
 
 .. raw:: html
 
@@ -100,7 +98,7 @@ paplotに最低限必要な項目のみで構成した、以下のようなデ�
 |
 
 .. code-block:: cfg
-  :emphasize-lines: 25,43,44,45,46,47
+  :emphasize-lines: 25,45,46,47,48,49
   
   ###################### general
   [style]
