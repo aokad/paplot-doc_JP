@@ -20,7 +20,7 @@ exampleデータ
 .. raw:: html
 
   <div style="margin-top: 10px; margin-bottom: 10px; padding: 8px; border: 1px solid #AAA; background-color:#FFF; ">
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">ID</font>,Chr,Start,End,Ref,Alt,<font color="red">func,gene</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><b><font color="red">ID</font>,Chr,Start,End,Ref,Alt,<font color="red">func,gene</font></b></p>
   <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE00</font>,chr10,8114472,8114474,A,C,<font color="red">intronic,GATA3</font></p>
   <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE00</font>,chr13,28644892,28644901,G,-,<font color="red">intronic,FLT3</font></p>
   <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE00</font>,chr13,28664636,28664638,-,G,<font color="red">intronic,FLT3</font></p>
@@ -31,10 +31,10 @@ exampleデータ
   <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE03</font>,chr14,103368263,103368270,G,C,<font color="red">intronic,TRAF3</font></p>
   </div>
 
-|
-|  exampleデータでは変異ファイルの例として、上記のデータを用意しています。
-|  このうち<font color="red">赤字</font>で記載したサンプルid(ID), func(変異タイプ), gene(遺伝子名）の3つが必須項目です。
-|  configファイルでは、[result_format_mutation]セクションで変異ファイルのヘッダ名を指定します。
+exampleデータでは変異ファイルの例として、上記のデータを用意しています。
+
+ - 赤字で記載したサンプルid(ID), func(変異タイプ), gene(遺伝子名）の3つが必須項目です。
+ - 太字がヘッダ名です。configファイルの [result_format_mutation] セクションでヘッダ名を指定します。
 
 `example/paplot.cfg` 
 
@@ -76,7 +76,7 @@ exampleデータ
 最小データセット
 ==========================
 
-| paplotに最低限必要な項目のみで構成した、以下のようなデータがあるとします。
+paplotに最低限必要な項目のみで構成した、以下のようなデータがあるとします。
 
 .. raw:: html
 
@@ -92,10 +92,9 @@ exampleデータ
   <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,TRAF3</p>
   </div>
 
-| 
-| configファイルは以下のようになります。
-| ハイライト表示が変更箇所です。
-|
+configファイルは以下のようになります。
+
+ハイライト表示が変更箇所です。
 
 .. code-block:: cfg
   :emphasize-lines: 25,45,46,47,48,49
@@ -156,25 +155,14 @@ exampleデータ
   sept = ,
 
 
-
-configファイルを編集して自分のファイルフォーマットを指定します。
-
-configファイルのサンプルは以下にあります。
-
-``{paplotをインストールしたディレクトリ}/example/example.cfg``
-
-.. warning::
-  
-  | 必須項目はハイライトで示しています。正しく設定してください。
-  | サンプル名の指定方法については、 :ref:`suffixとID<suffix>` も参照してください。
-
 作成したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
 
 実行例
 
 .. code-block:: bash
 
-  paplot qc "example/qc/*.csv" ./tmp DUMMY --config_file example/example.cfg
+  paplot mutation {/path/to/data.csv} ./tmp MINIMAL --config_file example/paplot.cfg
+
 
 1. 全般
 ------------
