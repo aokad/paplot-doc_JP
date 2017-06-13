@@ -30,12 +30,6 @@ exampleデータ
 
 赤字が必須項目です。
 
-出力するグラフを変更しない場合は、[result_format_mutation] のみ自分のデータに合わせて設定してください。
-
-:ref:`入力ファイルフォーマット<data_format>` に各項目の解説を記載しています。
-
-mutation-matrixグラフ固有の設定記載方法について、詳細は :doc:`config_mat` に記載しています。
-
 .. code-block:: cfg
   :linenos:
 
@@ -44,7 +38,6 @@ mutation-matrixグラフ固有の設定記載方法について、詳細は :doc
   # (省略)
   
   # 入力フォーマット (自分のデータに合わせて変更する)
-  # 項目は欄外「入力ファイルフォーマット」参照
   [result_format_mutation]
   suffix = 
   sept = \t
@@ -62,7 +55,78 @@ mutation-matrixグラフ固有の設定記載方法について、詳細は :doc
 
   # func列
   col_func = func
+  # gene列
+  col_gene = gene
   
+  ##################
+  # column index (option)
+  ##################
+  
+  # chromosome
+  col_opt_chr = Chr
+  # 開始位置
+  col_opt_start = Start
+  # 終了位置
+  col_opt_end = End
+  # リファレンスの塩基配列
+  col_opt_ref = Ref
+  # 対象の塩基配列
+  col_opt_alt = Alt
+  # id (sample) 列
+  col_opt_ID = ID
+  
+  # 出力フォーマット
+  [merge_format_mutation]
+  # (省略)
+
+
+最小データセット
+
+exampleデータ
+
+`example/mutation/sample_merge.csv` 
+
+.. raw:: html
+
+  <div style="margin: 5px; padding: 5px; border: 1px solid #AAA; background-color:#FFF; font-size: small;">
+  <font color="red">ID,Chr</font>,Start,End,Ref,Alt,<font color="red">func,gene</font>
+  <font color="red">SAMPLE00,chr10</font>,8114472,8114474,A,C,<font color="red">intronic,GATA3</font>
+  <font color="red">SAMPLE00,chr13</font>,28644892,28644901,G,-,<font color="red">intronic,FLT3</font>
+  <font color="red">SAMPLE00,chr13</font>,28664636,28664638,-,G,<font color="red">intronic,FLT3</font>
+  <font color="red">SAMPLE00,chr16</font>,68795521,68795530,-,T,<font color="red">UTR3,CDH1</font>
+  <font color="red">SAMPLE00,chr10</font>,8117068,8117069,G,T,<font color="red">exonic,GATA3</font>
+  <font color="red">SAMPLE00,chr3</font>,178906688,178906688,G,A,<font color="red">intronic,PIK3CA</font>
+  <font color="red">SAMPLE00,chr13</font>,28603715,28603715,G,-,<font color="red">intergenic,FLT3</font>
+  <font color="red">SAMPLE00,chr14</font>,103368263,103368270,G,C,<font color="red">intronic,TRAF3</font>
+  </div>
+
+赤字が必須項目です。
+
+.. code-block:: cfg
+  :linenos:
+
+  ###################### mutation
+  [mutation]
+  # (省略)
+  
+  # 入力フォーマット (自分のデータに合わせて変更する)
+  [result_format_mutation]
+  suffix = 
+  sept = \t
+  header = True
+  comment = #
+  
+  # funcが1セルに複数入力されている場合の区切り文字
+  sept_func = ";"
+  # geneが1セルに複数入力されている場合の区切り文字
+  sept_gene = ";"
+  
+  ##################
+  # Column index (required)
+  ##################
+
+  # func列
+  col_func = func
   # gene列
   col_gene = gene
   
@@ -88,7 +152,6 @@ mutation-matrixグラフ固有の設定記載方法について、詳細は :doc
   # (省略)
 
 
-最小データセット
 
 configファイルを編集して自分のファイルフォーマットを指定します。
 
