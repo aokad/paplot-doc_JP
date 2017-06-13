@@ -11,54 +11,53 @@ exampleデータはpaplotをダウンロードして解凍したディレクト�
 1. mutation-matrix
 ----------------------
 
+======================
 exampleデータ
+======================
 
 `example/mutation/sample_merge.csv` 
 
 .. raw:: html
 
   <div style="margin-top: 10px; margin-bottom: 10px; padding: 8px; border: 1px solid #AAA; background-color:#FFF; ">
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">ID,Chr</font>,Start,End,Ref,Alt,<font color="red">func,gene</font></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE00,chr10</font>,8114472,8114474,A,C,<font color="red">intronic,GATA3</font></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE00,chr13</font>,28644892,28644901,G,-,<font color="red">intronic,FLT3</font></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE00,chr13</font>,28664636,28664638,-,G,<font color="red">intronic,FLT3</font></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE01,chr16</font>,68795521,68795530,-,T,<font color="red">UTR3,CDH1</font></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE01,chr10</font>,8117068,8117069,G,T,<font color="red">exonic,GATA3</font></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE02,chr3</font>,178906688,178906688,G,A,<font color="red">intronic,PIK3CA</font></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE02,chr13</font>,28603715,28603715,G,-,<font color="red">intergenic,FLT3</font></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE03,chr14</font>,103368263,103368270,G,C,<font color="red">intronic,TRAF3</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">ID</font>,Chr,Start,End,Ref,Alt,<font color="red">func,gene</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE00</font>,chr10,8114472,8114474,A,C,<font color="red">intronic,GATA3</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE00</font>,chr13,28644892,28644901,G,-,<font color="red">intronic,FLT3</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE00</font>,chr13,28664636,28664638,-,G,<font color="red">intronic,FLT3</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE01</font>,chr16,68795521,68795530,-,T,<font color="red">UTR3,CDH1</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE01</font>,chr10,8117068,8117069,G,T,<font color="red">exonic,GATA3</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE02</font>,chr3,178906688,178906688,G,A,<font color="red">intronic,PIK3CA</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE02</font>,chr13,28603715,28603715,G,-,<font color="red">intergenic,FLT3</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE03</font>,chr14,103368263,103368270,G,C,<font color="red">intronic,TRAF3</font></p>
   </div>
 
 
-exampleデータでは変異情報の例として、上記のデータを用意しています。
-このうち赤字で記載したサンプルid(ID), func(変異タイプ), gene(遺伝子名）の3つが必須項目です。
+| exampleデータでは変異ファイルの例として、上記のデータを用意しています。
+| 
+| このうち赤字で記載したサンプルid(ID), func(変異タイプ), gene(遺伝子名）の3つが必須項目です。
+| configファイルでは、[result_format_mutation]セクションで変異ファイルのヘッダ名を指定します。
+|
+
+exampleデータ
+
+`example/paplot.cfg` 
 
 .. code-block:: cfg
   :linenos:
 
   ###################### mutation
-  [mutation]
-  # (省略)
-  
   # 入力フォーマット (自分のデータに合わせて変更する)
   [result_format_mutation]
-  suffix = 
   sept = ,
   header = True
-  comment = 
-  
-  # funcが1セルに複数入力されている場合の区切り文字
-  sept_func = 
-  # geneが1セルに複数入力されている場合の区切り文字
-  sept_gene = 
   
   ##################
   # Column index (required)
   ##################
 
-  # func列
+  # 変異タイプ
   col_func = func
-  # gene列
+  # 遺伝子名
   col_gene = gene
   
   ##################
@@ -77,17 +76,12 @@ exampleデータでは変異情報の例として、上記のデータを用意�
   col_opt_alt = Alt
   # id (sample) 列
   col_opt_ID = id
-  
-  # 出力フォーマット
-  [merge_format_mutation]
-  # (省略)
 
-
+==========================
 最小データセット
+==========================
 
-exampleデータ
-
-`example/mutation/sample_merge.csv` 
+データ
 
 .. raw:: html
 
@@ -103,51 +97,69 @@ exampleデータ
   <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,TRAF3</p>
   </div>
 
+| 
+| paplotで最低限必要な項目のみで出力するとconfigファイルは以下のようになります。
+| ハイライト表示が変更箇所です。
+|
+
 .. code-block:: cfg
   :linenos:
-
+  :emphasize-lines: 8,10,11,12
+  
+  ###################### general
+  [style]
+  path = 
+  remarks = 
+  
   ###################### mutation
   [mutation]
-  # (省略)
+  use_gene_rate = 0
   
-  # 入力フォーマット (自分のデータに合わせて変更する)
+  limited_genes = 
+  nouse_genes = 
+  limited_funcs = 
+  nouse_funcs = 
+  func_colors = 
+  
+  ### special item
+  # {#number_id}
+  # {#number_gene}
+  # {#number_mutaion}
+  # {#sum_mutaion}
+  # {#item_value}
+  # {#sum_item_value}
+  
+  tooltip_format_checker_title1 = ID:{id}, gene:{gene}, {#sum_item_value}
+  tooltip_format_checker_partial = type[{func}]
+  tooltip_format_gene_title = gene:{gene}, {#sum_item_value}
+  tooltip_format_gene_partial = func:{func}, {#item_value}
+  tooltip_format_id_title = ID:{id}, {#sum_item_value}
+  tooltip_format_id_partial = func:{func}, {#item_value}
+  
   [result_format_mutation]
   suffix = 
+  
   sept = ,
   header = True
-  comment = 
-  sept_func =
-  sept_gene =
+  comment = #
+  sept_func = ;
+  sept_gene = ;
   
-  ##################
-  # Column index (required)
-  ##################
-
-  # func列
+  # column index (required)
   col_func = func
-  # gene列
   col_gene = gene
   
-  ##################
   # column index (option)
-  ##################
-  
-  # chromosome
-  col_opt_chr =
-  # 開始位置
+  col_opt_chr = 
   col_opt_start = 
-  # 終了位置
   col_opt_end = 
-  # リファレンスの塩基配列
   col_opt_ref = 
-  # 対象の塩基配列
   col_opt_alt = 
-  # id (sample) 列
-  col_opt_ID = ID
+  col_opt_id = ID
   
-  # 出力フォーマット
   [merge_format_mutation]
-  # (省略)
+  lack_column_complement = NA
+  sept = ,
 
 
 
