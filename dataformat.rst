@@ -15,18 +15,19 @@ exampleデータ
 
 `example/mutation/sample_merge.csv` 
 
-.. code-block:: cfg
+.. raw:: html
   
-  ID,Chr,Start,End,Ref,Alt,func,gene
-  SAMPLE00,chr10,8114472,8114474,A,C,intronic,GATA3
-  SAMPLE00,chr13,28644892,28644901,G,-,intronic,FLT3
-  SAMPLE00,chr13,28664636,28664638,-,G,intronic,FLT3
-  SAMPLE00,chr16,68795521,68795530,-,T,UTR3,CDH1
-  SAMPLE00,chr10,8117068,8117069,G,T,exonic,GATA3
-  SAMPLE00,chr3,178906688,178906688,G,A,intronic,PIK3CA
-  SAMPLE00,chr13,28603715,28603715,G,-,intergenic,FLT3
-  SAMPLE00,chr14,103368263,103368270,G,C,intronic,TRAF3
+  <font color="red">ID,Chr</font>,Start,End,Ref,Alt,<font color="red">func,gene</font>
+  <font color="red">SAMPLE00,chr10</font>,8114472,8114474,A,C,<font color="red">intronic,GATA3</font>
+  <font color="red">SAMPLE00,chr13</font>,28644892,28644901,G,-,<font color="red">intronic,FLT3</font>
+  <font color="red">SAMPLE00,chr13</font>,28664636,28664638,-,G,<font color="red">intronic,FLT3</font>
+  <font color="red">SAMPLE00,chr16</font>,68795521,68795530,-,T,<font color="red">UTR3,CDH1</font>
+  <font color="red">SAMPLE00,chr10</font>,8117068,8117069,G,T,<font color="red">exonic,GATA3</font>
+  <font color="red">SAMPLE00,chr3</font>,178906688,178906688,G,A,<font color="red">intronic,PIK3CA</font>
+  <font color="red">SAMPLE00,chr13</font>,28603715,28603715,G,-,<font color="red">intergenic,FLT3</font>
+  <font color="red">SAMPLE00,chr14</font>,103368263,103368270,G,C,<font color="red">intronic,TRAF3</font>
 
+赤字が必須項目です。
 
 出力するグラフを変更しない場合は、[result_format_mutation] のみ自分のデータに合わせて設定してください。
 
@@ -40,49 +41,7 @@ mutation-matrixグラフ固有の設定記載方法について、詳細は :doc
 
   ###################### mutation
   [mutation]
-  # geneのサンプルに対する検出比(%) 
-  # 値より小さいgeneはplot対象から除外する
-  # 0の場合はすべて出力する
-  use_gene_rate = 0
-
-  # 入力されていた場合、そのgeneのみ出力する
-  # 未入力の場合、検出されたgeneすべて出力する
-  # , 区切りで複数指定可能
-  #
-  # limited_genes = TP,TTN,APC,BRAF,CDH1,FLT3
-  limited_genes = 
-  
-  # 入力されていた場合、そのgeneはplot対象から除外する
-  # , 区切りで複数指定可能
-  #
-  # nouse_genes = NONE,MUC4
-  nouse_genes =
-
-  # 入力されていた場合、その変異タイプ(func)のみ出力する
-  # 未入力の場合、検出されたfuncすべて出力する
-  # , 区切りで複数指定可能
-  #
-  # limited_funcs = exome,splicing
-  limited_funcs = 
-  
-  # 入力されていた場合、そのfuncはplot対象から除外する
-  # , 区切りで複数指定可能
-  # 空白行を除去する場合、_blank_ と記入する
-  nouse_funcs = _blank_,unknown,synonymous_SNV
-  
-  # funcのplot色を指定する。func名:(RGBもしくはカラー名)
-  # , 区切りで複数指定可能
-  # 未入力のfuncはデフォルト色を使用する
-  func_colors = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011,nonframeshift_deletion:#9CAEB7
-  
-  # ポップアップウィンドウの表示内容
-  # 詳細はページ下段の「ユーザ定義フォーマット」に記載
-  tooltip_format_checker_title1 = ID:{id}, gene:{gene}, {#sum_item_value}
-  tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -----> {alt}]
-  tooltip_format_gene_title = gene:{gene}, {#sum_item_value}
-  tooltip_format_gene_partial = func:{func}, {#item_value}
-  tooltip_format_id_title = ID:{id}, {#sum_item_value}
-  tooltip_format_id_partial = func:{func}, {#item_value}
+  # (省略)
   
   # 入力フォーマット (自分のデータに合わせて変更する)
   # 項目は欄外「入力ファイルフォーマット」参照
@@ -102,10 +61,10 @@ mutation-matrixグラフ固有の設定記載方法について、詳細は :doc
   ##################
 
   # func列
-  col_func = Merge_Func
+  col_func = func
   
   # gene列
-  col_gene = Gene.refGene
+  col_gene = gene
   
   ##################
   # column index (option)
@@ -125,12 +84,13 @@ mutation-matrixグラフ固有の設定記載方法について、詳細は :doc
   col_opt_ID = id
   
   # 出力フォーマット
-  # 項目は欄外「出力ファイルフォーマット」参照
   [merge_format_mutation]
-  lack_column_complement = NA
-  sept = ,
-  
-1. 
+  # (省略)
+
+
+最小データセット
+
+
 
 
 configファイルを編集して自分のファイルフォーマットを指定します。
