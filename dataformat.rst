@@ -18,15 +18,15 @@ exampleデータ
 .. raw:: html
 
   <div style="margin-top: 10px; margin-bottom: 10px; padding: 8px; border: 1px solid #AAA; background-color:#FFF; ">
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;"><font color="red">ID,Chr</font>,Start,End,Ref,Alt,<font color="red">func,gene</font></p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;"><font color="red">SAMPLE00,chr10</font>,8114472,8114474,A,C,<font color="red">intronic,GATA3</font></p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;"><font color="red">SAMPLE00,chr13</font>,28644892,28644901,G,-,<font color="red">intronic,FLT3</font></p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;"><font color="red">SAMPLE00,chr13</font>,28664636,28664638,-,G,<font color="red">intronic,FLT3</font></p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;"><font color="red">SAMPLE01,chr16</font>,68795521,68795530,-,T,<font color="red">UTR3,CDH1</font></p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;"><font color="red">SAMPLE01,chr10</font>,8117068,8117069,G,T,<font color="red">exonic,GATA3</font></p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;"><font color="red">SAMPLE02,chr3</font>,178906688,178906688,G,A,<font color="red">intronic,PIK3CA</font></p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;"><font color="red">SAMPLE02,chr13</font>,28603715,28603715,G,-,<font color="red">intergenic,FLT3</font></p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;"><font color="red">SAMPLE03,chr14</font>,103368263,103368270,G,C,<font color="red">intronic,TRAF3</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">ID,Chr</font>,Start,End,Ref,Alt,<font color="red">func,gene</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE00,chr10</font>,8114472,8114474,A,C,<font color="red">intronic,GATA3</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE00,chr13</font>,28644892,28644901,G,-,<font color="red">intronic,FLT3</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE00,chr13</font>,28664636,28664638,-,G,<font color="red">intronic,FLT3</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE01,chr16</font>,68795521,68795530,-,T,<font color="red">UTR3,CDH1</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE01,chr10</font>,8117068,8117069,G,T,<font color="red">exonic,GATA3</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE02,chr3</font>,178906688,178906688,G,A,<font color="red">intronic,PIK3CA</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE02,chr13</font>,28603715,28603715,G,-,<font color="red">intergenic,FLT3</font></p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE03,chr14</font>,103368263,103368270,G,C,<font color="red">intronic,TRAF3</font></p>
   </div>
 
 
@@ -92,15 +92,15 @@ exampleデータ
 .. raw:: html
 
   <div style="margin-top: 10px; margin-bottom: 10px; padding: 8px; border: 1px solid #AAA; background-color:#FFF;">
-  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">ID,func,gene</p>
-  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,intronic,GATA3</p>
-  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,intronic,FLT3</p>
-  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,intronic,FLT3</p>
-  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,UTR3,CDH1</p>
-  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,exonic,GATA3</p>
-  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,intronic,PIK3CA</p>
-  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,intergenic,FLT3</p>
-  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,intronic,TRAF3</p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>ID,func,gene</p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,GATA3</p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,FLT3</p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,FLT3</p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,UTR3,CDH1</p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,exonic,GATA3</p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,PIK3CA</p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intergenic,FLT3</p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,TRAF3</p>
   </div>
 
 .. code-block:: cfg
