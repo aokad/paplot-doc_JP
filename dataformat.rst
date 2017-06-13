@@ -17,7 +17,23 @@ exampleデータ
 
 .. raw:: html
 
-  <div style="margin-top: 10px; margin-bottom: 10px; padding: 8px; border: 1px solid #AAA; background-color:#FFF; font-size: small;">
+  <style>
+  div {
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    padding: 8px; 
+    border: 1px solid #AAA; 
+    background-color:#FFF; 
+    font-size: small;"
+  }
+  p {
+    margin-top: 2px; 
+    margin-bottom: 2px; 
+//    font-size: small;"
+  }
+  </style>
+  
+  <div>
   <p><font color="red">ID,Chr</font>,Start,End,Ref,Alt,<font color="red">func,gene</font></p>
   <p><font color="red">SAMPLE00,chr10</font>,8114472,8114474,A,C,<font color="red">intronic,GATA3</font></p>
   <p><font color="red">SAMPLE00,chr13</font>,28644892,28644901,G,-,<font color="red">intronic,FLT3</font></p>
