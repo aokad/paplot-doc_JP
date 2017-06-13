@@ -92,15 +92,15 @@ exampleデータ
 .. raw:: html
 
   <div style="margin-top: 10px; margin-bottom: 10px; padding: 8px; border: 1px solid #AAA; background-color:#FFF;">
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;">ID,func,gene</p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;">SAMPLE00,intronic,GATA3</p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;">SAMPLE00,intronic,FLT3</p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;">SAMPLE00,intronic,FLT3</p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;">SAMPLE00,UTR3,CDH1</p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;">SAMPLE00,exonic,GATA3</p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;">SAMPLE00,intronic,PIK3CA</p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;">SAMPLE00,intergenic,FLT3</p>
-  <p style="margin-top: 2px; margin-bottom: 2px; font-size: 12px;">SAMPLE00,intronic,TRAF3</p>
+  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">ID,func,gene</p>
+  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,intronic,GATA3</p>
+  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,intronic,FLT3</p>
+  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,intronic,FLT3</p>
+  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,UTR3,CDH1</p>
+  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,exonic,GATA3</p>
+  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,intronic,PIK3CA</p>
+  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,intergenic,FLT3</p>
+  <p style="margin-top: 1px; margin-bottom: 2px; font-size: 14px;">SAMPLE00,intronic,TRAF3</p>
   </div>
 
 .. code-block:: cfg
