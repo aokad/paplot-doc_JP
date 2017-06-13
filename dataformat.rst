@@ -17,7 +17,7 @@ exampleデータ
 
 .. raw:: html
 
-  <div style="margin-top: 10px; margin-bottom: 10px; padding: 8px; border: 1px solid #AAA; background-color:#FFF; font-size: small;">
+  <div style="margin-top: 10px; margin-bottom: 10px; padding: 8px; border: 1px solid #AAA; background-color:#FFF; font-size: 12px;">
   <p style="margin-top: 2px; margin-bottom: 2px;"><font color="red">ID,Chr</font>,Start,End,Ref,Alt,<font color="red">func,gene</font></p>
   <p style="margin-top: 2px; margin-bottom: 2px;"><font color="red">SAMPLE00,chr10</font>,8114472,8114474,A,C,<font color="red">intronic,GATA3</font></p>
   <p style="margin-top: 2px; margin-bottom: 2px;"><font color="red">SAMPLE00,chr13</font>,28644892,28644901,G,-,<font color="red">intronic,FLT3</font></p>
@@ -29,7 +29,10 @@ exampleデータ
   <p style="margin-top: 2px; margin-bottom: 2px;"><font color="red">SAMPLE03,chr14</font>,103368263,103368270,G,C,<font color="red">intronic,TRAF3</font></p>
   </div>
 
+
+exampleデータでは変異情報の例として、
 赤字が必須項目です。
+
 
 .. code-block:: cfg
   :linenos:
@@ -89,7 +92,7 @@ exampleデータ
 
 .. raw:: html
 
-  <div style="margin-top: 10px; margin-bottom: 10px; padding: 8px; border: 1px solid #AAA; background-color:#FFF; font-size: small;">
+  <div style="margin-top: 10px; margin-bottom: 10px; padding: 8px; border: 1px solid #AAA; background-color:#FFF; font-size: 12px;">
   <p style="margin-top: 2px; margin-bottom: 2px;">ID,func,gene</p>
   <p style="margin-top: 2px; margin-bottom: 2px;">SAMPLE00,intronic,GATA3</p>
   <p style="margin-top: 2px; margin-bottom: 2px;">SAMPLE00,intronic,FLT3</p>
