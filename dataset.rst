@@ -1,5 +1,5 @@
 **************************
-exampleデータセット
+データセット
 **************************
 
 paplot実行例として以下のデータセットを用意しています。
@@ -16,7 +16,7 @@ paplot実行例として以下のデータセットを用意しています。
  - :download:`download <example/mutation_noheader.zip>` ヘッダなし
  - :download:`download <example/mutation_subplot.zip>`  オプション情報追加、サブプロット付き (※1)
  
-※1 paplotのexampleに付属のデータ
+※1 paplot付属のexampleと同等の設定
 
 .. _conf_qc:
 
@@ -37,7 +37,7 @@ paplot実行例として以下のデータセットを用意しています。
  - 重複リード率 (duplicate_reads/total_reads)
  - リード長 (read_length_r1,read_length_r2 の積み上げグラフ)
 
-※3 paplotのexampleに付属のデータです。※2に対し、レポート先頭に選択用のグラフを追加しています。
+※3 paplot付属のexampleと同等の設定です。※2に対し、レポート先頭に選択用のグラフを追加しています。
 
 .. _conf_ca:
 
@@ -45,10 +45,11 @@ paplot実行例として以下のデータセットを用意しています。
 --------------
 
  - :download:`download <example/ca_minimal.zip>`  最小構成
- - :download:`download <example/ca_option.zip>`   オプション情報追加 (※)
+ - :download:`download <example/ca_option.zip>`   グループ情報追加
+ - :download:`download <example/ca_option.zip>`   グループ情報追加、オプション情報追加 (※4)
  - :download:`download <example/ca_noheader.zip>` ヘッダなし
 
-※ paplotのexampleに付属のデータ
+※4 paplot付属のexampleとほぼ同等の設定です（グルーピングの色が違います）
 
 .. _conf_signature:
 
@@ -56,9 +57,9 @@ paplot実行例として以下のデータセットを用意しています。
 ---------------------------
 
  - :download:`download <example/signature_minimal.zip>`     最小構成 (クラスタリング数 = 3)
- - :download:`download <example/signature_multi_class.zip>` 複数クラス (クラスタリング数 = 3～6)（※）
+ - :download:`download <example/signature_multi_class.zip>` 複数クラス (クラスタリング数 = 3～6)（※5）
 
-※ paplotのexampleに付属のデータ
+※5 paplot付属のexampleと同等の設定
 
 .. _conf_pmsignature:
 
@@ -66,9 +67,9 @@ paplot実行例として以下のデータセットを用意しています。
 ---------------------------
 
  - :download:`download <example/pmsignature_minimal.zip>`      最小構成 (クラスタリング数 = 3)
- - :download:`download <example/pmsignature_multi_class.zip>`  複数クラス (クラスタリング数 = 3～6)（※）
+ - :download:`download <example/pmsignature_multi_class.zip>`  複数クラス (クラスタリング数 = 3～6)（※6）
  - :download:`download <example/pmsignature_nobackground.zip>` backgroundなし
 
-※ paplotのexampleに付属のデータ
+※6 paplot付属のexampleと同等の設定
 
 .. |new| image:: image/tab_001.gif
