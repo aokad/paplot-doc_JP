@@ -26,11 +26,8 @@ pmsignatureを ``type="full"`` で実行してパラメータを出力します�
   inputFile <- system.file("extdata/Nik_Zainal_2012.mutationPositionFormat.txt.gz", package="pmsignature")
   G <- readMPFile(inputFile, numBases = 3, type = "full", trDir = FALSE)
   
-  # use background
-  BG_prob <- readBGFile(G)
-  
-  Param <- getPMSignature(G, K = 3, BG = BG_prob)
-  Boot <- bootPMSignature(G, Param0 = Param, bootNum = 100, BG = BG_prob)
+  Param <- getPMSignature(G, K = 3)
+  Boot <- bootPMSignature(G, Param0 = Param, bootNum = 100)
   
   # save .Rdata
   resultForSave <- list(Param, Boot)
@@ -52,6 +49,8 @@ https://github.com/Genomon-Project/genomon_Rscripts/releases
 
   R --vanilla --slave --args ./pmsignature_full3.Rdata ./pmsignature_full3.json < {path to genomon_Rscripts}/pmsignature/convert_toJson_full.R
 
+
+※ Rパッケージ "rjson" が必要です。ロードエラーが発生した場合はインストールしてください。
 
 3. paplotの実行
 -----------------------------
