@@ -1,0 +1,19 @@
+[
+  {
+    "graphs": [
+      {
+        "composite": false, 
+        "overview": "Gene-sample mutational profiles.", 
+        "name": "Mutation matrix", 
+        "items": [
+          {
+            "sub_text": "", 
+            "output_html": "graph_mutation.html", 
+            "exists": true
+          }
+        ]
+      }
+    ], 
+    "proj": "minimal-sample"
+  }
+]
