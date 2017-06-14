@@ -15,7 +15,7 @@
 exampleデータ
 ======================
 
-`example/mutation/sample_merge.csv` 
+``example/mutation/sample_merge.csv``
 
 .. raw:: html
 
@@ -36,7 +36,7 @@ exampleデータでは変異ファイルの例として、上記のデータを�
  - 赤字で記載したサンプルid(ID), func(変異タイプ), gene(遺伝子名）の3つが必須項目です。
  - 太字がヘッダ名です。configファイルの [result_format_mutation] セクションでヘッダ名を指定します。
 
-`example/paplot.cfg` 
+``example/paplot.cfg``
 
 .. code-block:: cfg
 
@@ -76,12 +76,14 @@ exampleデータでは変異ファイルの例として、上記のデータを�
 最小データセット
 ==========================
 
+:download:`download <example/mutation_minimal.zip>`
+
 paplotに最低限必要な項目のみで構成した、以下のようなデータがあるとします。
 
 .. raw:: html
 
   <div style="margin-top: 10px; margin-bottom: 10px; padding: 8px; border: 1px solid #AAA; background-color:#FFF;">
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>ID,func,gene</p>
+  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><b>ID,func,gene</b></p>
   <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,GATA3</p>
   <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,FLT3</p>
   <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,FLT3</p>
@@ -92,17 +94,14 @@ paplotに最低限必要な項目のみで構成した、以下のようなデ�
   <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,TRAF3</p>
   </div>
 
-configファイルは以下のようになります。
+configファイルは以下のように変更します。
 
 ハイライト表示が変更箇所です。
 
+``example/paplot.cfg``
+
 .. code-block:: cfg
-  :emphasize-lines: 25,45,46,47,48,49
-  
-  ###################### general
-  [style]
-  path = 
-  remarks = 
+  :emphasize-lines: 21,42,43,44,45,46
   
   ###################### mutation
   [mutation]
@@ -113,7 +112,8 @@ configファイルは以下のようになります。
   limited_funcs = 
   nouse_funcs = 
   func_colors = 
-  
+
+  # マウスを乗せたときの表示内容を定義します
   ### special item
   # {#number_id}
   # {#number_gene}
@@ -121,7 +121,7 @@ configファイルは以下のようになります。
   # {#sum_mutaion}
   # {#item_value}
   # {#sum_item_value}
-  
+
   tooltip_format_checker_title1 = ID:{id}, gene:{gene}, {#sum_item_value}
   tooltip_format_checker_partial = type[{func}]
   tooltip_format_gene_title = gene:{gene}, {#sum_item_value}
@@ -149,10 +149,6 @@ configファイルは以下のようになります。
   col_opt_ref = 
   col_opt_alt = 
   col_opt_id = ID
-  
-  [merge_format_mutation]
-  lack_column_complement = NA
-  sept = ,
 
 
 作成したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
@@ -161,7 +157,7 @@ configファイルは以下のようになります。
 
 .. code-block:: bash
 
-  paplot mutation {/path/to/data.csv} ./tmp MINIMAL --config_file example/paplot.cfg
+  paplot mutation {unzip_path}/data.csv ./tmp minimal --config_file {unzip_path}/paplot.cfg
 
 
 1. 全般
