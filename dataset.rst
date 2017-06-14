@@ -26,13 +26,13 @@ paplot実行例として以下のデータセットを用意しています。
 2. QC
 ------------
 
- * 最小構成 (depth average のみ):download:`<dataset/qc_minimal.zip>`
+ * 最小構成 (depth average のみ) :download:`<dataset/qc_minimal.zip>`
 
-   + グラフ情報追加 (※2):download:`<dataset/qc_multi_plot.zip>`
+   + グラフ情報追加 (※2) :download:`<dataset/qc_multi_plot.zip>`
 
-     - グラフ情報追加、選択グラフ追加 (※3):download:`<dataset/qc_brush.zip>`
+     - グラフ情報追加、選択グラフ追加 (※3) :download:`<dataset/qc_brush.zip>`
 
-   + ヘッダなし:download:`<dataset/qc_noheader.zip>`
+   + ヘッダなし :download:`<dataset/qc_noheader.zip>`
 
 | ※2 以下のグラフを追加しています。
 |  
@@ -49,13 +49,13 @@ paplot実行例として以下のデータセットを用意しています。
 3. CA
 --------------
 
- * 最小構成:download:`<dataset/ca_minimal.zip>`
+ * 最小構成 :download:`<dataset/ca_minimal.zip>`
 
-   + グループ情報追加:download:`<dataset/ca_option.zip>`
+   + グループ情報追加 :download:`<dataset/ca_option.zip>`
 
-     - グループ情報追加、オプション情報追加 (※4):download:`<dataset/ca_option.zip>`
+     - グループ情報追加、オプション情報追加 (※4) :download:`<dataset/ca_option.zip>`
 
-   + ヘッダなし:download:`<dataset/ca_noheader.zip>`
+   + ヘッダなし :download:`<dataset/ca_noheader.zip>`
 
 | ※4 paplot付属のexampleとほぼ同等の設定です（グルーピングの色が違います）
 
