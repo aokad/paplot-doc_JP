@@ -16,12 +16,13 @@
 ==========================
 
 `view <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal>`_ 
+`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal.zip?raw=true>`_ 
 
 paplotに最低限必要な項目はサンプルID、gene名、変異タイプ(func) の3つです。
 
 .. raw:: html
 
-  <iframe width="100%" height="315" src="https://raw.githubusercontent.com/Genomon-Project/paplot/master/example/mutation_minimal/data.csv" frameborder="0" allowfullscreen></iframe>
+  <iframe width="500" height="315" src="https://raw.githubusercontent.com/Genomon-Project/paplot/master/example/mutation_minimal/data.csv" frameborder="0" allowfullscreen></iframe>
 
 
 configファイルは以下のように設定します。
