@@ -732,7 +732,7 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
 ==========================
 
 | `view report <http://genomon-project.github.io/paplot/ca/graph_minimal.html>`_ 
-| `view dataset<https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal>`_ 
 | `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal.zip?raw=true>`_ 
 
 paplotでcaレポートを作成するために最低限必要な項目はサンプルID(ID)、ブレークポイント1のchromosome (Chr1) とposition(Break1)、ブレークポイント2のchromosome (Chr2) とposition(Break2) の5つです。
@@ -742,7 +742,8 @@ paplotでcaレポートを作成するために最低限必要な項目はサン
 ``example/mutation_minimal/data.csv``
 
 .. code-block:: cfg
-
+  :caption: example/mutation_minimal/data.csv
+  
   ID,Chr1,Break1,Chr2,Break2,
   SAMPLE1,14,16019088,12,62784483,
   SAMPLE1,9,99412502,7,129302434,
@@ -758,6 +759,8 @@ paplotでcaレポートを作成するために最低限必要な項目はサン
 configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
 
 ``example/ca_minimal/paplot.cfg``
+
+.. code-block:: cfg
 
   [result_format_ca]
   # column index (required)
@@ -775,7 +778,8 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 .. code-block:: bash
 
-  paplot ca {unzip_path}/example/ca_minimal/data.csv ./tmp ca_minimal --config_file {unzip_path}/example/ca_minimal/paplot.cfg
+  paplot ca {unzip_path}/example/ca_minimal/data.csv ./tmp ca_minimal \
+  --config_file {unzip_path}/example/ca_minimal/paplot.cfg
 
 ----
 
