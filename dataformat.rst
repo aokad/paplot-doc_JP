@@ -16,9 +16,9 @@
 最小データセット
 ==========================
 
-`view report <http://genomon-project.github.io/paplot/mutation/graph_minimal.html>`_ 
-`view dataset<https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal>`_ 
-`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal.zip?raw=true>`_ 
+| `view report <http://genomon-project.github.io/paplot/mutation/graph_minimal.html>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal.zip?raw=true>`_ 
 
 paplotでmutation-matrixを作成するために最低限必要な項目はサンプルID(ID)、gene名(gene)、変異タイプ(func) の3つです。
 
@@ -57,7 +57,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
   col_opt_id = ID
 
 
-編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+編集したconfigファイルを使用して ``paplot`` を実行します。
 
 実行例
 
@@ -81,9 +81,9 @@ configファイルの[result_format_mutation]セクションでデータの列�
 ヘッダなし
 ==========================
 
-`view report <http://genomon-project.github.io/paplot/mutation/graph_noheader.html>`_ 
-`view <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_noheader>`_ 
-`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_noheader.zip?raw=true>`_ 
+| `view report <http://genomon-project.github.io/paplot/mutation/graph_noheader.html>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_noheader>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_noheader.zip?raw=true>`_ 
 
 データファイルから一部抜粋
 
@@ -122,7 +122,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
   # column index (option)
   col_opt_id = 1
 
-編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+編集したconfigファイルを使用して ``paplot`` を実行します。
 
 実行例
 
@@ -134,9 +134,9 @@ configファイルの[result_format_mutation]セクションでデータの列�
 ポップアップの情報追加
 ==========================
 
-`view report <http://genomon-project.github.io/paplot/mutation/graph_option.html>`_ 
-`view <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_option>`_ 
-`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_option.zip?raw=true>`_ 
+| `view report <http://genomon-project.github.io/paplot/mutation/graph_option.html>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_option>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_option.zip?raw=true>`_ 
 
 マウスオーバーで表示する情報をカスタマイズすることができます。
 
@@ -205,7 +205,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
   # 次のように変更
   tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -----> {alt}]
 
-編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+編集したconfigファイルを使用して ``paplot`` を実行します。
 
 実行例
 
@@ -217,9 +217,9 @@ configファイルの[result_format_mutation]セクションでデータの列�
 サブプロットとしてクリニカルデータを追加
 =============================================
 
-`view report <http://genomon-project.github.io/paplot/mutation/graph_subplot.html>`_ 
-`view <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot>`_ 
-`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot.zip?raw=true>`_ 
+| `view report <http://genomon-project.github.io/paplot/mutation/graph_subplot.html>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot.zip?raw=true>`_ 
 
 変異以外のサンプルに関する情報（例えばクリニカルデータ）をサブプロットとしてmutation-matrixに追加することができます。
 
@@ -348,7 +348,7 @@ titleとnameset
 .. image:: image/conf_mut2.PNG
   :scale: 100%
 
-編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+編集したconfigファイルを使用して ``paplot`` を実行します。
 
 実行例
 
@@ -366,9 +366,9 @@ titleとnameset
 最小データセット
 ==========================
 
-`view report <http://genomon-project.github.io/paplot/qc/graph_minimal.html>`_ 
-`view <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal>`_ 
-`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal.zip?raw=true>`_ 
+| `view report <http://genomon-project.github.io/paplot/qc/graph_minimal.html>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal.zip?raw=true>`_ 
 
 paplotでQCレポートを作成するために最低限必要な情報はサンプルID(ID)とQCの値（最低1項目）です。
 
@@ -425,7 +425,7 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
   tooltip_format2 = {average_depth:.2}
 
 ここで、 ``average_depth`` という値を変数のように使用していますが、これは [result_format_qc]セクションで指定した ``col_opt_average_depth`` 項目のうち、``col_opt_`` を除いた名前です。
-編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+編集したconfigファイルを使用して ``paplot`` を実行します。
 
 実行例
 
@@ -448,9 +448,9 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
 ヘッダなし
 ==========================
 
-`view report <http://genomon-project.github.io/paplot/qc/graph_noheader.html>`_ 
-`view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_noheader>`_ 
-`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/qc_noheader.zip?raw=true>`_ 
+| `view report <http://genomon-project.github.io/paplot/qc/graph_noheader.html>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_noheader>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_noheader.zip?raw=true>`_ 
 
 データファイルから一部抜粋
 
@@ -478,7 +478,7 @@ configファイルの[result_format_qc]セクションでデータの列番号�
   col_opt_average_depth = 2
   col_opt_id = 1
 
-編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+編集したconfigファイルを使用して ``paplot`` を実行します。
 
 実行例
 
@@ -490,9 +490,9 @@ configファイルの[result_format_qc]セクションでデータの列番号�
 複数グラフ
 ==========================
 
-`view report <http://genomon-project.github.io/paplot/qc/graph_multi_plot.html>`_ 
-`view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot>`_ 
-`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot.zip?raw=true>`_ 
+| `view report <http://genomon-project.github.io/paplot/qc/graph_multi_plot.html>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot.zip?raw=true>`_ 
 
 最小構成では1つのグラフを作成しました。今回は複数のグラフを作成します。
 
@@ -658,7 +658,7 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
 
 上記では、 stack1にratio_30xを、stack2にratio_20xからratio_30xを引いたものを表示ししています。
 
-編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+編集したconfigファイルを使用して ``paplot`` を実行します。
 
 実行例
 
@@ -670,9 +670,9 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
 データ選択
 ==========================
 
-`view report <http://genomon-project.github.io/paplot/qc/graph_brush.html>`_ 
-`view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_brush>`_ 
-`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/qc_brush.zip?raw=true>`_ 
+| `view report <http://genomon-project.github.io/paplot/qc/graph_brush.html>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_brush>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_brush.zip?raw=true>`_ 
 
 前章で作成した複数のグラフに対し、領域選択用のグラフを追加します。
 
@@ -692,7 +692,7 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
   stack = {average_depth}
   name_set = average:#E3E5E9
 
-編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+編集したconfigファイルを使用して ``paplot`` を実行します。
 
 実行例
 
@@ -702,7 +702,7 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
 
 .. _conf_ca:
 
-------------
+--------------
 3. CA
 --------------
 
@@ -710,9 +710,9 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
 最小データセット
 ==========================
 
-`view report <http://genomon-project.github.io/paplot/ca/graph_minimal.html>`_ 
-`view dataset<https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal>`_ 
-`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal.zip?raw=true>`_ 
+| `view report <http://genomon-project.github.io/paplot/ca/graph_minimal.html>`_ 
+| `view dataset<https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal.zip?raw=true>`_ 
 
 paplotでcaレポートを作成するために最低限必要な項目はサンプルID(ID)、ブレークポイント1のchromosome (Chr1) とposition(Break1)、ブレークポイント2のchromosome (Chr2) とposition(Break2) の5つです。
 
@@ -748,7 +748,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
   # column index (option)
   col_opt_id = ID
 
-編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+編集したconfigファイルを使用して ``paplot`` を実行します。
 
 実行例
 
@@ -772,9 +772,9 @@ configファイルの[result_format_mutation]セクションでデータの列�
 ヘッダなし
 ==========================
 
-`view report <http://genomon-project.github.io/paplot/ca/graph_noheader.html>`_ 
-`view <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader>`_ 
-`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader.zip?raw=true>`_ 
+| `view report <http://genomon-project.github.io/paplot/ca/graph_noheader.html>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader.zip?raw=true>`_ 
 
 データファイルから一部抜粋
 
@@ -814,7 +814,7 @@ configファイルの[result_format_ca]セクションでデータの列番号�
   # column index (option)
   col_opt_id = 1
 
-編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+編集したconfigファイルを使用して ``paplot`` を実行します。
 
 実行例
 
@@ -826,9 +826,9 @@ configファイルの[result_format_ca]セクションでデータの列番号�
 変異のグルーピング
 ==========================
 
-`view report <http://genomon-project.github.io/paplot/ca/graph_group.html>`_ 
-`view <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group>`_ 
-`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group.zip?raw=true>`_ 
+| `view report <http://genomon-project.github.io/paplot/ca/graph_group.html>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group.zip?raw=true>`_ 
 
 最小構成で作成した変異には自動的にグループ機能が働いており、クロモソーム内の変異（緑）とクロモソーム間の変異（紫）に色分けされています。
 
@@ -841,23 +841,22 @@ configファイルの[result_format_ca]セクションでデータの列番号�
 .. code-block:: cfg
 
   ID,Chr1,Break1,Chr2,Break2,type
-  SAMPLE1,14,16019088,12,62784483,inter-Chromosome
-  SAMPLE1,9,99412502,7,129302434,inter-Chromosome
-  SAMPLE1,13,84663781,18,52991509,inter-Chromosome
-  SAMPLE2,11,101374238,22,26701405,inter-Chromosome
-  SAMPLE2,2,121708638,7,137424167,inter-Chromosome
-  SAMPLE2,16,43027789,22,23791492,inter-Chromosome
-  SAMPLE2,19,3862589,16,37135239,inter-Chromosome
-  SAMPLE3,14,56600342,hs37d5,5744957,inter-Chromosome
-  SAMPLE3,8,107868940,hs37d5,20517614,inter-Chromosome
-  SAMPLE4,8,135644313,3,116748248,inter-Chromosome
-  SAMPLE4,7,6037836,21,34855497,inter-Chromosome
-  SAMPLE4,7,109724564,14,106387943,inter-Chromosome
+  SAMPLE1,14,16019088,12,62784483,C
+  SAMPLE1,9,99412502,7,129302434,B
+  SAMPLE1,13,84663781,18,52991509,A
+  SAMPLE2,11,101374238,22,26701405,B
+  SAMPLE2,2,121708638,7,137424167,C
+  SAMPLE2,16,43027789,22,23791492,C
+  SAMPLE3,22,34268355,10,19871820,A
+  SAMPLE3,14,56600342,hs37d5,5744957,B
+  SAMPLE3,Y,12191863,hs37d5,29189687,A
+  SAMPLE4,8,135644313,3,116748248,D
+  SAMPLE4,7,6037836,21,34855497,D
+  SAMPLE4,7,109724564,14,106387943,A
 
-今回の例では、必須項目であるID、Chr1、Break1、Chr2、Break2 に加えて、
-変異タイプ (type, ここではクロモソーム内/間) が追加してあります。
+今回の例では、必須項目であるID、Chr1、Break1、Chr2、Break2 に加えて、type が追加してあります。
 
-まず、グルーピングに使用する列名、変異タイプ (type) をconfigファイルに記載します。
+まず、グルーピングに使用する列名、type をconfigファイルに記載します。
 
 configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
 
@@ -877,11 +876,17 @@ configファイルの[result_format_mutation]セクションでデータの列�
 .. code-block:: cfg
 
   [ca]
-  limited_group = 
-  nouse_group = 
-  group_colors = inter-Chromosome:green,intra-Chromosome:orange
+  # グループの色指定
+  group_colors = A:#66C2A5,B:#FC8D62,C:#8DA0CB,D:#E78AC3
 
-編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+  # 指定したグループのみ表示する
+  limited_group = 
+  
+  # 指定したグループを表示しない
+  nouse_group = 
+
+
+編集したconfigファイルを使用して ``paplot`` を実行します。
 
 実行例
 
@@ -893,17 +898,17 @@ configファイルの[result_format_mutation]セクションでデータの列�
 ポップアップの情報追加
 ==========================
 
-`view report <http://genomon-project.github.io/paplot/ca/graph_option.html>`_ 
-`view <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option>`_ 
-`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option.zip?raw=true>`_ 
+| `view report <http://genomon-project.github.io/paplot/ca/graph_option.html>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option.zip?raw=true>`_ 
 
 マウスオーバーで表示する情報をカスタマイズすることができます。
 
-最小構成で表示するポップアップ（グリッド部分）はこのようになっています。
+最小構成で表示するポップアップはこのようになっています。
 
 .. image:: image/data_ca1.png
 
-ここにもう少し情報を追加してポジションや変異内容を確認できるように変更します。
+ここにもう少し情報を追加して変異の詳細を確認できるように変更します。
 
 変更後
 
@@ -916,21 +921,19 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 .. code-block:: cfg
 
-  ID,Chr,Start,End,Ref,Alt,func,gene
-  SAMPLE00,chr10,8114472,8114474,A,C,intronic,GATA3
-  SAMPLE00,chr13,28644892,28644901,G,-,intronic,FLT3
-  SAMPLE00,chr13,28664636,28664638,-,G,intronic,FLT3
-  SAMPLE00,chr16,68795521,68795530,-,T,UTR3,CDH1
-  SAMPLE00,chr10,8117068,8117069,G,T,exonic,GATA3
-  SAMPLE00,chr3,178906688,178906688,G,A,intronic,PIK3CA
-  SAMPLE00,chr13,28603715,28603715,G,-,intergenic,FLT3
-  SAMPLE00,chr14,103368263,103368270,G,C,intronic,TRAF3
-  SAMPLE00,chr1,26505548,26505557,T,C,exonic,CNKSR1
-  SAMPLE00,chr7,140619975,140619979,-,G,intronic,BRAF
-  SAMPLE00,chr14,103320225,103320225,-,T,downstream,TRAF3
+  ID,Chr1,Break1,Dir1,Chr2,Break2,Dir2,Ref,Alt,func,gene1,gene2
+  SAMPLE1,14,16019088,-,12,62784483,+,---,GACTC,deletion,LS7T1EG444,4GRRIO5AVR
+  SAMPLE1,9,99412502,-,7,129302434,+,---,C-CT-,translocation,FQFW16UF5U,QP779MLPNV
+  SAMPLE1,13,84663781,+,18,52991509,-,---,GTAAA,deletion,Q9VX1I9U3I,7XM09ETN40
+  SAMPLE2,11,101374238,+,22,26701405,+,---,TGGGT,translocation,FZ7LOS66RD,9WYBJR57E0
+  SAMPLE2,2,121708638,-,7,137424167,-,---,G-TGA,translocation,5655M5E46B,HB14VJXDHV
+  SAMPLE2,16,43027789,+,22,23791492,-,---,CCTCA,inversion,REFSIL0H2M,L5EA31R8U0
+  SAMPLE3,22,34268355,+,10,19871820,+,---,TC-GT,tandem_duplication,9SVRQCFVCO,2BEWSO91FZ
+  SAMPLE3,14,56600342,-,hs37d5,5744957,+,---,--CAA,deletion,UTLVCZ63SK,5I74M5NKDC
+  SAMPLE3,Y,12191863,-,hs37d5,29189687,-,---,TG-G-,inversion,3PLD4C20IZ,BVYMBTIFKD
 
 今回の例では、必須項目であるID、Chr1、Break1、Chr2、Break2 に加えて、
-リファレンスの塩基 (Ref), 変異の塩基(Alt), 変異タイプ(func), 遺伝子名(gene1, gene2) が追加してあります。
+リファレンスの塩基 (Ref), 変異の塩基(Alt), 変異タイプ(func), 遺伝子名(gene1, gene2) Direction(Dir1, Dir2) が追加してあります。
 
 まず、ポップアップの情報として追加したい列名、変異タイプ(func)と 遺伝子名(gene1, gene2)をconfigファイルに記載します。
 
@@ -961,7 +964,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
   # 次のように変更
   tooltip_format = [{chr1}] {break1:,} ({dir1}) {gene_name1}; [{chr2}] {break2:,} ({dir2}) {gene_name2}; {type}
 
-編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+編集したconfigファイルを使用して ``paplot`` を実行します。
 
 実行例
 
