@@ -22,8 +22,11 @@ paplotに最低限必要な項目はサンプルID、gene名、変異タイプ(f
 
 .. raw:: html
 
-  <iframe width="500" height="315" src="https://raw.githubusercontent.com/Genomon-Project/paplot/master/example/mutation_minimal/data.csv" frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://raw.githubusercontent.com/Genomon-Project/paplot/master/example/mutation_minimal/data.csv"></iframe>
 
+.. raw:: html
+
+  <input type="checkbox" value="true">チェックしてね</input>
 
 configファイルは以下のように設定します。
 
