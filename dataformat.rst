@@ -8,6 +8,7 @@
 
 .. _conf_mm:
 
+----------------------
 1. mutation-matrix
 ----------------------
 
@@ -15,33 +16,39 @@
 最小データセット
 ==========================
 
-`view <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal>`_ 
+`view report <http://genomon-project.github.io/paplot/mutation/graph_minimal.html>`_ 
+`view dataset<https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal>`_ 
 `dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal.zip?raw=true>`_ 
 
-paplotに最低限必要な項目はサンプルID、gene名、変異タイプ(func) の3つです。
+paplotでmutation-matrixを作成するために最低限必要な項目はサンプルID(ID)、gene名(gene)、変異タイプ(func) の3つです。
 
-.. raw:: html
+データファイルから一部抜粋
 
-  <iframe src="https://raw.githubusercontent.com/Genomon-Project/paplot/master/example/mutation_minimal/data.csv"></iframe>
-
-.. raw:: html
-
-  <object width="100%" height="300">
-  <param name="allowFullScreen" value="true"></param>
-  <embed src="https://raw.githubusercontent.com/Genomon-Project/paplot/master/example/mutation_minimal/data.csv"></embed>
-  </object>
-
-configファイルは以下のように設定します。
-
-``example/paplot.cfg``
+``example/mutation_minimal/data.csv``
 
 .. code-block:: cfg
-  :emphasize-lines: 21,42,43,44,45,46
-  
+
+  ID,func,gene
+  SAMPLE00,intronic,GATA3
+  SAMPLE00,UTR3,CDH1
+  SAMPLE00,exonic,GATA3
+  SAMPLE01,splicing,WASF3
+  SAMPLE01,intronic,WASF3
+  SAMPLE01,exonic,NRAS
+  SAMPLE02,intronic,FBXW7
+  SAMPLE02,intronic,GATA3
+  SAMPLE02,ncRNA_intronic,ACVR2B
+  SAMPLE03,exonic,CAP2
+  SAMPLE03,intronic,PIK3CA
+  SAMPLE03,downstream,SEPT12
+
+configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
+
+``example/mutation_minimal/paplot.cfg``
+
+.. code-block:: cfg
+
   [result_format_mutation]
-  suffix = 
-  sept = ,
- 
   # column index (required)
   col_func = func
   col_gene = gene
@@ -50,132 +57,482 @@ configファイルは以下のように設定します。
   col_opt_id = ID
 
 
-作成したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
 
 実行例
 
 .. code-block:: bash
 
-  paplot mutation {unzip_path}/data.csv ./tmp minimal --config_file {unzip_path}/paplot.cfg
+  paplot mutation {unzip_path}/example/mutation_minimal/data.csv ./tmp mutation_minimal --config_file {unzip_path}/example/mutation_minimal/paplot.cfg
 
-======================
-exampleデータ
-======================
 
-``example/mutation/sample_merge.csv``
+==========================
+タブ区切り
+==========================
 
-.. raw:: html
-
-  <div style="margin-top: 10px; margin-bottom: 10px; padding: 8px; border: 1px solid #AAA; background-color:#FFF; ">
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><b><font color="red">ID</font>,Chr,Start,End,Ref,Alt,<font color="red">func,gene</font></b></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE00</font>,chr10,8114472,8114474,A,C,<font color="red">intronic,GATA3</font></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE00</font>,chr13,28644892,28644901,G,-,<font color="red">intronic,FLT3</font></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE00</font>,chr13,28664636,28664638,-,G,<font color="red">intronic,FLT3</font></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE01</font>,chr16,68795521,68795530,-,T,<font color="red">UTR3,CDH1</font></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE01</font>,chr10,8117068,8117069,G,T,<font color="red">exonic,GATA3</font></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE02</font>,chr3,178906688,178906688,G,A,<font color="red">intronic,PIK3CA</font></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE02</font>,chr13,28603715,28603715,G,-,<font color="red">intergenic,FLT3</font></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><font color="red">SAMPLE03</font>,chr14,103368263,103368270,G,C,<font color="red">intronic,TRAF3</font></p>
-  </div>
-
-exampleデータでは変異ファイルの例として、上記のデータを用意しています。
-
- - 赤字で記載したサンプルid(ID), func(変異タイプ), gene(遺伝子名）の3つが必須項目です。
- - 太字がヘッダ名です。configファイルの [result_format_mutation] セクションでヘッダ名を指定します。
-
-``example/paplot.cfg``
+データファイルがタブ区切りであった場合、以下のように設定します。
 
 .. code-block:: cfg
-
-  ###################### mutation
-  # 入力フォーマット (自分のデータに合わせて変更する)
+  
   [result_format_mutation]
-  sept = ,
-  header = True
-  
-  ##################
-  # Column index (required)
-  ##################
+  sept = \t
 
-  # 変異タイプ
-  col_func = func
-  # 遺伝子名
-  col_gene = gene
-  
-  ##################
-  # column index (option)
-  ##################
-  
-  # chromosome
-  col_opt_chr = Chr
-  # 開始位置
-  col_opt_start = Start
-  # 終了位置
-  col_opt_end = End
-  # リファレンスの塩基配列
-  col_opt_ref = Ref
-  # 対象の塩基配列
-  col_opt_alt = Alt
-  # id (sample) 列
-  col_opt_ID = id
+==========================
+ヘッダなし
+==========================
 
-1. 全般
-------------
+`view report <http://genomon-project.github.io/paplot/mutation/graph_noheader.html>`_ 
+`view <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_noheader>`_ 
+`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_noheader.zip?raw=true>`_ 
+
+データファイルから一部抜粋
+
+``example/mutation_noheader/data.csv``
 
 .. code-block:: cfg
-  :linenos:
 
-  ###################### general
-  [style]
-  # グラフのレイアウトファイル
-  # ~/tmp/paplot/style/rainbow.js
-  path = 
+  SAMPLE00,intronic,GATA3
+  SAMPLE00,UTR3,CDH1
+  SAMPLE00,exonic,GATA3
+  SAMPLE01,splicing,WASF3
+  SAMPLE01,intronic,WASF3
+  SAMPLE01,exonic,NRAS
+  SAMPLE02,intronic,FBXW7
+  SAMPLE02,intronic,GATA3
+  SAMPLE02,ncRNA_intronic,ACVR2B
+  SAMPLE03,exonic,CAP2
+  SAMPLE03,intronic,PIK3CA
+  SAMPLE03,downstream,SEPT12
+
+データにヘッダ行がない場合、列名でなく列番号を設定します。
+
+configファイルの[result_format_mutation]セクションでデータの列番号を以下のように設定します。
+
+列番号は左から順に1始まりで数えます。
+
+``example/mutation_noheader/paplot.cfg``
+
+.. code-block:: cfg
+
+  [result_format_mutation]
+  # column index (required)
+  col_func = 2
+  col_gene = 3
   
-  # index.html の備考欄に出力するテキスト(HTMLタグ使用可, 半角英数字のみ)
-  remarks = 
+  # column index (option)
+  col_opt_id = 1
+
+編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+
+実行例
+
+.. code-block:: bash
+
+  paplot mutation {unzip_path}/example/mutation_noheader/data.csv ./tmp mutation_noheader --config_file {unzip_path}/example/mutation_noheader/paplot.cfg
+
+==========================
+ポップアップの情報追加
+==========================
+
+`view report <http://genomon-project.github.io/paplot/mutation/graph_option.html>`_ 
+`view <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_option>`_ 
+`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_option.zip?raw=true>`_ 
+
+マウスオーバーで表示する情報をカスタマイズすることができます。
+
+最小構成で表示するポップアップ（グリッド部分）はこのようになっています。
+
+.. image:: image/data_mut1.png
+
+ここにもう少し情報を追加してポジションや変異内容を確認できるように変更します。
+
+変更後
+
+.. image:: image/data_mut2.png
+
+
+データファイルから一部抜粋
+
+``example/mutation_option/data.csv``
+
+.. code-block:: cfg
+
+  ID,Chr,Start,End,Ref,Alt,func,gene
+  SAMPLE00,chr10,8114472,8114474,A,C,intronic,GATA3
+  SAMPLE00,chr13,28644892,28644901,G,-,intronic,FLT3
+  SAMPLE00,chr13,28664636,28664638,-,G,intronic,FLT3
+  SAMPLE00,chr16,68795521,68795530,-,T,UTR3,CDH1
+  SAMPLE00,chr10,8117068,8117069,G,T,exonic,GATA3
+  SAMPLE00,chr3,178906688,178906688,G,A,intronic,PIK3CA
+  SAMPLE00,chr13,28603715,28603715,G,-,intergenic,FLT3
+  SAMPLE00,chr14,103368263,103368270,G,C,intronic,TRAF3
+  SAMPLE00,chr1,26505548,26505557,T,C,exonic,CNKSR1
+  SAMPLE00,chr7,140619975,140619979,-,G,intronic,BRAF
+  SAMPLE00,chr14,103320225,103320225,-,T,downstream,TRAF3
+
+今回の例では、必須項目であるサンプルID(ID)、gene名(gene)、変異タイプ(func) に加えて、
+Chromosome(Chr), 変異開始位置(Start),変異終了位置(End), リファレンスの塩基 (Ref), 変異の塩基(Alt)が追加してあります。
+
+まず、追加した列名をconfigファイルに記載します。
+
+configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
+
+``example/mutation_option/paplot.cfg``
+
+.. code-block:: cfg
+
+  [result_format_mutation]
+  # column index (option)
+  col_opt_chr = Chr
+  col_opt_start = Start
+  col_opt_end = End
+  col_opt_ref = Ref
+  col_opt_alt = Alt
+
+オプションの列名は ``col_opt_{name} = {columun name}`` というように記述します。
+
+``{name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+
+次に、ポップアップの表示内容を変更します。
+
+``example/mutation_option/paplot.cfg``
+
+.. code-block:: cfg
+
+  [mutation]
+  # 最小構成での設定
+  # tooltip_format_checker_partial = type[{func}]
+  # 次のように変更
+  tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -----> {alt}]
+
+編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+
+実行例
+
+.. code-block:: bash
+
+  paplot mutation {unzip_path}/example/mutation_option/data.csv ./tmp mutation_option --config_file {unzip_path}/example/mutation_option/paplot.cfg
+
+=============================================
+サブプロットとしてクリニカルデータを追加
+=============================================
+
+`view report <http://genomon-project.github.io/paplot/mutation/graph_subplot.html>`_ 
+`view <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot>`_ 
+`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot.zip?raw=true>`_ 
+
+変異以外のサンプルに関する情報（例えばクリニカルデータ）をサブプロットとしてmutation-matrixに追加することができます。
+
+.. image:: image/data_mut3.png
+
+exampleでは別ファイルとして以下のデータファイルを用意しています。
+
+データファイルから一部抜粋
+
+``example/mutation_subplot/data_subplot.csv``
+
+.. code-block:: cfg
+
+  ID,gender,age,BMI
+  SAMPLE00,F,30,40
+  SAMPLE01,F,62,25
+  SAMPLE02,F,59,34
+  SAMPLE03,M,66,26
+  SAMPLE04,M,53,40
+  SAMPLE05,F,79,27
+  SAMPLE06,M,64,29
+  SAMPLE07,M,54,22
+  SAMPLE08,F,55,35
+
+今回の例では、サンプルID(ID)、gender、age、BMIを用意していますが、そのうち、必須項目はサンプルID(ID)です。
+データファイル中のサンプルIDと紐づけられることが重要です。
+
+configファイルにサブプロットの設定を追加します。
+
+configファイルに[mutation_subplot_type1_1]セクションを追加し、以下のように設定します。
+
+``example/mutation_subplot/paplot.cfg``
+
+.. code-block:: cfg
+
+  ### sample for subplot
+  [mutation_subplot_type1_1]
+
+  # サブプロットのタイトル
+  title = Clinical Gender
+
+  # サブプロットのデータファイルのパスを設定します
+  path = {unzip_path}/example/mutation_subplot/data_subplot.csv
+
+  # データ区切り
+  sept = ,
+
+  # ヘッダ有り無し（ない場合はFalse)
+  header = True
+
+  # コメント行の先頭文字
+  comment = 
+
+  # 列名（ヘッダがない場合は列番号）
+  col_value = gender
+
+  # サンプルIDの列名（ヘッダがない場合は列番号）
+  col_id = ID
+  
+  # 表示形式 (欄外参照)
+  # fix, range, gradientから選択
+  mode = fix
+  
+  # サブプロットの色と凡例 (欄外参照)
+  name_set = M:Male:blue, F:Female:red
+
+
+サブプロットの表示位置
+--------------------------
+
+mutation-matrixグラフでは解析結果とは別にサンプルに対する情報を表示することができます。
+
+表示場所は2つあり、type1はサンプルグラフの下に、type2は最後に表示します。
+
+type1を表示する場合はセクション名を[mut_subplot_type1_*]とします。
+
+type2を表示する場合はセクション名を[mut_subplot_type2_*]とします。
+
+``*`` には1から始まる連番を入れてください。1から順に表示します。
+
+サブプロットの表示形式
+--------------------------
+
+表示形式 (mode) は3種類あり、fix, range, gradientから選択します。
+
+.. image:: image/conf_mut3.PNG
+  :scale: 100%
+
+name_setの書き方
+-----------------------
+
+サブプロットの色と判例を定義します。
+
+``{値}:{表示文字列}:{セルの色}`` を各値ごとに記入します。セルの色は省略可能です。
+
+mode = fixの場合
+
+.. code-block:: cfg
+  
+  name_set = 0:Male:blue, 1:Female:red, 2:Unknown:gray
+
+mode = rangeの場合
+
+値には範囲開始の値を記入します。
+
+.. code-block:: cfg
+  
+  name_set = 0:0-19, 20:20-39, 40:40-59, 60:60over
+
+mode = gradientの場合
+
+最初と最後の値を記入します。MIN/MAXを使用すると、データから自動的に設定します。
+
+.. code-block:: cfg
+
+  # 自動設定の場合
+  name_set = MIN:min, MAX:max
+
+  # 手動設定の場合
+  name_set = 0:min (0), 40:max (40)
+  
+
+titleとnameset
+--------------------------
+
+.. image:: image/conf_mut2.PNG
+  :scale: 100%
+
+編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+
+実行例
+
+.. code-block:: bash
+
+  paplot mutation {unzip_path}/example/mutation_subplot/data.csv ./tmp mutation_subplot --config_file {unzip_path}/example/mutation_subplot/paplot.cfg
 
 .. _conf_qc:
 
+------------
 2. QC
 ------------
 
-出力するグラフを変更しない場合は、[result_format_qc] のみ自分のデータに合わせて設定してください。
+==========================
+最小データセット
+==========================
 
-:ref:`入力ファイルフォーマット<data_format>` に各項目の解説を記載しています。
+`view report <http://genomon-project.github.io/paplot/qc/graph_minimal.html>`_ 
+`view <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal>`_ 
+`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal.zip?raw=true>`_ 
 
-QCグラフ固有の設定記載方法について、詳細は :doc:`config_qc` に記載しています。
+paplotでQCレポートを作成するために最低限必要な情報はサンプルID(ID)とQCの値（最低1項目）です。
+
+今回の例では、depth-averageを使用していますが、ほかの値でも問題ありません。
+
+データファイルから一部抜粋
+
+``example/qc_minimal/data.csv``
 
 .. code-block:: cfg
-  :linenos:
-  :emphasize-lines: 8,10,11,12,24,25,26,27,28,29,30,31,32,33,34,35
-  
-  ###################### qc
-  [qc]
-  # (none)
-  
-  # 入力フォーマット (自分のデータに合わせて変更する)
-  # 各項目の解説はページ下段の「入力ファイルフォーマット」に記載
+
+  ID,average_depth
+  SAMPLE1,70.0474
+  SAMPLE2,65.7578
+  SAMPLE3,63.3750
+  SAMPLE4,70.9654
+  SAMPLE5,69.9653
+
+まず、configファイルの[result_format_qc]セクションに入力データの列名を登録します。
+
+.. code-block:: cfg
+
   [result_format_qc]
-  suffix = .qc.csv
+  # column index (option)
+  col_opt_average_depth = average_depth
+  col_opt_id = ID
+
+オプションの列名は ``col_opt_{name} = {columun name}`` というように記述します。
+
+``{name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+
+次に、configファイルに[qc_chart_1]セクションを追加し、以下のように設定します。
+
+``example/qc_minimal/paplot.cfg``
+
+.. code-block:: cfg
+
+  [qc_chart_1]
   
-  sept = ,
-  header = True
-  comment = #
+  # グラフのタイトル
+  title = depth average
   
-  ##################
-  # Column index (required)
-  ##################
+  # Y軸のラベル
+  title_y = average of depth
   
-  # (none)
+  # 積み上げ要素（今回は1項目のみなので、通常の棒グラフとなる）
+  stack1 = {average_depth}
   
-  ##################
-  # Column index (option)
-  ##################
+  # グラフの色と凡例 (欄外参照)
+  name_set = average_depth:#2478B4
   
+  # マウスオーバーで表示する情報のフォーマット
+  tooltip_format1 = ID:{id}
+  tooltip_format2 = {average_depth:.2}
+
+ここで、 ``average_depth`` という値を変数のように使用していますが、これは [result_format_qc]セクションで指定した ``col_opt_average_depth`` 項目のうち、``col_opt_`` を除いた名前です。
+編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+
+実行例
+
+.. code-block:: bash
+
+  paplot qc {unzip_path}/example/qc_minimal/data.csv ./tmp minimal --config_file {unzip_path}/example/qc_minimal/paplot.cfg
+
+==========================
+タブ区切り
+==========================
+
+データファイルがタブ区切りであった場合、以下のように設定します。
+
+.. code-block:: cfg
+  
+  [result_format_qc]
+  sept = \t
+
+==========================
+ヘッダなし
+==========================
+
+`view report <http://genomon-project.github.io/paplot/qc/graph_noheader.html>`_ 
+`view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_noheader>`_ 
+`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/qc_noheader.zip?raw=true>`_ 
+
+データファイルから一部抜粋
+
+``example/qc_noheader/data.csv``
+
+.. code-block:: cfg
+
+  SAMPLE1,70.0474
+  SAMPLE2,65.7578
+  SAMPLE3,63.3750
+  SAMPLE4,70.9654
+  SAMPLE5,69.9653
+
+データにヘッダ行がない場合、列名でなく列番号を設定します。
+
+configファイルの[result_format_qc]セクションでデータの列番号を以下のように設定します。
+
+列番号は左から順に1始まりで数えます。
+
+``example/qc_noheader/paplot.cfg``
+
+.. code-block:: cfg
+
+  [result_format_qc]
+  col_opt_average_depth = 2
+  col_opt_id = 1
+
+編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+
+実行例
+
+.. code-block:: bash
+
+  paplot qc {unzip_path}/example/qc_noheader/data.csv ./tmp qc_noheader --config_file {unzip_path}/example/qc_noheader/paplot.cfg
+
+==========================
+複数グラフ
+==========================
+
+`view report <http://genomon-project.github.io/paplot/qc/graph_multi_plot.html>`_ 
+`view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot>`_ 
+`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot.zip?raw=true>`_ 
+
+最小構成では1つのグラフを作成しました。今回は複数のグラフを作成します。
+
+データファイルから一部抜粋
+
+``example/qc_multi_plot/data.csv``
+
+.. code-block:: cfg
+
+  ID,average_depth,read_length_r1,read_length_r2,total_reads,mapped_reads,mean_insert_size,duplicate_reads,2x_rt,10x_rt,20x_rt,30x_rt
+  SAMPLE1,70.0474,265,270,94315157,56262203,343.92,7964009,0.9796,0.7680,0.6844,0.6747
+  SAMPLE2,65.7578,140,200,50340277,33860998,351.23,5297450,0.8489,0.7725,0.7655,0.6131
+  SAMPLE3,63.3750,120,175,90635480,88010999,496.34,8347508,0.9814,0.8236,0.6045,0.5889
+  SAMPLE4,70.9654,120,140,72885114,89163960,696.23,6726021,0.9047,0.8303,0.7032,0.6801
+  SAMPLE5,69.9653,230,110,92572101,28793615,731.98,9794813,0.9776,0.9452,0.6720,0.6518
+
+ここでは以下の構成でグラフを作成します。
+
+ - chart_1　[棒グラフ] average_depth
+ - chart_2　[積み上げグラフ] 2x_rt,10x_rt,20x_rt,30x_rt
+ - chart_3　[棒グラフ] mapped_readsをtotal_readsで割る
+ - chart_4　[棒グラフ] mean_insert_size
+ - chart_5　[棒グラフ] duplicate_readsをtotal_readsで割る
+ - chart_6　[積み上げグラフ] read_length_r1,read_length_r2
+
+完成したグラフはここ `view <http://genomon-project.github.io/paplot/qc/graph_multi_plot.html>`_ を参照してください。
+
+まず、configファイルの[result_format_qc]セクションに入力データの列名を登録します。
+
+``example/qc_multi_plot/paplot.cfg``
+
+.. code-block:: cfg
+
+  [result_format_qc]
+  # column index (option)
+  col_opt_average_depth = average_depth
+  col_opt_id = ID
   col_opt_duplicate_reads = duplicate_reads
   col_opt_mapped_reads = mapped_reads
   col_opt_total_reads = total_reads
-  col_opt_average_depth = average_depth
   col_opt_mean_insert_size = mean_insert_size
   col_opt_ratio_2x = 2x_rt
   col_opt_ratio_10x = 10x_rt
@@ -183,41 +540,438 @@ QCグラフ固有の設定記載方法について、詳細は :doc:`config_qc` 
   col_opt_ratio_30x = 30x_rt
   col_opt_read_length_r1 = read_length_r1
   col_opt_read_length_r2 = read_length_r2
-  col_opt_id = file_name
+
+オプションの列名は ``col_opt_{name} = {columun name}`` というように記述します。
+
+``{name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+
+次に、configファイルに[qc_chart_1],[qc_chart_2],[qc_chart_3]... セクションを追加し、順番に設定します。
+
+| QCレポートは[qc_chart_1],[qc_chart_2],[qc_chart_3] の順番に表示し、必要な数だけ [qc_chart_*] セクションを増やすことができます。
+| ``*`` には1から始まる連番を入れてください。1から順に表示します。
+
+ここでは各設定について解説します。
+
+完成したconfigファイルはここ `config <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot/paplot.cfg>`_ を参照してください。
+
+chart_1 (average_depth) と chart_4 (mean_insert_size) は単純な棒グラフです。
+
+記載方法は最小構成と同じですので、ここでは割愛します。
+
+列同士の数値演算
+-----------------------
+
+chart_3 (mapped_reads) と chart_5 (duplicate_reads) は列同士で計算（今回は割り算）させて出力します。
+
+``example/qc_multi_plot/paplot.cfg``
+
+.. code-block:: cfg
+
+  [qc_chart_3]
   
-  # 出力フォーマット
-  # 各項目の解説はページ下段の「出力ファイルフォーマット」に記載
-  [merge_format_qc]
-  lack_column_complement = NA
-  sept = ,
+  # 表示する文字列を設定します
+  title = mapped_reads/total_reads
+  title_y = rate
   
-  # 領域選択用のグラフ設定
-  [qc_chart_brush]
-  title = 
-  title_y = 
-  stack = {average_depth}
-  name_set = average:#E3E5E9
-  tooltip_format = 
+  # 凡例の文字列と色を設定します
+  name_set = mapped_reads/total_reads:#2478B4
   
-  # グラフ設定(グラフごとに用意する)
-  [qc_chart_1]
+  # グラフの値
+  stack1 = {mapped_reads/total_reads}
+  
+  # ポップアップの表示内容
+  tooltip_format1 = ID:{id}
+  tooltip_format2 = {mapped_reads/total_reads:.2}
+
+上記では、 ``stack1 = {mapped_reads/total_reads}`` として記入しています。
+
+ここで ``{mapped_reads/total_reads}`` と書くと割り算に、 ``{mapped_reads+total_reads}`` と書くと足し算させることができます。
+
+tooltip_format2でも同様に数値演算させています。
+
+tooltip_format2 = {mapped_reads/total_reads:.2}
+
+このように書くと、mapped_readsをtotal_readsで割ったものを小数点第2位まで表示する、という意味になります。
+
+積み上げグラフ　その１
+-----------------------
+
+chart_6 (read_length_r1,read_length_r2) は積み上げグラフです。
+
+``example/qc_multi_plot/paplot.cfg``
+
+.. code-block:: cfg
+
+  [qc_chart_6]
+  
+  # 表示する文字列を設定します
+  title = read_length_r1, read_length_r2
+  title_y = read_length
+
+  # 凡例の文字列と色を設定します
+  name_set = read_length_r1:#2478B4, read_length_r2:#FF7F0E
+  
+  # グラフの値
+  stack1 = {read_length_r1}
+  stack2 = {read_length_r2}
+  
+  # ポップアップの表示内容
+  tooltip_format1 = ID:{id}
+  tooltip_format2 = r1: {read_length_r1: ,}
+  tooltip_format3 = r2: {read_length_r2: ,}
+
+上記では、 stack1にread_length_r1を、stack2にread_length_r2を記入しています。
+
+1，2，3の順に下から表示します。1を一番下に表示します。
+
+
+積み上げグラフ　その２
+-----------------------
+
+chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演算もしています。
+
+``example/qc_multi_plot/paplot.cfg``
+
+.. code-block:: cfg
+
+  [qc_chart_2]
+  
+  # 表示する文字列を設定します
   title = depth coverage
   title_y = coverage
+  
+  # 凡例の文字列と色を設定します
+  name_set = ratio_30x:#2478B4, ratio_20x:#FF7F0E, ratio_10x:#2CA02C, ratio_2x:#D62728
+  
+  # グラフの値
   stack1 = {ratio_30x}
   stack2 = {ratio_20x-ratio_30x}
   stack3 = {ratio_10x-ratio_20x}
   stack4 = {ratio_2x-ratio_10x}
-  name_set = ratio_30x:#2478B4, ratio_20x:#FF7F0E, ratio_10x:#2CA02C, ratio_2x:#D62728
+  
+  # ポップアップの表示内容
   tooltip_format1 = ID:{id}
-  tooltip_format2 = ratio_2x: {ratio_2x:.2}
+  tooltip_format2 = ratio__2x: {ratio_2x:.2}
   tooltip_format3 = ratio_10x: {ratio_10x:.2}
   tooltip_format4 = ratio_20x: {ratio_20x:.2}
   tooltip_format5 = ratio_30x: {ratio_30x:.2}
 
+上記では、 stack1にratio_30xを、stack2にratio_20xからratio_30xを引いたものを表示ししています。
+
+編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+
+実行例
+
+.. code-block:: bash
+
+  paplot qc {unzip_path}/example/qc_multi_plot/data.csv ./tmp qc_multi_plot --config_file {unzip_path}/example/qc_multi_plot/paplot.cfg
+
+==========================
+データ選択
+==========================
+
+`view report <http://genomon-project.github.io/paplot/qc/graph_brush.html>`_ 
+`view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_brush>`_ 
+`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/qc_brush.zip?raw=true>`_ 
+
+前章で作成した複数のグラフに対し、領域選択用のグラフを追加します。
+
+完成したグラフはここ `view <http://genomon-project.github.io/paplot/qc/graph_brush.html>`_ を参照してください。
+
+データ列はaverage_depthを使用します。
+
+もし、新しいデータ列を使用する場合は設定ファイルの[result_format_qc]セクションにcol_opt_{name} として登録してください。
+
+領域選択用のグラフは[qc_chart_brush]というセクション名で一つだけ追加することができます。
+
+``example/qc_brush/paplot.cfg``
+
+.. code-block:: cfg
+
+  [qc_chart_brush]
+  stack = {average_depth}
+  name_set = average:#E3E5E9
+
+編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+
+実行例
+
+.. code-block:: bash
+
+  paplot qc {unzip_path}/example/qc_brush/data.csv ./tmp qc_brush --config_file {unzip_path}/example/qc_brush/paplot.cfg
+
 .. _conf_ca:
 
+------------
 3. CA
 --------------
+
+==========================
+最小データセット
+==========================
+
+`view report <http://genomon-project.github.io/paplot/ca/graph_minimal.html>`_ 
+`view dataset<https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal>`_ 
+`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal.zip?raw=true>`_ 
+
+paplotでcaレポートを作成するために最低限必要な項目はサンプルID(ID)、ブレークポイント1のchromosome (Chr1) とposition(Break1)、ブレークポイント2のchromosome (Chr2) とposition(Break2) の5つです。
+
+データファイルから一部抜粋
+
+``example/mutation_minimal/data.csv``
+
+.. code-block:: cfg
+
+  ID,Chr1,Break1,Chr2,Break2,
+  SAMPLE1,14,16019088,12,62784483,
+  SAMPLE1,9,99412502,7,129302434,
+  SAMPLE1,13,84663781,18,52991509,
+  SAMPLE2,11,101374238,22,26701405,
+  SAMPLE2,2,121708638,7,137424167,
+  SAMPLE3,22,34268355,10,19871820,
+  SAMPLE3,8,107868940,hs37d5,20517614,
+  SAMPLE4,8,135644313,3,116748248,
+  SAMPLE4,7,6037836,21,34855497,
+  SAMPLE4,7,109724564,14,106387943,
+
+configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
+
+``example/ca_minimal/paplot.cfg``
+
+  [result_format_ca]
+  # column index (required)
+  col_chr1 = Chr1
+  col_break1 = Break1
+  col_chr2 = Chr2
+  col_break2 = Break2
+  
+  # column index (option)
+  col_opt_id = ID
+
+編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+
+実行例
+
+.. code-block:: bash
+
+  paplot ca {unzip_path}/example/ca_minimal/data.csv ./tmp ca_minimal --config_file {unzip_path}/example/ca_minimal/paplot.cfg
+
+
+==========================
+タブ区切り
+==========================
+
+データファイルがタブ区切りであった場合、以下のように設定します。
+
+.. code-block:: cfg
+  
+  [result_format_ca]
+  sept = \t
+
+==========================
+ヘッダなし
+==========================
+
+`view report <http://genomon-project.github.io/paplot/ca/graph_noheader.html>`_ 
+`view <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader>`_ 
+`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader.zip?raw=true>`_ 
+
+データファイルから一部抜粋
+
+``example/ca_noheader/data.csv``
+
+.. code-block:: cfg
+
+  SAMPLE00,intronic,GATA3
+  SAMPLE00,UTR3,CDH1
+  SAMPLE00,exonic,GATA3
+  SAMPLE01,splicing,WASF3
+  SAMPLE01,intronic,WASF3
+  SAMPLE01,exonic,NRAS
+  SAMPLE02,intronic,FBXW7
+  SAMPLE02,intronic,GATA3
+  SAMPLE02,ncRNA_intronic,ACVR2B
+  SAMPLE03,exonic,CAP2
+  SAMPLE03,intronic,PIK3CA
+  SAMPLE03,downstream,SEPT12
+
+データにヘッダ行がない場合、列名でなく列番号を設定します。
+
+configファイルの[result_format_ca]セクションでデータの列番号を以下のように設定します。
+
+列番号は左から順に1始まりで数えます。
+
+``example/ca_noheader/paplot.cfg``
+
+.. code-block:: cfg
+
+  # column index (required)
+  col_chr1 = 2
+  col_break1 = 3
+  col_chr2 = 4
+  col_break2 = 5
+  
+  # column index (option)
+  col_opt_id = 1
+
+編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+
+実行例
+
+.. code-block:: bash
+
+  paplot ca {unzip_path}/example/ca_noheader/data.csv ./tmp ca_noheader --config_file {unzip_path}/example/ca_noheader/paplot.cfg
+
+==========================
+変異のグルーピング
+==========================
+
+`view report <http://genomon-project.github.io/paplot/ca/graph_group.html>`_ 
+`view <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group>`_ 
+`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group.zip?raw=true>`_ 
+
+最小構成で作成した変異には自動的にグループ機能が働いており、クロモソーム内の変異（緑）とクロモソーム間の変異（紫）に色分けされています。
+
+ここでは、グループを手動で設定するように変更します。
+
+データファイルから一部抜粋
+
+``example/mutation_option/data.csv``
+
+.. code-block:: cfg
+
+  ID,Chr1,Break1,Chr2,Break2,type
+  SAMPLE1,14,16019088,12,62784483,inter-Chromosome
+  SAMPLE1,9,99412502,7,129302434,inter-Chromosome
+  SAMPLE1,13,84663781,18,52991509,inter-Chromosome
+  SAMPLE2,11,101374238,22,26701405,inter-Chromosome
+  SAMPLE2,2,121708638,7,137424167,inter-Chromosome
+  SAMPLE2,16,43027789,22,23791492,inter-Chromosome
+  SAMPLE2,19,3862589,16,37135239,inter-Chromosome
+  SAMPLE3,14,56600342,hs37d5,5744957,inter-Chromosome
+  SAMPLE3,8,107868940,hs37d5,20517614,inter-Chromosome
+  SAMPLE4,8,135644313,3,116748248,inter-Chromosome
+  SAMPLE4,7,6037836,21,34855497,inter-Chromosome
+  SAMPLE4,7,109724564,14,106387943,inter-Chromosome
+
+今回の例では、必須項目であるID、Chr1、Break1、Chr2、Break2 に加えて、
+変異タイプ (type, ここではクロモソーム内/間) が追加してあります。
+
+まず、グルーピングに使用する列名、変異タイプ (type) をconfigファイルに記載します。
+
+configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
+
+``example/mutation_option/paplot.cfg``
+
+.. code-block:: cfg
+
+  [result_format_ca]
+  col_opt_group = type
+
+オプションの列名は通常任意に設定できますが、グルーピングにおいては ``col_opt_group`` 固定にしてください。
+
+これで ``type`` 列を使用してグルーピングされますが、追加で色も指定できます。
+
+``example/mutation_option/paplot.cfg``
+
+.. code-block:: cfg
+
+  [ca]
+  limited_group = 
+  nouse_group = 
+  group_colors = inter-Chromosome:green,intra-Chromosome:orange
+
+編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+
+実行例
+
+.. code-block:: bash
+
+  paplot ca {unzip_path}/example/ca_group/data.csv ./tmp ca_group --config_file {unzip_path}/example/ca_group/paplot.cfg
+
+==========================
+ポップアップの情報追加
+==========================
+
+`view report <http://genomon-project.github.io/paplot/ca/graph_option.html>`_ 
+`view <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option>`_ 
+`dwonload <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option.zip?raw=true>`_ 
+
+マウスオーバーで表示する情報をカスタマイズすることができます。
+
+最小構成で表示するポップアップ（グリッド部分）はこのようになっています。
+
+.. image:: image/data_ca1.png
+
+ここにもう少し情報を追加してポジションや変異内容を確認できるように変更します。
+
+変更後
+
+.. image:: image/data_ca2.png
+
+
+データファイルから一部抜粋
+
+``example/mutation_option/data.csv``
+
+.. code-block:: cfg
+
+  ID,Chr,Start,End,Ref,Alt,func,gene
+  SAMPLE00,chr10,8114472,8114474,A,C,intronic,GATA3
+  SAMPLE00,chr13,28644892,28644901,G,-,intronic,FLT3
+  SAMPLE00,chr13,28664636,28664638,-,G,intronic,FLT3
+  SAMPLE00,chr16,68795521,68795530,-,T,UTR3,CDH1
+  SAMPLE00,chr10,8117068,8117069,G,T,exonic,GATA3
+  SAMPLE00,chr3,178906688,178906688,G,A,intronic,PIK3CA
+  SAMPLE00,chr13,28603715,28603715,G,-,intergenic,FLT3
+  SAMPLE00,chr14,103368263,103368270,G,C,intronic,TRAF3
+  SAMPLE00,chr1,26505548,26505557,T,C,exonic,CNKSR1
+  SAMPLE00,chr7,140619975,140619979,-,G,intronic,BRAF
+  SAMPLE00,chr14,103320225,103320225,-,T,downstream,TRAF3
+
+今回の例では、必須項目であるID、Chr1、Break1、Chr2、Break2 に加えて、
+リファレンスの塩基 (Ref), 変異の塩基(Alt), 変異タイプ(func), 遺伝子名(gene1, gene2) が追加してあります。
+
+まず、ポップアップの情報として追加したい列名、変異タイプ(func)と 遺伝子名(gene1, gene2)をconfigファイルに記載します。
+
+configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
+
+``example/mutation_option/paplot.cfg``
+
+.. code-block:: cfg
+
+  [result_format_ca]
+  col_opt_type = func
+  col_opt_gene_name1 = gene1
+  col_opt_gene_name2 = gene2
+
+オプションの列名は ``col_opt_{name} = {columun name}`` というように記述します。
+
+``{name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+
+次に、ポップアップの表示内容を変更します。
+
+``example/mutation_option/paplot.cfg``
+
+.. code-block:: cfg
+
+  [ca]
+  # 最小構成での設定
+  # tooltip_format = [{chr1}] {break1:,}; [{chr2}] {break2:,}
+  # 次のように変更
+  tooltip_format = [{chr1}] {break1:,} ({dir1}) {gene_name1}; [{chr2}] {break2:,} ({dir2}) {gene_name2}; {type}
+
+編集したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+
+実行例
+
+.. code-block:: bash
+
+  paplot ca {unzip_path}/example/ca_option/data.csv ./tmp ca_option --config_file {unzip_path}/example/ca_option/paplot.cfg
+
+
+
+
 
 出力するグラフを変更しない場合は、[result_format_ca] のみ自分のデータに合わせて設定してください。
 
@@ -307,115 +1061,9 @@ CAグラフ固有の設定記載方法について、詳細は :doc:`config_ca` 
   lack_column_complement = NA
   sept = ,
 
-.. _conf_mm:
-
-4. mutation-matrix
-----------------------
-
-出力するグラフを変更しない場合は、[result_format_mutation] のみ自分のデータに合わせて設定してください。
-
-:ref:`入力ファイルフォーマット<data_format>` に各項目の解説を記載しています。
-
-mutation-matrixグラフ固有の設定記載方法について、詳細は :doc:`config_mat` に記載しています。
-
-.. code-block:: cfg
-  :linenos:
-  :emphasize-lines: 50,51,52,53,56,58,65,68,75,77,79,81,83,85
-
-  ###################### mutation
-  [mut]
-  # geneのサンプルに対する検出比(%) 
-  # 値より小さいgeneはplot対象から除外する
-  # 0の場合はすべて出力する
-  use_gene_rate = 0
-
-  # 入力されていた場合、そのgeneのみ出力する
-  # 未入力の場合、検出されたgeneすべて出力する
-  # , 区切りで複数指定可能
-  #
-  # limited_genes = TP,TTN,APC,BRAF,CDH1,FLT3
-  limited_genes = 
-  
-  # 入力されていた場合、そのgeneはplot対象から除外する
-  # , 区切りで複数指定可能
-  #
-  # nouse_genes = NONE,MUC4
-  nouse_genes =
-
-  # 入力されていた場合、その変異タイプ(func)のみ出力する
-  # 未入力の場合、検出されたfuncすべて出力する
-  # , 区切りで複数指定可能
-  #
-  # limited_funcs = exome,splicing
-  limited_funcs = 
-  
-  # 入力されていた場合、そのfuncはplot対象から除外する
-  # , 区切りで複数指定可能
-  # 空白行を除去する場合、_blank_ と記入する
-  nouse_funcs = _blank_,unknown,synonymous_SNV
-  
-  # funcのplot色を指定する。func名:(RGBもしくはカラー名)
-  # , 区切りで複数指定可能
-  # 未入力のfuncはデフォルト色を使用する
-  func_colors = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011,nonframeshift_deletion:#9CAEB7
-  
-  # ポップアップウィンドウの表示内容
-  # 詳細はページ下段の「ユーザ定義フォーマット」に記載
-  tooltip_format_checker_title1 = ID:{id}, gene:{gene}, {#sum_item_value}
-  tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -----> {alt}]
-  tooltip_format_gene_title = gene:{gene}, {#sum_item_value}
-  tooltip_format_gene_partial = func:{func}, {#item_value}
-  tooltip_format_id_title = ID:{id}, {#sum_item_value}
-  tooltip_format_id_partial = func:{func}, {#item_value}
-  
-  # 入力フォーマット (自分のデータに合わせて変更する)
-  # 項目は欄外「入力ファイルフォーマット」参照
-  [result_format_mutation]
-  suffix = 
-  sept = \t
-  header = True
-  comment = #
-  
-  # funcが1セルに複数入力されている場合の区切り文字
-  sept_func = ";"
-  # geneが1セルに複数入力されている場合の区切り文字
-  sept_gene = ";"
-  
-  ##################
-  # Column index (required)
-  ##################
-
-  # func列
-  col_func = Merge_Func
-  
-  # gene列
-  col_gene = Gene.refGene
-  
-  ##################
-  # column index (option)
-  ##################
-  
-  # chromosome
-  col_opt_chr = Chr
-  # 開始位置
-  col_opt_start = Start
-  # 終了位置
-  col_opt_end = End
-  # リファレンスの塩基配列
-  col_opt_ref = Ref
-  # 対象の塩基配列
-  col_opt_alt = Alt
-  # id (sample) 列
-  col_opt_ID = id
-  
-  # 出力フォーマット
-  # 項目は欄外「出力ファイルフォーマット」参照
-  [merge_format_mutation]
-  lack_column_complement = NA
-  sept = ,
-
 .. _conf_signature:
 
+---------------------------
 5. signature
 ---------------------------
 
@@ -465,6 +1113,7 @@ signatureデータ準備方法およびjsonファイルフォーマットにつ�
 
 .. _conf_pmsignature:
 
+---------------------------
 6. pmsignature
 ---------------------------
 
@@ -519,7 +1168,7 @@ pmsignatureデータ準備方法およびjsonファイルフォーマットに�
   key_strand = strand
   key_mutation_count = mutation_count
 
-
+---------------
 7. 共通項目
 ---------------
 
@@ -664,5 +1313,23 @@ mouse overにより表示するポップアップのようにグラフそのも�
   
   表示例：
   3.33%
+
+------------
+1. 全般
+------------
+
+.. code-block:: cfg
+  :linenos:
+
+  ###################### general
+  [style]
+  # グラフのレイアウトファイル
+  # ~/tmp/paplot/style/rainbow.js
+  path = 
+  
+  # index.html の備考欄に出力するテキスト(HTMLタグ使用可, 半角英数字のみ)
+  remarks = 
+
+
 
 .. |new| image:: image/tab_001.gif
