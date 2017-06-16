@@ -24,10 +24,9 @@ paplotでmutation-matrixを作成するために最低限必要な項目はサ�
 
 データファイルから一部抜粋
 
-``example/mutation_minimal/data.csv``
-
 .. code-block:: cfg
-
+  :caption: example/mutation_minimal/data.csv
+  
   ID,func,gene
   SAMPLE00,intronic,GATA3
   SAMPLE00,UTR3,CDH1
@@ -44,9 +43,8 @@ paplotでmutation-matrixを作成するために最低限必要な項目はサ�
 
 configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
 
-``example/mutation_minimal/paplot.cfg``
-
 .. code-block:: cfg
+  :caption: example/mutation_minimal/paplot.cfg
 
   [result_format_mutation]
   # column index (required)
@@ -59,12 +57,10 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 編集したconfigファイルを使用して ``paplot`` を実行します。
 
-実行例
-
 .. code-block:: bash
 
-  paplot mutation {unzip_path}/example/mutation_minimal/data.csv ./tmp mutation_minimal --config_file {unzip_path}/example/mutation_minimal/paplot.cfg
-
+  paplot mutation {unzip_path}/example/mutation_minimal/data.csv ./tmp mutation_minimal \
+  --config_file {unzip_path}/example/mutation_minimal/paplot.cfg
 
 ----
 
@@ -91,9 +87,8 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 データファイルから一部抜粋
 
-``example/mutation_noheader/data.csv``
-
 .. code-block:: cfg
+  :caption: example/mutation_noheader/data.csv
 
   SAMPLE00,intronic,GATA3
   SAMPLE00,UTR3,CDH1
@@ -114,10 +109,9 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 列番号は左から順に1始まりで数えます。
 
-``example/mutation_noheader/paplot.cfg``
-
 .. code-block:: cfg
-
+  :caption: example/mutation_noheader/paplot.cfg
+  
   [result_format_mutation]
   # column index (required)
   col_func = 2
@@ -128,11 +122,10 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 編集したconfigファイルを使用して ``paplot`` を実行します。
 
-実行例
-
 .. code-block:: bash
 
-  paplot mutation {unzip_path}/example/mutation_noheader/data.csv ./tmp mutation_noheader --config_file {unzip_path}/example/mutation_noheader/paplot.cfg
+  paplot mutation {unzip_path}/example/mutation_noheader/data.csv ./tmp mutation_noheader \
+  --config_file {unzip_path}/example/mutation_noheader/paplot.cfg
 
 ----
 
@@ -150,19 +143,17 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 .. image:: image/data_mut1.png
 
-ここにもう少し情報を追加してポジションや変異内容を確認できるように変更します。
+ここに情報を追加してポジションや変異内容を確認できるように変更します。
 
 変更後
 
 .. image:: image/data_mut2.png
 
-
 データファイルから一部抜粋
 
-``example/mutation_option/data.csv``
-
 .. code-block:: cfg
-
+  :caption: example/mutation_option/data.csv
+  
   ID,Chr,Start,End,Ref,Alt,func,gene
   SAMPLE00,chr10,8114472,8114474,A,C,intronic,GATA3
   SAMPLE00,chr13,28644892,28644901,G,-,intronic,FLT3
@@ -177,16 +168,15 @@ configファイルの[result_format_mutation]セクションでデータの列�
   SAMPLE00,chr14,103320225,103320225,-,T,downstream,TRAF3
 
 今回の例では、必須項目であるサンプルID(ID)、gene名(gene)、変異タイプ(func) に加えて、
-Chromosome(Chr), 変異開始位置(Start),変異終了位置(End), リファレンスの塩基 (Ref), 変異の塩基(Alt)が追加してあります。
+Chromosome(Chr), 変異開始位置(Start),変異終了位置(End), リファレンスの塩基 (Ref), 変異の塩基(Alt)を追加しています。
 
 まず、追加した列名をconfigファイルに記載します。
 
 configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
 
-``example/mutation_option/paplot.cfg``
-
 .. code-block:: cfg
-
+  :caption: example/mutation_option/paplot.cfg
+  
   [result_format_mutation]
   # column index (option)
   col_opt_chr = Chr
@@ -201,10 +191,9 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 次に、ポップアップの表示内容を変更します。
 
-``example/mutation_option/paplot.cfg``
-
 .. code-block:: cfg
-
+  :caption: example/mutation_option/paplot.cfg
+  
   [mutation]
   # 最小構成での設定
   # tooltip_format_checker_partial = type[{func}]
@@ -213,11 +202,10 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 編集したconfigファイルを使用して ``paplot`` を実行します。
 
-実行例
-
 .. code-block:: bash
 
-  paplot mutation {unzip_path}/example/mutation_option/data.csv ./tmp mutation_option --config_file {unzip_path}/example/mutation_option/paplot.cfg
+  paplot mutation {unzip_path}/example/mutation_option/data.csv ./tmp mutation_option \
+  --config_file {unzip_path}/example/mutation_option/paplot.cfg
 
 ----
 
@@ -237,10 +225,9 @@ exampleでは別ファイルとして以下のデータファイルを用意し�
 
 データファイルから一部抜粋
 
-``example/mutation_subplot/data_subplot.csv``
-
 .. code-block:: cfg
-
+  :caption: example/mutation_subplot/data_subplot.csv
+  
   ID,gender,age,BMI
   SAMPLE00,F,30,40
   SAMPLE01,F,62,25
@@ -259,10 +246,9 @@ configファイルにサブプロットの設定を追加します。
 
 configファイルに[mutation_subplot_type1_1]セクションを追加し、以下のように設定します。
 
-``example/mutation_subplot/paplot.cfg``
-
 .. code-block:: cfg
-
+  :caption: example/mutation_subplot/paplot.cfg
+  
   ### sample for subplot
   [mutation_subplot_type1_1]
 
@@ -358,11 +344,10 @@ titleとnameset
 
 編集したconfigファイルを使用して ``paplot`` を実行します。
 
-実行例
-
 .. code-block:: bash
 
-  paplot mutation {unzip_path}/example/mutation_subplot/data.csv ./tmp mutation_subplot --config_file {unzip_path}/example/mutation_subplot/paplot.cfg
+  paplot mutation {unzip_path}/example/mutation_subplot/data.csv ./tmp mutation_subplot \
+  --config_file {unzip_path}/example/mutation_subplot/paplot.cfg
 
 ----
 
@@ -386,10 +371,9 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
 
 データファイルから一部抜粋
 
-``example/qc_minimal/data.csv``
-
 .. code-block:: cfg
-
+  :caption: example/qc_minimal/data.csv
+  
   ID,average_depth
   SAMPLE1,70.0474
   SAMPLE2,65.7578
@@ -400,7 +384,8 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
 まず、configファイルの[result_format_qc]セクションに入力データの列名を登録します。
 
 .. code-block:: cfg
-
+  :caption: example/qc_minimal/paplot.cfg
+  
   [result_format_qc]
   # column index (option)
   col_opt_average_depth = average_depth
@@ -412,10 +397,9 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
 
 次に、configファイルに[qc_chart_1]セクションを追加し、以下のように設定します。
 
-``example/qc_minimal/paplot.cfg``
-
 .. code-block:: cfg
-
+  :caption: example/qc_minimal/paplot.cfg
+  
   [qc_chart_1]
   
   # グラフのタイトル
@@ -434,15 +418,14 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
   tooltip_format1 = ID:{id}
   tooltip_format2 = {average_depth:.2}
 
-ここで、 ``average_depth`` という値を変数のように使用していますが、これは [result_format_qc]セクションで指定した ``col_opt_average_depth`` 項目のうち、``col_opt_`` を除いた名前です。
+ここで、 ``average_depth`` という値を変数のとして使用していますが、これは [result_format_qc]セクションで指定した ``col_opt_average_depth`` 項目のうち、``col_opt_`` を除いた名前です。
 
 編集したconfigファイルを使用して ``paplot`` を実行します。
 
-実行例
-
 .. code-block:: bash
 
-  paplot qc {unzip_path}/example/qc_minimal/data.csv ./tmp minimal --config_file {unzip_path}/example/qc_minimal/paplot.cfg
+  paplot qc {unzip_path}/example/qc_minimal/data.csv ./tmp qc_minimal \
+  --config_file {unzip_path}/example/qc_minimal/paplot.cfg
 
 ----
 
@@ -469,10 +452,9 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
 
 データファイルから一部抜粋
 
-``example/qc_noheader/data.csv``
-
 .. code-block:: cfg
-
+  :caption: example/qc_noheader/data.csv
+  
   SAMPLE1,70.0474
   SAMPLE2,65.7578
   SAMPLE3,63.3750
@@ -485,21 +467,19 @@ configファイルの[result_format_qc]セクションでデータの列番号�
 
 列番号は左から順に1始まりで数えます。
 
-``example/qc_noheader/paplot.cfg``
-
 .. code-block:: cfg
-
+  :caption: example/qc_noheader/paplot.cfg
+  
   [result_format_qc]
   col_opt_average_depth = 2
   col_opt_id = 1
 
 編集したconfigファイルを使用して ``paplot`` を実行します。
 
-実行例
-
 .. code-block:: bash
 
-  paplot qc {unzip_path}/example/qc_noheader/data.csv ./tmp qc_noheader --config_file {unzip_path}/example/qc_noheader/paplot.cfg
+  paplot qc {unzip_path}/example/qc_noheader/data.csv ./tmp qc_noheader \
+  --config_file {unzip_path}/example/qc_noheader/paplot.cfg
 
 ----
 
@@ -515,10 +495,9 @@ configファイルの[result_format_qc]セクションでデータの列番号�
 
 データファイルから一部抜粋
 
-``example/qc_multi_plot/data.csv``
-
 .. code-block:: cfg
-
+  :caption: example/qc_multi_plot/data.csv
+  
   ID,average_depth,read_length_r1,read_length_r2,total_reads,mapped_reads,mean_insert_size,duplicate_reads,2x_rt,10x_rt,20x_rt,30x_rt
   SAMPLE1,70.0474,265,270,94315157,56262203,343.92,7964009,0.9796,0.7680,0.6844,0.6747
   SAMPLE2,65.7578,140,200,50340277,33860998,351.23,5297450,0.8489,0.7725,0.7655,0.6131
@@ -539,10 +518,9 @@ configファイルの[result_format_qc]セクションでデータの列番号�
 
 まず、configファイルの[result_format_qc]セクションに入力データの列名を登録します。
 
-``example/qc_multi_plot/paplot.cfg``
-
 .. code-block:: cfg
-
+  :caption: example/qc_multi_plot/paplot.cfg
+  
   [result_format_qc]
   # column index (option)
   col_opt_average_depth = average_depth
@@ -580,9 +558,8 @@ chart_1 (average_depth) と chart_4 (mean_insert_size) は単純な棒グラフ�
 
 chart_3 (mapped_reads) と chart_5 (duplicate_reads) は列同士で計算（今回は割り算）させて出力します。
 
-``example/qc_multi_plot/paplot.cfg``
-
 .. code-block:: cfg
+  :caption: example/qc_multi_plot/paplot.cfg
 
   [qc_chart_3]
   
@@ -615,10 +592,9 @@ tooltip_format2 = {mapped_reads/total_reads:.2}
 
 chart_6 (read_length_r1,read_length_r2) は積み上げグラフです。
 
-``example/qc_multi_plot/paplot.cfg``
-
 .. code-block:: cfg
-
+  :caption: example/qc_multi_plot/paplot.cfg
+  
   [qc_chart_6]
   
   # 表示する文字列を設定します
@@ -647,10 +623,9 @@ chart_6 (read_length_r1,read_length_r2) は積み上げグラフです。
 
 chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演算もしています。
 
-``example/qc_multi_plot/paplot.cfg``
-
 .. code-block:: cfg
-
+  :caption: example/qc_multi_plot/paplot.cfg
+  
   [qc_chart_2]
   
   # 表示する文字列を設定します
@@ -677,11 +652,10 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
 
 編集したconfigファイルを使用して ``paplot`` を実行します。
 
-実行例
-
 .. code-block:: bash
 
-  paplot qc {unzip_path}/example/qc_multi_plot/data.csv ./tmp qc_multi_plot --config_file {unzip_path}/example/qc_multi_plot/paplot.cfg
+  paplot qc {unzip_path}/example/qc_multi_plot/data.csv ./tmp qc_multi_plot \
+  --config_file {unzip_path}/example/qc_multi_plot/paplot.cfg
 
 ----
 
@@ -703,21 +677,19 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
 
 領域選択用のグラフは[qc_chart_brush]というセクション名で一つだけ追加することができます。
 
-``example/qc_brush/paplot.cfg``
-
 .. code-block:: cfg
-
+  :caption: example/qc_brush/paplot.cfg
+  
   [qc_chart_brush]
   stack = {average_depth}
   name_set = average:#E3E5E9
 
 編集したconfigファイルを使用して ``paplot`` を実行します。
 
-実行例
-
 .. code-block:: bash
 
-  paplot qc {unzip_path}/example/qc_brush/data.csv ./tmp qc_brush --config_file {unzip_path}/example/qc_brush/paplot.cfg
+  paplot qc {unzip_path}/example/qc_brush/data.csv ./tmp qc_brush \
+  --config_file {unzip_path}/example/qc_brush/paplot.cfg
 
 ----
 
@@ -739,11 +711,8 @@ paplotでcaレポートを作成するために最低限必要な項目はサン
 
 データファイルから一部抜粋
 
-``example/mutation_minimal/data.csv``
-
 .. code-block:: cfg
   :caption: example/mutation_minimal/data.csv
-  :name: example/mutation_minimal/data.csv
   
   ID,Chr1,Break1,Chr2,Break2,
   SAMPLE1,14,16019088,12,62784483,
@@ -775,8 +744,6 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 編集したconfigファイルを使用して ``paplot`` を実行します。
 
-実行例
-
 .. code-block:: bash
 
   paplot ca {unzip_path}/example/ca_minimal/data.csv ./tmp ca_minimal \
@@ -807,10 +774,9 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 データファイルから一部抜粋
 
-``example/ca_noheader/data.csv``
-
 .. code-block:: cfg
-
+  :caption: example/ca_noheader/data.csv
+  
   SAMPLE00,intronic,GATA3
   SAMPLE00,UTR3,CDH1
   SAMPLE00,exonic,GATA3
@@ -830,10 +796,9 @@ configファイルの[result_format_ca]セクションでデータの列番号�
 
 列番号は左から順に1始まりで数えます。
 
-``example/ca_noheader/paplot.cfg``
-
 .. code-block:: cfg
-
+  :caption: example/ca_noheader/paplot.cfg
+  
   # column index (required)
   col_chr1 = 2
   col_break1 = 3
@@ -845,11 +810,10 @@ configファイルの[result_format_ca]セクションでデータの列番号�
 
 編集したconfigファイルを使用して ``paplot`` を実行します。
 
-実行例
-
 .. code-block:: bash
 
-  paplot ca {unzip_path}/example/ca_noheader/data.csv ./tmp ca_noheader --config_file {unzip_path}/example/ca_noheader/paplot.cfg
+  paplot ca {unzip_path}/example/ca_noheader/data.csv ./tmp ca_noheader \
+  --config_file {unzip_path}/example/ca_noheader/paplot.cfg
 
 ----
 
@@ -867,10 +831,9 @@ configファイルの[result_format_ca]セクションでデータの列番号�
 
 データファイルから一部抜粋
 
-``example/mutation_option/data.csv``
-
 .. code-block:: cfg
-
+  :caption: example/mutation_option/data.csv
+  
   ID,Chr1,Break1,Chr2,Break2,type
   SAMPLE1,14,16019088,12,62784483,C
   SAMPLE1,9,99412502,7,129302434,B
@@ -891,10 +854,9 @@ configファイルの[result_format_ca]セクションでデータの列番号�
 
 configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
 
-``example/mutation_option/paplot.cfg``
-
 .. code-block:: cfg
-
+  :caption: example/mutation_option/paplot.cfg
+  
   [result_format_ca]
   col_opt_group = type
 
@@ -902,9 +864,8 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 これで ``type`` 列を使用してグルーピングされますが、追加で色も指定できます。
 
-``example/mutation_option/paplot.cfg``
-
 .. code-block:: cfg
+  :caption: example/mutation_option/paplot.cfg
 
   [ca]
   # グループの色指定
@@ -919,11 +880,10 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 編集したconfigファイルを使用して ``paplot`` を実行します。
 
-実行例
-
 .. code-block:: bash
 
-  paplot ca {unzip_path}/example/ca_group/data.csv ./tmp ca_group --config_file {unzip_path}/example/ca_group/paplot.cfg
+  paplot ca {unzip_path}/example/ca_group/data.csv ./tmp ca_group \
+  --config_file {unzip_path}/example/ca_group/paplot.cfg
 
 ----
 
@@ -950,10 +910,9 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 データファイルから一部抜粋
 
-``example/mutation_option/data.csv``
-
 .. code-block:: cfg
-
+  :caption: example/mutation_option/data.csv
+  
   ID,Chr1,Break1,Dir1,Chr2,Break2,Dir2,Ref,Alt,func,gene1,gene2
   SAMPLE1,14,16019088,-,12,62784483,+,---,GACTC,deletion,LS7T1EG444,4GRRIO5AVR
   SAMPLE1,9,99412502,-,7,129302434,+,---,C-CT-,translocation,FQFW16UF5U,QP779MLPNV
@@ -972,10 +931,9 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
 
-``example/mutation_option/paplot.cfg``
-
 .. code-block:: cfg
-
+  :caption: example/mutation_option/paplot.cfg
+  
   [result_format_ca]
   col_opt_dir1 = Dir1
   col_opt_dir2 = Dir2
@@ -989,10 +947,9 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 次に、ポップアップの表示内容を変更します。
 
-``example/mutation_option/paplot.cfg``
-
 .. code-block:: cfg
-
+  :caption: example/mutation_option/paplot.cfg
+  
   [ca]
   # 最小構成での設定
   # tooltip_format = [{chr1}] {break1:,}; [{chr2}] {break2:,}
@@ -1001,11 +958,10 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 編集したconfigファイルを使用して ``paplot`` を実行します。
 
-実行例
-
 .. code-block:: bash
 
-  paplot ca {unzip_path}/example/ca_option/data.csv ./tmp ca_option --config_file {unzip_path}/example/ca_option/paplot.cfg
+  paplot ca {unzip_path}/example/ca_option/data.csv ./tmp ca_option \
+  --config_file {unzip_path}/example/ca_option/paplot.cfg
 
 .. _conf_signature:
 
