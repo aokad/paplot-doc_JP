@@ -66,6 +66,8 @@ configファイルの[result_format_mutation]セクションでデータの列�
   paplot mutation {unzip_path}/example/mutation_minimal/data.csv ./tmp mutation_minimal --config_file {unzip_path}/example/mutation_minimal/paplot.cfg
 
 
+----
+
 ==========================
 タブ区切り
 ==========================
@@ -76,6 +78,8 @@ configファイルの[result_format_mutation]セクションでデータの列�
   
   [result_format_mutation]
   sept = \t
+
+----
 
 ==========================
 ヘッダなし
@@ -129,6 +133,8 @@ configファイルの[result_format_mutation]セクションでデータの列�
 .. code-block:: bash
 
   paplot mutation {unzip_path}/example/mutation_noheader/data.csv ./tmp mutation_noheader --config_file {unzip_path}/example/mutation_noheader/paplot.cfg
+
+----
 
 ==========================
 ポップアップの情報追加
@@ -212,6 +218,8 @@ configファイルの[result_format_mutation]セクションでデータの列�
 .. code-block:: bash
 
   paplot mutation {unzip_path}/example/mutation_option/data.csv ./tmp mutation_option --config_file {unzip_path}/example/mutation_option/paplot.cfg
+
+----
 
 =============================================
 サブプロットとしてクリニカルデータを追加
@@ -356,6 +364,8 @@ titleとnameset
 
   paplot mutation {unzip_path}/example/mutation_subplot/data.csv ./tmp mutation_subplot --config_file {unzip_path}/example/mutation_subplot/paplot.cfg
 
+----
+
 .. _conf_qc:
 
 ------------
@@ -425,6 +435,7 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
   tooltip_format2 = {average_depth:.2}
 
 ここで、 ``average_depth`` という値を変数のように使用していますが、これは [result_format_qc]セクションで指定した ``col_opt_average_depth`` 項目のうち、``col_opt_`` を除いた名前です。
+
 編集したconfigファイルを使用して ``paplot`` を実行します。
 
 実行例
@@ -432,6 +443,8 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
 .. code-block:: bash
 
   paplot qc {unzip_path}/example/qc_minimal/data.csv ./tmp minimal --config_file {unzip_path}/example/qc_minimal/paplot.cfg
+
+----
 
 ==========================
 タブ区切り
@@ -443,6 +456,8 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
   
   [result_format_qc]
   sept = \t
+
+----
 
 ==========================
 ヘッダなし
@@ -485,6 +500,8 @@ configファイルの[result_format_qc]セクションでデータの列番号�
 .. code-block:: bash
 
   paplot qc {unzip_path}/example/qc_noheader/data.csv ./tmp qc_noheader --config_file {unzip_path}/example/qc_noheader/paplot.cfg
+
+----
 
 ==========================
 複数グラフ
@@ -666,6 +683,8 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
 
   paplot qc {unzip_path}/example/qc_multi_plot/data.csv ./tmp qc_multi_plot --config_file {unzip_path}/example/qc_multi_plot/paplot.cfg
 
+----
+
 ==========================
 データ選択
 ==========================
@@ -699,6 +718,8 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
 .. code-block:: bash
 
   paplot qc {unzip_path}/example/qc_brush/data.csv ./tmp qc_brush --config_file {unzip_path}/example/qc_brush/paplot.cfg
+
+----
 
 .. _conf_ca:
 
@@ -756,6 +777,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
   paplot ca {unzip_path}/example/ca_minimal/data.csv ./tmp ca_minimal --config_file {unzip_path}/example/ca_minimal/paplot.cfg
 
+----
 
 ==========================
 タブ区切り
@@ -767,6 +789,8 @@ configファイルの[result_format_mutation]セクションでデータの列�
   
   [result_format_ca]
   sept = \t
+
+----
 
 ==========================
 ヘッダなし
@@ -821,6 +845,8 @@ configファイルの[result_format_ca]セクションでデータの列番号�
 .. code-block:: bash
 
   paplot ca {unzip_path}/example/ca_noheader/data.csv ./tmp ca_noheader --config_file {unzip_path}/example/ca_noheader/paplot.cfg
+
+----
 
 ==========================
 変異のグルーピング
@@ -894,6 +920,8 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
   paplot ca {unzip_path}/example/ca_group/data.csv ./tmp ca_group --config_file {unzip_path}/example/ca_group/paplot.cfg
 
+----
+
 ==========================
 ポップアップの情報追加
 ==========================
@@ -944,6 +972,8 @@ configファイルの[result_format_mutation]セクションでデータの列�
 .. code-block:: cfg
 
   [result_format_ca]
+  col_opt_dir1 = Dir1
+  col_opt_dir2 = Dir2
   col_opt_type = func
   col_opt_gene_name1 = gene1
   col_opt_gene_name2 = gene2
@@ -971,98 +1001,6 @@ configファイルの[result_format_mutation]セクションでデータの列�
 .. code-block:: bash
 
   paplot ca {unzip_path}/example/ca_option/data.csv ./tmp ca_option --config_file {unzip_path}/example/ca_option/paplot.cfg
-
-
-
-
-
-出力するグラフを変更しない場合は、[result_format_ca] のみ自分のデータに合わせて設定してください。
-
-:ref:`入力ファイルフォーマット<data_format>` に各項目の解説を記載しています。
-
-CAグラフ固有の設定記載方法について、詳細は :doc:`config_ca` に記載しています。
-
-.. code-block:: cfg
-  :linenos:
-  :emphasize-lines: 10,46,48,49,50,56,57,58,59,71
-  
-  ###################### sv
-  [genome]
-  # ゲノムサイズのファイル（CSV形式）（デフォルトはhg19, installディレクトリ配下のgenomeディレクトリにあります）
-  #
-  # for example.
-  # (linux)
-  # path = ~/tmp/genome/hg19.csv
-  # (windows)
-  # path = C:\genome\hg19_part.csv
-  path = 
-  
-  [ca]
-  # 使用するchromosomes (,で区切る)
-  use_chrs = 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X,Y
-  
-  # if setting label-text & color
-  # use_chrs = 1:Chr1:crimson, 2:Chr2:lightpink, 3:Chr3:mediumvioletred, 4:Chr4:violet, 5:Chr5:darkmagenta, 6:Chr6:mediumpurple
-  
-  # 積み上げグラフのchromosome分割サイズ (bps)
-  selector_split_size = 5000000
-  
-  ##################
-  # group setting
-  # [result_format_ca] col_opt_group が設定されている場合のみ有効
-  ##################
-  
-  # 入力されていた場合、そのgroupのみ出力する
-  # 未入力の場合、検出されたgroupすべて出力する
-  # , 区切りで複数指定可能
-  #
-  limited_group = stopgain,frameshift_deletion,frameshift_insertion
-  
-  # 入力されていた場合、そのgroupはplot対象から除外する
-  # , 区切りで複数指定可能
-  # 空白行を除去する場合、_blank_ と記入する
-  nouse_group = _blank_,unknown,synonymous_SNV
-  
-  # groupのplot色を指定する。group名:(RGBもしくはカラー名)
-  # , 区切りで複数指定可能
-  # 未入力のgroupはデフォルト色を使用する
-  group_colors = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011
-  
-  # 入力フォーマット (自分のデータに合わせて変更する)
-  # 項目は欄外「入力ファイルフォーマット」参照
-  [result_format_ca]
-  suffix = .result.txt
-  
-  sept = \t
-  header = False
-  comment = #
-  
-  ##################
-  # Column index (required)
-  ##################
-  
-  col_chr1 = Chr_1
-  col_break1 = Pos_1
-  col_chr2 = Chr_2
-  col_break2 = Pos_2
-  
-  ##################
-  # Column index (option)
-  ##################
-  
-  col_opt_dir1 = Dir_1
-  col_opt_dir2 = Dir_2
-  col_opt_type = Variant_Type
-  col_opt_gene_name1 = Gene_1
-  col_opt_gene_name2 = Gene_2
-  col_opt_group = 
-  col_opt_id =
-  
-  # 出力フォーマット
-  # 項目は欄外「出力ファイルフォーマット」参照
-  [merge_format_ca]
-  lack_column_complement = NA
-  sept = ,
 
 .. _conf_signature:
 
