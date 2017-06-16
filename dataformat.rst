@@ -11,6 +11,46 @@
 1. mutation-matrix
 ----------------------
 
+==========================
+最小データセット
+==========================
+
+`view <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal>`_ 
+
+paplotに最低限必要な項目はサンプルID、gene名、変異タイプ(func) の3つです。
+
+.. raw:: html
+
+  <iframe width="100%" height="315" src="https://raw.githubusercontent.com/Genomon-Project/paplot/master/example/mutation_minimal/data.csv" frameborder="0" allowfullscreen></iframe>
+
+
+configファイルは以下のように設定します。
+
+``example/paplot.cfg``
+
+.. code-block:: cfg
+  :emphasize-lines: 21,42,43,44,45,46
+  
+  [result_format_mutation]
+  suffix = 
+  sept = ,
+ 
+  # column index (required)
+  col_func = func
+  col_gene = gene
+  
+  # column index (option)
+  col_opt_id = ID
+
+
+作成したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
+
+実行例
+
+.. code-block:: bash
+
+  paplot mutation {unzip_path}/data.csv ./tmp minimal --config_file {unzip_path}/paplot.cfg
+
 ======================
 exampleデータ
 ======================
@@ -71,94 +111,6 @@ exampleデータでは変異ファイルの例として、上記のデータを�
   col_opt_alt = Alt
   # id (sample) 列
   col_opt_ID = id
-
-==========================
-最小データセット
-==========================
-
-:download:`download <example/mutation_minimal.zip>`
-
-paplotに最低限必要な項目のみで構成した、以下のようなデータがあるとします。
-
-.. raw:: html
-
-  <div style="margin-top: 10px; margin-bottom: 10px; padding: 8px; border: 1px solid #AAA; background-color:#FFF;">
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'><b>ID,func,gene</b></p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,GATA3</p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,FLT3</p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,FLT3</p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,UTR3,CDH1</p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,exonic,GATA3</p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,PIK3CA</p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intergenic,FLT3</p>
-  <p style='margin-top: 1px; margin-bottom: 1px; font-size: 12px; font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;'>SAMPLE00,intronic,TRAF3</p>
-  </div>
-
-configファイルは以下のように変更します。
-
-ハイライト表示が変更箇所です。
-
-``example/paplot.cfg``
-
-.. code-block:: cfg
-  :emphasize-lines: 21,42,43,44,45,46
-  
-  ###################### mutation
-  [mutation]
-  use_gene_rate = 0
-  
-  limited_genes = 
-  nouse_genes = 
-  limited_funcs = 
-  nouse_funcs = 
-  func_colors = 
-
-  # マウスを乗せたときの表示内容を定義します
-  ### special item
-  # {#number_id}
-  # {#number_gene}
-  # {#number_mutaion}
-  # {#sum_mutaion}
-  # {#item_value}
-  # {#sum_item_value}
-
-  tooltip_format_checker_title1 = ID:{id}, gene:{gene}, {#sum_item_value}
-  tooltip_format_checker_partial = type[{func}]
-  tooltip_format_gene_title = gene:{gene}, {#sum_item_value}
-  tooltip_format_gene_partial = func:{func}, {#item_value}
-  tooltip_format_id_title = ID:{id}, {#sum_item_value}
-  tooltip_format_id_partial = func:{func}, {#item_value}
-  
-  [result_format_mutation]
-  suffix = 
-  
-  sept = ,
-  header = True
-  comment = #
-  sept_func = ;
-  sept_gene = ;
-  
-  # column index (required)
-  col_func = func
-  col_gene = gene
-  
-  # column index (option)
-  col_opt_chr = 
-  col_opt_start = 
-  col_opt_end = 
-  col_opt_ref = 
-  col_opt_alt = 
-  col_opt_id = ID
-
-
-作成したconfigファイルは ``paplot`` コマンドの ``--config_file`` オプションで指定します。
-
-実行例
-
-.. code-block:: bash
-
-  paplot mutation {unzip_path}/data.csv ./tmp minimal --config_file {unzip_path}/paplot.cfg
-
 
 1. 全般
 ------------

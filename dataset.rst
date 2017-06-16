@@ -43,10 +43,10 @@ paplot実行例として以下のデータセットを用意しています。
 3. CA
 --------------
 
- - :download:`<dataset/ca_minimal.zip>`  最小構成 
- - :download:`<dataset/ca_option.zip>`   グループ情報追加 
- - :download:`<dataset/ca_option.zip>`   グループ情報追加、オプション情報追加 (※4) 
- - :download:`<dataset/ca_noheader.zip>` ヘッダなし 
+ - :download:`download <dataset/ca_minimal.zip>`  最小構成 
+ - :download:`download <dataset/ca_option.zip>`   グループ情報追加 
+ - :download:`download <dataset/ca_option.zip>`   グループ情報追加、オプション情報追加 (※4) 
+ - :download:`download <dataset/ca_noheader.zip>` ヘッダなし 
 
 | ※4 paplot付属のexampleとほぼ同等の設定です（グルーピングの色が違います）
 
