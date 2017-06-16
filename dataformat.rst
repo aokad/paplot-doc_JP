@@ -743,6 +743,7 @@ paplotでcaレポートを作成するために最低限必要な項目はサン
 
 .. code-block:: cfg
   :caption: example/mutation_minimal/data.csv
+  :name: example/mutation_minimal/data.csv
   
   ID,Chr1,Break1,Chr2,Break2,
   SAMPLE1,14,16019088,12,62784483,
