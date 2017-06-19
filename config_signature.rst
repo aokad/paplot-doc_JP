@@ -7,7 +7,6 @@ Config 記述方法 (signature) |new|
 ----------------------------------------------------------
 
 .. code-block:: cfg
-  :linenos:
   
   ###################### signature
   [signature]

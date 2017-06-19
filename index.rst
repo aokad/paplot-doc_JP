@@ -42,11 +42,7 @@ Contents:
    :caption: for advance
    :name: advance_toc
    
-   config_qc.rst
-   config_ca.rst
-   config_mat.rst
-   config_signature.rst
-   config_pmsignature.rst
+   config.rst
    exec_signature.rst
    exec_pmsignature.rst
    style.rst
