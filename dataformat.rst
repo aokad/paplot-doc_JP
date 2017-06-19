@@ -306,7 +306,7 @@ name_setの書き方
 .. image:: image/default_color.PNG
   :scale: 100%
 
----
+----
 
 .. _qc_noheader:
 
@@ -1581,7 +1581,7 @@ Backgroundなし
   paplot pmsignature pmsignature_nobackground/data.json ./tmp pmsignature_nobackground \
   --config_file ./pmsignature_nobackground/paplot.cfg
 
----
+----
 
 ---------------
 6. 共通項目
@@ -1634,7 +1634,7 @@ qc, caの場合、configは[result_format_qc]、[result_format_ca]セクショ�
 ここではmutation-matrixを例にとりましたが、qc, caの場合も同様です。
 qc, caの場合、configは[result_format_qc]、[result_format_ca]セクションを変更してください。
 
----
+----
 
 .. _suffix:
 
@@ -1658,19 +1658,7 @@ paplotではサンプル名が必須ですが、以下の2通りで指定する�
 | `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_split_file>`_ 
 | `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_split_file.zip?raw=true>`_ 
 
-データファイルから一部抜粋
-
-.. code-block:: cfg
-  :caption: example/mutation_split_file/SAMPLE00.data.csv
-
-  func,gene
-  intronic,GATA3
-  intronic,FLT3
-  intronic,FLT3
-  UTR3,CDH1
-  exonic,GATA3
-
-この例ではサンプル毎にデータが分かれています。
+今回の例ではサンプル毎にデータが分かれています。
 
 ::
 
@@ -1685,6 +1673,18 @@ paplotではサンプル名が必須ですが、以下の2通りで指定する�
 
      # configファイル
     ┗ paplot.cfg
+
+データファイルから一部抜粋
+
+.. code-block:: cfg
+  :caption: example/mutation_split_file/SAMPLE00.data.csv
+
+  func,gene
+  intronic,GATA3
+  intronic,FLT3
+  intronic,FLT3
+  UTR3,CDH1
+  exonic,GATA3
 
 configファイルでsuffixを設定します。
 
