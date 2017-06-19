@@ -41,7 +41,9 @@ paplotでmutation-matrixを作成するために最低限必要な項目はサ�
   SAMPLE03,intronic,PIK3CA
   SAMPLE03,downstream,SEPT12
 
-configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
+今回の例では列名はID、gene、funcとしていますが、任意に設定できます。
+
+configファイルの[result_format_mutation]セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/mutation_minimal/paplot.cfg
@@ -68,7 +70,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
 タブ区切り
 ==========================
 
-データファイルがタブ区切りであった場合、以下のように設定します。
+データファイルがタブ区切りであった場合、次のように設定します。
 
 .. code-block:: cfg
   
@@ -105,7 +107,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 データにヘッダ行がない場合、列名でなく列番号を設定します。
 
-configファイルの[result_format_mutation]セクションでデータの列番号を以下のように設定します。
+configファイルの[result_format_mutation]セクションでデータの列番号を次のように設定します。
 
 列番号は左から順に1始まりで数えます。
 
@@ -172,7 +174,7 @@ Chromosome(Chr), 変異開始位置(Start),変異終了位置(End), リファレ
 
 まず、追加した列名をconfigファイルに記載します。
 
-configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
+configファイルの[result_format_mutation]セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/mutation_option/paplot.cfg
@@ -185,7 +187,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
   col_opt_ref = Ref
   col_opt_alt = Alt
 
-オプションの列名は ``col_opt_{name} = {columun name}`` というように記述します。
+オプションの列名は次の形式で記述します。 ``col_opt_{name} = {columun name}`` 
 
 ``{name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
 
@@ -219,7 +221,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 変異以外のサンプルに関する情報（例えばクリニカルデータ）をサブプロットとしてmutation-matrixに追加することができます。
 
-.. image:: image/data_mut3.png
+.. image:: image/data_mut3.PNG
 
 exampleでは別ファイルとして以下のデータファイルを用意しています。
 
@@ -240,11 +242,11 @@ exampleでは別ファイルとして以下のデータファイルを用意し�
   SAMPLE08,F,55,35
 
 今回の例では、サンプルID(ID)、gender、age、BMIを用意していますが、そのうち、必須項目はサンプルID(ID)です。
-データファイル中のサンプルIDと紐づけられることが重要です。
+変異のファイルとサブデータのファイルがサンプルIDで紐づけられることが重要です。
 
 configファイルにサブプロットの設定を追加します。
 
-configファイルに[mutation_subplot_type1_1]セクションを追加し、以下のように設定します。
+[mutation_subplot_type1_1]セクションを追加し、次のように設定します。
 
 .. code-block:: cfg
   :caption: example/mutation_subplot/paplot.cfg
@@ -284,9 +286,7 @@ configファイルに[mutation_subplot_type1_1]セクションを追加し、以
 サブプロットの表示位置
 --------------------------
 
-mutation-matrixグラフでは解析結果とは別にサンプルに対する情報を表示することができます。
-
-表示場所は2つあり、type1はサンプルグラフの下に、type2は最後に表示します。
+サブプロットの表示位置は2つあり、type1はサンプルグラフの下に、type2は最後に表示します。
 
 type1を表示する場合はセクション名を[mut_subplot_type1_*]とします。
 
@@ -391,11 +391,11 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
   col_opt_average_depth = average_depth
   col_opt_id = ID
 
-オプションの列名は ``col_opt_{name} = {columun name}`` というように記述します。
+オプションの列名は次の形式で記述します。 ``col_opt_{name} = {columun name}`` 
 
 ``{name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
 
-次に、configファイルに[qc_chart_1]セクションを追加し、以下のように設定します。
+次に、configファイルに[qc_chart_1]セクションを追加し、次のように設定します。
 
 .. code-block:: cfg
   :caption: example/qc_minimal/paplot.cfg
@@ -433,7 +433,7 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
 タブ区切り
 ==========================
 
-データファイルがタブ区切りであった場合、以下のように設定します。
+データファイルがタブ区切りであった場合、次のように設定します。
 
 .. code-block:: cfg
   
@@ -463,7 +463,7 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
 
 データにヘッダ行がない場合、列名でなく列番号を設定します。
 
-configファイルの[result_format_qc]セクションでデータの列番号を以下のように設定します。
+configファイルの[result_format_qc]セクションでデータの列番号を次のように設定します。
 
 列番号は左から順に1始まりで数えます。
 
@@ -536,7 +536,7 @@ configファイルの[result_format_qc]セクションでデータの列番号�
   col_opt_read_length_r1 = read_length_r1
   col_opt_read_length_r2 = read_length_r2
 
-オプションの列名は ``col_opt_{name} = {columun name}`` というように記述します。
+オプションの列名は次の形式で記述します。 ``col_opt_{name} = {columun name}`` 
 
 ``{name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
 
@@ -712,7 +712,7 @@ paplotでcaレポートを作成するために最低限必要な項目はサン
 データファイルから一部抜粋
 
 .. code-block:: cfg
-  :caption: example/mutation_minimal/data.csv
+  :caption: example/ca_minimal/data.csv
   
   ID,Chr1,Break1,Chr2,Break2,
   SAMPLE1,14,16019088,12,62784483,
@@ -726,12 +726,11 @@ paplotでcaレポートを作成するために最低限必要な項目はサン
   SAMPLE4,7,6037836,21,34855497,
   SAMPLE4,7,109724564,14,106387943,
 
-configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
-
-``example/ca_minimal/paplot.cfg``
+configファイルの[result_format_ca]セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
-
+  :caption: example/ca_minimal/paplot.cfg
+  
   [result_format_ca]
   # column index (required)
   col_chr1 = Chr1
@@ -755,7 +754,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
 タブ区切り
 ==========================
 
-データファイルがタブ区切りであった場合、以下のように設定します。
+データファイルがタブ区切りであった場合、次のように設定します。
 
 .. code-block:: cfg
   
@@ -792,7 +791,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 データにヘッダ行がない場合、列名でなく列番号を設定します。
 
-configファイルの[result_format_ca]セクションでデータの列番号を以下のように設定します。
+configファイルの[result_format_ca]セクションでデータの列番号を次のように設定します。
 
 列番号は左から順に1始まりで数えます。
 
@@ -832,7 +831,7 @@ configファイルの[result_format_ca]セクションでデータの列番号�
 データファイルから一部抜粋
 
 .. code-block:: cfg
-  :caption: example/mutation_option/data.csv
+  :caption: example/ca_group/data.csv
   
   ID,Chr1,Break1,Chr2,Break2,type
   SAMPLE1,14,16019088,12,62784483,C
@@ -852,10 +851,10 @@ configファイルの[result_format_ca]セクションでデータの列番号�
 
 まず、グルーピングに使用する列名、type をconfigファイルに記載します。
 
-configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
+configファイルの[result_format_ca]セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
-  :caption: example/mutation_option/paplot.cfg
+  :caption: example/ca_group/paplot.cfg
   
   [result_format_ca]
   col_opt_group = type
@@ -865,7 +864,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
 これで ``type`` 列を使用してグルーピングされますが、追加で色も指定できます。
 
 .. code-block:: cfg
-  :caption: example/mutation_option/paplot.cfg
+  :caption: example/ca_group/paplot.cfg
 
   [ca]
   # グループの色指定
@@ -911,7 +910,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
 データファイルから一部抜粋
 
 .. code-block:: cfg
-  :caption: example/mutation_option/data.csv
+  :caption: example/ca_option/data.csv
   
   ID,Chr1,Break1,Dir1,Chr2,Break2,Dir2,Ref,Alt,func,gene1,gene2
   SAMPLE1,14,16019088,-,12,62784483,+,---,GACTC,deletion,LS7T1EG444,4GRRIO5AVR
@@ -924,31 +923,40 @@ configファイルの[result_format_mutation]セクションでデータの列�
   SAMPLE3,14,56600342,-,hs37d5,5744957,+,---,--CAA,deletion,UTLVCZ63SK,5I74M5NKDC
   SAMPLE3,Y,12191863,-,hs37d5,29189687,-,---,TG-G-,inversion,3PLD4C20IZ,BVYMBTIFKD
 
-今回の例では、必須項目であるID、Chr1、Break1、Chr2、Break2 に加えて、
-リファレンスの塩基 (Ref), 変異の塩基(Alt), 変異タイプ(func), 遺伝子名(gene1, gene2) Direction(Dir1, Dir2) が追加してあります。
+今回の例では、必須項目であるID、Chr1、Break1、Chr2、Break2 に加えて、次の7つを追加してあります。
 
-まず、ポップアップの情報として追加したい列名、変異タイプ(func)と 遺伝子名(gene1, gene2)をconfigファイルに記載します。
+ - リファレンスの塩基 (Ref)
+ - 変異の塩基(Alt)
+ - 変異タイプ(func)
+ - ブレークポイント1の遺伝子名(gene1)
+ - ブレークポイント2の遺伝子名(gene2)
+ - ブレークポイント1のDirection(Dir1)
+ - ブレークポイント2のDirection(Dir2)
 
-configファイルの[result_format_mutation]セクションでデータの列名を以下のように設定します。
+このうち、変異タイプ(func)と遺伝子名(gene1, gene2)、Direction(Dir1, Dir2)を使用します。
+
+まず、ポップアップの情報として追加したい列名をconfigファイルに記載します。
+
+configファイルの[result_format_ca]セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
-  :caption: example/mutation_option/paplot.cfg
+  :caption: example/ca_option/paplot.cfg
   
   [result_format_ca]
-  col_opt_dir1 = Dir1
-  col_opt_dir2 = Dir2
   col_opt_type = func
   col_opt_gene_name1 = gene1
   col_opt_gene_name2 = gene2
+  col_opt_dir1 = Dir1
+  col_opt_dir2 = Dir2
 
-オプションの列名は ``col_opt_{name} = {columun name}`` というように記述します。
+オプションの列名は次の形式で記述します。 ``col_opt_{name} = {columun name}`` 
 
 ``{name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
 
 次に、ポップアップの表示内容を変更します。
 
 .. code-block:: cfg
-  :caption: example/mutation_option/paplot.cfg
+  :caption: example/ca_option/paplot.cfg
   
   [ca]
   # 最小構成での設定
@@ -969,27 +977,191 @@ configファイルの[result_format_mutation]セクションでデータの列�
 5. signature
 ---------------------------
 
-:doc:`exec_signature` の手順で実行する場合、configファイルの変更は必要ありません。
+:doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。
 
-signatureデータ準備方法およびjsonファイルフォーマットについては :doc:`exec_signature` に記載しています。
+signatureデータ準備方法については :doc:`exec_signature` に記載しています。
+
+.. _json_full:
+
+==========================
+jsonフォーマット
+==========================
+
+paplotでsignatureレポートを作成するためにはこれまでの、mutation-matrixやca,qcとは異なり、jsonファイル形式でsignatureデータを擁していただく必要があります。
+
+ここでは、paplotが使用するsignatureデータのフォーマットについて解説します。
+
+`example/signature_integral/data2.json` ファイルをテキストエディタで開くと次のようになっています。
+
+(長いため一部省略しています)
+
+.. code-block:: python
+  caption: example/signature_integral/data2.json
+
+  {
+    "signature":[
+                  [ # signature 1
+                    [0.0018,0.0003,0.0002,0.0005,0.0014,0.0008,0.0002,0.0007,0.0012,0.0003,0.0002,0.0004,0.0271,0.0107,0.0016,0.0145],  # C > A
+                    [0.0023,0.0007,0.0001,0.002,0.0027,0.0005,0.0004,0.0032,0.0007,0.0004,0.0001,0.0013,0.1546,0.0306,0.0055,0.1931],   # C > G
+                    [0.0043,0.0016,0.0027,0.0019,0.0096,0.0026,0.0046,0.0053,0.0045,0.0021,0.0034,0.0028,0.2612,0.0517,0.0284,0.1335],  # C > T
+                    [0.0012,0.0007,0.0004,0.0003,0.0003,0.0003,0,0,0.0003,0.0001,0.0003,0,0.0005,0.0001,0.0001,0.0002],                 # T > A
+                    [0.0008,0.0003,0.0008,0.0007,0.0002,0.0004,0.0009,0.0005,0.0004,0.0003,0.0006,0.0003,0.0003,0.0004,0.0002,0.0004],  # T > C
+                    [0.0001,0.0001,0.0001,0.0001,0,0.0001,0.0001,0,0.0001,0.0001,0.0009,0.0002,0.0001,0,0.0001,0.0005]                  # T > G
+                  ],
+                  [ # signature 2
+                    [0.0266,0.0222,0.0026,0.02,0.0205,0.0145,0.0012,0.0155,0.0155,0.0094,0.0009,0.011,0.0224,0.0177,0.0019,0.0307],
+                    [0.0127,0.0079,0.0035,0.0145,0.0058,0.0048,0.0015,0.0115,0.0034,0.0032,0,0.0071,0.0047,0.0145,0.0006,0.0246],
+                    [0.0232,0.0099,0.042,0.0184,0.014,0.0108,0.0219,0.02,0.0137,0.0102,0.0264,0.0128,0.0048,0.0186,0.0153,0.0165],
+                    [0.0096,0.0084,0.0094,0.0175,0.0075,0.0076,0.0046,0.0123,0.0044,0.0035,0.0028,0.008,0.0176,0.0047,0.0031,0.0139],
+                    [0.0245,0.0087,0.0144,0.0235,0.0098,0.0096,0.0051,0.0102,0.0105,0.0053,0.0042,0.0108,0.0114,0.0081,0.0038,0.0098],
+                    [0.0046,0.0006,0.0036,0.0035,0.0025,0.0009,0.0028,0.0082,0.0023,0.0005,0.004,0.0048,0.0041,0.0012,0.0056,0.0104]
+                  ]
+                ],
+    "id":["PD3851a","PD3890a","PD3904a"],
+    "mutation":[[0,0,0.0594],[0,1,0.7677],[0,2,0.1727],[1,0,0.1474],[1,1,0.4064],[1,2,0.4461]],
+    "mutation_count":[4001,7174,5804]
+  }
+
+**signature描画データ**
+
+:signature:
+  | signatureの各barの値。
+  | signatureごと、変化パターン (C > A など) ごとに値を記述します。
+  | 変化パターンの数を変えることはできません。
+  | baseの数は3か5のいずれかのみ設定できます。
+
+今回の例ではbase=3のため次の順に16ケースの値を記述します。(R=Reference) 
+
+::
+
+  ARA,ARC,ARG,ART,CRA,CRA,CRG,CRT,GRA,GRC,GRG,GRT,TRA,TRA,TRG,TRT
+
+もしbase=5とする場合は、次の順に256ケースの記述が必要です。(R=Reference) 
+
+::
+
+  AARAA,AARAC,AARAG,AARAT,AARCA,AARCC,AARCG,AARCT,AARGA,AARGC,AARGG,AARGT,AARTA,AARTC,AARTG,AARTT,
+  ACRAA,ACRAC,ACRAG,ACRAT,ACRCA,ACRCC,ACRCG,ACRCT,ACRGA,ACRGC,ACRGG,ACRGT,ACRTA,ACRTC,ACRTG,ACRTT,
+  AGRAA,AGRAC,AGRAG,AGRAT,AGRCA,AGRCC,AGRCG,AGRCT,AGRGA,AGRGC,AGRGG,AGRGT,AGRTA,AGRTC,AGRTG,AGRTT,
+  ATRAA,ATRAC,ATRAG,ATRAT,ATRCA,ATRCC,ATRCG,ATRCT,ATRGA,ATRGC,ATRGG,ATRGT,ATRTA,ATRTC,ATRTG,ATRTT,
+  CARAA,CARAC,CARAG,CARAT,CARCA,CARCC,CARCG,CARCT,CARGA,CARGC,CARGG,CARGT,CARTA,CARTC,CARTG,CARTT,
+  CCRAA,CCRAC,CCRAG,CCRAT,CCRCA,CCRCC,CCRCG,CCRCT,CCRGA,CCRGC,CCRGG,CCRGT,CCRTA,CCRTC,CCRTG,CCRTT,
+  CGRAA,CGRAC,CGRAG,CGRAT,CGRCA,CGRCC,CGRCG,CGRCT,CGRGA,CGRGC,CGRGG,CGRGT,CGRTA,CGRTC,CGRTG,CGRTT,
+  CTRAA,CTRAC,CTRAG,CTRAT,CTRCA,CTRCC,CTRCG,CTRCT,CTRGA,CTRGC,CTRGG,CTRGT,CTRTA,CTRTC,CTRTG,CTRTT,
+  GARAA,GARAC,GARAG,GARAT,GARCA,GARCC,GARCG,GARCT,GARGA,GARGC,GARGG,GARGT,GARTA,GARTC,GARTG,GARTT,
+  GCRAA,GCRAC,GCRAG,GCRAT,GCRCA,GCRCC,GCRCG,GCRCT,GCRGA,GCRGC,GCRGG,GCRGT,GCRTA,GCRTC,GCRTG,GCRTT,
+  GGRAA,GGRAC,GGRAG,GGRAT,GGRCA,GGRCC,GGRCG,GGRCT,GGRGA,GGRGC,GGRGG,GGRGT,GGRTA,GGRTC,GGRTG,GGRTT,
+  GTRAA,GTRAC,GTRAG,GTRAT,GTRCA,GTRCC,GTRCG,GTRCT,GTRGA,GTRGC,GTRGG,GTRGT,GTRTA,GTRTC,GTRTG,GTRTT,
+  TARAA,TARAC,TARAG,TARAT,TARCA,TARCC,TARCG,TARCT,TARGA,TARGC,TARGG,TARGT,TARTA,TARTC,TARTG,TARTT,
+  TCRAA,TCRAC,TCRAG,TCRAT,TCRCA,TCRCC,TCRCG,TCRCT,TCRGA,TCRGC,TCRGG,TCRGT,TCRTA,TCRTC,TCRTG,TCRTT,
+  TGRAA,TGRAC,TGRAG,TGRAT,TGRCA,TGRCC,TGRCG,TGRCT,TGRGA,TGRGC,TGRGG,TGRGT,TGRTA,TGRTC,TGRTG,TGRTT,
+  TTRAA,TTRAC,TTRAG,TTRAT,TTRCA,TTRCC,TTRCG,TTRCT,TTRGA,TTRGC,TTRGG,TTRGT,TTRTA,TTRTC,TTRTG,TTRTT
+
+**積み上げグラフ描画データ**
+
+この項目はオプションです。
+
+設定すると変異におけるsignatureの分布を表示した積み上げグラフを作成します。
+
+`例を見る <http://genomon-project.github.io/paplot/signature/graph_integral2.html>`_ 
+
+:id:
+  | サンプル名リスト
+
+:mutation_count:
+  | サンプルごとのmutation数
+  | 上記の例の場合、PD3851a のmutation数=4001, PD3890a のmutation数=7174, PD3904a のmutation数=5804 となります。
+
+:mutation:
+  | サンプルごと、signatureごとの割合を設定します。 
+  | [sample index, signature index, value] の順に記載します。
+  |
+  | サンプルのindexは id で記載した順に0からカウントします。
+  | 上記の例の場合、PD3851a=0, PD3890a=1, PD3904a=2となります。
+  |
+  | signatureのindexも signature で記載した順に0からカウントします。
+  | 上記の例の場合、signature1 = 0, signature2 = 1, signature3 = 2となります。
+
+.. note::
+
+  key名は変更可能です。key名を変更した場合は設定ファイル ([result_format_signature] key_*)を変更してください。
+
+  .. code-block:: cfg
+    :caption:  paplot/example/signature_integral/paplot.cfg
+    
+    [result_format_signature]
+    # jsonファイルのkey名
+    key_signature = signature
+    key_id = id
+    key_mutation = mutation
+    key_mutation_count = mutation_count
+            
+.. note::
+
+  jsonとしての形式の厳密さについては、paplotはpythonのjsonパッケージを使用しているため、次のコマンドで読めればOKです。
+
+  python jsonパッケージを使用したファイル確認例 (ファイル名が "data2.json" の場合)
+
+  .. code-block:: shell
+  
+    $ python
+    >>> import json
+    >>> json.load(open("data2.json"))
+  
+
+==========================
+最小データセット
+==========================
+
+| `view report <http://genomon-project.github.io/paplot/signature/graph_signature_minimal2.html>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal.zip?raw=true>`_ 
+
+入力データ形式は :ref:`こちら<conf_mm>` 参照。
+
+:doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。
+
+ここではpaplotコマンドを中心に解説します。
+
+データファイル (シグネチャ数は2)
+
+.. code-block:: json
+  :caption: example/signature_minimal/data.json
+  
+  {
+    "signature":[
+      # signature 1
+      [ 
+        [0.0021,0.0006,0.0002,0.0007,0.0017,0.001,0.0003,0.0009,0.0014,0.0006,0.0003,0.0006,0.027,0.0108,0.0016,0.0147],
+        [0.0025,0.0009,0.0002,0.0022,0.0029,0.0007,0.0005,0.0034,0.0009,0.0006,0.0002,0.0014,0.1504,0.0301,0.0053,0.1884],
+        [0.0046,0.0018,0.0031,0.0021,0.0097,0.0029,0.0049,0.0055,0.0047,0.0024,0.0037,0.003,0.2557,0.0513,0.0286,0.1312],
+        [0.0014,0.0009,0.0007,0.0006,0.0004,0.0005,0.0003,0.0003,0.0004,0.0003,0.0005,0.0002,0.0008,0.0003,0.0003,0.0005],
+        [0.001,0.0004,0.0011,0.001,0.0003,0.0007,0.0012,0.0008,0.0006,0.0004,0.0007,0.0005,0.0005,0.0007,0.0004,0.0007],
+        [0.0003,0.0003,0.0003,0.0003,0.0001,0.0003,0.0003,0.0003,0.0002,0.0002,0.0011,0.0004,0.0003,0.0002,0.0003,0.0009]
+      ],
+      # signature 2
+      [ 
+        [0.022,0.0183,0.0028,0.0171,0.0192,0.0148,0.0026,0.0157,0.0143,0.0108,0.0018,0.0116,0.0181,0.016,0.0021,0.0246],
+        [0.0133,0.0088,0.0037,0.0136,0.0095,0.008,0.003,0.0131,0.0065,0.0063,0.0016,0.0095,0.0044,0.0135,0.0016,0.0171],
+        [0.0195,0.0098,0.0283,0.0159,0.0138,0.0112,0.0156,0.0183,0.0128,0.0108,0.0186,0.0127,0,0.0146,0.0095,0.0115],
+        [0.0095,0.0085,0.0102,0.0155,0.0077,0.0102,0.0096,0.0135,0.0054,0.0052,0.0058,0.0089,0.0145,0.0076,0.0058,0.016],
+        [0.0192,0.0089,0.0135,0.0198,0.0089,0.0113,0.0092,0.0117,0.0092,0.0063,0.0064,0.01,0.0107,0.0096,0.0061,0.0123],
+        [0.0059,0.0028,0.0068,0.0063,0.0039,0.0044,0.0076,0.0101,0.004,0.0028,0.007,0.0064,0.006,0.0046,0.008,0.0132]
+      ]
+    ]
+}
+
+configファイル
 
 .. code-block:: cfg
-  :linenos:
+  :caption: example/signature_minimal/paplot.cfg
   
-  ###################### signature
   [signature]
-
-  # ポップアップウィンドウの表示内容
-  # 詳細はページ下段の「ユーザ定義フォーマット」に記載
   tooltip_format_signature_title = {sig}
   tooltip_format_signature_partial = {route}: {#sum_item_value:6.2}
-  tooltip_format_mutation_title = {id}
-  tooltip_format_mutation_partial = {sig}: {#sum_item_value:.2}
   
-  # signatureのY軸最大値 (-1の場合、それぞれのデータの最大値を使用する)
   signature_y_max = -1
   
-  # signatureのbarの色
   alt_color_CtoA = #1BBDEB
   alt_color_CtoG = #211D1E
   alt_color_CtoT = #E62623
@@ -997,21 +1169,200 @@ signatureデータ準備方法およびjsonファイルフォーマットにつ�
   alt_color_TtoC = #ACD577
   alt_color_TtoG = #EDC7C4
   
-  # 入力フォーマット (自分のデータに合わせて変更する)
   [result_format_signature]
-
-  # 入力形式 (現在はjsonのみ)
   format = json
-
-  # background を使用しているかどうか
-  background = True
-  
-  # jsonファイルのkey名
-  key_id = id
-  key_mutation = mutation
+  background = False
   key_signature = signature
-  key_mutation_count = mutation_count
-  
+
+``paplot`` を実行します。
+
+.. code-block:: bash
+
+  paplot signature signature_minimal/data.json ./tmp signature_minimal \
+  --config_file ./signature_minimal/paplot.cfg
+
+
+上記のコマンドを実行すると以下の場所にレポートが作成されます。
+
+ここで出力されるレポートは、graph_signature2.html と、signature数がファイル名に反映されています。
+
+signature数はpaplot実行時に入力ファイル (data.json) から読み取り、自動的に判定します。
+
+::
+
+  ./tmp
+    ┗ signature_minimal
+        ┗ graph_signature2.html
+
+
+==========================
+複数タイプのsignature
+==========================
+
+| view report
+
+ - `signature 2 <http://genomon-project.github.io/paplot/signature/graph_multi_class2.html>`_ 
+ - `signature 3 <http://genomon-project.github.io/paplot/signature/graph_multi_class3.html>`_ 
+ - `signature 4 <http://genomon-project.github.io/paplot/signature/graph_multi_class4.html>`_ 
+ - `signature 5 <http://genomon-project.github.io/paplot/signature/graph_multi_class5.html>`_ 
+ - `signature 6 <http://genomon-project.github.io/paplot/signature/graph_multi_class6.html>`_ 
+
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal.zip?raw=true>`_ 
+
+入力データ形式は :ref:`こちら<conf_mm>` 参照。
+
+:doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。
+
+ここではpaplotコマンドを中心に解説します。
+
+データファイルはsignatureタイプの数だけ用意します。
+
+configファイルは形式が同じであれば一つあればよいです。
+
+今回の場合、以下のファイル構成になります。
+
+::
+
+  example/signature_multi_class/
+       # データファイル
+    ┣ data2.json  # signature num = 2
+    ┣ data3.json  # signature num = 3
+    ┣ data4.json  # signature num = 4
+    ┣ data5.json  # signature num = 5
+    ┣ data6.json  # signature num = 6
+       # configファイル
+    ┗ paplot.cfg
+
+``paplot`` を実行します。
+
+.. code-block:: bash
+
+  paplot signature signature_multi_class/data2.json ./tmp signature_multi_class \
+  --config_file ./signature_multi_class/paplot.cfg
+
+  paplot signature signature_multi_class/data3.json ./tmp signature_multi_class \
+  --config_file ./signature_multi_class/paplot.cfg
+
+  paplot signature signature_multi_class/data4.json ./tmp signature_multi_class \
+  --config_file ./signature_multi_class/paplot.cfg
+
+  paplot signature signature_multi_class/data5.json ./tmp signature_multi_class \
+  --config_file ./signature_multi_class/paplot.cfg
+
+  paplot signature signature_multi_class/data6.json ./tmp signature_multi_class \
+  --config_file ./signature_multi_class/paplot.cfg
+
+上記のように一つずつ実行してもよいですが、下記のようにまとめて実行することもできます。
+
+  paplot "signature signature_multi_class/data*.json" ./tmp signature_multi_class \
+  --config_file ./signature_multi_class/paplot.cfg
+
+上記のコマンドを実行すると以下の場所にレポートが作成されます。
+
+ここで出力されるレポートは、graph_signature2.html と、signature数がファイル名に反映されています。
+
+signature数はpaplot実行時に入力ファイル (data?.json) のデータから読み取り、自動的に判定します。ファイル名称には依存しません。
+
+::
+
+  ./tmp
+    ┗ signature_multi_class
+        ┣ graph_signature2.html
+        ┣ graph_signature3.html
+        ┣ graph_signature4.html
+        ┣ graph_signature5.html
+        ┗ graph_signature6.html
+
+
+==========================
+積算グラフ
+==========================
+
+| view report
+
+ - `signature 2 <http://genomon-project.github.io/paplot/signature/graph_multi_class2.html>`_ 
+ - `signature 3 <http://genomon-project.github.io/paplot/signature/graph_multi_class3.html>`_ 
+ - `signature 4 <http://genomon-project.github.io/paplot/signature/graph_multi_class4.html>`_ 
+ - `signature 5 <http://genomon-project.github.io/paplot/signature/graph_multi_class5.html>`_ 
+ - `signature 6 <http://genomon-project.github.io/paplot/signature/graph_multi_class6.html>`_ 
+
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal.zip?raw=true>`_ 
+
+入力データ形式は :ref:`こちら<conf_mm>` 参照。
+
+レポートに変異の内訳グラフを追加します。 :ref:`こちら<conf_mm>` で解説に使用しているデータです。
+
+また、:doc:`exec_signature` の手順でデータの準備を行う場合に出力されるデータです。
+
+.. code-block:: python
+  caption: example/signature_integral/data2.json
+
+  {
+    "signature":[
+                  [ # signature 1
+                    [0.0018,0.0003,0.0002,0.0005,0.0014,0.0008,0.0002,0.0007,0.0012,0.0003,0.0002,0.0004,0.0271,0.0107,0.0016,0.0145],  # C > A
+                    [0.0023,0.0007,0.0001,0.002,0.0027,0.0005,0.0004,0.0032,0.0007,0.0004,0.0001,0.0013,0.1546,0.0306,0.0055,0.1931],   # C > G
+                    [0.0043,0.0016,0.0027,0.0019,0.0096,0.0026,0.0046,0.0053,0.0045,0.0021,0.0034,0.0028,0.2612,0.0517,0.0284,0.1335],  # C > T
+                    [0.0012,0.0007,0.0004,0.0003,0.0003,0.0003,0,0,0.0003,0.0001,0.0003,0,0.0005,0.0001,0.0001,0.0002],                 # T > A
+                    [0.0008,0.0003,0.0008,0.0007,0.0002,0.0004,0.0009,0.0005,0.0004,0.0003,0.0006,0.0003,0.0003,0.0004,0.0002,0.0004],  # T > C
+                    [0.0001,0.0001,0.0001,0.0001,0,0.0001,0.0001,0,0.0001,0.0001,0.0009,0.0002,0.0001,0,0.0001,0.0005]                  # T > G
+                  ],
+                  [ # signature 2
+                    [0.0266,0.0222,0.0026,0.02,0.0205,0.0145,0.0012,0.0155,0.0155,0.0094,0.0009,0.011,0.0224,0.0177,0.0019,0.0307],
+                    [0.0127,0.0079,0.0035,0.0145,0.0058,0.0048,0.0015,0.0115,0.0034,0.0032,0,0.0071,0.0047,0.0145,0.0006,0.0246],
+                    [0.0232,0.0099,0.042,0.0184,0.014,0.0108,0.0219,0.02,0.0137,0.0102,0.0264,0.0128,0.0048,0.0186,0.0153,0.0165],
+                    [0.0096,0.0084,0.0094,0.0175,0.0075,0.0076,0.0046,0.0123,0.0044,0.0035,0.0028,0.008,0.0176,0.0047,0.0031,0.0139],
+                    [0.0245,0.0087,0.0144,0.0235,0.0098,0.0096,0.0051,0.0102,0.0105,0.0053,0.0042,0.0108,0.0114,0.0081,0.0038,0.0098],
+                    [0.0046,0.0006,0.0036,0.0035,0.0025,0.0009,0.0028,0.0082,0.0023,0.0005,0.004,0.0048,0.0041,0.0012,0.0056,0.0104]
+                  ]
+                ],
+    "id":["PD3851a","PD3890a","PD3904a"],
+    "mutation":[[0,0,0.0594],[0,1,0.7677],[0,2,0.1727],[1,0,0.1474],[1,1,0.4064],[1,2,0.4461]],
+    "mutation_count":[4001,7174,5804]
+  }
+
+  ``paplot`` を実行します。
+
+.. code-block:: bash
+
+  paplot signature signature_multi_class/data2.json ./tmp signature_multi_class \
+  --config_file ./signature_multi_class/paplot.cfg
+
+  paplot signature signature_multi_class/data3.json ./tmp signature_multi_class \
+  --config_file ./signature_multi_class/paplot.cfg
+
+  paplot signature signature_multi_class/data4.json ./tmp signature_multi_class \
+  --config_file ./signature_multi_class/paplot.cfg
+
+  paplot signature signature_multi_class/data5.json ./tmp signature_multi_class \
+  --config_file ./signature_multi_class/paplot.cfg
+
+  paplot signature signature_multi_class/data6.json ./tmp signature_multi_class \
+  --config_file ./signature_multi_class/paplot.cfg
+
+上記のように一つずつ実行してもよいですが、下記のようにまとめて実行することもできます。
+
+  paplot "signature signature_multi_class/data*.json" ./tmp signature_multi_class \
+  --config_file ./signature_multi_class/paplot.cfg
+
+上記のコマンドを実行すると以下の場所にレポートが作成されます。
+
+ここで出力されるレポートは、graph_signature2.html と、signature数がファイル名に反映されています。
+
+signature数はpaplot実行時に入力ファイル (data?.json) のデータから読み取り、自動的に判定します。ファイル名称には依存しません。
+
+::
+
+  ./tmp
+    ┗ signature_multi_class
+        ┣ graph_signature2.html
+        ┣ graph_signature3.html
+        ┣ graph_signature4.html
+        ┣ graph_signature5.html
+        ┗ graph_signature6.html
+
 
 .. _conf_pmsignature:
 
