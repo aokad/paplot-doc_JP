@@ -974,7 +974,7 @@ configファイルの[result_format_ca]セクションでデータの列名を�
 .. _conf_signature:
 
 ---------------------------
-5. signature
+4. signature
 ---------------------------
 
 :doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。
@@ -987,7 +987,7 @@ signatureデータ準備方法については :doc:`exec_signature` に記載し
 jsonフォーマット
 ==========================
 
-paplotでsignatureレポートを作成するためにはこれまでの、mutation-matrixやca,qcとは異なり、jsonファイル形式でsignatureデータを擁していただく必要があります。
+paplotでsignatureレポートを作成するためにはこれまでの、mutation-matrixやca,qcとは異なり、jsonファイル形式でsignatureデータを用意していただく必要があります。
 
 ここでは、paplotが使用するsignatureデータのフォーマットについて解説します。
 
@@ -996,7 +996,7 @@ paplotでsignatureレポートを作成するためにはこれまでの、mutat
 (長いため一部省略しています)
 
 .. code-block:: python
-  caption: example/signature_integral/data2.json
+  :caption: example/signature_integral/data2.json
 
   {
     "signature":[
@@ -1061,9 +1061,7 @@ paplotでsignatureレポートを作成するためにはこれまでの、mutat
 
 この項目はオプションです。
 
-設定すると変異におけるsignatureの分布を表示した積み上げグラフを作成します。
-
-`例を見る <http://genomon-project.github.io/paplot/signature/graph_integral2.html>`_ 
+設定するとサンプル毎にsignatureの積算グラフ ( `例 <http://genomon-project.github.io/paplot/signature/graph_integral2.html>`_ ) を作成します。
 
 :id:
   | サンプル名リスト
@@ -1117,7 +1115,7 @@ paplotでsignatureレポートを作成するためにはこれまでの、mutat
 | `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal>`_ 
 | `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal.zip?raw=true>`_ 
 
-入力データ形式は :ref:`こちら<conf_mm>` 参照。
+入力データ形式は :ref:`こちら<json_full>` 参照。
 
 :doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。
 
@@ -1194,6 +1192,7 @@ signature数はpaplot実行時に入力ファイル (data.json) から読み取�
     ┗ signature_minimal
         ┗ graph_signature2.html
 
+.. _conf_signature_multi:
 
 ==========================
 複数タイプのsignature
@@ -1210,28 +1209,26 @@ signature数はpaplot実行時に入力ファイル (data.json) から読み取�
 | `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal>`_ 
 | `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal.zip?raw=true>`_ 
 
-入力データ形式は :ref:`こちら<conf_mm>` 参照。
+入力データ形式は :ref:`こちら<json_full>` 参照。
 
-:doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。
+:doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。ここではpaplotコマンドを中心に解説します。
 
-ここではpaplotコマンドを中心に解説します。
-
-データファイルはsignatureタイプの数だけ用意します。
-
-configファイルは形式が同じであれば一つあればよいです。
+データファイルはsignatureタイプの数だけ用意し、configファイルは形式が同じであれば一つだけ用意します。
 
 今回の場合、以下のファイル構成になります。
 
 ::
 
   example/signature_multi_class/
-       # データファイル
+
+     # データファイル
     ┣ data2.json  # signature num = 2
     ┣ data3.json  # signature num = 3
     ┣ data4.json  # signature num = 4
     ┣ data5.json  # signature num = 5
     ┣ data6.json  # signature num = 6
-       # configファイル
+
+     # configファイル
     ┗ paplot.cfg
 
 ``paplot`` を実行します。
@@ -1255,6 +1252,8 @@ configファイルは形式が同じであれば一つあればよいです。
 
 上記のように一つずつ実行してもよいですが、下記のようにまとめて実行することもできます。
 
+.. code-block:: bash
+
   paplot "signature signature_multi_class/data*.json" ./tmp signature_multi_class \
   --config_file ./signature_multi_class/paplot.cfg
 
@@ -1274,7 +1273,6 @@ signature数はpaplot実行時に入力ファイル (data?.json) のデータか
         ┣ graph_signature5.html
         ┗ graph_signature6.html
 
-
 ==========================
 積算グラフ
 ==========================
@@ -1290,14 +1288,40 @@ signature数はpaplot実行時に入力ファイル (data?.json) のデータか
 | `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal>`_ 
 | `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal.zip?raw=true>`_ 
 
-入力データ形式は :ref:`こちら<conf_mm>` 参照。
+レポートに変異の内訳グラフを追加します。 :ref:`こちら<json_full>` で解説に使用しているデータで、:doc:`exec_signature` の手順でデータの準備を行う場合に出力されるデータです。
 
-レポートに変異の内訳グラフを追加します。 :ref:`こちら<conf_mm>` で解説に使用しているデータです。
+データフォーマットは。 :ref:`こちら<json_full>` 参照。
 
-また、:doc:`exec_signature` の手順でデータの準備を行う場合に出力されるデータです。
+複数データ実行方法は :ref:`こちら<conf_signature_multi>` 参照。
+
+.. _conf_pmsignature:
+
+---------------------------
+5. pmsignature
+---------------------------
+
+:doc:`exec_pmsignature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。
+
+pmsignatureデータ準備方法については :doc:`exec_pmsignature` に記載しています。
+
+.. _json_ind:
+
+.. _json_full:
+
+==========================
+jsonフォーマット
+==========================
+
+paplotでpmsignatureレポートを作成するためにはこれまでの、mutation-matrixやca,qcとは異なり、jsonファイル形式でpmsignatureデータを用意していただく必要があります。
+
+ここでは、paplotが使用するpmsignatureデータのフォーマットについて解説します。
+
+`example/signature_integral/data2.json` ファイルをテキストエディタで開くと次のようになっています。
+
+(長いため一部省略しています)
 
 .. code-block:: python
-  caption: example/signature_integral/data2.json
+  :caption: example/signature_integral/data2.json
 
   {
     "signature":[
@@ -1323,7 +1347,216 @@ signature数はpaplot実行時に入力ファイル (data?.json) のデータか
     "mutation_count":[4001,7174,5804]
   }
 
-  ``paplot`` を実行します。
+**signature描画データ**
+
+:signature:
+  | signatureの各barの値。
+  | signatureごと、変化パターン (C > A など) ごとに値を記述します。
+  | 変化パターンの数を変えることはできません。
+  | baseの数は3か5のいずれかのみ設定できます。
+
+今回の例ではbase=3のため次の順に16ケースの値を記述します。(R=Reference) 
+
+::
+
+  ARA,ARC,ARG,ART,CRA,CRA,CRG,CRT,GRA,GRC,GRG,GRT,TRA,TRA,TRG,TRT
+
+もしbase=5とする場合は、次の順に256ケースの記述が必要です。(R=Reference) 
+
+::
+
+  AARAA,AARAC,AARAG,AARAT,AARCA,AARCC,AARCG,AARCT,AARGA,AARGC,AARGG,AARGT,AARTA,AARTC,AARTG,AARTT,
+  ACRAA,ACRAC,ACRAG,ACRAT,ACRCA,ACRCC,ACRCG,ACRCT,ACRGA,ACRGC,ACRGG,ACRGT,ACRTA,ACRTC,ACRTG,ACRTT,
+  AGRAA,AGRAC,AGRAG,AGRAT,AGRCA,AGRCC,AGRCG,AGRCT,AGRGA,AGRGC,AGRGG,AGRGT,AGRTA,AGRTC,AGRTG,AGRTT,
+  ATRAA,ATRAC,ATRAG,ATRAT,ATRCA,ATRCC,ATRCG,ATRCT,ATRGA,ATRGC,ATRGG,ATRGT,ATRTA,ATRTC,ATRTG,ATRTT,
+  CARAA,CARAC,CARAG,CARAT,CARCA,CARCC,CARCG,CARCT,CARGA,CARGC,CARGG,CARGT,CARTA,CARTC,CARTG,CARTT,
+  CCRAA,CCRAC,CCRAG,CCRAT,CCRCA,CCRCC,CCRCG,CCRCT,CCRGA,CCRGC,CCRGG,CCRGT,CCRTA,CCRTC,CCRTG,CCRTT,
+  CGRAA,CGRAC,CGRAG,CGRAT,CGRCA,CGRCC,CGRCG,CGRCT,CGRGA,CGRGC,CGRGG,CGRGT,CGRTA,CGRTC,CGRTG,CGRTT,
+  CTRAA,CTRAC,CTRAG,CTRAT,CTRCA,CTRCC,CTRCG,CTRCT,CTRGA,CTRGC,CTRGG,CTRGT,CTRTA,CTRTC,CTRTG,CTRTT,
+  GARAA,GARAC,GARAG,GARAT,GARCA,GARCC,GARCG,GARCT,GARGA,GARGC,GARGG,GARGT,GARTA,GARTC,GARTG,GARTT,
+  GCRAA,GCRAC,GCRAG,GCRAT,GCRCA,GCRCC,GCRCG,GCRCT,GCRGA,GCRGC,GCRGG,GCRGT,GCRTA,GCRTC,GCRTG,GCRTT,
+  GGRAA,GGRAC,GGRAG,GGRAT,GGRCA,GGRCC,GGRCG,GGRCT,GGRGA,GGRGC,GGRGG,GGRGT,GGRTA,GGRTC,GGRTG,GGRTT,
+  GTRAA,GTRAC,GTRAG,GTRAT,GTRCA,GTRCC,GTRCG,GTRCT,GTRGA,GTRGC,GTRGG,GTRGT,GTRTA,GTRTC,GTRTG,GTRTT,
+  TARAA,TARAC,TARAG,TARAT,TARCA,TARCC,TARCG,TARCT,TARGA,TARGC,TARGG,TARGT,TARTA,TARTC,TARTG,TARTT,
+  TCRAA,TCRAC,TCRAG,TCRAT,TCRCA,TCRCC,TCRCG,TCRCT,TCRGA,TCRGC,TCRGG,TCRGT,TCRTA,TCRTC,TCRTG,TCRTT,
+  TGRAA,TGRAC,TGRAG,TGRAT,TGRCA,TGRCC,TGRCG,TGRCT,TGRGA,TGRGC,TGRGG,TGRGT,TGRTA,TGRTC,TGRTG,TGRTT,
+  TTRAA,TTRAC,TTRAG,TTRAT,TTRCA,TTRCC,TTRCG,TTRCT,TTRGA,TTRGC,TTRGG,TTRGT,TTRTA,TTRTC,TTRTG,TTRTT
+
+**積み上げグラフ描画データ**
+
+この項目はオプションです。
+
+設定するとサンプル毎にsignatureの積算グラフ ( `例 <http://genomon-project.github.io/paplot/signature/graph_integral2.html>`_ ) を作成します。
+
+:id:
+  | サンプル名リスト
+
+:mutation_count:
+  | サンプルごとのmutation数
+  | 上記の例の場合、PD3851a のmutation数=4001, PD3890a のmutation数=7174, PD3904a のmutation数=5804 となります。
+
+:mutation:
+  | サンプルごと、signatureごとの割合を設定します。 
+  | [sample index, signature index, value] の順に記載します。
+  |
+  | サンプルのindexは id で記載した順に0からカウントします。
+  | 上記の例の場合、PD3851a=0, PD3890a=1, PD3904a=2となります。
+  |
+  | signatureのindexも signature で記載した順に0からカウントします。
+  | 上記の例の場合、signature1 = 0, signature2 = 1, signature3 = 2となります。
+
+.. note::
+
+  key名は変更可能です。key名を変更した場合は設定ファイル ([result_format_signature] key_*)を変更してください。
+
+  .. code-block:: cfg
+    :caption:  paplot/example/signature_integral/paplot.cfg
+    
+    [result_format_signature]
+    # jsonファイルのkey名
+    key_signature = signature
+    key_id = id
+    key_mutation = mutation
+    key_mutation_count = mutation_count
+            
+.. note::
+
+  jsonとしての形式の厳密さについては、paplotはpythonのjsonパッケージを使用しているため、次のコマンドで読めればOKです。
+
+  python jsonパッケージを使用したファイル確認例 (ファイル名が "data2.json" の場合)
+
+  .. code-block:: shell
+  
+    $ python
+    >>> import json
+    >>> json.load(open("data2.json"))
+  
+
+==========================
+最小データセット
+==========================
+
+| `view report <http://genomon-project.github.io/paplot/signature/graph_signature_minimal2.html>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal.zip?raw=true>`_ 
+
+入力データ形式は :ref:`こちら<json_full>` 参照。
+
+:doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。
+
+ここではpaplotコマンドを中心に解説します。
+
+データファイル (シグネチャ数は2)
+
+.. code-block:: json
+  :caption: example/signature_minimal/data.json
+  
+  {
+    "signature":[
+      # signature 1
+      [ 
+        [0.0021,0.0006,0.0002,0.0007,0.0017,0.001,0.0003,0.0009,0.0014,0.0006,0.0003,0.0006,0.027,0.0108,0.0016,0.0147],
+        [0.0025,0.0009,0.0002,0.0022,0.0029,0.0007,0.0005,0.0034,0.0009,0.0006,0.0002,0.0014,0.1504,0.0301,0.0053,0.1884],
+        [0.0046,0.0018,0.0031,0.0021,0.0097,0.0029,0.0049,0.0055,0.0047,0.0024,0.0037,0.003,0.2557,0.0513,0.0286,0.1312],
+        [0.0014,0.0009,0.0007,0.0006,0.0004,0.0005,0.0003,0.0003,0.0004,0.0003,0.0005,0.0002,0.0008,0.0003,0.0003,0.0005],
+        [0.001,0.0004,0.0011,0.001,0.0003,0.0007,0.0012,0.0008,0.0006,0.0004,0.0007,0.0005,0.0005,0.0007,0.0004,0.0007],
+        [0.0003,0.0003,0.0003,0.0003,0.0001,0.0003,0.0003,0.0003,0.0002,0.0002,0.0011,0.0004,0.0003,0.0002,0.0003,0.0009]
+      ],
+      # signature 2
+      [ 
+        [0.022,0.0183,0.0028,0.0171,0.0192,0.0148,0.0026,0.0157,0.0143,0.0108,0.0018,0.0116,0.0181,0.016,0.0021,0.0246],
+        [0.0133,0.0088,0.0037,0.0136,0.0095,0.008,0.003,0.0131,0.0065,0.0063,0.0016,0.0095,0.0044,0.0135,0.0016,0.0171],
+        [0.0195,0.0098,0.0283,0.0159,0.0138,0.0112,0.0156,0.0183,0.0128,0.0108,0.0186,0.0127,0,0.0146,0.0095,0.0115],
+        [0.0095,0.0085,0.0102,0.0155,0.0077,0.0102,0.0096,0.0135,0.0054,0.0052,0.0058,0.0089,0.0145,0.0076,0.0058,0.016],
+        [0.0192,0.0089,0.0135,0.0198,0.0089,0.0113,0.0092,0.0117,0.0092,0.0063,0.0064,0.01,0.0107,0.0096,0.0061,0.0123],
+        [0.0059,0.0028,0.0068,0.0063,0.0039,0.0044,0.0076,0.0101,0.004,0.0028,0.007,0.0064,0.006,0.0046,0.008,0.0132]
+      ]
+    ]
+}
+
+configファイル
+
+.. code-block:: cfg
+  :caption: example/signature_minimal/paplot.cfg
+  
+  [signature]
+  tooltip_format_signature_title = {sig}
+  tooltip_format_signature_partial = {route}: {#sum_item_value:6.2}
+  
+  signature_y_max = -1
+  
+  alt_color_CtoA = #1BBDEB
+  alt_color_CtoG = #211D1E
+  alt_color_CtoT = #E62623
+  alt_color_TtoA = #CFCFCF
+  alt_color_TtoC = #ACD577
+  alt_color_TtoG = #EDC7C4
+  
+  [result_format_signature]
+  format = json
+  background = False
+  key_signature = signature
+
+``paplot`` を実行します。
+
+.. code-block:: bash
+
+  paplot signature signature_minimal/data.json ./tmp signature_minimal \
+  --config_file ./signature_minimal/paplot.cfg
+
+
+上記のコマンドを実行すると以下の場所にレポートが作成されます。
+
+ここで出力されるレポートは、graph_signature2.html と、signature数がファイル名に反映されています。
+
+signature数はpaplot実行時に入力ファイル (data.json) から読み取り、自動的に判定します。
+
+::
+
+  ./tmp
+    ┗ signature_minimal
+        ┗ graph_signature2.html
+
+.. _conf_signature_multi:
+
+==========================
+複数タイプのsignature
+==========================
+
+| view report
+
+ - `signature 2 <http://genomon-project.github.io/paplot/signature/graph_multi_class2.html>`_ 
+ - `signature 3 <http://genomon-project.github.io/paplot/signature/graph_multi_class3.html>`_ 
+ - `signature 4 <http://genomon-project.github.io/paplot/signature/graph_multi_class4.html>`_ 
+ - `signature 5 <http://genomon-project.github.io/paplot/signature/graph_multi_class5.html>`_ 
+ - `signature 6 <http://genomon-project.github.io/paplot/signature/graph_multi_class6.html>`_ 
+
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal.zip?raw=true>`_ 
+
+入力データ形式は :ref:`こちら<json_full>` 参照。
+
+:doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。ここではpaplotコマンドを中心に解説します。
+
+データファイルはsignatureタイプの数だけ用意し、configファイルは形式が同じであれば一つだけ用意します。
+
+今回の場合、以下のファイル構成になります。
+
+::
+
+  example/signature_multi_class/
+
+     # データファイル
+    ┣ data2.json  # signature num = 2
+    ┣ data3.json  # signature num = 3
+    ┣ data4.json  # signature num = 4
+    ┣ data5.json  # signature num = 5
+    ┣ data6.json  # signature num = 6
+
+     # configファイル
+    ┗ paplot.cfg
+
+``paplot`` を実行します。
 
 .. code-block:: bash
 
@@ -1344,6 +1577,8 @@ signature数はpaplot実行時に入力ファイル (data?.json) のデータか
 
 上記のように一つずつ実行してもよいですが、下記のようにまとめて実行することもできます。
 
+.. code-block:: bash
+
   paplot "signature signature_multi_class/data*.json" ./tmp signature_multi_class \
   --config_file ./signature_multi_class/paplot.cfg
 
@@ -1363,63 +1598,27 @@ signature数はpaplot実行時に入力ファイル (data?.json) のデータか
         ┣ graph_signature5.html
         ┗ graph_signature6.html
 
+==========================
+積算グラフ
+==========================
 
-.. _conf_pmsignature:
+| view report
 
----------------------------
-6. pmsignature
----------------------------
+ - `signature 2 <http://genomon-project.github.io/paplot/signature/graph_multi_class2.html>`_ 
+ - `signature 3 <http://genomon-project.github.io/paplot/signature/graph_multi_class3.html>`_ 
+ - `signature 4 <http://genomon-project.github.io/paplot/signature/graph_multi_class4.html>`_ 
+ - `signature 5 <http://genomon-project.github.io/paplot/signature/graph_multi_class5.html>`_ 
+ - `signature 6 <http://genomon-project.github.io/paplot/signature/graph_multi_class6.html>`_ 
 
-:doc:`exec_pmsignature` の手順で実行する場合、configファイルの変更は必要ありません。
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal.zip?raw=true>`_ 
 
-pmsignatureデータ準備方法およびjsonファイルフォーマットについては :doc:`exec_pmsignature` に記載しています。
+レポートに変異の内訳グラフを追加します。 :ref:`こちら<json_full>` で解説に使用しているデータで、:doc:`exec_signature` の手順でデータの準備を行う場合に出力されるデータです。
 
-.. code-block:: cfg
-  :linenos:
-  
-  ###################### pmsignature
-  [pmsignature]
+データフォーマットは。 :ref:`こちら<json_full>` 参照。
 
-  # ポップアップウィンドウの表示内容
-  # 詳細はページ下段の「ユーザ定義フォーマット」に記載
-  tooltip_format_ref1 = A: {a:.2}
-  tooltip_format_ref2 = C: {c:.2}
-  tooltip_format_ref3 = G: {g:.2}
-  tooltip_format_ref4 = T: {t:.2}
-  tooltip_format_alt1 = C -> A: {ca:.2}
-  tooltip_format_alt2 = C -> G: {cg:.2}
-  tooltip_format_alt3 = C -> T: {ct:.2}
-  tooltip_format_alt4 = T -> A: {ta:.2}
-  tooltip_format_alt5 = T -> C: {tc:.2}
-  tooltip_format_alt6 = T -> G: {tg:.2}
-  tooltip_format_strand = + {plus:.2} - {minus:.2}
-  tooltip_format_mutation_title = {id}
-  tooltip_format_mutation_partial = {sig}: {#sum_item_value:.2}
-  
-  # pmsignatureのboxの色
-  color_A = #06B838
-  color_C = #609CFF
-  color_G = #B69D02
-  color_T = #F6766D
-  color_plus = #00BEC3
-  color_minus = #F263E2
-  
-  # 入力フォーマット (自分のデータに合わせて変更する)
-  [result_format_pmsignature]
+複数データ実行方法は :ref:`こちら<conf_signature_multi>` 参照。
 
-  # 入力形式 (現在はjsonのみ)
-  format = json
-
-  # background を使用しているかどうか
-  background = True
-
-  # jsonファイルのkey名
-  key_id = id
-  key_mutation = mutation
-  key_ref = ref
-  key_alt = alt
-  key_strand = strand
-  key_mutation_count = mutation_count
 
 ---------------
 7. 共通項目
