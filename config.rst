@@ -1,5 +1,5 @@
 *******************************
-Config 全設定項目
+Config 設定項目
 *******************************
 
 .. _conf_mm:
@@ -52,7 +52,7 @@ Config 全設定項目
   func_colors = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011,nonframeshift_deletion:#9CAEB7
   
   # ポップアップウィンドウの表示内容
-  # 詳細はページ下段の「ユーザ定義フォーマット」に記載
+  # 詳細はページ下段の「ポップアップウィンドウの表示内容」に記載
   tooltip_format_checker_title1 = ID:{id}, gene:{gene}, {#sum_item_value}
   tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -----> {alt}]
   tooltip_format_gene_title = gene:{gene}, {#sum_item_value}
@@ -116,14 +116,22 @@ Config 全設定項目
   # データ区切り
   sept = ,
 
+---
+
+.. _conf_mm_tooltip:
+
 ----------------------------------------------------------
 ポップアップウィンドウの表示内容
 ----------------------------------------------------------
 
-| 記載方法は `view dataset <./dataformat.html#user-format>`_ を参照してください。
+| 記載方法は `ユーザ定義フォーマット <./dataformat.html#user-format>`_ を参照してください。
 | 
 | 表示箇所ごとに6種類設定しますが、書き方は同一です。
 | データ列とは別に以下も特殊キーワードとして使用することができます。
+|
+| mutationの集計について
+| limited_funcs や nouse_funcs 等のオプションを使用してmutationを限定した場合、使用しなかったmutationはカウントしません。
+| 
 |
 
 :{#number_id}:      サンプル数
@@ -132,9 +140,6 @@ Config 全設定項目
 :{#sum_mutaion}:    mutation総検出数
 :{#item_value}:     積み上げグラフの1項目の値
 :{#sum_item_value}: 積み上げグラフの合計値
-
-| mutationの集計について、使用しなかったmutationはカウントしていません。
-|
 
 **デフォルトでの設定内容と表示との対応**
 
@@ -161,6 +166,9 @@ Config 全設定項目
 .. image:: image/conf_mut4.PNG
   :scale: 100%
 
+---
+
+.. _conf_mm_subplot:
 
 ----------------------------------------------
 サブプロットとしてクリニカルデータを追加
@@ -256,7 +264,7 @@ type2を表示する場合はセクション名を[mut_subplot_type2_*]としま
 name_setの書き方
 -----------------------
 
-サブプロットの色と判例を定義します。
+サブプロットの色と凡例を定義します。
 
 ``{値}:{表示文字列}:{セルの色}`` を各値ごとに記入します。セルの色は省略可能です。
 
@@ -287,18 +295,14 @@ mode = gradientの場合
   name_set = 0:min (0), 40:max (40)
   
 
-titleとnameset
---------------------------
-
-.. image:: image/conf_mut2.PNG
-  :scale: 100%
-
 編集したconfigファイルを使用して ``paplot`` を実行します。
 
 .. code-block:: bash
 
   paplot mutation {unzip_path}/example/mutation_subplot/data.csv ./tmp mutation_subplot \
   --config_file {unzip_path}/example/mutation_subplot/paplot.cfg
+
+.. _conf_qc:
 
 =======================
 2. QC
@@ -383,13 +387,21 @@ titleとnameset
   tooltip_format4 = ratio_20x: {ratio_20x:.2}
   tooltip_format5 = ratio_30x: {ratio_30x:.2}
 
+---
+
+.. _conf_qc_tooltip:
+
 ----------------------------------------
 ポップアップウィンドウの表示内容
 ----------------------------------------
 
-| 記載方法は :ref:`ユーザ定義フォーマット<user_format>` を参照してください。
+| 記載方法は `ユーザ定義フォーマット <./dataformat.html#user-format>`_ を参照してください。
 |
 
+
+---
+
+.. _conf_ca:
 
 =======================
 3. CA
@@ -487,6 +499,10 @@ titleとnameset
   # データ区切り
   sept = ,
 
+---
+
+.. _conf_ca_use_chrs:
+
 ---------------------------------
 表示するchromosomeを限定する
 ---------------------------------
@@ -506,6 +522,10 @@ configファイルで次の項目を編集してください。
 編集したconfigファイルは次のようにしてコマンドから指定します。
 
 ``paplot {input files} {output directory} {title} --config_file {config file}``
+
+---
+
+.. _conf_ca_genome:
 
 -------------------------------
 ヒト以外のゲノムを使用する
@@ -548,13 +568,21 @@ chromosome名は分析したいファイルのChr1, Chr2で使用されている
   # path = C:\genome\hg19_part.csv
   path = {ここにゲノムサイズのファイルのパスを指定する}
 
+---
+
+.. _conf_ca_tooltip:
+
 ----------------------------------------
 ポップアップウィンドウの表示内容
 ----------------------------------------
 
-| 記載方法は :ref:`ユーザ定義フォーマット<user_format>` を参照してください。
+| 記載方法は `ユーザ定義フォーマット <./dataformat.html#user-format>`_ を参照してください。
 | SVにはmutation-matrixのような特殊キーワードはありません。
 |
+
+---
+
+.. _conf_signature:
 
 =======================
 4. signature |new|
@@ -570,7 +598,7 @@ chromosome名は分析したいファイルのChr1, Chr2で使用されている
   [signature]
 
   # ポップアップウィンドウの表示内容
-  # 詳細はページ下段の「ユーザ定義フォーマット」に記載
+  # 詳細はページ下段の「ポップアップウィンドウの表示内容」に記載
   tooltip_format_signature_title = {sig}
   tooltip_format_signature_partial = {route}: {#sum_item_value:6.2}
   tooltip_format_mutation_title = {id}
@@ -602,11 +630,15 @@ chromosome名は分析したいファイルのChr1, Chr2で使用されている
   key_signature = signature
   key_mutation_count = mutation_count
 
+---
+
+.. _conf_signature_tooltip:
+
 ----------------------------------------------------------
 ポップアップウィンドウの表示内容
 ----------------------------------------------------------
 
-| 記載方法は :ref:`ユーザ定義フォーマット<user_format>` を参照してください。
+| 記載方法は `ユーザ定義フォーマット <./dataformat.html#user-format>`_ を参照してください。
 | 
 | 表示箇所ごとに4種類設定しますが、書き方は同一です。
 | それぞれ次のキーワードが使用できます。
@@ -668,6 +700,10 @@ chromosome名は分析したいファイルのChr1, Chr2で使用されている
 .. image:: image/conf_sig1.PNG
   :scale: 100%
 
+---
+
+.. _conf_pmsignature:
+
 =======================
 5. pmsignature |new|
 =======================
@@ -682,7 +718,7 @@ chromosome名は分析したいファイルのChr1, Chr2で使用されている
   [pmsignature]
 
   # ポップアップウィンドウの表示内容
-  # 詳細はページ下段の「ユーザ定義フォーマット」に記載
+  # 詳細はページ下段の「ポップアップウィンドウの表示内容」に記載
   tooltip_format_ref1 = A: {a:.2}
   tooltip_format_ref2 = C: {c:.2}
   tooltip_format_ref3 = G: {g:.2}
@@ -721,12 +757,16 @@ chromosome名は分析したいファイルのChr1, Chr2で使用されている
   key_alt = alt
   key_strand = strand
   key_mutation_count = mutation_count
-  
+
+---
+
+.. _conf_pmsignature_tooltip:
+
 ----------------------------------------------------------
 ポップアップウィンドウの表示内容
 ----------------------------------------------------------
 
-| 記載方法は :ref:`ユーザ定義フォーマット<user_format>` を参照してください。
+| 記載方法は `ユーザ定義フォーマット <./dataformat.html#user-format>`_ を参照してください。
 | 
 | 表示箇所ごとに4種類設定しますが、書き方は同一です。
 | それぞれ次のキーワードが使用できます。

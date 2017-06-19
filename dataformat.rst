@@ -196,10 +196,9 @@ configファイルの[result_format_mutation]セクションでデータの列�
   paplot mutation {unzip_path}/example/mutation_option/data.csv ./tmp mutation_option \
   --config_file {unzip_path}/example/mutation_option/paplot.cfg
 
-今回はグリッド部分のポップアップを変更しました。その他のポップアップに関しては
+今回はグリッド部分のポップアップを変更しました。その他のポップアップ設定項目は `ポップアップウィンドウの表示内容 <./config.html#conf_mm_tooltip>`_ を参照してください。
 
-http://paplot-doc.readthedocs.io/ja/develop/config.html#id2
-
+また、記述方法詳細は  :ref:`ユーザ定義フォーマット <user_format>` を参照してください。
 
 ----
 
@@ -279,7 +278,22 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
   paplot qc {unzip_path}/example/qc_minimal/data.csv ./tmp qc_minimal \
   --config_file {unzip_path}/example/qc_minimal/paplot.cfg
 
-** デフォルト色 **
+
+name_setの書き方
+-----------------------
+
+凡例名と色を定義します。
+
+``{要素の凡例名}:{セルの色}`` を積み上げ要素ごとに記入します。セルの色は省略可能です。
+
+.. code-block:: cfg
+  
+  name_set = average_depth:#2478B4
+  
+  # 複数ある場合は,で区切って書きます。
+  name_set = ratio_30x:#2478B4, ratio_20x:#FF7F0E, ratio_10x:#2CA02C, ratio_2x:#D62728
+  
+セルの色を省略した場合、以下の色を上から順に使用します。
 
 .. image:: image/default_color.PNG
   :scale: 100%
@@ -351,7 +365,7 @@ configファイルの[result_format_qc]セクションでデータの列番号�
 
 ここでは以下の構成でグラフを作成します。
 
- - chart_1　[棒グラフ] average_depth
+ - chart_1　[棒グラフ] average_depth (最小構成と同じ)
  - chart_2　[積み上げグラフ] 2x_rt,10x_rt,20x_rt,30x_rt
  - chart_3　[棒グラフ] mapped_readsをtotal_readsで割る
  - chart_4　[棒グラフ] mean_insert_size
@@ -389,9 +403,9 @@ configファイルの[result_format_qc]セクションでデータの列番号�
 | QCレポートは[qc_chart_1],[qc_chart_2],[qc_chart_3] の順番に表示し、必要な数だけ [qc_chart_*] セクションを増やすことができます。
 | ``*`` には1から始まる連番を入れてください。1から順に表示します。
 
-ここでは各設定について解説します。
-
 完成したconfigファイルはここ `config <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot/paplot.cfg>`_ を参照してください。
+単純な棒グラフ
+-----------------------
 
 chart_1 (average_depth) と chart_4 (mean_insert_size) は単純な棒グラフです。
 
@@ -421,15 +435,19 @@ chart_3 (mapped_reads) と chart_5 (duplicate_reads) は列同士で計算（今
   tooltip_format1 = ID:{id}
   tooltip_format2 = {mapped_reads/total_reads:.2}
 
-上記では、 ``stack1 = {mapped_reads/total_reads}`` として記入しています。
+グラフの要素について
 
-ここで ``{mapped_reads/total_reads}`` と書くと割り算に、 ``{mapped_reads+total_reads}`` と書くと足し算させることができます。
-
-tooltip_format2でも同様に数値演算させています。
-
-tooltip_format2 = {mapped_reads/total_reads:.2}
-
-このように書くと、mapped_readsをtotal_readsで割ったものを小数点第2位まで表示する、という意味になります。
+| 上記では、 ``stack1 = {mapped_reads/total_reads}`` と記入しています。
+| ここで ``{mapped_reads-total_reads}`` と書くと引き算に、 ``{mapped_reads+total_reads}`` と書くと足し算させることができます。
+| 
+| なお、ポップアップウィンドウでも同様に数値演算させています。
+| ``tooltip_format2 = {mapped_reads/total_reads:.2}``
+| 
+| もし、ポップアップウィンドウではそれぞれの値を表示したい場合は
+| ``tooltip_format2 = mapped: {mapped_reads}, total: {total_reads}`` 等と書くとそれぞれの値が表示されます。
+|
+| ポップアップウィンドウ記述方法詳細は  :ref:`ユーザ定義フォーマット <user_format>` を参照してください。
+|
 
 積み上げグラフ　その１
 -----------------------
@@ -801,6 +819,8 @@ configファイルの[result_format_ca]セクションでデータの列名を�
 
   paplot ca {unzip_path}/example/ca_option/data.csv ./tmp ca_option \
   --config_file {unzip_path}/example/ca_option/paplot.cfg
+
+ポップアップ ( ``tooltip_format`` ) 記述方法詳細は  :ref:`ユーザ定義フォーマット <user_format>` を参照してください。
 
 .. _data_signature:
 
@@ -1642,7 +1662,7 @@ qc, caの場合、configは[result_format_qc]、[result_format_ca]セクショ�
 ユーザ定義フォーマット
 =======================
 
-mouse overにより表示するポップアップのようにグラフそのものに影響を与えないような文字列はある程度変更することができます。
+マウスオーバーにより表示するポップアップのようにグラフそのものに影響を与えないような文字列はある程度変更することができます。
 
 表示箇所ごとにそれぞれ設定しますが、書き方は同一です。
 
@@ -1665,14 +1685,6 @@ mouse overにより表示するポップアップのようにグラフそのも�
 
 ``col_opt_new_option = column_name``
 
-記載方法詳細は各項目参照
-
- - :doc:`config_mat` 
- - :doc:`config_ca` 
- - :doc:`config_qc` 
- - :doc:`config_signature` 
- - :doc:`config_pmsignature` 
-
 ::
 
   数値計算させることもできます。その場合、計算式を{}で囲います。
@@ -1688,28 +1700,5 @@ mouse overにより表示するポップアップのようにグラフそのも�
   
   表示例：
   3.33%
-
-.. _name_set:
-
-=======================
-name_set
-=======================
-
-凡例名と色を定義します。
-色は省略可能。省略した場合、デフォルト値を順番に使用します。
-
-.. image:: image/conf_qc2.PNG
-  :scale: 100%
-
-name_set(色指定あり)
-
-.. image:: image/conf_qc3.PNG
-  :scale: 100%
-
-name_set(色指定なし)
-
-.. image:: image/conf_qc4.PNG
-  :scale: 100%
-  
 
 .. |new| image:: image/tab_001.gif
