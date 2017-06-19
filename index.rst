@@ -36,8 +36,6 @@ Contents:
    install.rst
    dataformat.rst
    command.rst
-   config.rst
-   dataset.rst
    
 .. toctree:: 
    :maxdepth: 2

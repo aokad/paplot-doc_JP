@@ -2,81 +2,76 @@
 Config 記述方法 (QC)
 *******************************
 
-全設定項目は :ref:`こちら<conf_qc>`
+全設定項目
+---------------------------------
 
-列と設定の対応
------------------------------
-
-=========================  =============  ==========  =============================
-name                       input type     required    description
-=========================  =============  ==========  =============================
-col_opt_duplicate_reads    numeric        x           number of total reads
-col_opt_mapped_reads       numeric        x           number of mapped reads
-col_opt_total_reads        numeric        x           number of duplicate reads
-col_opt_average_depth      numeric        x           mean of insert size
-col_opt_mean_insert_size   numeric        x           average of depth
-col_opt_read_length_r1     numeric        x           number of read_length_r1
-col_opt_read_length_r2     numeric        x           number of read_length_r2
-col_opt_ratio_2x           0.0～1.0       x           coverage (depth=2)
-col_opt_ratio_10x          0.0～1.0       x           coverage (depth=10)
-col_opt_ratio_20x          0.0～1.0       x           coverage (depth=20)
-col_opt_ratio_30x          0.0～1.0       x           coverage (depth=30)
-col_opt_id                 text           x           サンプルを識別できる名称
-=========================  =============  ==========  =============================
-
-| 列の指定方法については、 :ref:`列の指定方法<column>` を参照してください。
-| suffixとIDの指定方法および、サンプル名の指定方法については、 :ref:`suffixとID<suffix>` を参照してください。
-| 
-
-
-ユーザ定義グラフ
------------------------------
-
-| QCではすべてのグラフがユーザ定義になっています。
-| ※ 積み上げグラフのみです。それ以外のグラフにすることはできません。
-|
-| configファイルの ``[qc_chart_*]``  というセクションに必要事項を記入します。
-| [qc_chart_brush] (領域を選択できるグラフ) を先頭に[qc_chart_1],[qc_chart_2],[qc_chart_3] の順番に表示します。
-| 必要な数だけ [qc_chart_*] セクションを増やすことができます。
-|
-| exampleでの設定例は次のようになっています。
-
-.. image:: image/conf_qc1.PNG
-  :scale: 100%
-
-** [qc_chart_*] 各セクションの設定内容 **
-
-| 各セクションでは次のオプションを設定します。
-|
-
-:title: グラフのタイトル
-
-:title_y: y軸のタイトル
-
-:stack: 積み上げ要素。複数ある場合は積み上げる順にstack1, stack2, ... と連番に指定します。{ } 内にキーワードを設定します。キーワードについては :ref:`ユーザ定義フォーマット<user_format>` を参照してください。
-
-:name_set: 積み上げ要素の凡例名と色。色は省略可能。省略した場合、デフォルト値を上から順番に使用します。
-
-:tooltip_format: mouse over で表示されるポップアップウィンドウのフォーマット。複数行の場合は上から順にtooltip_format1, tooltip_format2, ... と連番に指定します。記載方法は :ref:`ユーザ定義フォーマット<user_format>` を参照してください。
-
-
-.. image:: image/conf_qc2.PNG
-  :scale: 100%
-
-name_set(色指定あり)
-
-.. image:: image/conf_qc3.PNG
-  :scale: 100%
-
-name_set(色指定なし)
-
-.. image:: image/conf_qc4.PNG
-  :scale: 100%
-
-
-** デフォルト色 **
-
-.. image:: image/default_color.PNG
-  :scale: 100%
+.. code-block:: cfg
+  :linenos:
+  :emphasize-lines: 8,10,11,12,24,25,26,27,28,29,30,31,32,33,34,35
+  
+  ###################### qc
+  [qc]
+  # (none)
+  
+  # 入力フォーマット (自分のデータに合わせて変更する)
+  # 各項目の解説はページ下段の「入力ファイルフォーマット」に記載
+  [result_format_qc]
+  suffix = .qc.csv
+  
+  sept = ,
+  header = True
+  comment = #
+  
+  ##################
+  # Column index (required)
+  ##################
+  
+  # (none)
+  
+  ##################
+  # Column index (option)
+  ##################
+  
+  col_opt_duplicate_reads = duplicate_reads
+  col_opt_mapped_reads = mapped_reads
+  col_opt_total_reads = total_reads
+  col_opt_average_depth = average_depth
+  col_opt_mean_insert_size = mean_insert_size
+  col_opt_ratio_2x = 2x_rt
+  col_opt_ratio_10x = 10x_rt
+  col_opt_ratio_20x = 20x_rt
+  col_opt_ratio_30x = 30x_rt
+  col_opt_read_length_r1 = read_length_r1
+  col_opt_read_length_r2 = read_length_r2
+  col_opt_id = file_name
+  
+  # 出力フォーマット
+  # 各項目の解説はページ下段の「出力ファイルフォーマット」に記載
+  [merge_format_qc]
+  lack_column_complement = NA
+  sept = ,
+  
+  # 領域選択用のグラフ設定
+  [qc_chart_brush]
+  title = 
+  title_y = 
+  stack = {average_depth}
+  name_set = average:#E3E5E9
+  tooltip_format = 
+  
+  # グラフ設定(グラフごとに用意する)
+  [qc_chart_1]
+  title = depth coverage
+  title_y = coverage
+  stack1 = {ratio_30x}
+  stack2 = {ratio_20x-ratio_30x}
+  stack3 = {ratio_10x-ratio_20x}
+  stack4 = {ratio_2x-ratio_10x}
+  name_set = ratio_30x:#2478B4, ratio_20x:#FF7F0E, ratio_10x:#2CA02C, ratio_2x:#D62728
+  tooltip_format1 = ID:{id}
+  tooltip_format2 = ratio_2x: {ratio_2x:.2}
+  tooltip_format3 = ratio_10x: {ratio_10x:.2}
+  tooltip_format4 = ratio_20x: {ratio_20x:.2}
+  tooltip_format5 = ratio_30x: {ratio_30x:.2}
 
 .. |new| image:: image/tab_001.gif

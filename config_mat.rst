@@ -2,28 +2,105 @@
 Config 記述方法 (mutation-matrix)
 ************************************************
 
-全設定項目は :ref:`こちら<conf_mm>`
+----------------------------------------------------------
+全設定項目
+----------------------------------------------------------
 
------------------------------
-列と設定の対応
------------------------------
+.. code-block:: cfg
+  :linenos:
+  :emphasize-lines: 50,51,52,53,56,58,65,68,75,77,79,81,83,85
 
-=========================  =============  ==========  =============================
-name                       input type     required    description
-=========================  =============  ==========  =============================
-col_func                   text           o           mutation type
-col_gene                   text           o           gene name
-col_opt_chr                text           x           chromosome
-col_opt_start              numeric        x           開始位置
-col_opt_end                numeric        x           終了位置
-col_opt_ref                text           x           リファレンスの塩基配列
-col_opt_alt                text           x           対象の塩基配列
-col_opt_id                 text           x           サンプルを識別できる名称
-=========================  =============  ==========  =============================
+  ###################### mutation
+  [mut]
+  # geneのサンプルに対する検出比(%) 
+  # 値より小さいgeneはplot対象から除外する
+  # 0の場合はすべて出力する
+  use_gene_rate = 0
 
-| 列の指定方法については、 :ref:`列の指定方法<column>` を参照してください。
-| suffixとIDの指定方法および、サンプル名の指定方法については、 :ref:`suffixとID<suffix>` を参照してください。
-| 
+  # 入力されていた場合、そのgeneのみ出力する
+  # 未入力の場合、検出されたgeneすべて出力する
+  # , 区切りで複数指定可能
+  #
+  # limited_genes = TP,TTN,APC,BRAF,CDH1,FLT3
+  limited_genes = 
+  
+  # 入力されていた場合、そのgeneはplot対象から除外する
+  # , 区切りで複数指定可能
+  #
+  # nouse_genes = NONE,MUC4
+  nouse_genes =
+
+  # 入力されていた場合、その変異タイプ(func)のみ出力する
+  # 未入力の場合、検出されたfuncすべて出力する
+  # , 区切りで複数指定可能
+  #
+  # limited_funcs = exome,splicing
+  limited_funcs = 
+  
+  # 入力されていた場合、そのfuncはplot対象から除外する
+  # , 区切りで複数指定可能
+  # 空白行を除去する場合、_blank_ と記入する
+  nouse_funcs = _blank_,unknown,synonymous_SNV
+  
+  # funcのplot色を指定する。func名:(RGBもしくはカラー名)
+  # , 区切りで複数指定可能
+  # 未入力のfuncはデフォルト色を使用する
+  func_colors = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011,nonframeshift_deletion:#9CAEB7
+  
+  # ポップアップウィンドウの表示内容
+  # 詳細はページ下段の「ユーザ定義フォーマット」に記載
+  tooltip_format_checker_title1 = ID:{id}, gene:{gene}, {#sum_item_value}
+  tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -----> {alt}]
+  tooltip_format_gene_title = gene:{gene}, {#sum_item_value}
+  tooltip_format_gene_partial = func:{func}, {#item_value}
+  tooltip_format_id_title = ID:{id}, {#sum_item_value}
+  tooltip_format_id_partial = func:{func}, {#item_value}
+  
+  # 入力フォーマット (自分のデータに合わせて変更する)
+  # 項目は欄外「入力ファイルフォーマット」参照
+  [result_format_mutation]
+  suffix = 
+  sept = \t
+  header = True
+  comment = #
+  
+  # funcが1セルに複数入力されている場合の区切り文字
+  sept_func = ";"
+  # geneが1セルに複数入力されている場合の区切り文字
+  sept_gene = ";"
+  
+  ##################
+  # Column index (required)
+  ##################
+
+  # func列
+  col_func = Merge_Func
+  
+  # gene列
+  col_gene = Gene.refGene
+  
+  ##################
+  # column index (option)
+  ##################
+  
+  # chromosome
+  col_opt_chr = Chr
+  # 開始位置
+  col_opt_start = Start
+  # 終了位置
+  col_opt_end = End
+  # リファレンスの塩基配列
+  col_opt_ref = Ref
+  # 対象の塩基配列
+  col_opt_alt = Alt
+  # id (sample) 列
+  col_opt_ID = id
+  
+  # 出力フォーマット
+  # 項目は欄外「出力ファイルフォーマット」参照
+  [merge_format_mutation]
+  lack_column_complement = NA
+  sept = ,
 
 ----------------------------------------------------------
 ポップアップウィンドウの表示内容
@@ -68,112 +145,6 @@ col_opt_id                 text           x           サンプルを識別で�
   tooltip_format_id_partial = func:{func}, {#item_value}
 
 .. image:: image/conf_mut4.PNG
-  :scale: 100%
-
------------------------------
-サブプロットについて
------------------------------
-
-| mutation-matrixグラフでは解析結果とは別にサンプルに対する情報を表示することができます。
-| 
-| 表示場所は2つあり、type1はサンプルグラフの下に、type2は最後に表示します。
-| 
-| type1を表示する場合はセクション名を[mut_subplot_type1_*]とします。
-| type2を表示する場合はセクション名を[mut_subplot_type2_*]とします。
-| 
-| ``*`` には1から始まる連番を入れてください。1から順に表示します。
-| 
-
-.. image:: image/conf_mut1.PNG
-  :scale: 100%
-
-.. code-block:: cfg
-  :linenos:
-  
-  # mut_subplot_type1_1
-  [mut_subplot_type1_1]
-  
-  # ファイルのパス
-  path = /path/to/file1
-  
-  ###########################
-  # ファイルフォーマット
-  
-  # ファイルのデータ区切り
-  sept = ,
-  
-  # 先頭1行がヘッダかどうか
-  header = True
-  
-  # コメント行
-  comment = #
-  
-  # 表示データの列
-  col_value = average_depth
-  
-  # id 列（main plotと紐づけられること）
-  col_ID = id
-  
-  ###########################
-  # サブプロットのフォーマット
-  
-  # サブプロットのタイトル
-  title = bam's average depth
-  
-  # 表示形式
-  # fix, range, gradientから選択
-  mode = gradient
-  
-  # 凡例のフォーマット
-  # 値:表示文字列:セルの色を各値ごとに記入する。セルの色は省略可能
-  #
-  # mode = fixの場合
-  # name_set = 0:Male:blue, 1:Female:red, 2:Unknown:gray
-  # 
-  # mode = rangeの場合、値には範囲開始の値を入れる
-  # name_set = 0:0-19, 20:20-39, 40:40-59, 60:60over
-  # 
-  # mode = gradientの場合、最初と最後の値を入れる。MIN/MAXを使用すると、データから自動的に設定する
-  # 自動設定の場合
-  # name_set = MIN:min, MAX:max
-  # 手動設定の場合
-  # name_set = 0:min (0), 40:max (40)
-  name_set = MIN:min, MAX:max
-  
-  # mut_subplot_type2_1
-  [mut_subplot_type2_1]
-  title = Clinical Gender
-  path = /path/to/file2
-  sept = ,
-  header = True
-  comment = 
-  col_value = gender
-  col_ID = barcode
-  mode = fix
-  name_set = 0:Male:blue, 1:Female:red, 2:Unknown:gray
-  
-  #mut_subplot_type2_2
-  [mut_subplot_type2_2]
-  title = Clinical Age
-  path = /path/to/file3
-  sept = ,
-  header = True
-  comment = 
-  col_value = age
-  col_ID = barcode
-  mode = range
-  name_set = 0:0-19, 20:20-39, 40:40-59, 60:60over
-
-titleとnameset
---------------------------
-
-.. image:: image/conf_mut2.PNG
-  :scale: 100%
-
-表示モードの違い
-----------------------------
-
-.. image:: image/conf_mut3.PNG
   :scale: 100%
 
 .. |new| image:: image/tab_001.gif

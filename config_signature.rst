@@ -2,7 +2,48 @@
 Config 記述方法 (signature) |new|
 **********************************************
 
-全設定項目は :ref:`こちら<conf_signature>`
+----------------------------------------------------------
+全設定項目
+----------------------------------------------------------
+
+.. code-block:: cfg
+  :linenos:
+  
+  ###################### signature
+  [signature]
+
+  # ポップアップウィンドウの表示内容
+  # 詳細はページ下段の「ユーザ定義フォーマット」に記載
+  tooltip_format_signature_title = {sig}
+  tooltip_format_signature_partial = {route}: {#sum_item_value:6.2}
+  tooltip_format_mutation_title = {id}
+  tooltip_format_mutation_partial = {sig}: {#sum_item_value:.2}
+  
+  # signatureのY軸最大値 (-1の場合、それぞれのデータの最大値を使用する)
+  signature_y_max = -1
+  
+  # signatureのbarの色
+  alt_color_CtoA = #1BBDEB
+  alt_color_CtoG = #211D1E
+  alt_color_CtoT = #E62623
+  alt_color_TtoA = #CFCFCF
+  alt_color_TtoC = #ACD577
+  alt_color_TtoG = #EDC7C4
+  
+  # 入力フォーマット (自分のデータに合わせて変更する)
+  [result_format_signature]
+
+  # 入力形式 (現在はjsonのみ)
+  format = json
+
+  # background を使用しているかどうか
+  background = True
+  
+  # jsonファイルのkey名
+  key_id = id
+  key_mutation = mutation
+  key_signature = signature
+  key_mutation_count = mutation_count
 
 ----------------------------------------------------------
 ポップアップウィンドウの表示内容
