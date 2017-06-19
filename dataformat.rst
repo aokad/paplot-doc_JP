@@ -12,6 +12,8 @@
 1. mutation-matrix
 ----------------------
 
+.. _mm_minimal:
+
 ==========================
 最小データセット
 ==========================
@@ -66,6 +68,8 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 ----
 
+.. _mm_noheader:
+
 ==========================
 ヘッダなし
 ==========================
@@ -117,6 +121,8 @@ configファイルの[result_format_mutation]セクションでデータの列�
   --config_file {unzip_path}/example/mutation_noheader/paplot.cfg
 
 ----
+
+.. _mm_option:
 
 ==========================
 ポップアップの情報追加
@@ -196,7 +202,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
   paplot mutation {unzip_path}/example/mutation_option/data.csv ./tmp mutation_option \
   --config_file {unzip_path}/example/mutation_option/paplot.cfg
 
-今回はグリッド部分のポップアップを変更しました。その他のポップアップ設定項目は `ポップアップウィンドウの表示内容 <./config.html#conf_mm_tooltip>`_ を参照してください。
+今回はグリッド部分のポップアップを変更しました。その他のポップアップ設定項目は `ポップアップウィンドウの表示内容 <./config.html#mm_tooltip>`_ を参照してください。
 
 また、記述方法詳細は  :ref:`ユーザ定義フォーマット <user_format>` を参照してください。
 
@@ -207,6 +213,8 @@ configファイルの[result_format_mutation]セクションでデータの列�
 ------------
 2. QC
 ------------
+
+.. _qc_minimal:
 
 ==========================
 最小データセット
@@ -300,6 +308,8 @@ name_setの書き方
 
 ---
 
+.. _qc_noheader:
+
 ==========================
 ヘッダなし
 ==========================
@@ -340,6 +350,8 @@ configファイルの[result_format_qc]セクションでデータの列番号�
   --config_file {unzip_path}/example/qc_noheader/paplot.cfg
 
 ----
+
+.. _qc_mplot:
 
 ==========================
 複数グラフ
@@ -521,6 +533,8 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
 
 ----
 
+.. _qc_brush:
+
 ==========================
 データ選択
 ==========================
@@ -560,6 +574,8 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
 --------------
 3. CA
 --------------
+
+.. _ca_minimal:
 
 ==========================
 最小データセット
@@ -611,6 +627,8 @@ configファイルの[result_format_ca]セクションでデータの列名を�
   --config_file {unzip_path}/example/ca_minimal/paplot.cfg
 
 ----
+
+.. _ca_noheader:
 
 ==========================
 ヘッダなし
@@ -664,6 +682,8 @@ configファイルの[result_format_ca]セクションでデータの列番号�
   --config_file {unzip_path}/example/ca_noheader/paplot.cfg
 
 ----
+
+.. _ca_group:
 
 ==========================
 変異のグルーピング
@@ -734,6 +754,8 @@ configファイルの[result_format_ca]セクションでデータの列名を�
   --config_file {unzip_path}/example/ca_group/paplot.cfg
 
 ----
+
+.. _ca_option:
 
 ==========================
 ポップアップの情報追加
@@ -822,6 +844,8 @@ configファイルの[result_format_ca]セクションでデータの列名を�
 
 ポップアップ ( ``tooltip_format`` ) 記述方法詳細は  :ref:`ユーザ定義フォーマット <user_format>` を参照してください。
 
+----
+
 .. _data_signature:
 
 ---------------------------
@@ -832,13 +856,15 @@ configファイルの[result_format_ca]セクションでデータの列名を�
 
 signatureデータ準備方法については :doc:`exec_signature` に記載しています。
 
+----
+
 .. _json_full:
 
 ==========================
 jsonフォーマット
 ==========================
 
-paplotでsignatureレポートを作成するためにはこれまでの、mutation-matrixやca,qcとは異なり、jsonファイル形式でsignatureデータを用意していただく必要があります。
+paplotでsignatureレポートを作成するためにはこれまでの、mutation-matrixやca,qcとは異なり、jsonファイル形式でsignatureデータを用意する必要があります。
 
 ここでは、paplotが使用するsignatureデータのフォーマットについて解説します。
 
@@ -957,6 +983,9 @@ paplotでsignatureレポートを作成するためにはこれまでの、mutat
     >>> import json
     >>> json.load(open("data2.json"))
   
+----
+
+.. _sig_minimal:
 
 ==========================
 最小データセット
@@ -1045,6 +1074,10 @@ signature数はpaplot実行時に入力ファイル (data.json) から読み取�
 
 .. _data_signature_multi:
 
+----
+
+.. _sig_mclass:
+
 ==========================
 複数タイプのsignature
 ==========================
@@ -1057,8 +1090,8 @@ signature数はpaplot実行時に入力ファイル (data.json) から読み取�
  - `signature 5 <http://genomon-project.github.io/paplot/signature/graph_multi_class5.html>`_ 
  - `signature 6 <http://genomon-project.github.io/paplot/signature/graph_multi_class6.html>`_ 
 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal.zip?raw=true>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_multi_class>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_multi_class.zip?raw=true>`_ 
 
 入力データ形式は :ref:`こちら <json_full>` 参照。
 
@@ -1124,26 +1157,32 @@ signature数はpaplot実行時に入力ファイル (data?.json) のデータか
         ┣ graph_signature5.html
         ┗ graph_signature6.html
 
+----
+
+.. _sig_integral:
+
 ==========================
 積算グラフ
 ==========================
 
 | view report
 
- - `signature 2 <http://genomon-project.github.io/paplot/signature/graph_multi_class2.html>`_ 
- - `signature 3 <http://genomon-project.github.io/paplot/signature/graph_multi_class3.html>`_ 
- - `signature 4 <http://genomon-project.github.io/paplot/signature/graph_multi_class4.html>`_ 
- - `signature 5 <http://genomon-project.github.io/paplot/signature/graph_multi_class5.html>`_ 
- - `signature 6 <http://genomon-project.github.io/paplot/signature/graph_multi_class6.html>`_ 
+ - `signature 2 <http://genomon-project.github.io/paplot/signature/graph_integral2.html>`_ 
+ - `signature 3 <http://genomon-project.github.io/paplot/signature/graph_integral3.html>`_ 
+ - `signature 4 <http://genomon-project.github.io/paplot/signature/graph_integral4.html>`_ 
+ - `signature 5 <http://genomon-project.github.io/paplot/signature/graph_integral5.html>`_ 
+ - `signature 6 <http://genomon-project.github.io/paplot/signature/graph_integral6.html>`_ 
 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal.zip?raw=true>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_integral>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_integral.zip?raw=true>`_ 
 
 レポートに変異の内訳グラフを追加します。 :ref:`こちら <json_full>` で解説に使用しているデータであり、:doc:`exec_signature` によりデータの準備を行う場合に出力されるデータです。
 
 データフォーマットは :ref:`こちら <json_full>` 参照。
 
-複数データ実行方法は :ref:`こちら <data_signature_multi>` 参照。
+複数データ実行方法は :ref:`こちら <sig_mclass>` 参照。
+
+----
 
 .. _data_pmsignature:
 
@@ -1155,13 +1194,15 @@ signature数はpaplot実行時に入力ファイル (data?.json) のデータか
 
 pmsignatureデータ準備方法については :doc:`exec_pmsignature` に記載しています。
 
+----
+
 .. _json_ind:
 
 ==========================
 jsonフォーマット
 ==========================
 
-paplotでpmsignatureレポートを作成するためにはmutation-matrixやca,qcとは異なり、jsonファイル形式でpmsignatureデータを用意していただく必要があります。
+paplotでpmsignatureレポートを作成するためにはmutation-matrixやca,qcとは異なり、jsonファイル形式でpmsignatureデータを用意する必要があります。
 
 ここでは、paplotが使用するpmsignatureデータのフォーマットについて解説します。
 
@@ -1282,7 +1323,10 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
     $ python
     >>> import json
     >>> json.load(open("data2.json"))
-  
+
+----
+
+.. _pm_minimal:
 
 ==========================
 最小データセット
@@ -1365,7 +1409,9 @@ pmsignature数はpaplot実行時に入力ファイル (data.json) から読み�
 
   今回の例ではpmsignatureの出力にbackgroundを設定しているため、実際に出力されるpmsignatureは1少ない数（今回は1つだけ）が表示されます。
 
-.. _data_pmsignature_multi:
+----
+
+.. _pm_mclass:
 
 ==========================
 複数タイプのpmsignature
@@ -1379,8 +1425,8 @@ pmsignature数はpaplot実行時に入力ファイル (data.json) から読み�
  - `pmsignature 5 <http://genomon-project.github.io/paplot/pmsignature/graph_multi_class5.html>`_ 
  - `pmsignature 6 <http://genomon-project.github.io/paplot/pmsignature/graph_multi_class6.html>`_ 
 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_minimal>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_minimal.zip?raw=true>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_multi_class>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_multi_class.zip?raw=true>`_ 
 
 入力データ形式は :ref:`こちら <json_ind>` 参照。
 
@@ -1450,26 +1496,34 @@ pmsignature数はpaplot実行時に入力ファイル (data?.json) のデータ�
 
   今回の例ではpmsignatureの出力にbackgroundを設定しているため、実際に出力されるpmsignatureは1少ない数（今回は1つだけ）が表示されます。
 
+----
+
+.. _pm_integral:
+
 ==========================
 積算グラフ
 ==========================
 
 | view report
 
- - `pmsignature 2 <http://genomon-project.github.io/paplot/pmsignature/graph_multi_class2.html>`_ 
- - `pmsignature 3 <http://genomon-project.github.io/paplot/pmsignature/graph_multi_class3.html>`_ 
- - `pmsignature 4 <http://genomon-project.github.io/paplot/pmsignature/graph_multi_class4.html>`_ 
- - `pmsignature 5 <http://genomon-project.github.io/paplot/pmsignature/graph_multi_class5.html>`_ 
- - `pmsignature 6 <http://genomon-project.github.io/paplot/pmsignature/graph_multi_class6.html>`_ 
+ - `pmsignature 2 <http://genomon-project.github.io/paplot/pmsignature/graph_integral2.html>`_ 
+ - `pmsignature 3 <http://genomon-project.github.io/paplot/pmsignature/graph_integral3.html>`_ 
+ - `pmsignature 4 <http://genomon-project.github.io/paplot/pmsignature/graph_integral4.html>`_ 
+ - `pmsignature 5 <http://genomon-project.github.io/paplot/pmsignature/graph_integral5.html>`_ 
+ - `pmsignature 6 <http://genomon-project.github.io/paplot/pmsignature/graph_integral6.html>`_ 
 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_minimal>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_minimal.zip?raw=true>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_integral>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_integral.zip?raw=true>`_ 
 
 レポートに変異の内訳グラフを追加します。 :ref:`こちら <json_ind>` で解説に使用しているデータで、:doc:`exec_pmsignature` の手順でデータの準備を行う場合に出力されるデータです。
 
 データフォーマットは :ref:`こちら <json_ind>` 参照。
 
-複数データ実行方法は :ref:`こちら <data_pmsignature_multi>` 参照。
+複数データ実行方法は :ref:`こちら <pm_mclass>` 参照。
+
+----
+
+.. _pm_nobackground:
 
 ==========================
 Backgroundなし
@@ -1527,11 +1581,11 @@ Backgroundなし
   paplot pmsignature pmsignature_nobackground/data.json ./tmp pmsignature_nobackground \
   --config_file ./pmsignature_nobackground/paplot.cfg
 
+---
+
 ---------------
 6. 共通項目
 ---------------
-
-----
 
 .. _sept:
 
@@ -1579,6 +1633,8 @@ qc, caの場合、configは[result_format_qc]、[result_format_ca]セクショ�
 
 ここではmutation-matrixを例にとりましたが、qc, caの場合も同様です。
 qc, caの場合、configは[result_format_qc]、[result_format_ca]セクションを変更してください。
+
+---
 
 .. _suffix:
 
@@ -1680,22 +1736,26 @@ qc, caの場合、configは[result_format_qc]、[result_format_ca]セクショ�
 大文字と小文字の区別はありません。
 たとえば、CHR, Chr, chr はすべて同一とみなしますので、ご注意ください。
 
-デフォルトで設定しているのは下記ですが、任意で増やすことができます。
-その場合は、```col_opt_{任意の名前}``` として追加し、実際のデータの列名を指定してください。
-
-``col_opt_new_option = column_name``
+キーワードは任意で増やすことができます。(signature, pmsignatureは追加できません)
+```col_opt_{任意の名前}``` として追加し、{}には実際のデータの列名を指定してください。
 
 ::
 
-  数値計算させることもできます。その場合、計算式を{}で囲います。
+  col_opt_new_option = column_name
+
+数値計算させることもできます。その場合、計算式を{}で囲います。
+
+::
   
   {#number_mutaion_gene/#number_id*100}%
   
   表示例：
   3.33333333333333%
-  
-  表示桁数を指定したい場合は計算式の後に ":.2" と書きます。小数点以下3桁の場合は ":.3" と書きます。
-  
+
+表示桁数を指定したい場合は計算式の後に ":.2" と書きます。小数点以下3桁の場合は ":.3" と書きます。
+
+::
+
   {#number_mutaion_gene/#number_id*100:.2}%
   
   表示例：

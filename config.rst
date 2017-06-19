@@ -116,9 +116,9 @@ Config 設定項目
   # データ区切り
   sept = ,
 
----
+----
 
-.. _conf_mm_tooltip:
+.. _mm_tooltip:
 
 ----------------------------------------------------------
 ポップアップウィンドウの表示内容
@@ -166,9 +166,9 @@ Config 設定項目
 .. image:: image/conf_mut4.PNG
   :scale: 100%
 
----
+----
 
-.. _conf_mm_subplot:
+.. _mm_subplot:
 
 ----------------------------------------------
 サブプロットとしてクリニカルデータを追加
@@ -302,6 +302,8 @@ mode = gradientの場合
   paplot mutation {unzip_path}/example/mutation_subplot/data.csv ./tmp mutation_subplot \
   --config_file {unzip_path}/example/mutation_subplot/paplot.cfg
 
+----
+
 .. _conf_qc:
 
 =======================
@@ -387,9 +389,9 @@ mode = gradientの場合
   tooltip_format4 = ratio_20x: {ratio_20x:.2}
   tooltip_format5 = ratio_30x: {ratio_30x:.2}
 
----
+----
 
-.. _conf_qc_tooltip:
+.. _qc_tooltip:
 
 ----------------------------------------
 ポップアップウィンドウの表示内容
@@ -399,7 +401,7 @@ mode = gradientの場合
 |
 
 
----
+----
 
 .. _conf_ca:
 
@@ -499,9 +501,9 @@ mode = gradientの場合
   # データ区切り
   sept = ,
 
----
+----
 
-.. _conf_ca_use_chrs:
+.. _ca_usechrs:
 
 ---------------------------------
 表示するchromosomeを限定する
@@ -523,9 +525,9 @@ configファイルで次の項目を編集してください。
 
 ``paplot {input files} {output directory} {title} --config_file {config file}``
 
----
+----
 
-.. _conf_ca_genome:
+.. _ca_genome:
 
 -------------------------------
 ヒト以外のゲノムを使用する
@@ -568,9 +570,9 @@ chromosome名は分析したいファイルのChr1, Chr2で使用されている
   # path = C:\genome\hg19_part.csv
   path = {ここにゲノムサイズのファイルのパスを指定する}
 
----
+----
 
-.. _conf_ca_tooltip:
+.. _ca_tooltip:
 
 ----------------------------------------
 ポップアップウィンドウの表示内容
@@ -580,7 +582,7 @@ chromosome名は分析したいファイルのChr1, Chr2で使用されている
 | SVにはmutation-matrixのような特殊キーワードはありません。
 |
 
----
+----
 
 .. _conf_signature:
 
@@ -630,9 +632,9 @@ chromosome名は分析したいファイルのChr1, Chr2で使用されている
   key_signature = signature
   key_mutation_count = mutation_count
 
----
+----
 
-.. _conf_signature_tooltip:
+.. _sig_tooltip:
 
 ----------------------------------------------------------
 ポップアップウィンドウの表示内容
@@ -700,7 +702,7 @@ chromosome名は分析したいファイルのChr1, Chr2で使用されている
 .. image:: image/conf_sig1.PNG
   :scale: 100%
 
----
+----
 
 .. _conf_pmsignature:
 
@@ -758,9 +760,9 @@ chromosome名は分析したいファイルのChr1, Chr2で使用されている
   key_strand = strand
   key_mutation_count = mutation_count
 
----
+----
 
-.. _conf_pmsignature_tooltip:
+.. _pm_tooltip:
 
 ----------------------------------------------------------
 ポップアップウィンドウの表示内容
