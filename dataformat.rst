@@ -67,19 +67,6 @@ configファイルの[result_format_mutation]セクションでデータの列�
 ----
 
 ==========================
-タブ区切り
-==========================
-
-データファイルがタブ区切りであった場合、次のように設定します。
-
-.. code-block:: cfg
-  
-  [result_format_mutation]
-  sept = \t
-
-----
-
-==========================
 ヘッダなし
 ==========================
 
@@ -211,146 +198,6 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 ----
 
-=============================================
-サブプロットとしてクリニカルデータを追加
-=============================================
-
-| `view report <http://genomon-project.github.io/paplot/mutation/graph_subplot.html>`_ 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot.zip?raw=true>`_ 
-
-変異以外のサンプルに関する情報（例えばクリニカルデータ）をサブプロットとしてmutation-matrixに追加することができます。
-
-.. image:: image/data_mut3.PNG
-
-exampleでは別ファイルとして以下のデータファイルを用意しています。
-
-データファイルから一部抜粋
-
-.. code-block:: cfg
-  :caption: example/mutation_subplot/data_subplot.csv
-  
-  ID,gender,age,BMI
-  SAMPLE00,F,30,40
-  SAMPLE01,F,62,25
-  SAMPLE02,F,59,34
-  SAMPLE03,M,66,26
-  SAMPLE04,M,53,40
-  SAMPLE05,F,79,27
-  SAMPLE06,M,64,29
-  SAMPLE07,M,54,22
-  SAMPLE08,F,55,35
-
-今回の例では、サンプルID(ID)、gender、age、BMIを用意していますが、そのうち、必須項目はサンプルID(ID)です。
-変異のファイルとサブデータのファイルがサンプルIDで紐づけられることが重要です。
-
-configファイルにサブプロットの設定を追加します。
-
-[mutation_subplot_type1_1]セクションを追加し、次のように設定します。
-
-.. code-block:: cfg
-  :caption: example/mutation_subplot/paplot.cfg
-  
-  ### sample for subplot
-  [mutation_subplot_type1_1]
-
-  # サブプロットのタイトル
-  title = Clinical Gender
-
-  # サブプロットのデータファイルのパスを設定します
-  path = {unzip_path}/example/mutation_subplot/data_subplot.csv
-
-  # データ区切り
-  sept = ,
-
-  # ヘッダ有り無し（ない場合はFalse)
-  header = True
-
-  # コメント行の先頭文字
-  comment = 
-
-  # 列名（ヘッダがない場合は列番号）
-  col_value = gender
-
-  # サンプルIDの列名（ヘッダがない場合は列番号）
-  col_id = ID
-  
-  # 表示形式 (欄外参照)
-  # fix, range, gradientから選択
-  mode = fix
-  
-  # サブプロットの色と凡例 (欄外参照)
-  name_set = M:Male:blue, F:Female:red
-
-
-サブプロットの表示位置
---------------------------
-
-サブプロットの表示位置は2つあり、type1はサンプルグラフの下に、type2は最後に表示します。
-
-type1を表示する場合はセクション名を[mut_subplot_type1_*]とします。
-
-type2を表示する場合はセクション名を[mut_subplot_type2_*]とします。
-
-``*`` には1から始まる連番を入れてください。1から順に表示します。
-
-サブプロットの表示形式
---------------------------
-
-表示形式 (mode) は3種類あり、fix, range, gradientから選択します。
-
-.. image:: image/conf_mut3.PNG
-  :scale: 100%
-
-name_setの書き方
------------------------
-
-サブプロットの色と判例を定義します。
-
-``{値}:{表示文字列}:{セルの色}`` を各値ごとに記入します。セルの色は省略可能です。
-
-mode = fixの場合
-
-.. code-block:: cfg
-  
-  name_set = 0:Male:blue, 1:Female:red, 2:Unknown:gray
-
-mode = rangeの場合
-
-値には範囲開始の値を記入します。
-
-.. code-block:: cfg
-  
-  name_set = 0:0-19, 20:20-39, 40:40-59, 60:60over
-
-mode = gradientの場合
-
-最初と最後の値を記入します。MIN/MAXを使用すると、データから自動的に設定します。
-
-.. code-block:: cfg
-
-  # 自動設定の場合
-  name_set = MIN:min, MAX:max
-
-  # 手動設定の場合
-  name_set = 0:min (0), 40:max (40)
-  
-
-titleとnameset
---------------------------
-
-.. image:: image/conf_mut2.PNG
-  :scale: 100%
-
-編集したconfigファイルを使用して ``paplot`` を実行します。
-
-.. code-block:: bash
-
-  paplot mutation {unzip_path}/example/mutation_subplot/data.csv ./tmp mutation_subplot \
-  --config_file {unzip_path}/example/mutation_subplot/paplot.cfg
-
-----
-
 .. _conf_qc:
 
 ------------
@@ -432,21 +279,7 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
 .. image:: image/default_color.PNG
   :scale: 100%
 
-
-----
-
-==========================
-タブ区切り
-==========================
-
-データファイルがタブ区切りであった場合、次のように設定します。
-
-.. code-block:: cfg
-  
-  [result_format_qc]
-  sept = \t
-
-----
+---
 
 ==========================
 ヘッダなし
@@ -753,19 +586,6 @@ configファイルの[result_format_ca]セクションでデータの列名を�
 
   paplot ca {unzip_path}/example/ca_minimal/data.csv ./tmp ca_minimal \
   --config_file {unzip_path}/example/ca_minimal/paplot.cfg
-
-----
-
-==========================
-タブ区切り
-==========================
-
-データファイルがタブ区切りであった場合、次のように設定します。
-
-.. code-block:: cfg
-  
-  [result_format_ca]
-  sept = \t
 
 ----
 
@@ -1687,13 +1507,62 @@ Backgroundなし
 6. 共通項目
 ---------------
 
+----
+
+.. _sept:
+
+==========================
+データ区切り
+==========================
+
+データファイルがタブ区切りであった場合、次のように設定します。
+
+.. code-block:: cfg
+  
+  [result_format_mutation]
+  sept = \t
+
+  # スペース区切りの場合
+  sept = " "
+
+ここではmutation-matrixを例にとりましたが、qc, caの場合も同様です。
+qc, caの場合、configは[result_format_qc]、[result_format_ca]セクションを変更してください。
+
+----
+
+.. _comment:
+
+==========================
+コメント行
+==========================
+
+.. code-block:: cfg
+  
+  # This is comment.
+  # Please skip this line.
+  
+  ID,func,gene
+  SAMPLE00,intronic,GATA3
+  SAMPLE00,UTR3,CDH1
+
+このようにデータファイルにコメント行がある場合、次のようにコメント行の開始文字を設定することで、読み飛ばしできます。
+開始文字がない場合は読み飛ばしできませんので、手動で削除してください。
+
+.. code-block:: cfg
+  
+  [result_format_mutation]
+  comment = #
+
+ここではmutation-matrixを例にとりましたが、qc, caの場合も同様です。
+qc, caの場合、configは[result_format_qc]、[result_format_ca]セクションを変更してください。
+
 .. _suffix:
 
-====================
-suffixとID
-====================
+======================================
+データファイルが分かれている場合
+======================================
 
-paplotではサンプル名が必要です。ファイル入力では、以下のことに注意してください。
+paplotではサンプル名が必須ですが、以下の2通りで指定することができます。
 
  - case1: マージされたファイルを入力する
  
@@ -1702,85 +1571,67 @@ paplotではサンプル名が必要です。ファイル入力では、以下�
  - case2: サンプルごとに分かれた複数のファイルを入力し、データ中にサンプル名となるものはない。
  
    ファイル名の一部をサンプル名として使用します。 ``suffix`` を必ず指定してください。
+   サンプル名となる列がある場合は ``col_opt_ID`` で指定することもできます。
 
- - case3: サンプルごとに分かれた複数のファイルを入力し、データ中にサンプル名となるデータがある。
- 
-   サンプル名となる列を ``col_opt_ID`` で必ず指定してください。
+これまでのサンプルでは、case1について記述してきました。ここではcase2の入力方法を解説します。
+
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_split_file>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_split_file.zip?raw=true>`_ 
+
+データファイルから一部抜粋
+
+.. code-block:: cfg
+  :caption: example/mutation_split_file/SAMPLE00.data.csv
+
+  func,gene
+  intronic,GATA3
+  intronic,FLT3
+  intronic,FLT3
+  UTR3,CDH1
+  exonic,GATA3
+
+この例ではサンプル毎にデータが分かれています。
+
+::
+
+  example/mutation_split_file/
+
+     # データファイル
+    ┣ SAMPLE00.data.csv  # SAMPLE00の結果ファイル
+    ┣ SAMPLE01.data.csv  # SAMPLE01の結果ファイル
+    ┣ SAMPLE02.data.csv  # SAMPLE02の結果ファイル
+    ┣ SAMPLE03.data.csv  # SAMPLE03の結果ファイル
+    ┣ SAMPLE04.data.csv  # SAMPLE04の結果ファイル
+
+     # configファイル
+    ┗ paplot.cfg
+
+configファイルでsuffixを設定します。
+
+.. code-block:: cfg
+  :caption: example/mutation_split_file/paplot.cfg
+
+   [result_format_mutation]
+   suffix = .data.csv
+   
+   # id設定は削除する
+   col_opt_id = 
+
+suffixを指定すると、suffix手前までのファイル名をサンプル名として使用します。
 
 .. image:: image/id_suffix.PNG
   :scale: 100%
 
-複数ファイル入力する場合のコマンドの実行方法は :doc:`command` を参照してください。
+編集したconfigファイルを使用して ``paplot`` を実行します
 
-.. _data_format:
+.. code-block:: bash
 
-=========================
-入力ファイルフォーマット
-=========================
+  paplot mutation "{unzip_path}/example/mutation_split_file/*.csv" ./tmp mutation_split_file \
+  --config_file {unzip_path}/example/mutation_split_file/paplot.cfg
 
-configファイル中、[result_format_*] というセクションでは入力ファイルのフォーマットを指定します。
+ここではmutation-matrixを例にとりましたが、qc, caの場合も同様です。
+qc, caの場合、configは[result_format_qc]、[result_format_ca]セクションを変更してください。
 
-:suffix:  :ref:`suffixとID<suffix>` を参照してください。
-
-:sept: データ区切り。
-
-.. code-block:: cfg
-
-  # タブ区切りの場合
-  sept = \t
-  
-  # ,区切りの場合
-  sept = ,
-  
-  # スペース区切りの場合
-  sept = " "
-
-:header: 先頭1行がヘッダかどうか。先頭行がヘッダの場合はTrue。ヘッダなしの場合はFalse
-
-:comment: 先頭に指定文字がある行は飛ばす
-
-=========================
-出力ファイルフォーマット
-=========================
-
-configファイル中、[merge_format_*] というセクションでは出力ファイル(data_*.csv) のフォーマットを指定します。
-
-通常、変更する必要はありません。
-
-:sept: データ区切り。(入力ファイルフォーマットと同)
-
-:lack_column_complement: カラムがない場合、何で埋めるか
-
-.. _column:
-
-====================
-列の指定方法
-====================
-
-ヘッダの有り無しに合わせて、カラム名もしくはカラムインデックスを入力します。
-
-.. image:: image/col_pos.PNG
-  :scale: 100%
-
-記入例
-
-.. code-block:: cfg
-
-  # ヘッダ行がある場合、カラム名 (テキスト) を入力する
-  header = True
-  col_chr1 = Chr_1
-  col_break1 = Pos_1
-  col_chr2 = Chr_2
-  col_break2 = Pos_2
-
-  # ヘッダ行がない場合、カラムインデックス (数値) を入力する
-  header = False
-  col_chr1 = 0
-  col_break1 = 1
-  col_chr2 = 3
-  col_break2 = 4
-
-  
 .. _user_format:
 
 =======================
@@ -1834,12 +1685,14 @@ mouse overにより表示するポップアップのようにグラフそのも�
   表示例：
   3.33%
 
+.. _name_set:
 
+=======================
+name_set
+=======================
 
-:name_set: 積み上げ要素の凡例名と色。色は省略可能。省略した場合、デフォルト値を上から順番に使用します。
-
-:tooltip_format: mouse over で表示されるポップアップウィンドウのフォーマット。複数行の場合は上から順にtooltip_format1, tooltip_format2, ... と連番に指定します。記載方法は :ref:`ユーザ定義フォーマット<user_format>` を参照してください。
-
+凡例名と色を定義します。
+色は省略可能。省略した場合、デフォルト値を順番に使用します。
 
 .. image:: image/conf_qc2.PNG
   :scale: 100%
@@ -1854,22 +1707,5 @@ name_set(色指定なし)
 .. image:: image/conf_qc4.PNG
   :scale: 100%
   
-==================
-レイアウトファイル
-==================
-
-.. code-block:: cfg
-  :linenos:
-
-  ###################### general
-  [style]
-  # グラフのレイアウトファイル
-  # ~/tmp/paplot/style/rainbow.js
-  path = 
-  
-  # index.html の備考欄に出力するテキスト(HTMLタグ使用可, 半角英数字のみ)
-  remarks = 
-
-
 
 .. |new| image:: image/tab_001.gif

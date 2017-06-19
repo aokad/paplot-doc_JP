@@ -13,8 +13,6 @@ Config 全設定項目
 ----------------------------------------------------------
 
 .. code-block:: cfg
-  :linenos:
-  :emphasize-lines: 50,51,52,53,56,58,65,68,75,77,79,81,83,85
 
   ###################### mutation
   [mut]
@@ -103,9 +101,11 @@ Config 全設定項目
   col_opt_ID = id
   
   # 出力フォーマット
-  # 項目は欄外「出力ファイルフォーマット」参照
+  # 通常、変更する必要はありません。
   [merge_format_mutation]
+  # カラムがない場合、何で埋めるか
   lack_column_complement = NA
+  # データ区切り
   sept = ,
 
 ----------------------------------------------------------
@@ -153,10 +153,150 @@ Config 全設定項目
 .. image:: image/conf_mut4.PNG
   :scale: 100%
 
+
+----------------------------------------------
+サブプロットとしてクリニカルデータを追加
+----------------------------------------------
+
+| `view report <http://genomon-project.github.io/paplot/mutation/graph_subplot.html>`_ 
+| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot>`_ 
+| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot.zip?raw=true>`_ 
+
+変異以外のサンプルに関する情報（例えばクリニカルデータ）をサブプロットとしてmutation-matrixに追加することができます。
+
+.. image:: image/data_mut3.PNG
+
+exampleでは別ファイルとして以下のデータファイルを用意しています。
+
+データファイルから一部抜粋
+
+.. code-block:: cfg
+  :caption: example/mutation_subplot/data_subplot.csv
+  
+  ID,gender,age,BMI
+  SAMPLE00,F,30,40
+  SAMPLE01,F,62,25
+  SAMPLE02,F,59,34
+  SAMPLE03,M,66,26
+  SAMPLE04,M,53,40
+  SAMPLE05,F,79,27
+  SAMPLE06,M,64,29
+  SAMPLE07,M,54,22
+  SAMPLE08,F,55,35
+
+今回の例では、サンプルID(ID)、gender、age、BMIを用意していますが、そのうち、必須項目はサンプルID(ID)です。
+変異のファイルとサブデータのファイルがサンプルIDで紐づけられることが重要です。
+
+configファイルにサブプロットの設定を追加します。
+
+[mutation_subplot_type1_1]セクションを追加し、次のように設定します。
+
+.. code-block:: cfg
+  :caption: example/mutation_subplot/paplot.cfg
+  
+  ### sample for subplot
+  [mutation_subplot_type1_1]
+
+  # サブプロットのタイトル
+  title = Clinical Gender
+
+  # サブプロットのデータファイルのパスを設定します
+  path = {unzip_path}/example/mutation_subplot/data_subplot.csv
+
+  # データ区切り
+  sept = ,
+
+  # ヘッダ有り無し（ない場合はFalse)
+  header = True
+
+  # コメント行の先頭文字
+  comment = 
+
+  # 列名（ヘッダがない場合は列番号）
+  col_value = gender
+
+  # サンプルIDの列名（ヘッダがない場合は列番号）
+  col_id = ID
+  
+  # 表示形式 (欄外参照)
+  # fix, range, gradientから選択
+  mode = fix
+  
+  # サブプロットの色と凡例 (欄外参照)
+  name_set = M:Male:blue, F:Female:red
+
+
+サブプロットの表示位置
+--------------------------
+
+サブプロットの表示位置は2つあり、type1はサンプルグラフの下に、type2は最後に表示します。
+
+type1を表示する場合はセクション名を[mut_subplot_type1_*]とします。
+
+type2を表示する場合はセクション名を[mut_subplot_type2_*]とします。
+
+``*`` には1から始まる連番を入れてください。1から順に表示します。
+
+サブプロットの表示形式
+--------------------------
+
+表示形式 (mode) は3種類あり、fix, range, gradientから選択します。
+
+.. image:: image/conf_mut3.PNG
+  :scale: 100%
+
+name_setの書き方
+-----------------------
+
+サブプロットの色と判例を定義します。
+
+``{値}:{表示文字列}:{セルの色}`` を各値ごとに記入します。セルの色は省略可能です。
+
+mode = fixの場合
+
+.. code-block:: cfg
+  
+  name_set = 0:Male:blue, 1:Female:red, 2:Unknown:gray
+
+mode = rangeの場合
+
+値には範囲開始の値を記入します。
+
+.. code-block:: cfg
+  
+  name_set = 0:0-19, 20:20-39, 40:40-59, 60:60over
+
+mode = gradientの場合
+
+最初と最後の値を記入します。MIN/MAXを使用すると、データから自動的に設定します。
+
+.. code-block:: cfg
+
+  # 自動設定の場合
+  name_set = MIN:min, MAX:max
+
+  # 手動設定の場合
+  name_set = 0:min (0), 40:max (40)
+  
+
+titleとnameset
+--------------------------
+
+.. image:: image/conf_mut2.PNG
+  :scale: 100%
+
+編集したconfigファイルを使用して ``paplot`` を実行します。
+
+.. code-block:: bash
+
+  paplot mutation {unzip_path}/example/mutation_subplot/data.csv ./tmp mutation_subplot \
+  --config_file {unzip_path}/example/mutation_subplot/paplot.cfg
+
 =======================
 2. QC
 =======================
 
+---------------------------------
 全設定項目
 ---------------------------------
 
@@ -199,9 +339,11 @@ Config 全設定項目
   col_opt_id = file_name
   
   # 出力フォーマット
-  # 各項目の解説はページ下段の「出力ファイルフォーマット」に記載
+  # 通常、変更する必要はありません。
   [merge_format_qc]
+  # カラムがない場合、何で埋めるか
   lack_column_complement = NA
+  # データ区切り
   sept = ,
   
   # 領域選択用のグラフ設定
@@ -227,10 +369,19 @@ Config 全設定項目
   tooltip_format4 = ratio_20x: {ratio_20x:.2}
   tooltip_format5 = ratio_30x: {ratio_30x:.2}
 
+----------------------------------------
+ポップアップウィンドウの表示内容
+----------------------------------------
+
+| 記載方法は :ref:`ユーザ定義フォーマット<user_format>` を参照してください。
+|
+
+
 =======================
 3. CA
 =======================
 
+---------------------------------
 全設定項目
 ---------------------------------
 
@@ -309,12 +460,14 @@ Config 全設定項目
   col_opt_id =
   
   # 出力フォーマット
-  # 項目は欄外「出力ファイルフォーマット」参照
+  # 通常、変更する必要はありません。
   [merge_format_ca]
+  # カラムがない場合、何で埋めるか
   lack_column_complement = NA
+  # データ区切り
   sept = ,
 
-
+---------------------------------
 表示するchromosomeを限定する
 ---------------------------------
 
@@ -334,7 +487,7 @@ configファイルで次の項目を編集してください。
 
 ``paplot {input files} {output directory} {title} --config_file {config file}``
 
-
+-------------------------------
 ヒト以外のゲノムを使用する
 -------------------------------
 
@@ -375,7 +528,7 @@ chromosome名は分析したいファイルのChr1, Chr2で使用されている
   # path = C:\genome\hg19_part.csv
   path = {ここにゲノムサイズのファイルのパスを指定する}
 
-
+----------------------------------------
 ポップアップウィンドウの表示内容
 ----------------------------------------
 

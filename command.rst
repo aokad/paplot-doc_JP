@@ -47,34 +47,10 @@ paplot コマンド
 :project_name:
   プロジェクト名です。出力ファイルのタイトルに使用します。
 
-------------------------
-2. コマンドオプション 
-------------------------
-
-次の項目をオプションで変更することができます。
-
---config_file        設定ファイルです。未指定の場合、デフォルトを使用します。
---title              グラフのタイトル
---ellipsis           グラフの短縮名。グラフのファイル名になるため、同一ディレクトリに複数ファイルを出力する際に設定すると便利です。
---overview           index.htmlに表示するグラフの概要。
---remarks            index.htmlの備考欄に出力するテキストです。未指定の場合、設定ファイル ([style] remarks) の値を使用します。
-
-デフォルト値は次の通りです。
-
-=============== =================== ============ ============================================= ==============
-subcommand      title               ellipsis     overview                                      remarks
-=============== =================== ============ ============================================= ==============
-qc              QC graphs           qc           Quality Control of bam.                       なし
-ca              CA graphs           ca           Chromosomal Aberration.                       なし
-mutation        Mutation matrix     mutation     Gene-sample mutational profiles.              なし
-signature       Signature           signature    Mutational signatures.                        なし
-pmsignature     PMSignature         pmsignature  Express mutational signatures in pmsignature. なし
-=============== =================== ============ ============================================= ==============
-
 .. _output:
 
 ---------------------
-3. 出力ディレクトリ
+2. 出力ディレクトリ
 ---------------------
 
 ``output_dir`` オプションで指定した場所に次の構成でファイルを出力します。
@@ -96,5 +72,29 @@ pmsignature     PMSignature         pmsignature  Express mutational signatures i
 出力ファイルを移動する場合は ``{output_dir}`` ごと移動してください。
 
 それぞれのグラフの使い方は `how to use graphs <./index.html#how-to-toc>`_ を参照してください。
+
+------------------------
+3. コマンドオプション 
+------------------------
+
+次の項目をオプションで変更することができます。
+
+--config_file        設定ファイルです。未指定の場合、デフォルトを使用します。
+--title              グラフのタイトル
+--ellipsis           グラフの短縮名。グラフのファイル名になるため、同一ディレクトリに複数ファイルを出力する際に設定すると便利です。
+--overview           index.htmlに表示するグラフの概要。
+--remarks            index.htmlの備考欄に出力するテキストです。未指定の場合、設定ファイル ([style] remarks) の値を使用します。
+
+デフォルト値は次の通りです。
+
+=============== =================== ============ ============================================= ==============
+subcommand      title               ellipsis     overview                                      remarks
+=============== =================== ============ ============================================= ==============
+qc              QC graphs           qc           Quality Control of bam.                       なし
+ca              CA graphs           ca           Chromosomal Aberration.                       なし
+mutation        Mutation matrix     mutation     Gene-sample mutational profiles.              なし
+signature       Signature           signature    Mutational signatures.                        なし
+pmsignature     PMSignature         pmsignature  Express mutational signatures in pmsignature. なし
+=============== =================== ============ ============================================= ==============
 
 .. |new| image:: image/tab_001.gif
