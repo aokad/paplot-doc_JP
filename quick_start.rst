@@ -69,7 +69,7 @@ quick start
 **必須**
 
 :subcommand:
-  paplotのサブコマンドです。いづれかを選択します。
+  paplotのサブコマンドです。いずれかを選択します。
   
   - qc
   - ca

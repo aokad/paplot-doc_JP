@@ -61,15 +61,23 @@ Config 全設定項目
   tooltip_format_id_partial = func:{func}, {#item_value}
   
   # 入力フォーマット (自分のデータに合わせて変更する)
-  # 項目は欄外「入力ファイルフォーマット」参照
   [result_format_mutation]
+  
+  # 複数入力時に使用
   suffix = 
+  
+  # データ区切り
   sept = \t
+  
+  # ヘッダ有り無し（ない場合はFalse)
   header = True
+  
+  # コメント行の先頭文字
   comment = #
   
   # funcが1セルに複数入力されている場合の区切り文字
   sept_func = ";"
+  
   # geneが1セルに複数入力されている場合の区切り文字
   sept_gene = ";"
   
@@ -112,7 +120,7 @@ Config 全設定項目
 ポップアップウィンドウの表示内容
 ----------------------------------------------------------
 
-| 記載方法は :ref:`ユーザ定義フォーマット<user_format>` を参照してください。
+| 記載方法は `view dataset <./dataformat.html#user-format>`_ を参照してください。
 | 
 | 表示箇所ごとに6種類設定しますが、書き方は同一です。
 | データ列とは別に以下も特殊キーワードとして使用することができます。
@@ -307,12 +315,18 @@ titleとnameset
   # (none)
   
   # 入力フォーマット (自分のデータに合わせて変更する)
-  # 各項目の解説はページ下段の「入力ファイルフォーマット」に記載
   [result_format_qc]
+  
+  # 複数入力時に使用
   suffix = .qc.csv
   
+  # データ区切り
   sept = ,
+  
+  # ヘッダ有り無し（ない場合はFalse)
   header = True
+  
+  # コメント行の先頭文字
   comment = #
   
   ##################
@@ -430,12 +444,18 @@ titleとnameset
   group_colors = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011
   
   # 入力フォーマット (自分のデータに合わせて変更する)
-  # 項目は欄外「入力ファイルフォーマット」参照
   [result_format_ca]
+  
+  # 複数入力時に使用
   suffix = .result.txt
   
+  # データ区切り
   sept = \t
-  header = False
+  
+  # ヘッダ有り無し（ない場合はFalse)
+  header = True
+  
+  # コメント行の先頭文字
   comment = #
   
   ##################

@@ -6,7 +6,7 @@
 
 ※ exampleデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
 
-.. _conf_mm:
+.. _data_mm:
 
 ----------------------
 1. mutation-matrix
@@ -196,9 +196,14 @@ configファイルの[result_format_mutation]セクションでデータの列�
   paplot mutation {unzip_path}/example/mutation_option/data.csv ./tmp mutation_option \
   --config_file {unzip_path}/example/mutation_option/paplot.cfg
 
+今回はグリッド部分のポップアップを変更しました。その他のポップアップに関しては
+
+http://paplot-doc.readthedocs.io/ja/develop/config.html#id2
+
+
 ----
 
-.. _conf_qc:
+.. _data_qc:
 
 ------------
 2. QC
@@ -532,7 +537,7 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
 
 ----
 
-.. _conf_ca:
+.. _data_ca:
 
 --------------
 3. CA
@@ -797,7 +802,7 @@ configファイルの[result_format_ca]セクションでデータの列名を�
   paplot ca {unzip_path}/example/ca_option/data.csv ./tmp ca_option \
   --config_file {unzip_path}/example/ca_option/paplot.cfg
 
-.. _conf_signature:
+.. _data_signature:
 
 ---------------------------
 4. signature
@@ -1018,7 +1023,7 @@ signature数はpaplot実行時に入力ファイル (data.json) から読み取�
     ┗ signature_minimal
         ┗ graph_signature2.html
 
-.. _conf_signature_multi:
+.. _data_signature_multi:
 
 ==========================
 複数タイプのsignature
@@ -1118,9 +1123,9 @@ signature数はpaplot実行時に入力ファイル (data?.json) のデータか
 
 データフォーマットは :ref:`こちら <json_full>` 参照。
 
-複数データ実行方法は :ref:`こちら <conf_signature_multi>` 参照。
+複数データ実行方法は :ref:`こちら <data_signature_multi>` 参照。
 
-.. _conf_pmsignature:
+.. _data_pmsignature:
 
 ---------------------------
 5. pmsignature
@@ -1340,8 +1345,7 @@ pmsignature数はpaplot実行時に入力ファイル (data.json) から読み�
 
   今回の例ではpmsignatureの出力にbackgroundを設定しているため、実際に出力されるpmsignatureは1少ない数（今回は1つだけ）が表示されます。
 
-
-.. _conf_pmsignature_multi:
+.. _data_pmsignature_multi:
 
 ==========================
 複数タイプのpmsignature
@@ -1445,7 +1449,7 @@ pmsignature数はpaplot実行時に入力ファイル (data?.json) のデータ�
 
 データフォーマットは :ref:`こちら <json_ind>` 参照。
 
-複数データ実行方法は :ref:`こちら <conf_pmsignature_multi>` 参照。
+複数データ実行方法は :ref:`こちら <data_pmsignature_multi>` 参照。
 
 ==========================
 Backgroundなし
