@@ -15,7 +15,7 @@
 .. _mm_minimal:
 
 ==========================
-最小データセット
+1-1. 最小データセット
 ==========================
 
 | `view report <http://genomon-project.github.io/paplot/mutation/graph_minimal.html>`_ 
@@ -71,7 +71,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
 .. _mm_noheader:
 
 ==========================
-ヘッダなし
+1-2. ヘッダなし
 ==========================
 
 | `view report <http://genomon-project.github.io/paplot/mutation/graph_noheader.html>`_ 
@@ -124,9 +124,9 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 .. _mm_option:
 
-==========================
-ポップアップの情報追加
-==========================
+===================================
+1-3. ポップアップの情報追加
+===================================
 
 | `view report <http://genomon-project.github.io/paplot/mutation/graph_option.html>`_ 
 | `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_option>`_ 
@@ -217,7 +217,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
 .. _qc_minimal:
 
 ==========================
-最小データセット
+2-1. 最小データセット
 ==========================
 
 | `view report <http://genomon-project.github.io/paplot/qc/graph_minimal.html>`_ 
@@ -287,8 +287,8 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
   --config_file {unzip_path}/example/qc_minimal/paplot.cfg
 
 
-name_setの書き方
------------------------
+2-1-1. name_setの書き方
+------------------------------
 
 凡例名と色を定義します。
 
@@ -311,7 +311,7 @@ name_setの書き方
 .. _qc_noheader:
 
 ==========================
-ヘッダなし
+2-2. ヘッダなし
 ==========================
 
 | `view report <http://genomon-project.github.io/paplot/qc/graph_noheader.html>`_ 
@@ -354,7 +354,7 @@ configファイルの[result_format_qc]セクションでデータの列番号�
 .. _qc_mplot:
 
 ==========================
-複数グラフ
+2-3. 複数グラフ
 ==========================
 
 | `view report <http://genomon-project.github.io/paplot/qc/graph_multi_plot.html>`_ 
@@ -416,14 +416,15 @@ configファイルの[result_format_qc]セクションでデータの列番号�
 | ``*`` には1から始まる連番を入れてください。1から順に表示します。
 
 完成したconfigファイルはここ `config <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot/paplot.cfg>`_ を参照してください。
-単純な棒グラフ
------------------------
+
+2-3-1. 単純な棒グラフ
+---------------------------
 
 chart_1 (average_depth) と chart_4 (mean_insert_size) は単純な棒グラフです。
 
 記載方法は最小構成と同じですので、ここでは割愛します。
 
-列同士の数値演算
+2-3-2. 列同士の数値演算
 -----------------------
 
 chart_3 (mapped_reads) と chart_5 (duplicate_reads) は列同士で計算（今回は割り算）させて出力します。
@@ -461,8 +462,8 @@ chart_3 (mapped_reads) と chart_5 (duplicate_reads) は列同士で計算（今
 | ポップアップウィンドウ記述方法詳細は  :ref:`ユーザ定義フォーマット <user_format>` を参照してください。
 |
 
-積み上げグラフ　その１
------------------------
+2-3-3. 積み上げグラフ　その１
+-------------------------------------
 
 chart_6 (read_length_r1,read_length_r2) は積み上げグラフです。
 
@@ -491,9 +492,8 @@ chart_6 (read_length_r1,read_length_r2) は積み上げグラフです。
 
 1，2，3の順に下から表示します。1を一番下に表示します。
 
-
-積み上げグラフ　その２
------------------------
+2-3-4. 積み上げグラフ　その２
+-------------------------------------
 
 chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演算もしています。
 
@@ -536,7 +536,7 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
 .. _qc_brush:
 
 ==========================
-データ選択
+2-4. データ選択
 ==========================
 
 | `view report <http://genomon-project.github.io/paplot/qc/graph_brush.html>`_ 
@@ -578,7 +578,7 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
 .. _ca_minimal:
 
 ==========================
-最小データセット
+3-1. 最小データセット
 ==========================
 
 | `view report <http://genomon-project.github.io/paplot/ca/graph_minimal.html>`_ 
@@ -631,7 +631,7 @@ configファイルの[result_format_ca]セクションでデータの列名を�
 .. _ca_noheader:
 
 ==========================
-ヘッダなし
+3-2. ヘッダなし
 ==========================
 
 | `view report <http://genomon-project.github.io/paplot/ca/graph_noheader.html>`_ 
@@ -686,7 +686,7 @@ configファイルの[result_format_ca]セクションでデータの列番号�
 .. _ca_group:
 
 ==========================
-変異のグルーピング
+3-3. 変異のグルーピング
 ==========================
 
 | `view report <http://genomon-project.github.io/paplot/ca/graph_group.html>`_ 
@@ -757,9 +757,9 @@ configファイルの[result_format_ca]セクションでデータの列名を�
 
 .. _ca_option:
 
-==========================
-ポップアップの情報追加
-==========================
+===================================
+3-4. ポップアップの情報追加
+===================================
 
 | `view report <http://genomon-project.github.io/paplot/ca/graph_option.html>`_ 
 | `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option>`_ 
@@ -861,7 +861,7 @@ signatureデータ準備方法については :doc:`exec_signature` に記載し
 .. _json_full:
 
 ==========================
-jsonフォーマット
+4-1. jsonフォーマット
 ==========================
 
 paplotでsignatureレポートを作成するためにはこれまでの、mutation-matrixやca,qcとは異なり、jsonファイル形式でsignatureデータを用意する必要があります。
@@ -988,7 +988,7 @@ paplotでsignatureレポートを作成するためにはこれまでの、mutat
 .. _sig_minimal:
 
 ==========================
-最小データセット
+4-2. 最小データセット
 ==========================
 
 | `view report <http://genomon-project.github.io/paplot/signature/graph_signature_minimal2.html>`_ 
@@ -1078,9 +1078,9 @@ signature数はpaplot実行時に入力ファイル (data.json) から読み取�
 
 .. _sig_mclass:
 
-==========================
-複数タイプのsignature
-==========================
+===================================
+4-3. 複数タイプのsignature
+===================================
 
 | view report
 
@@ -1162,7 +1162,7 @@ signature数はpaplot実行時に入力ファイル (data?.json) のデータか
 .. _sig_integral:
 
 ==========================
-積算グラフ
+4-4. 積算グラフ
 ==========================
 
 | view report
@@ -1199,7 +1199,7 @@ pmsignatureデータ準備方法については :doc:`exec_pmsignature` に記�
 .. _json_ind:
 
 ==========================
-jsonフォーマット
+5-1. jsonフォーマット
 ==========================
 
 paplotでpmsignatureレポートを作成するためにはmutation-matrixやca,qcとは異なり、jsonファイル形式でpmsignatureデータを用意する必要があります。
@@ -1329,7 +1329,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 .. _pm_minimal:
 
 ==========================
-最小データセット
+5-2. 最小データセット
 ==========================
 
 | `view report <http://genomon-project.github.io/paplot/pmsignature/graph_pmsignature_minimal2.html>`_ 
@@ -1413,9 +1413,9 @@ pmsignature数はpaplot実行時に入力ファイル (data.json) から読み�
 
 .. _pm_mclass:
 
-==========================
-複数タイプのpmsignature
-==========================
+===================================
+5-3. 複数タイプのpmsignature
+===================================
 
 | view report
 
@@ -1501,7 +1501,7 @@ pmsignature数はpaplot実行時に入力ファイル (data?.json) のデータ�
 .. _pm_integral:
 
 ==========================
-積算グラフ
+5-4. 積算グラフ
 ==========================
 
 | view report
@@ -1526,7 +1526,7 @@ pmsignature数はpaplot実行時に入力ファイル (data?.json) のデータ�
 .. _pm_nobackground:
 
 ==========================
-Backgroundなし
+5-5. Backgroundなし
 ==========================
 
 | `view report <http://genomon-project.github.io/paplot/pmsignature/graph_nobackground2.html>`_ 
@@ -1590,7 +1590,7 @@ Backgroundなし
 .. _sept:
 
 ==========================
-データ区切り
+6-1. データ区切り
 ==========================
 
 データファイルがタブ区切りであった場合、次のように設定します。
@@ -1611,7 +1611,7 @@ qc, caの場合、configは[result_format_qc]、[result_format_ca]セクショ�
 .. _comment:
 
 ==========================
-コメント行
+6-2. コメント行
 ==========================
 
 .. code-block:: cfg
@@ -1639,7 +1639,7 @@ qc, caの場合、configは[result_format_qc]、[result_format_ca]セクショ�
 .. _suffix:
 
 ======================================
-データファイルが分かれている場合
+6-3. データファイルが分かれている場合
 ======================================
 
 paplotではサンプル名が必須ですが、以下の2通りで指定することができます。
@@ -1714,9 +1714,9 @@ qc, caの場合、configは[result_format_qc]、[result_format_ca]セクショ�
 
 .. _user_format:
 
-=======================
-ユーザ定義フォーマット
-=======================
+==============================
+6-4. ユーザ定義フォーマット
+==============================
 
 マウスオーバーにより表示するポップアップのようにグラフそのものに影響を与えないような文字列はある程度変更することができます。
 
