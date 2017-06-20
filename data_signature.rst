@@ -8,7 +8,7 @@ signatureレポート
 
 :doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。
 
-.. _json_full:
+.. _json:
 
 ==========================
 1. jsonフォーマット
@@ -145,7 +145,7 @@ paplotでsignatureレポートを作成するためにはこれまでの、mutat
 | `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal>`_ 
 | `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal.zip?raw=true>`_ 
 
-入力データ形式は :ref:`こちら <json_full>` 参照。
+入力データ形式は :ref:`こちら <json>` 参照。
 
 :doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。
 
@@ -243,7 +243,7 @@ signature数はpaplot実行時に入力ファイル (data.json) から読み取�
 | `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_multi_class>`_ 
 | `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/signature_multi_class.zip?raw=true>`_ 
 
-入力データ形式は :ref:`こちら <json_full>` 参照。
+入力データ形式は :ref:`こちら <json>` 参照。
 
 :doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。ここではpaplotコマンドを中心に解説します。
 
@@ -328,7 +328,7 @@ signature数はpaplot実行時に入力ファイル (data?.json) のデータか
 
 レポートに変異の内訳グラフを追加します。 :ref:`こちら <json_full>` で解説に使用しているデータであり、:doc:`exec_signature` によりデータの準備を行う場合に出力されるデータです。
 
-データフォーマットは :ref:`こちら <json_full>` 参照。
+データフォーマットは :ref:`こちら <json>` 参照。
 
 複数データ実行方法は :ref:`こちら <sig_mclass>` 参照。
 
