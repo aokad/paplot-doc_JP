@@ -109,8 +109,8 @@ https://github.com/Genomon-Project/paplot/releases/
 .. code-block:: bash
 
   cd {downloadしたディレクトリ}
-  # 大抵は以下でOKです。
-  # cd /Users/<user name>/Downloads/paplot-devel
+  # 大抵は以下にあります
+  # cd /Users/<user name>/Downloads/paplot-<version>
 
 
 | インストールします。

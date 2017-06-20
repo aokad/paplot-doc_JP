@@ -12,12 +12,14 @@ Contents:
 
 .. toctree:: 
    :maxdepth: 2
-   :caption: quick start
+   :caption: start up guide
    :name: quick_start_toc
    
    about.rst
    quick_start.rst
-
+   install.rst
+   command.rst
+   
 .. toctree:: 
    :maxdepth: 2
    :caption: how to use graphs
@@ -30,12 +32,15 @@ Contents:
 
 .. toctree:: 
    :maxdepth: 2
-   :caption: install & setting
-   :name: install_toc
+   :caption: dataformat
+   :name: dataformat_toc
    
-   install.rst
-   dataformat.rst
-   command.rst
+   data_mat.rst
+   data_qc.rst
+   data_ca.rst
+   data_signature.rst
+   data_pmsignature.rst
+   data_common.rst
    
 .. toctree:: 
    :maxdepth: 2

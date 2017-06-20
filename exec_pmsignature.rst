@@ -9,14 +9,21 @@
   | 実行前にRの環境構築とpmsignatureおよび関連パッケージのインストールが必要です。
   | インストールおよび、実行コマンドの詳しい解説は `pmsignature <https://github.com/friend1ws/pmsignature/>`_ を参照ください。
   |
-  | 別のツールを用いてsignature解析を行った場合は、:ref:`仕様 <json_ind>` に準拠するjsonファイルを別途準備ください。
+  | 別のツールを用いてpmsignature解析を行った場合は、 `仕様 <./dataformat.html#json-ind>`_ に準拠するjsonファイルを別途準備ください。
+  
+1. 結果ファイルの整形
+-----------------------------
 
-1. pmsignatureの実行
+pmsignatureに入力する変異のデータファイルは以下のフォーマットである必要があります。
+
+手順は `signature <./exec_signature.html#pre>`_ 参照
+ 
+2. pmsignatureの実行
 -----------------------------
 
 pmsignatureを ``type="independent"`` (default) で実行したのち、パラメータを `.Rdata` ファイルに出力します。
 
-今回の例では、pmsignatureのサンプルデータを使用しています。
+今回の例では、pmsignatureのサンプルデータを使用してるため .txt.gz 形式ですが、1の結果ファイルを入力する場合は圧縮する必要はありません。
 
 .. code-block:: R
 
@@ -36,10 +43,10 @@ pmsignatureを ``type="independent"`` (default) で実行したのち、パラ�
   resultForSave <- list(Param, Boot)
   save(resultForSave, file="pmsignature_ind3.Rdata")
 
-2. paplotで使用できるように結果ファイルを変換する
+3. paplotで使用できるようにRdataを変換する
 -----------------------------------------------------
 
-1で作成した"pmsignature_ind3.Rdata" ファイルをpaplotで読み込めるように.json形式に変換します。
+4で作成した"pmsignature_ind3.Rdata" ファイルをpaplotで読み込めるように.json形式に変換します。
 
 変換スクリプトを用意していますので、以下より最新版をダウンロードし、適切な場所に解凍してください。
 インストールの必要はありません。
@@ -50,10 +57,11 @@ https://github.com/Genomon-Project/genomon_Rscripts/releases
 
 .. code-block:: bash
 
-  R --vanilla --slave --args ./pmsignature_ind3.Rdata ./pmsignature_ind3.json < {path to genomon_Rscripts}/pmsignature/convert_toJson_ind.R
+  R --vanilla --slave --args ./pmsignature_ind3.Rdata ./pmsignature_ind3.json \
+  < {path to genomon_Rscripts}/pmsignature/convert_toJson_ind.R
 
 
-3. paplotの実行
+4. paplotの実行
 -----------------------------
 
 2で作成した"pmsignature_ind3.json" ファイルを使用して、paplot を実行します。上述の方法で実行した場合、configファイルの変更は必要ありません。
@@ -62,6 +70,8 @@ https://github.com/Genomon-Project/genomon_Rscripts/releases
 
   backgroundを使用しない場合は、configファイルのbackgroundをFalseに変更してください。
 
-`paplot signature pmsignature_ind3.Rdata ./temp signature_test`
+.. code-block:: bash
+
+  paplot signature pmsignature_ind3.Rdata ./temp signature_test
 
 .. |new| image:: image/tab_001.gif

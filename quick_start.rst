@@ -92,20 +92,20 @@ quick start
 
   cd {paplotをインストールしたディレクトリ}
 
-  # create bar graphs of qc
-  paplot qc example/qc/sample_merge.csv ./tmp demo
+  # QCレポート
+  paplot qc example/qc_brush/data.csv ./tmp demo
 
-  # create bundle graphs of Structural Variation (SV)
-  paplot ca example/sv/sample_merge.csv  ./tmp demo
+  # CAレポート
+  paplot ca example/ca_option/data.csv ./tmp demo
 
-  # create matrix graphs of mutation
-  paplot mutation example/mutation/sample_merge.csv ./tmp demo
+  # mutation-matrixレポート
+  paplot mutation example/mutation_option/data.csv ./tmp demo
 
-  # create signature graphs
-  paplot signature "example/signature/Nik_Zainal_2012.full.*.json" ./tmp demo
+  # signatureレポート
+  paplot signature "example/signature_integral/data*.json" ./tmp demo
 
-  # create signature graphs (pmsignature)
-  paplot pmsignature "example/pmsignature/Nik_Zainal_2012.ind.*.json" ./tmp demo
+  # pmsignatureレポート
+  paplot pmsignature "example/pmsignature_integral/data*.json" ./tmp demo
 
 
 3. 結果ファイルを表示
