@@ -57,7 +57,7 @@ pmsignatureに入力する変異のデータファイルは以下のフォーマ
 
 pmsignatureを ``type="full"`` で実行してパラメータを出力します。
 
-今回の例では、pmsignatureのサンプルデータを使用してるため .txt.gz 形式ですが、1の結果ファイルを入力する場合は圧縮する必要はありません。
+今回の例では、pmsignatureのサンプルデータを使用しているため .txt.gz 形式ですが、1の結果ファイルを入力する場合は圧縮する必要はありません。
 
 .. code-block:: R
   :caption: R console
@@ -100,10 +100,7 @@ https://github.com/Genomon-Project/genomon_Rscripts/releases
 
 2で作成した"pmsignature_full3.json" ファイルを使用して、paplot を実行します。上述の方法で実行した場合、configファイルの変更は必要ありません。
 
-.. note::
-
-  backgroundを使用しない場合は、configファイルのbackgroundをFalseに変更してください。
-
+paplot実行例
 
 .. code-block:: bash
 

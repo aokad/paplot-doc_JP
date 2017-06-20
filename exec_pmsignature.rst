@@ -14,16 +14,14 @@ pmsignature実行手順
 1. 結果ファイルの整形
 -----------------------------
 
-pmsignatureに入力する変異のデータファイルは以下のフォーマットである必要があります。
-
-手順は `signature <./exec_signature.html#pre>`_ 参照
+`signature <./exec_signature.html#pre>`_ 参照
  
 2. pmsignatureの実行
 -----------------------------
 
 pmsignatureを ``type="independent"`` (default) で実行したのち、パラメータを `.Rdata` ファイルに出力します。
 
-今回の例では、pmsignatureのサンプルデータを使用してるため .txt.gz 形式ですが、1の結果ファイルを入力する場合は圧縮する必要はありません。
+今回の例では、pmsignatureのサンプルデータを使用しているため .txt.gz 形式ですが、1の結果ファイルを入力する場合は圧縮する必要はありません。
 
 .. code-block:: R
 
@@ -66,9 +64,7 @@ https://github.com/Genomon-Project/genomon_Rscripts/releases
 
 2で作成した"pmsignature_ind3.json" ファイルを使用して、paplot を実行します。上述の方法で実行した場合、configファイルの変更は必要ありません。
 
-.. note::
-
-  backgroundを使用しない場合は、configファイルのbackgroundをFalseに変更してください。
+paplot実行例
 
 .. code-block:: bash
 
