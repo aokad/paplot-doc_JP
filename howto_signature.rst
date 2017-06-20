@@ -1,5 +1,5 @@
 ========================
-signature レポート |new|
+signature レポート
 ========================
 
 signature レポートでは検出したmutation についてsignatureとその集積を積み上げグラフで表示します。

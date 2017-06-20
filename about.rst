@@ -42,7 +42,7 @@ Structural Variation (SV) 等、Chromosome間の変異を円形のplotで可視�
 .. image:: image/mut_dummy.PNG
   :scale: 100%
 
-4. signature レポート |new|
+4. signature レポート
 
 検出したmutation についてsignatureとその集積を積み上げグラフで表示します。
 

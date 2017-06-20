@@ -161,12 +161,12 @@ HTMLファイルができていますか？
 .. image:: image/mut_dummy.PNG
   :scale: 100%
 
-| **signature レポート** |new|
+| **signature レポート**
 
 .. image:: image/sig_dummy.PNG
   :scale: 100%
 
-| **pmsignature レポート** |new|
+| **pmsignature レポート**
 
 .. image:: image/pmsig_dummy.PNG
   :scale: 100%
