@@ -25,9 +25,9 @@ Contents:
    :caption: how to use graphs
    :name: how_to_toc
    
-   howto_qc.rst
-   howto_ca.rst
    howto_mat.rst
+   howto_qc.rst
+   howto_ca.rst   
    howto_signature.rst
 
 .. toctree:: 
