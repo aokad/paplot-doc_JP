@@ -23,28 +23,28 @@
 
 1. QC (Quality Control) レポート
 
-bamファイルの品質を表示します。
+アライメント率やカバレッジ率など、シーケンスデータの品質を表示します。
 
 .. image:: image/qc_dummy.PNG
   :scale: 100%
 
 2. CA (Chromosomal Aberration) レポート
 
-Structural Variation (SV) 等、Chromosome間の変異を円形のplotで可視化し、棒グラフでその分布を表示します。
+構造異常や融合遺伝子など、染色体間の変異を円形のプロットで可視化し、棒グラフでその分布を表示します。
 
 .. image:: image/sv_dummy.PNG
   :scale: 100%
 
 3. mutation-matrix レポート
 
-検出したmutation について縦軸を遺伝子(Gene), 横軸をサンプル(Sample) として、変異タイプ別に表示します。
+検出した変異について縦軸を遺伝子(Gene)、横軸をサンプル(Sample) として、変異タイプ別に表示します。
 
 .. image:: image/mut_dummy.PNG
   :scale: 100%
 
 4. signature レポート
 
-検出したmutation についてsignatureとその集積を積み上げグラフで表示します。
+検出した変異についての特徴的なパターン (変異シグネチャ) を表示します。
 
 .. image:: image/sig_dummy.PNG
   :scale: 100%

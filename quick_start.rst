@@ -1,9 +1,9 @@
 *****************
-quick start
+クイックスタート
 *****************
 
 #. paplotをインストール
-#. testサンプルでコマンドを実行
+#. サンプルデータでコマンドを実行
 #. 結果ファイルを表示
 
 1. paplotをインストール
@@ -16,7 +16,7 @@ quick start
 
 .. code-block:: bash
 
-  cd {install したいディレクトリ}
+  cd {インストールしたいディレクトリ}
   # v0.5.3の場合
   wget https://github.com/Genomon-Project/paplot/archive/v0.5.3.zip
   unzip v0.5.3.zip
@@ -28,7 +28,7 @@ quick start
 |
 
 
-**installの確認**
+**インストールの確認**
 
 | 以下を入力してください。
 
@@ -49,7 +49,7 @@ quick start
 
 
 2. サンプルデータでコマンドを実行
----------------------------------
+-------------------------------------
 
 | paplotはコマンドから使用します。
 | 
@@ -66,7 +66,7 @@ quick start
 
 |
 
-**必須**
+**必ず入力する項目**
 
 :subcommand:
   paplotのサブコマンドです。いずれかを選択します。
@@ -98,7 +98,7 @@ quick start
   # CAレポート
   paplot ca example/ca_option/data.csv ./tmp demo
 
-  # mutation-matrixレポート
+  # mutation matrixレポート
   paplot mutation example/mutation_option/data.csv ./tmp demo
 
   # signatureレポート
@@ -119,13 +119,13 @@ HTMLファイルができていますか？
     ├ demo
     │   ├ graph_ca.html            <--- ca レポート
     │   ├ graph_mut.html           <--- mutation-matrix レポート
-    │   ├ graph_pmsignature2.html  <--- pmsignature レポート (数字はsignature数)
+    │   ├ graph_pmsignature2.html  <--- pmsignature レポート (数字はシグネチャの数)
     │   ├ graph_pmsignature3.html
     │   ├ graph_pmsignature4.html
     │   ├ graph_pmsignature5.html
     │   ├ graph_pmsignature6.html
     │   ├ graph_qc.html            <--- qc レポート
-    │   ├ graph_signature2.html    <--- signature レポート (数字はsignature数)
+    │   ├ graph_signature2.html    <--- signature レポート (数字はシグネチャの数)
     │   ├ graph_signature3.html
     │   ├ graph_signature4.html
     │   ├ graph_signature5.html
@@ -136,10 +136,10 @@ HTMLファイルができていますか？
     ├ lib
     ├ style
     │
-    └ index.html             <--- このファイルを web ブラウザで開いてください。
+    └ index.html             <--- このファイルをウェブブラウザで開いてください。
 
 
-| index.htmlファイルを web ブラウザで開いてください。
+| index.htmlファイルをウェブブラウザで開いてください。
 |
 | ※HGCスパコン等、サーバ上で実行した場合はファイルをローカルに転送するか、サーバ上の仮想ウィンドウ(NoMachime等)で表示してください。
 |   ローカルに転送する場合は、:file:`tmp` ディレクトリを丸ごとコピーしてください。
@@ -156,12 +156,12 @@ HTMLファイルができていますか？
 .. image:: image/sv_dummy.PNG
   :scale: 100%
 
-| **mutation-matrix レポート**
+| **Mutation Matrix レポート**
 
 .. image:: image/mut_dummy.PNG
   :scale: 100%
 
-| **signature レポート**
+| **Mutation Signature レポート**
 
 .. image:: image/sig_dummy.PNG
   :scale: 100%
