@@ -1,8 +1,8 @@
-**************************
-CAレポート
-**************************
+************************************
+Chromosomal Aberration レポート
+************************************
 
-ここでは、exampleデータ (※) を基にして、CAレポートを出力するために必要な入力データを解説します。
+ここでは、exampleデータ (※) を基にして、Chromosomal Aberration レポートを出力するために必要な入力データを解説します。
 
 ※ exampleデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
 
@@ -16,7 +16,7 @@ CAレポート
 | `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal>`_ 
 | `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal.zip?raw=true>`_ 
 
-paplotでcaレポートを作成するために最低限必要な項目はサンプルID(ID)、ブレークポイント1のchromosome (Chr1) とposition(Break1)、ブレークポイント2のchromosome (Chr2) とposition(Break2) の5つです。
+paplotでcaレポートを作成するために最低限必要な項目はサンプルID(ID)、ブレークポイント1の染色体 (Chr1) とposition (Break1)、ブレークポイント2の染色体 (Chr2) とposition(Break2) の5つです。
 
 データファイルから一部抜粋
 
@@ -235,7 +235,7 @@ configファイルの[result_format_ca]セクションでデータの列名を�
  - ブレークポイント1のDirection(Dir1)
  - ブレークポイント2のDirection(Dir2)
 
-このうち、変異タイプ(func)と遺伝子名(gene1, gene2)、Direction(Dir1, Dir2)を使用します。
+このうち、変異タイプ (func) と遺伝子名 (gene1、gene2)、Direction (Dir1、Dir2) を使用します。
 
 まず、ポップアップの情報として追加したい列名をconfigファイルに記載します。
 

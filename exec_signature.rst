@@ -9,7 +9,7 @@ Mutaiton signature実行手順
   | 実行前にRの環境構築とpmsignatureおよび関連パッケージのインストールが必要です。
   | インストールおよび、実行コマンドの詳しい解説は `pmsignature <https://github.com/friend1ws/pmsignature/>`_ を参照ください。
   |
-  | 別のツールを用いてsignature解析を行った場合は、 `仕様 <./data_signature.html#json>`_ に準拠するjsonファイルを別途準備ください。
+  | 別のツールを用いてシグネチャ解析を行った場合は、 `仕様 <./data_signature.html#json>`_ に準拠するjsonファイルを別途準備ください。
 
 .. _pre:
 
@@ -85,7 +85,7 @@ pmsignatureを ``type="full"`` で実行してパラメータを出力します�
 
 https://github.com/Genomon-Project/genomon_Rscripts/releases
 
-入力ファイル, 出力したいファイル名の順に引数を渡します。
+入力ファイル、出力したいファイル名の順に引数を渡します。
 
 .. code-block:: bash
 

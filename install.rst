@@ -5,7 +5,7 @@
 | paplotは次のマシンで動作します。
 |
 
- * Linux系サーバ (HGCスパコン含), Linux ディストリビューション
+ * Linux系サーバ (HGCスパコン含)、Linux ディストリビューション
  * MacOS X
  * Windows
 
@@ -13,7 +13,7 @@
 | (python 2.6 は未検証)
 |
 
- * :ref:`Linux系の場合 (HGCスパコン, cygwin含) <linux>`
+ * :ref:`Linux系の場合 (HGCスパコン、cygwin含) <linux>`
  * :ref:`MacOS Xの場合 <macosx>`
  * :ref:`Windowsの場合 <windows>`
 
@@ -32,7 +32,7 @@ Linux系の場合 (cygwin含)
 
 .. code-block:: bash
 
-  cd {install したいディレクトリ}
+  cd {インストールしたいディレクトリ}
   # v0.5.3の場合
   wget https://github.com/Genomon-Project/paplot/archive/v0.5.3.zip
   unzip v0.5.3.zip
@@ -108,7 +108,7 @@ https://github.com/Genomon-Project/paplot/releases/
 
 .. code-block:: bash
 
-  cd {downloadしたディレクトリ}
+  cd {ダウンロードしたディレクトリ}
   # 大抵は以下にあります
   # cd /Users/<user name>/Downloads/paplot-<version>
 
@@ -134,21 +134,21 @@ https://github.com/Genomon-Project/paplot/releases/
   | ここにない場合は ``find / -name paplot`` とコマンドを入力してインストールされているところを探します。
   |
   | 4つ見つかるはずです。
-  | このうち、downloadしたディレクトリは使用しません。
+  | このうち、ダウンロードしたディレクトリは使用しません。
   | 
 
   .. code-block:: bash
     
-    {installしたディレクトリ}/bin/paplot               <--- ココです
-    {installしたディレクトリ}/lib/python2.7/site-packages/paplot-0.2.6devel-py2.7.egg/EGG-INFO/scripts/paplot
-    {downloadディレクトリ}/paplot-devel/paplot
-    {downloadディレクトリ}/paplot-devel/build/scripts-2.7/paplot
+    {インストールしたディレクトリ}/bin/paplot               <--- ココです
+    {インストールしたディレクトリ}/lib/python2.7/site-packages/paplot-0.2.6devel-py2.7.egg/EGG-INFO/scripts/paplot
+    {ダウンロードしたディレクトリ}/paplot-devel/paplot
+    {ダウンロードしたディレクトリ}/paplot-devel/build/scripts-2.7/paplot
   
 
 .. code-block:: bash
 
-  export PATH={installしたディレクトリ}/bin:$PATH
-  export LD_LIBRARY_PATH={installしたディレクトリ}/lib:$LD_LIBRARY_PATH
+  export PATH={インストールしたディレクトリ}/bin:$PATH
+  export LD_LIBRARY_PATH={インストールしたディレクトリ}/lib:$LD_LIBRARY_PATH
   
   # 大抵は以下でOKです。
   # <user name>は自分のユーザ名に置き換えてください。
@@ -215,7 +215,7 @@ Windows系の場合
 
 | winPython もしくはPython(x,y)をインストールするのが手軽だと思います。
 | cygwinでも動きます。
-| cygwinの場合は :ref:`Linux系の場合 (HGCスパコン, cygwin含) <linux>` を参照してください。
+| cygwinの場合は :ref:`Linux系の場合 (HGCスパコン、cygwin含) <linux>` を参照してください。
 |
 
  * winPython http://winpython.github.io/

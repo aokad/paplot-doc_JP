@@ -98,10 +98,10 @@
   # CAレポート
   paplot ca example/ca_option/data.csv ./tmp demo
 
-  # mutation matrixレポート
+  # Mutation Matrixレポート
   paplot mutation example/mutation_option/data.csv ./tmp demo
 
-  # signatureレポート
+  # Mutational Signatureレポート
   paplot signature "example/signature_integral/data*.json" ./tmp demo
 
   # pmsignatureレポート
@@ -117,15 +117,15 @@ HTMLファイルができていますか？
 
   {output_dir} で指定したディレクトリ
     ├ demo
-    │   ├ graph_ca.html            <--- ca レポート
-    │   ├ graph_mut.html           <--- mutation-matrix レポート
+    │   ├ graph_ca.html            <--- Chromosomal Aberration レポート
+    │   ├ graph_mut.html           <--- Mutation Matrix レポート
     │   ├ graph_pmsignature2.html  <--- pmsignature レポート (数字はシグネチャの数)
     │   ├ graph_pmsignature3.html
     │   ├ graph_pmsignature4.html
     │   ├ graph_pmsignature5.html
     │   ├ graph_pmsignature6.html
-    │   ├ graph_qc.html            <--- qc レポート
-    │   ├ graph_signature2.html    <--- signature レポート (数字はシグネチャの数)
+    │   ├ graph_qc.html            <--- QC レポート
+    │   ├ graph_signature2.html    <--- Mutational Signature レポート (数字はシグネチャの数)
     │   ├ graph_signature3.html
     │   ├ graph_signature4.html
     │   ├ graph_signature5.html
@@ -151,7 +151,7 @@ HTMLファイルができていますか？
 .. image:: image/qc_dummy.PNG
   :scale: 100%
 
-| **CA レポート**
+| **Chromosomal Aberration レポート**
 
 .. image:: image/sv_dummy.PNG
   :scale: 100%
@@ -161,7 +161,7 @@ HTMLファイルができていますか？
 .. image:: image/mut_dummy.PNG
   :scale: 100%
 
-| **Mutation Signature レポート**
+| **Mutational Signature レポート**
 
 .. image:: image/sig_dummy.PNG
   :scale: 100%

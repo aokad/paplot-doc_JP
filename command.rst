@@ -66,7 +66,7 @@ paplot コマンド
     ├ lib
     ├ style
     │
-    └ index.html             <--- このファイルを web ブラウザで開いてください。
+    └ index.html             <--- このファイルをウェブブラウザで開いてください。
 
 
 出力ファイルを移動する場合は ``{output_dir}`` ごと移動してください。
@@ -94,8 +94,8 @@ subcommand      title               ellipsis     overview                       
 =============== =================== ============ ============================================= ==============
 qc              QC graphs           qc           Quality Control of bam.                       なし
 ca              CA graphs           ca           Chromosomal Aberration.                       なし
-mutation        Mutation matrix     mutation     Gene-sample mutational profiles.              なし
-signature       Signature           signature    Mutational signatures.                        なし
+mutation        Mutation Matrix     mutation     Gene-sample mutational profiles.              なし
+signature       Signature           signature    Mutational Signatures.                        なし
 pmsignature     PMSignature         pmsignature  Express mutational signatures in pmsignature. なし
 =============== =================== ============ ============================================= ==============
 

@@ -96,7 +96,7 @@
 
 上で作成したファイルは次のディレクトリにコピーされています。
 
-すでにpaplotで出力したHTMLファイルを変更する場合、スタイルファイル (mystyle.js) を編集し、再読み込み(ブラウザで ``F5`` )すれば反映されます。
+すでにpaplotで出力したHTMLファイルを変更する場合、スタイルファイル (mystyle.js) を編集し、再読み込み(ウェブブラウザで ``F5`` )すれば反映されます。
 
 .. code-block:: bash
 
@@ -194,7 +194,7 @@
       link_select_opacity: 1.0,
   };
   
-  // style of mutaion-matrix
+  // style of Mutaion Matrix
   style_mut = {
       // title's text options
       title_sample: "Sample",
@@ -231,7 +231,7 @@
       
   };
   
-  // style of signature
+  // style of Mutational Signature
   style_signature = {
       // stack-integral
       title_integral: "Signature integral",

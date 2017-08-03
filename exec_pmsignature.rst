@@ -51,7 +51,7 @@ pmsignatureを ``type="independent"`` (default) で実行したのち、パラ�
 
 https://github.com/Genomon-Project/genomon_Rscripts/releases
 
-入力ファイル, 出力したいファイル名の順に引数を渡します。
+入力ファイル、出力したいファイル名の順に引数を渡します。
 
 .. code-block:: bash
 

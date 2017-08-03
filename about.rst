@@ -35,14 +35,14 @@
 .. image:: image/sv_dummy.PNG
   :scale: 100%
 
-3. mutation-matrix レポート
+3. Mutation Matrix レポート
 
 検出した変異について縦軸を遺伝子(Gene)、横軸をサンプル(Sample) として、変異タイプ別に表示します。
 
 .. image:: image/mut_dummy.PNG
   :scale: 100%
 
-4. signature レポート
+4. Mutational Signature レポート
 
 検出した変異についての特徴的なパターン (変異シグネチャ) を表示します。
 

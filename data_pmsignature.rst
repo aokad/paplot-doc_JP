@@ -14,7 +14,7 @@ pmsignatureレポート
 1. jsonフォーマット
 ==========================
 
-paplotでpmsignatureレポートを作成するためにはmutation-matrixやca,qcとは異なり、jsonファイル形式でpmsignatureデータを用意する必要があります。
+paplotでpmsignatureレポートを作成するためには Mutation Matrix や Chromosomal Aberration、QC とは異なり、jsonファイル形式でpmsignatureデータを用意する必要があります。
 
 ここでは、paplotが使用するpmsignatureデータのフォーマットについて解説します。
 
@@ -70,17 +70,17 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 
 :ref:
   | pmsignatureの各リファレンスの値。
-  | pmsignatureごと、リファレンスごとにA,C,G,Tの順に値を記述します。描画時に再計算しますので、合計して1になる必要はありません。
+  | pmsignatureごと、リファレンスごとにA -> C -> G -> Tの順に値を記述します。描画時に再計算しますので、合計して1になる必要はありません。
   | 今回の例ではbaseの数が5ですが、3や7など奇数の数値であれば変更可能です。
 
 :alt:
   | pmsignatureのaltの値。
   | pmsignatureごとに16個の値を設定します。
-  | 横方向のサイズはref3 (base=5の場合。base=3であればref2, base=7であればref4) のACGTの各値に従うため、altAとaltGについては通常は0を設定します。
+  | 横方向のサイズはref3 (base=5の場合。base=3であればref2、base=7であればref4) のACGTの各値に従うため、altAとaltGについては通常は0を設定します。
 
 :strand:
   | pmsignatureのstrandの値。
-  | pmsignatureごとにplus, minus2つの値をそれぞれ設定します。
+  | pmsignatureごとにplus/minus2つの値をそれぞれ設定します。
   | strandが無い場合は `[0,0]` を記入します。
 
 **積み上げグラフ描画データ**
@@ -93,19 +93,19 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
   | サンプル名リスト
 
 :mutation_count:
-  | サンプルごとのmutation数
-  | 上記の例の場合、PD3851a のmutation数=702, PD3890a のmutation数=2312, PD3904a のmutation数=2096 となります。
+  | サンプルごとの変異数
+  | 上記の例の場合、PD3851a の変異数=702、PD3890a の変異数=2312、PD3904a の変異数=2096 となります。
 
 :mutation:
   | サンプルごと、pmsignatureごとの割合を設定します。 
   | [sample index, pmsignature index, value] の順に記載します。
   |
   | サンプルのindexは id で記載した順に0からカウントします。
-  | 上記の例の場合、PD3851a=0, PD3890a=1, PD3904a=2となります。
+  | 上記の例の場合、PD3851a=0、PD3890a=1、PD3904a=2となります。
   |
   | pmsignatureのindexも ref で記載した順に0からカウントします。
   | backgroundを使用する場合、signature1, signature2, ..., backgroundの順にカウントします。
-  | 上記の例の場合、signature1 = 0, signature2 = 1, background = 2となります。
+  | 上記の例の場合、signature1 = 0、signature2 = 1、background = 2となります。
 
 .. note::
 

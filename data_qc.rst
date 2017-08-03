@@ -202,9 +202,9 @@ configファイルの[result_format_qc]セクションでデータの列番号�
 
 ``{name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
 
-次に、configファイルに[qc_chart_1],[qc_chart_2],[qc_chart_3]... セクションを追加し、順番に設定します。
+次に、configファイルに[qc_chart_1]、[qc_chart_2]、[qc_chart_3] ... セクションを追加し、順番に設定します。
 
-| QCレポートは[qc_chart_1],[qc_chart_2],[qc_chart_3] の順番に表示し、必要な数だけ [qc_chart_*] セクションを増やすことができます。
+| QCレポートは[qc_chart_1]、[qc_chart_2]、[qc_chart_3] の順番に表示し、必要な数だけ [qc_chart_*] セクションを増やすことができます。
 | ``*`` には1から始まる連番を入れてください。1から順に表示します。
 
 完成したconfigファイルはここ `config <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot/paplot.cfg>`_ を参照してください。

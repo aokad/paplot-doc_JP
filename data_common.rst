@@ -22,8 +22,8 @@
   # スペース区切りの場合
   sept = " "
 
-ここではmutation-matrixを例にとりましたが、qc, caの場合も同様です。
-qc, caの場合、configは[result_format_qc]、[result_format_ca]セクションを変更してください。
+ここでは Mutation Matrix を例にとりましたが、QC や Chromosomal Aberration の場合も同様です。
+QC、Chromosomal Aberration の場合、configは[result_format_qc]、[result_format_ca]セクションを変更してください。
 
 ----
 
@@ -50,8 +50,8 @@ qc, caの場合、configは[result_format_qc]、[result_format_ca]セクショ�
   [result_format_mutation]
   comment = #
 
-ここではmutation-matrixを例にとりましたが、qc, caの場合も同様です。
-qc, caの場合、configは[result_format_qc]、[result_format_ca]セクションを変更してください。
+ここでは Mutation Matrix を例にとりましたが、QC や Chromosomal Aberration の場合も同様です。
+QC、Chromosomal Aberration の場合、configは[result_format_qc]、[result_format_ca]セクションを変更してください。
 
 ----
 
@@ -128,8 +128,8 @@ suffixを指定すると、suffix手前までのファイル名をサンプル�
   paplot mutation "{unzip_path}/example/mutation_split_file/*.csv" ./tmp mutation_split_file \
   --config_file {unzip_path}/example/mutation_split_file/paplot.cfg
 
-ここではmutation-matrixを例にとりましたが、qc, caの場合も同様です。
-qc, caの場合、configは[result_format_qc]、[result_format_ca]セクションを変更してください。
+ここでは Mutation Matrix を例にとりましたが、QC や Chromosomal Aberration の場合も同様です。
+QC、Chromosomal Aberration の場合、configは[result_format_qc]、[result_format_ca]セクションを変更してください。
 
 .. _user_format:
 
@@ -153,9 +153,9 @@ qc, caの場合、configは[result_format_qc]、[result_format_ca]セクショ�
 {}で囲った文字がキーワードで、実際の値に置き換えられます。
 キーワードとはconfigファイルで各データ列を設定した項目のうち、``col_`` もしくは ``col_opt_`` を除いた名前です。
 大文字と小文字の区別はありません。
-たとえば、CHR, Chr, chr はすべて同一とみなしますので、ご注意ください。
+たとえば、CHR、Chr、chr はすべて同一とみなしますので、ご注意ください。
 
-キーワードは任意で増やすことができます。(signature, pmsignatureは追加できません)
+キーワードは任意で増やすことができます。(signature、pmsignatureは追加できません)
 ```col_opt_{任意の名前}``` として追加し、{}には実際のデータの列名を指定してください。
 
 ::

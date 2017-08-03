@@ -9,9 +9,9 @@
 v0.5.0
 ====================
 
-| グラフ追加
-| ● signature graph
-| ● pmsignature graph
+| サブコマンド追加
+| ● signature
+| ● pmsignature
 
 | サブコマンド変更
 | ● sv -> ca
@@ -26,13 +26,13 @@ v0.4.0
 v0.3.1
 ====================
 
-| mutation-matrix graphについて、不具合修正
+| Mutation Matrix レポートについて、不具合修正
 
 v0.3.0
 ====================
 
-| グラフ追加
-| ● mutation-matrix graph
+| サブコマンド追加
+| ● mutation
 
 v0.2.8
 ====================
@@ -43,8 +43,8 @@ v0.2.7
 ====================
 
 | 新規作成
-| ● QC graph
-| ● SV graph
+| ● qc
+| ● sv
 
 
 ライセンス

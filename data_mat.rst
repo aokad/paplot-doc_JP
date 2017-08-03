@@ -1,8 +1,8 @@
 **************************
-mutation-matrixレポート
+Mutation Matrix レポート
 **************************
 
-ここでは、exampleデータ (※) を基にして、mutation-matrixレポートを出力するために必要な入力データを解説します。
+ここでは、exampleデータ (※) を基にして、Mutation Matrix レポートを出力するために必要な入力データを解説します。
 
 ※ exampleデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
 
@@ -16,7 +16,7 @@ mutation-matrixレポート
 | `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal>`_ 
 | `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal.zip?raw=true>`_ 
 
-paplotでmutation-matrixを作成するために最低限必要な項目はサンプルID(ID)、gene名(gene)、変異タイプ(func) の3つです。
+paplotで Mutation Matrix を作成するために最低限必要な項目はサンプルID(ID)、gene名(gene)、変異タイプ(func) の3つです。
 
 データファイルから一部抜粋
 
@@ -157,7 +157,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
   SAMPLE00,chr14,103320225,103320225,-,T,downstream,TRAF3
 
 今回の例では、必須項目であるサンプルID(ID)、gene名(gene)、変異タイプ(func) に加えて、
-Chromosome(Chr), 変異開始位置(Start),変異終了位置(End), リファレンスの塩基 (Ref), 変異の塩基(Alt)を追加しています。
+染色体(Chr)、変異開始位置(Start)、変異終了位置(End)、リファレンスの塩基 (Ref)、変異の塩基(Alt) を追加しています。
 
 まず、追加した列名をconfigファイルに記載します。
 

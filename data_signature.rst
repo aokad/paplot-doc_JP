@@ -1,8 +1,8 @@
-**************************
-signatureレポート
-**************************
+******************************
+Mutational Signature レポート
+******************************
 
-ここでは、exampleデータ (※) を基にして、signatureレポートを出力するために必要な入力データを解説します。
+ここでは、exampleデータ (※) を基にして、Mutational Signature レポートを出力するために必要な入力データを解説します。
 
 ※ exampleデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
 
@@ -14,9 +14,9 @@ signatureレポート
 1. jsonフォーマット
 ==========================
 
-paplotでsignatureレポートを作成するためにはこれまでの、mutation-matrixやca,qcとは異なり、jsonファイル形式でsignatureデータを用意する必要があります。
+paplotで Mutational Signature レポートを作成するためにはこれまでの、 Mutation Matrix や Chromosomal Aberration、QC とは異なり、jsonファイル形式でシグネチャのデータを用意する必要があります。
 
-ここでは、paplotが使用するsignatureデータのフォーマットについて解説します。
+ここでは、paplotが使用するシグネチャのデータフォーマットについて解説します。
 
 `example/signature_integral/data2.json` ファイルをテキストエディタで開くと次のようになっています。
 
@@ -49,11 +49,11 @@ paplotでsignatureレポートを作成するためにはこれまでの、mutat
     "mutation_count":[4001,7174,5804]
   }
 
-**signature描画データ**
+**シグネチャのデータフォーマット**
 
 :signature:
-  | signatureの各barの値。
-  | signatureごと、変化パターン (C > A など) ごとに値を記述します。
+  | シグネチャの各barの値。
+  | シグネチャごと、変化パターン (C > A など) ごとに値を記述します。
   | 変化パターンの数を変えることはできません。
   | baseの数は3か5のいずれかのみ設定できます。
 
@@ -88,24 +88,24 @@ paplotでsignatureレポートを作成するためにはこれまでの、mutat
 
 この項目はオプションです。
 
-設定するとサンプル毎にsignatureの積算グラフ ( `例 <http://genomon-project.github.io/paplot/signature/graph_integral2.html>`_ ) を作成します。
+設定するとサンプル毎にシグネチャの積算グラフ ( `例 <http://genomon-project.github.io/paplot/signature/graph_integral2.html>`_ ) を作成します。
 
 :id:
   | サンプル名リスト
 
 :mutation_count:
-  | サンプルごとのmutation数
-  | 上記の例の場合、PD3851a のmutation数=4001, PD3890a のmutation数=7174, PD3904a のmutation数=5804 となります。
+  | サンプルごとの変異数
+  | 上記の例の場合、PD3851a の変異数=4001、PD3890a の変異数=7174、PD3904a の変異数=5804 となります。
 
 :mutation:
-  | サンプルごと、signatureごとの割合を設定します。 
+  | サンプルごと、シグネチャごとの割合を設定します。 
   | [sample index, signature index, value] の順に記載します。
   |
   | サンプルのindexは id で記載した順に0からカウントします。
-  | 上記の例の場合、PD3851a=0, PD3890a=1, PD3904a=2となります。
+  | 上記の例の場合、PD3851a=0、PD3890a=1、PD3904a=2となります。
   |
-  | signatureのindexも signature で記載した順に0からカウントします。
-  | 上記の例の場合、signature1 = 0, signature2 = 1, signature3 = 2となります。
+  | シグネチャのindexも `signature` で記載した順に0からカウントします。
+  | 上記の例の場合、signature1 = 0、signature2 = 1、signature3 = 2 となります。
 
 .. note::
 
@@ -212,9 +212,9 @@ configファイル
 
 上記のコマンドを実行すると以下の場所にレポートが作成されます。
 
-ここで出力されるレポートは、graph_signature2.html と、signature数がファイル名に反映されています。
+ここで出力されるレポートは、graph_signature2.html と、シグネチャの数がファイル名に反映されています。
 
-signature数はpaplot実行時に入力ファイル (data.json) から読み取り、自動的に判定します。
+シグネチャの数はpaplot実行時に入力ファイル (data.json) から読み取り、自動的に判定します。
 
 ::
 
@@ -229,7 +229,7 @@ signature数はpaplot実行時に入力ファイル (data.json) から読み取�
 .. _sig_mclass:
 
 ===================================
-3. 複数タイプのsignature
+3. 複数タイプのシグネチャ
 ===================================
 
 | view report
@@ -247,7 +247,7 @@ signature数はpaplot実行時に入力ファイル (data.json) から読み取�
 
 :doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。ここではpaplotコマンドを中心に解説します。
 
-データファイルはsignatureタイプの数だけ用意し、configファイルは形式が同じであれば一つだけ用意します。
+データファイルはシグネチャクラスの数だけ用意し、configファイルは形式が同じであれば一つだけ用意します。
 
 今回の場合、以下のファイル構成になります。
 
@@ -293,9 +293,9 @@ signature数はpaplot実行時に入力ファイル (data.json) から読み取�
 
 上記のコマンドを実行すると以下の場所にレポートが作成されます。
 
-ここで出力されるレポートは、graph_signature2.html と、signature数がファイル名に反映されています。
+ここで出力されるレポートは、graph_signature2.html と、シグネチャの数がファイル名に反映されています。
 
-signature数はpaplot実行時に入力ファイル (data?.json) のデータから読み取り、自動的に判定します。ファイル名称には依存しません。
+シグネチャの数はpaplot実行時に入力ファイル (data?.json) のデータから読み取り、自動的に判定します。ファイル名称には依存しません。
 
 ::
 

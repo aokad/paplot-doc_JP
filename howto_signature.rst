@@ -2,13 +2,13 @@
 Mutaiton signature レポート
 =============================
 
-signature レポートでは検出したmutation についてsignatureとその集積を積み上げグラフで表示します。
+Mutaiton signature レポートでは検出した変異についてシグネチャとその集積を積み上げグラフで表示します。
 
 :signature:
-  signatureを表示します。
+  シグネチャを表示します。
 
 :積み上げグラフ:
-  サンプルごとmutationについて、signatureの割合を表示します。
+  サンプルごとの変異について、シグネチャの割合を表示します。
 
 .. image:: image/sig_dummy.PNG
   :scale: 100%
@@ -16,17 +16,17 @@ signature レポートでは検出したmutation についてsignatureとその�
 また、積み上げグラフの下のリストボックスにより表示モードを切り替えることができます。
 
 :view mode:
-  - rate ... mutationの数を1としたときのsignatureの割合を % で表示します。
-  - integral ... 実際のmutation数に対する割合を表示します。
+  - rate ... 変異の数を1としたときのsignatureの割合を % で表示します。
+  - integral ... 実際の変異数に対する割合を表示します。
 
 :sort by:
   - sampleID ... サンプルID順
-  - mutation count ... mutation数の降順
+  - mutation count ... 変異数の降順
 
   view modeがintegralの場合のみ、ソート方法を選択できます。
 
 
-view mode 「integral」, sort by 「mutation count」の表示例
+view mode 「integral」、sort by 「mutation count」の表示例
 
 .. image:: image/sig_operation1.PNG
   :scale: 100%
