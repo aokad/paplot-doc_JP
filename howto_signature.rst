@@ -1,8 +1,8 @@
 =============================
-Mutaiton signature レポート
+Mutaitonal Signature レポート
 =============================
 
-Mutaiton signature レポートでは検出した変異についてシグネチャとその集積を積み上げグラフで表示します。
+Mutaitonal Signature レポートでは検出した変異についてシグネチャとその集積を積み上げグラフで表示します。
 
 :signature:
   シグネチャを表示します。

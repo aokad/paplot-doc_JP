@@ -92,19 +92,19 @@
 
   cd {paplotをインストールしたディレクトリ}
 
-  # QCレポート
+  # QC レポート
   paplot qc example/qc_brush/data.csv ./tmp demo
 
-  # CAレポート
+  # Chromosomal Aberration レポート
   paplot ca example/ca_option/data.csv ./tmp demo
 
-  # Mutation Matrixレポート
+  # Mutation Matrix レポート
   paplot mutation example/mutation_option/data.csv ./tmp demo
 
   # Mutational Signatureレポート
   paplot signature "example/signature_integral/data*.json" ./tmp demo
 
-  # pmsignatureレポート
+  # pmsignature レポート
   paplot pmsignature "example/pmsignature_integral/data*.json" ./tmp demo
 
 
@@ -141,7 +141,7 @@ HTMLファイルができていますか？
 
 | index.htmlファイルをウェブブラウザで開いてください。
 |
-| ※HGCスパコン等、サーバ上で実行した場合はファイルをローカルに転送するか、サーバ上の仮想ウィンドウ(NoMachime等)で表示してください。
+| ※HGCスパコン等、サーバ上で実行した場合はファイルをローカルに転送するか、NoMachime等サーバ上の仮想ウィンドウで表示してください。
 |   ローカルに転送する場合は、:file:`tmp` ディレクトリを丸ごとコピーしてください。
 | 
 | 次のように見えていますか?

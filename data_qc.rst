@@ -1,10 +1,10 @@
 **************************
-QCレポート
+QC レポート
 **************************
 
-ここでは、exampleデータ (※) を基にして、QCレポートを出力するために必要な入力データを解説します。
+ここでは、サンプルデータ (※) を基にして、QC レポートを出力するために必要な入力データを解説します。
 
-※ exampleデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
+※ サンプルデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
 
 .. _qc_minimal:
 
@@ -16,7 +16,7 @@ QCレポート
 | `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal>`_ 
 | `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal.zip?raw=true>`_ 
 
-paplotでQCレポートを作成するために最低限必要な情報はサンプルID(ID)とQCの値（最低1項目）です。
+paplotで QC レポートを作成するために最低限必要な情報はサンプルID(ID)と QC の値（最低1項目）です。
 
 今回の例では、depth-averageを使用していますが、ほかの値でも問題ありません。
 
@@ -32,7 +32,7 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
   SAMPLE4,70.9654
   SAMPLE5,69.9653
 
-まず、configファイルの[result_format_qc]セクションに入力データの列名を登録します。
+まず、configファイルの [result_format_qc] セクションに入力データの列名を登録します。
 
 .. code-block:: cfg
   :caption: example/qc_minimal/paplot.cfg
@@ -46,7 +46,7 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
 
 ``{name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
 
-次に、configファイルに[qc_chart_1]セクションを追加し、次のように設定します。
+次に、configファイルに [qc_chart_1] セクションを追加し、次のように設定します。
 
 .. code-block:: cfg
   :caption: example/qc_minimal/paplot.cfg
@@ -69,7 +69,7 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
   tooltip_format1 = ID:{id}
   tooltip_format2 = {average_depth:.2}
 
-ここで、 ``average_depth`` という値を変数のとして使用していますが、これは [result_format_qc]セクションで指定した ``col_opt_average_depth`` 項目のうち、``col_opt_`` を除いた名前です。
+ここで、 ``average_depth`` という値を変数のように使用していますが、これは [result_format_qc] セクションで指定した ``col_opt_average_depth`` 項目のうち、``col_opt_`` を除いた名前です。
 
 編集したconfigファイルを使用して ``paplot`` を実行します。
 
@@ -123,7 +123,7 @@ paplotでQCレポートを作成するために最低限必要な情報はサン
 
 データにヘッダ行がない場合、列名でなく列番号を設定します。
 
-configファイルの[result_format_qc]セクションでデータの列番号を次のように設定します。
+configファイルの [result_format_qc] セクションでデータの列番号を次のように設定します。
 
 列番号は左から順に1始まりで数えます。
 
@@ -178,7 +178,7 @@ configファイルの[result_format_qc]セクションでデータの列番号�
 
 完成したグラフはここ `view <http://genomon-project.github.io/paplot/qc/graph_multi_plot.html>`_ を参照してください。
 
-まず、configファイルの[result_format_qc]セクションに入力データの列名を登録します。
+まず、configファイルの [result_format_qc] セクションに入力データの列名を登録します。
 
 .. code-block:: cfg
   :caption: example/qc_multi_plot/paplot.cfg
@@ -202,9 +202,9 @@ configファイルの[result_format_qc]セクションでデータの列番号�
 
 ``{name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
 
-次に、configファイルに[qc_chart_1]、[qc_chart_2]、[qc_chart_3] ... セクションを追加し、順番に設定します。
+次に、configファイルに [qc_chart_1]、[qc_chart_2]、[qc_chart_3] ... セクションを追加し、順番に設定します。
 
-| QCレポートは[qc_chart_1]、[qc_chart_2]、[qc_chart_3] の順番に表示し、必要な数だけ [qc_chart_*] セクションを増やすことができます。
+| QCレポートは[qc_chart_1] -> [qc_chart_2] -> [qc_chart_3] の順番に表示し、必要な数だけ [qc_chart_*] セクションを増やすことができます。
 | ``*`` には1から始まる連番を入れてください。1から順に表示します。
 
 完成したconfigファイルはここ `config <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot/paplot.cfg>`_ を参照してください。
@@ -341,7 +341,7 @@ chart_6 (2x_rt,10x_rt,20x_rt,30x_rt) は積み上げグラフですが数値演�
 
 データ列はaverage_depthを使用します。
 
-もし、新しいデータ列を使用する場合は設定ファイルの[result_format_qc]セクションにcol_opt_{name} として登録してください。
+もし、新しいデータ列を使用する場合は設定ファイルの [result_format_qc] セクションに col_opt_{name} として登録してください。
 
 領域選択用のグラフは[qc_chart_brush]というセクション名で一つだけ追加することができます。
 

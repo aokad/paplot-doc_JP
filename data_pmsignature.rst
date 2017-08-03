@@ -1,10 +1,10 @@
 **************************
-pmsignatureレポート
+pmsignature レポート
 **************************
 
-ここでは、exampleデータ (※) を基にして、pmsignatureレポートを出力するために必要な入力データを解説します。
+ここでは、サンプルデータ (※) を基にして、pmsignature レポートを出力するために必要な入力データを解説します。
 
-※ exampleデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
+※ サンプルデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
 
 :doc:`exec_pmsignature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。
 
@@ -14,9 +14,9 @@ pmsignatureレポート
 1. jsonフォーマット
 ==========================
 
-paplotでpmsignatureレポートを作成するためには Mutation Matrix や Chromosomal Aberration、QC とは異なり、jsonファイル形式でpmsignatureデータを用意する必要があります。
+paplot で pmsignature レポートを作成するためには Mutation Matrix や Chromosomal Aberration、QC とは異なり、json ファイル形式で pmsignature データを用意する必要があります。
 
-ここでは、paplotが使用するpmsignatureデータのフォーマットについて解説します。
+ここでは、paplot が使用する pmsignature データのフォーマットについて解説します。
 
 exampleのデータファイルをテキストエディタで開くと次のようになっています。
 (長いため一部省略しています)
@@ -66,7 +66,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 
 .. image:: image/exec_pmsig1.PNG
 
-**pmsignature描画データ**
+**pmsignature データフォーマット**
 
 :ref:
   | pmsignatureの各リファレンスの値。

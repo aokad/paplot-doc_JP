@@ -2,9 +2,9 @@
 Mutation Matrix レポート
 **************************
 
-ここでは、exampleデータ (※) を基にして、Mutation Matrix レポートを出力するために必要な入力データを解説します。
+ここでは、サンプルデータ (※) を基にして、Mutation Matrix レポートを出力するために必要な入力データを解説します。
 
-※ exampleデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
+※ サンプルデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
 
 .. _mm_minimal:
 
@@ -39,7 +39,7 @@ paplotで Mutation Matrix を作成するために最低限必要な項目はサ
 
 今回の例では列名はID、gene、funcとしていますが、任意に設定できます。
 
-configファイルの[result_format_mutation]セクションでデータの列名を次のように設定します。
+configファイルの [result_format_mutation] セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/mutation_minimal/paplot.cfg
@@ -92,7 +92,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 データにヘッダ行がない場合、列名でなく列番号を設定します。
 
-configファイルの[result_format_mutation]セクションでデータの列番号を次のように設定します。
+configファイルの [result_format_mutation] セクションでデータの列番号を次のように設定します。
 
 列番号は左から順に1始まりで数えます。
 
@@ -161,7 +161,7 @@ configファイルの[result_format_mutation]セクションでデータの列�
 
 まず、追加した列名をconfigファイルに記載します。
 
-configファイルの[result_format_mutation]セクションでデータの列名を次のように設定します。
+configファイルの [result_format_mutation] セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/mutation_option/paplot.cfg

@@ -2,9 +2,9 @@
 Mutational Signature レポート
 ******************************
 
-ここでは、exampleデータ (※) を基にして、Mutational Signature レポートを出力するために必要な入力データを解説します。
+ここでは、サンプルデータ (※) を基にして、Mutational Signature レポートを出力するために必要な入力データを解説します。
 
-※ exampleデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
+※ サンプルデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
 
 :doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。
 

@@ -2,9 +2,9 @@
 Chromosomal Aberration レポート
 ************************************
 
-ここでは、exampleデータ (※) を基にして、Chromosomal Aberration レポートを出力するために必要な入力データを解説します。
+ここでは、サンプルデータ (※) を基にして、Chromosomal Aberration レポートを出力するために必要な入力データを解説します。
 
-※ exampleデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
+※ サンプルデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
 
 .. _ca_minimal:
 
@@ -16,7 +16,7 @@ Chromosomal Aberration レポート
 | `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal>`_ 
 | `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal.zip?raw=true>`_ 
 
-paplotでcaレポートを作成するために最低限必要な項目はサンプルID(ID)、ブレークポイント1の染色体 (Chr1) とposition (Break1)、ブレークポイント2の染色体 (Chr2) とposition(Break2) の5つです。
+paplot で Chromosomal Aberration レポートを作成するために最低限必要な項目はサンプルID(ID)、ブレークポイント1の染色体 (Chr1) とposition (Break1)、ブレークポイント2の染色体 (Chr2) とposition(Break2) の5つです。
 
 データファイルから一部抜粋
 
@@ -35,7 +35,7 @@ paplotでcaレポートを作成するために最低限必要な項目はサン
   SAMPLE4,7,6037836,21,34855497,
   SAMPLE4,7,109724564,14,106387943,
 
-configファイルの[result_format_ca]セクションでデータの列名を次のように設定します。
+configファイルの [result_format_ca] セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/ca_minimal/paplot.cfg
@@ -89,7 +89,7 @@ configファイルの[result_format_ca]セクションでデータの列名を�
 
 データにヘッダ行がない場合、列名でなく列番号を設定します。
 
-configファイルの[result_format_ca]セクションでデータの列番号を次のように設定します。
+configファイルの [result_format_ca] セクションでデータの列番号を次のように設定します。
 
 列番号は左から順に1始まりで数えます。
 
@@ -151,7 +151,7 @@ configファイルの[result_format_ca]セクションでデータの列番号�
 
 まず、グルーピングに使用する列名、type をconfigファイルに記載します。
 
-configファイルの[result_format_ca]セクションでデータの列名を次のように設定します。
+configファイルの [result_format_ca] セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/ca_group/paplot.cfg
@@ -239,7 +239,7 @@ configファイルの[result_format_ca]セクションでデータの列名を�
 
 まず、ポップアップの情報として追加したい列名をconfigファイルに記載します。
 
-configファイルの[result_format_ca]セクションでデータの列名を次のように設定します。
+configファイルの [result_format_ca] セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/ca_option/paplot.cfg

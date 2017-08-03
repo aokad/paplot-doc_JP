@@ -205,7 +205,7 @@ exampleでは別ファイルとして以下のデータファイルを用意し�
 
 configファイルにサブプロットの設定を追加します。
 
-[mutation_subplot_type1_1]セクションを追加し、次のように設定します。
+[mutation_subplot_type1_1] セクションを追加し、次のように設定します。
 
 .. code-block:: cfg
   :caption: example/mutation_subplot/paplot.cfg
@@ -247,9 +247,9 @@ configファイルにサブプロットの設定を追加します。
 
 サブプロットの表示位置は2つあり、type1はサンプルグラフの下に、type2は最後に表示します。
 
-type1を表示する場合はセクション名を[mut_subplot_type1_*]とします。
+type1を表示する場合はセクション名を [mut_subplot_type1_*] とします。
 
-type2を表示する場合はセクション名を[mut_subplot_type2_*]とします。
+type2を表示する場合はセクション名を [mut_subplot_type2_*] とします。
 
 ``*`` には1から始まる連番を入れてください。1から順に表示します。
 
