@@ -12,18 +12,18 @@ Mutation Matrix レポート
 1. 最小データセット
 ==========================
 
-| `view report <http://genomon-project.github.io/paplot/mutation/graph_minimal.html>`_ 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal.zip?raw=true>`_ 
+ * `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/mutation/graph_minimal.html>`_ 
+ * `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal>`_ 
+ * `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal.zip?raw=true>`_ 
 
-paplotで Mutation Matrix を作成するために最低限必要な項目はサンプルID(ID)、gene名(gene)、変異タイプ(func) の3つです。
+paplotで Mutation Matrix を作成するために最低限必要な項目はサンプルID (Sample)、gene名 (Gene)、変異タイプ (MutationType) の3つです。
 
 データファイルから一部抜粋
 
 .. code-block:: cfg
   :caption: example/mutation_minimal/data.csv
   
-  ID,func,gene
+  Sample,MutationType,Gene
   SAMPLE00,intronic,GATA3
   SAMPLE00,UTR3,CDH1
   SAMPLE00,exonic,GATA3
