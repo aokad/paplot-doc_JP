@@ -6,7 +6,7 @@ pmsignature レポート
 
 ※ サンプルデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
 
-:doc:`exec_pmsignature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。
+:doc:`exec_pmsignature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。
 
 .. _json_ind:
 
@@ -150,7 +150,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 
 入力データ形式は :ref:`こちら <json_ind>` 参照。
 
-:doc:`exec_pmsignature` に従いデータの準備を行う場合、configファイルの変更は必要ありません。
+:doc:`exec_pmsignature` に従いデータの準備を行う場合、設定ファイルの変更は必要ありません。
 
 ここではpaplotコマンドを中心に解説します。
 
@@ -165,7 +165,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
     "strand":[[0.514,0.485]]
   }
 
-configファイル
+設定ファイル
 
 .. code-block:: cfg
   :caption: example/signature_minimal/paplot.cfg
@@ -242,9 +242,9 @@ pmsignature数はpaplot実行時に入力ファイル (data.json) から読み�
 
 入力データ形式は :ref:`こちら <json_ind>` 参照。
 
-:doc:`exec_pmsignature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。ここではpaplotコマンドを中心に解説します。
+:doc:`exec_pmsignature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。ここではpaplotコマンドを中心に解説します。
 
-データファイルはpmsignatureタイプの数だけ用意し、configファイルは形式が同じであれば一つだけ用意します。
+データファイルはpmsignatureタイプの数だけ用意し、設定ファイルは形式が同じであれば一つだけ用意します。
 
 今回の場合、以下のファイル構成になります。
 
@@ -259,7 +259,7 @@ pmsignature数はpaplot実行時に入力ファイル (data.json) から読み�
     ┣ data5.json  # pmsignature num = 5
     ┣ data6.json  # pmsignature num = 6
 
-     # configファイル
+     # 設定ファイル
     ┗ paplot.cfg
 
 ``paplot`` を実行します。

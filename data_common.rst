@@ -90,7 +90,7 @@ paplotではサンプル名が必須ですが、以下の2通りで指定する�
     ┣ SAMPLE03.data.csv  # SAMPLE03の結果ファイル
     ┣ SAMPLE04.data.csv  # SAMPLE04の結果ファイル
 
-     # configファイル
+     # 設定ファイル
     ┗ paplot.cfg
 
 データファイルから一部抜粋
@@ -105,7 +105,7 @@ paplotではサンプル名が必須ですが、以下の2通りで指定する�
   UTR3,CDH1
   exonic,GATA3
 
-configファイルでsuffixを設定します。
+設定ファイルでsuffixを設定します。
 
 .. code-block:: cfg
   :caption: example/mutation_split_file/paplot.cfg
@@ -121,7 +121,7 @@ suffixを指定すると、suffix手前までのファイル名をサンプル�
 .. image:: image/id_suffix.PNG
   :scale: 100%
 
-編集したconfigファイルを使用して ``paplot`` を実行します
+編集した設定ファイルを使用して ``paplot`` を実行します
 
 .. code-block:: bash
 
@@ -151,7 +151,7 @@ QC、Chromosomal Aberration の場合、configは [result_format_qc]、[result_f
   type[exome], chr1:2000:2001, [A -----> T]
 
 {}で囲った文字がキーワードで、実際の値に置き換えられます。
-キーワードとはconfigファイルで各データ列を設定した項目のうち、``col_`` もしくは ``col_opt_`` を除いた名前です。
+キーワードとは設定ファイルで各データ列を設定した項目のうち、``col_`` もしくは ``col_opt_`` を除いた名前です。
 大文字と小文字の区別はありません。
 たとえば、CHR、Chr、chr はすべて同一とみなしますので、ご注意ください。
 

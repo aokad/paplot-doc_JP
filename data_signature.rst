@@ -6,7 +6,7 @@ Mutational Signature レポート
 
 ※ サンプルデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
 
-:doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。
+:doc:`exec_signature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。
 
 .. _json:
 
@@ -147,7 +147,7 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
 
 入力データ形式は :ref:`こちら <json>` 参照。
 
-:doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。
+:doc:`exec_signature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。
 
 ここではpaplotコマンドを中心に解説します。
 
@@ -179,7 +179,7 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
     ]
   }
 
-configファイル
+設定ファイル
 
 .. code-block:: cfg
   :caption: example/signature_minimal/paplot.cfg
@@ -245,9 +245,9 @@ configファイル
 
 入力データ形式は :ref:`こちら <json>` 参照。
 
-:doc:`exec_signature` の手順でデータの準備を行う場合、configファイルの変更は必要ありません。ここではpaplotコマンドを中心に解説します。
+:doc:`exec_signature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。ここではpaplotコマンドを中心に解説します。
 
-データファイルはシグネチャクラスの数だけ用意し、configファイルは形式が同じであれば一つだけ用意します。
+データファイルはシグネチャクラスの数だけ用意し、設定ファイルは形式が同じであれば一つだけ用意します。
 
 今回の場合、以下のファイル構成になります。
 
@@ -262,7 +262,7 @@ configファイル
     ┣ data5.json  # signature num = 5
     ┣ data6.json  # signature num = 6
 
-     # configファイル
+     # 設定ファイル
     ┗ paplot.cfg
 
 ``paplot`` を実行します。

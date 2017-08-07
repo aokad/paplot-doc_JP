@@ -2,31 +2,31 @@
 インストール
 ************************
 
-| paplotは次のマシンで動作します。
+| paplot は次のマシンで動作します。
 |
 
- * Linux系サーバ (HGCスパコン含)、Linux ディストリビューション
+ * Linux 系サーバ (HGC スパコン含)、Linux ディストリビューション
  * MacOS X
  * Windows
 
-| paplotを実行するにはpython 2.7が必要です。
-| (python 2.6 は未検証)
+| paplot を実行するには python 2.7 が必要です。
+| ( python 2.6 は未検証)
 |
 
- * :ref:`Linux系の場合 (HGCスパコン、cygwin含) <linux>`
- * :ref:`MacOS Xの場合 <macosx>`
- * :ref:`Windowsの場合 <windows>`
+ * :ref:`Linux 系の場合 (HGC スパコン、cygwin 含) <linux>`
+ * :ref:`MacOS X の場合 <macosx>`
+ * :ref:`Windows の場合 <windows>`
 
 .. _linux:
 
 ================================================
-Linux系の場合 (cygwin含)
+Linux 系の場合 (cygwin 含)
 ================================================
 
 1. paplot のインストール
 --------------------------
 
-| paplotのサイトから最新版の ``Source code (zip)`` をダウンロードします。
+| paplot のサイトから最新版の ``Source code (zip)`` をダウンロードします。
 | https://github.com/Genomon-Project/paplot/releases/
 |
 
@@ -80,7 +80,7 @@ Linux系の場合 (cygwin含)
 .. _macosx:
 
 ================================================
-MacOS Xの場合
+MacOS X の場合
 ================================================
 
 1. ソースファイルのダウンロード
@@ -99,7 +99,7 @@ https://github.com/Genomon-Project/paplot/releases/
 
 | ターミナルを起動してダウンロードしたディレクトリに移動します。
 | 
-| 「ターミナル.app」がDockの中にない場合、次からたどることができます。
+| 「ターミナル.app」が Dock の中にない場合、次からたどることができます。
 | Finder → 「移動」メニュー → 「アプリケーション」を選択 → 「ユーティリティ」ディレクトリを開く → 「ターミナル」を起動
 | 
 | <user name>は自分のユーザ名です。
@@ -120,10 +120,10 @@ https://github.com/Genomon-Project/paplot/releases/
   
   python setup.py build install --user
 
-3. PATHの設定
+3. PATH の設定
 ----------------
 
-| このままではターミナルは ``paplot`` がどこにあるかわからないので、インストールされているところにPATHを通します。
+| このままではターミナルは ``paplot`` がどこにあるかわからないので、インストールされている場所を PATH という環境変数に設定します。
 | 大抵、ここにあります。
 |
 
@@ -175,7 +175,7 @@ https://github.com/Genomon-Project/paplot/releases/
 
 .. note::
   
-  PATH設定を忘れないようにする
+  PATH 設定を忘れないようにする
   
   | ↑で設定したPATHは再起動すると忘れてしまうので、
   | 起動するたびに ``export PATH=...`` コマンドを入力する必要があります。
@@ -207,33 +207,86 @@ https://github.com/Genomon-Project/paplot/releases/
 .. _windows:
 
 ====================================
-Windows系の場合
+Windows 系の場合
 ====================================
 
-1. Pythonのインストール
+1. Python のインストール
 ---------------------------
 
-| winPython もしくはPython(x,y)をインストールするのが手軽だと思います。
-| cygwinでも動きます。
-| cygwinの場合は :ref:`Linux系の場合 (HGCスパコン、cygwin含) <linux>` を参照してください。
+| Windows の場合、標準では python はインストールされていませんので、まず python をインストールします。
+| 標準 python でも paplot は動きますが、今後 python を使用してデータ解析される予定でしたら、数値計算系パッケージがあらかじめ用意されている winPython もしくは Python(x,y) をインストールすることをお勧めします。
+| cygwin でも動きます。
+| cygwin の場合は :ref:`Linux 系の場合 (HGC スパコン、cygwin 含) <linux>` を参照してください。
 |
 
+ * python (標準) https://www.python.org/
  * winPython http://winpython.github.io/
  * Python(x,y) http://python-xy.github.io/
 
-| python 2.7.10 で動作確認済みです。
+| python 2.7.10、python 3.5.3 で動作確認済みです。
 | 
 
 2. paplot のインストール
 -----------------------------
 
-| paplotのサイトから最新版の ``Source code (zip)`` をダウンロードします。
+| paplot のサイトから最新版の ``Source code (zip)`` をダウンロードします。
 | ダウンロードしたファイルは適当なフォルダに解凍します。
 |
-
 https://github.com/Genomon-Project/paplot/releases/
 
-| pythonをインストールしたフォルダにコマンドプロンプトがありますので、起動します。
+
+2.1 Windows 標準のコマンドプロンプトを使用する場合
+=====================================================
+
+| Windows 標準のコマンドプロンプトを起動し、ダウンロードした zip ファイルを解凍したフォルダに移動します。
+|
+
+.. code-block:: bash
+
+  cd {zip ファイルを解凍したフォルダ}
+
+
+| paplot インストールコマンドを実行します。
+| Windowsの場合、1．による python のインストール作業では環境変数 (PATH) が設定されていません。
+| ここでは python をパスごと指定していますが、システムの環境変数 PATH に登録することで省略することもできます。
+|
+| ※ 以下、python のパスは WinPython-64bit-2.7.10.3 を標準インストールしたときのものです。
+|    実際の環境に合わせてください。
+|
+
+.. code-block:: bash
+
+  > C:\WinPython-64bit-2.7.10.3\python-2.7.10.amd64\python.exe setup.py build install
+
+
+.. code-block:: bash
+
+  > cd {zip ファイルを解凍したフォルダ}
+
+| 続けて、テストコマンドを実行します。
+|
+
+.. code-block:: bash
+
+  > C:\WinPython-64bit-2.7.10.3\python-2.7.10.amd64\python.exe conf
+  **********************
+     hello paplot !!!
+  **********************
+
+  (デフォルト設定値が表示される)
+
+| このような表示が出れば成功です。
+|
+| インストールが終わったら、:doc:`quick_start` をお試しください。
+| 
+
+
+2.2 Windows 標準のコマンドプロンプトを使用する場合
+=====================================================
+
+| winPython もしくは Python(x,y) をインストールした場合、python 専用のコマンドプロンプトがついてきますので、これを使用することもできます。
+|
+| python をインストールしたフォルダにコマンドプロンプトがありますので、起動します。
 | WinPython-64bit-3.5.1.2 を標準でインストールした場合、ここにあります。
 | 
 
@@ -248,20 +301,20 @@ https://github.com/Genomon-Project/paplot/releases/
   python setup.py build install
 
 
-| Windowsの場合、 ``paplot`` コマンドにパスが通っていないのでバッチファイルを使用します。
-| zipを解凍したフォルダに ``paplot.cmd`` がありますので、ノートパッド等テキストエディタで開いて編集します。
+| ``paplot`` コマンドにパスが通っていないのでバッチファイルを使用します。
+| ダウンロードした zip ファイルを解凍したフォルダに ``paplot.cmd`` がありますので、ノートパッド等テキストエディタで開いて編集します。
 | 
 
 .. code-block:: bash
 
   set paplot="C:\Program Files\WinPython-64bit-2.7.10.2\python-2.7.10.amd64\Scripts\paplot"
 
-| paplotの実際の場所を記入してください。
-| 数字はインストールしたpythonのバージョンにより変化します。
+| paplot の実際の場所を記入してください。
+| 数字はインストールした python のバージョンにより変化します。
 | 
-| 編集したバッチファイルをpythonコマンドプロンプトと同じフォルダにコピーします。
+| 編集したバッチファイルを python コマンドプロンプトと同じフォルダにコピーします。
 | 
-| pythonコマンドプロンプトで、先ほど作成したバッチファイルを実行します。
+| python コマンドプロンプトで、先ほど作成したバッチファイルを実行します。
 
 .. code-block:: bash
 
@@ -274,8 +327,6 @@ https://github.com/Genomon-Project/paplot/releases/
 
 | このような表示が出れば成功です。
 | 
-| **注意：Windows標準のコマンドプロンプトでは動作しません。**
-| **必ずPythonのコマンドプロンプトを使用してください。**
 | 
 | 以降、``paplot`` コマンドは ``paplot.cmd`` と読み替えてください。
 | 

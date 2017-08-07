@@ -35,7 +35,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   SAMPLE4,7,6037836,21,34855497,
   SAMPLE4,7,109724564,14,106387943,
 
-configファイルの [result_format_ca] セクションでデータの列名を次のように設定します。
+設定ファイルの [result_format_ca] セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/ca_minimal/paplot.cfg
@@ -50,7 +50,7 @@ configファイルの [result_format_ca] セクションでデータの列名を
   # column index (option)
   col_opt_id = ID
 
-編集したconfigファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して ``paplot`` を実行します。
 
 .. code-block:: bash
 
@@ -89,7 +89,7 @@ configファイルの [result_format_ca] セクションでデータの列名を
 
 データにヘッダ行がない場合、列名でなく列番号を設定します。
 
-configファイルの [result_format_ca] セクションでデータの列番号を次のように設定します。
+設定ファイルの [result_format_ca] セクションでデータの列番号を次のように設定します。
 
 列番号は左から順に1始まりで数えます。
 
@@ -105,7 +105,7 @@ configファイルの [result_format_ca] セクションでデータの列番号
   # column index (option)
   col_opt_id = 1
 
-編集したconfigファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して ``paplot`` を実行します。
 
 .. code-block:: bash
 
@@ -149,9 +149,9 @@ configファイルの [result_format_ca] セクションでデータの列番号
 
 今回の例では、必須項目であるID、Chr1、Break1、Chr2、Break2 に加えて、type が追加してあります。
 
-まず、グルーピングに使用する列名、type をconfigファイルに記載します。
+まず、グルーピングに使用する列名、type を設定ファイルに記載します。
 
-configファイルの [result_format_ca] セクションでデータの列名を次のように設定します。
+設定ファイルの [result_format_ca] セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/ca_group/paplot.cfg
@@ -177,7 +177,7 @@ configファイルの [result_format_ca] セクションでデータの列名を
   nouse_group = 
 
 
-編集したconfigファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して ``paplot`` を実行します。
 
 .. code-block:: bash
 
@@ -237,9 +237,9 @@ configファイルの [result_format_ca] セクションでデータの列名を
 
 このうち、変異タイプ (func) と遺伝子名 (gene1、gene2)、Direction (Dir1、Dir2) を使用します。
 
-まず、ポップアップの情報として追加したい列名をconfigファイルに記載します。
+まず、ポップアップの情報として追加したい列名を設定ファイルに記載します。
 
-configファイルの [result_format_ca] セクションでデータの列名を次のように設定します。
+設定ファイルの [result_format_ca] セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/ca_option/paplot.cfg
@@ -266,7 +266,7 @@ configファイルの [result_format_ca] セクションでデータの列名を
   # 次のように変更
   tooltip_format = [{chr1}] {break1:,} ({dir1}) {gene_name1}; [{chr2}] {break2:,} ({dir2}) {gene_name2}; {type}
 
-編集したconfigファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して ``paplot`` を実行します。
 
 .. code-block:: bash
 

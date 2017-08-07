@@ -39,7 +39,7 @@ paplotで Mutation Matrix を作成するために最低限必要な項目はサ
 
 今回の例では列名はID、gene、funcとしていますが、任意に設定できます。
 
-configファイルの [result_format_mutation] セクションでデータの列名を次のように設定します。
+設定ファイルの [result_format_mutation] セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/mutation_minimal/paplot.cfg
@@ -53,7 +53,7 @@ configファイルの [result_format_mutation] セクションでデータの列
   col_opt_id = ID
 
 
-編集したconfigファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して ``paplot`` を実行します。
 
 .. code-block:: bash
 
@@ -92,7 +92,7 @@ configファイルの [result_format_mutation] セクションでデータの列
 
 データにヘッダ行がない場合、列名でなく列番号を設定します。
 
-configファイルの [result_format_mutation] セクションでデータの列番号を次のように設定します。
+設定ファイルの [result_format_mutation] セクションでデータの列番号を次のように設定します。
 
 列番号は左から順に1始まりで数えます。
 
@@ -107,7 +107,7 @@ configファイルの [result_format_mutation] セクションでデータの列
   # column index (option)
   col_opt_id = 1
 
-編集したconfigファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して ``paplot`` を実行します。
 
 .. code-block:: bash
 
@@ -159,9 +159,9 @@ configファイルの [result_format_mutation] セクションでデータの列
 今回の例では、必須項目であるサンプルID(ID)、gene名(gene)、変異タイプ(func) に加えて、
 染色体(Chr)、変異開始位置(Start)、変異終了位置(End)、リファレンスの塩基 (Ref)、変異の塩基(Alt) を追加しています。
 
-まず、追加した列名をconfigファイルに記載します。
+まず、追加した列名を設定ファイルに記載します。
 
-configファイルの [result_format_mutation] セクションでデータの列名を次のように設定します。
+設定ファイルの [result_format_mutation] セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/mutation_option/paplot.cfg
@@ -189,7 +189,7 @@ configファイルの [result_format_mutation] セクションでデータの列
   # 次のように変更
   tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -----> {alt}]
 
-編集したconfigファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して ``paplot`` を実行します。
 
 .. code-block:: bash
 

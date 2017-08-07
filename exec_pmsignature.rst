@@ -62,7 +62,7 @@ https://github.com/Genomon-Project/genomon_Rscripts/releases
 4. paplotの実行
 -----------------------------
 
-2で作成した"pmsignature_ind3.json" ファイルを使用して、paplot を実行します。上述の方法で実行した場合、configファイルの変更は必要ありません。
+2で作成した"pmsignature_ind3.json" ファイルを使用して、paplot を実行します。上述の方法で実行した場合、設定ファイルの変更は必要ありません。
 
 paplot実行例
 
