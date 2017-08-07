@@ -14,9 +14,9 @@ Mutational Signature レポート
 1. jsonフォーマット
 ==========================
 
-paplotで Mutational Signature レポートを作成するためにはこれまでの、 Mutation Matrix や Chromosomal Aberration、QC とは異なり、jsonファイル形式でシグネチャのデータを用意する必要があります。
+paplotで Mutational Signature レポートを作成するためにはこれまでの、 Mutation Matrix や Chromosomal Aberration、QC とは異なり、jsonファイル形式で変異シグネチャのデータを用意する必要があります。
 
-ここでは、paplotが使用するシグネチャのデータフォーマットについて解説します。
+ここでは、paplotが使用する変異シグネチャのデータフォーマットについて解説します。
 
 `example/signature_integral/data2.json` ファイルをテキストエディタで開くと次のようになっています。
 
@@ -49,11 +49,11 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
     "mutation_count":[4001,7174,5804]
   }
 
-**シグネチャのデータフォーマット**
+**変異シグネチャのデータフォーマット**
 
 :signature:
-  | シグネチャの各barの値。
-  | シグネチャごと、変化パターン (C > A など) ごとに値を記述します。
+  | 変異シグネチャの各barの値。
+  | 変異シグネチャごと、変化パターン (C > A など) ごとに値を記述します。
   | 変化パターンの数を変えることはできません。
   | baseの数は3か5のいずれかのみ設定できます。
 
@@ -88,7 +88,7 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
 
 この項目はオプションです。
 
-設定するとサンプル毎にシグネチャの積算グラフ ( `例 <http://genomon-project.github.io/paplot/signature/graph_integral2.html>`_ ) を作成します。
+設定するとサンプル毎に変異シグネチャの積算グラフ ( `例 <http://genomon-project.github.io/paplot/signature/graph_integral2.html>`_ ) を作成します。
 
 :id:
   | サンプル名リスト
@@ -98,13 +98,13 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
   | 上記の例の場合、PD3851a の変異数=4001、PD3890a の変異数=7174、PD3904a の変異数=5804 となります。
 
 :mutation:
-  | サンプルごと、シグネチャごとの割合を設定します。 
+  | サンプルごと、変異シグネチャごとの割合を設定します。 
   | [sample index, signature index, value] の順に記載します。
   |
   | サンプルのindexは id で記載した順に0からカウントします。
   | 上記の例の場合、PD3851a=0、PD3890a=1、PD3904a=2となります。
   |
-  | シグネチャのindexも `signature` で記載した順に0からカウントします。
+  | 変異シグネチャのindexも `signature` で記載した順に0からカウントします。
   | 上記の例の場合、signature1 = 0、signature2 = 1、signature3 = 2 となります。
 
 .. note::
@@ -151,7 +151,7 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
 
 ここではpaplotコマンドを中心に解説します。
 
-データファイル (シグネチャ数は2)
+データファイル (変異シグネチャ数は2)
 
 .. code-block:: python
   :caption: example/signature_minimal/data.json
@@ -212,9 +212,9 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
 
 上記のコマンドを実行すると以下の場所にレポートが作成されます。
 
-ここで出力されるレポートは、graph_signature2.html と、シグネチャの数がファイル名に反映されています。
+ここで出力されるレポートは、graph_signature2.html と、変異シグネチャの数がファイル名に反映されています。
 
-シグネチャの数はpaplot実行時に入力ファイル (data.json) から読み取り、自動的に判定します。
+変異シグネチャの数はpaplot実行時に入力ファイル (data.json) から読み取り、自動的に判定します。
 
 ::
 
@@ -229,7 +229,7 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
 .. _sig_mclass:
 
 ===================================
-3. 複数タイプのシグネチャ
+3. 複数タイプの変異シグネチャ
 ===================================
 
 | view report
@@ -247,7 +247,7 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
 
 :doc:`exec_signature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。ここではpaplotコマンドを中心に解説します。
 
-データファイルはシグネチャクラスの数だけ用意し、設定ファイルは形式が同じであれば一つだけ用意します。
+データファイルは変異シグネチャクラスの数だけ用意し、設定ファイルは形式が同じであれば一つだけ用意します。
 
 今回の場合、以下のファイル構成になります。
 
@@ -293,9 +293,9 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
 
 上記のコマンドを実行すると以下の場所にレポートが作成されます。
 
-ここで出力されるレポートは、graph_signature2.html と、シグネチャの数がファイル名に反映されています。
+ここで出力されるレポートは、graph_signature2.html と、変異シグネチャの数がファイル名に反映されています。
 
-シグネチャの数はpaplot実行時に入力ファイル (data?.json) のデータから読み取り、自動的に判定します。ファイル名称には依存しません。
+変異シグネチャの数はpaplot実行時に入力ファイル (data?.json) のデータから読み取り、自動的に判定します。ファイル名称には依存しません。
 
 ::
 

@@ -38,7 +38,7 @@ pmsignatureに入力する変異のデータファイルは以下のフォーマ
 
   input_file={入力ファイル}
   
-  # この例では1,2,3,5,6番目の列を取り出します
+  # 1,2,3,5,6番目の列を取り出す例
   cut -s -f 1,2,3,5,6 $input_file > ./output.txt
   
   # 順番を入れ替える例 (1番目の列を最後に移動する)
@@ -49,7 +49,7 @@ pmsignatureに入力する変異のデータファイルは以下のフォーマ
   # chrを先頭につける例 (2番目の列がchr列とする)
   cut -s -f 2 $input_file | sed "s/^/chr/" | sed -e "s/^chr[Cc]hr/chr/g" > tmp1.txt
   
-  # 先頭1行がヘッダなので取り除く
+  # 先頭1行がヘッダなので取り除く例
   tail -n +2 $input_file > tmp1.txt
 
 2. pmsignatureの実行

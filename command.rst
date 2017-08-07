@@ -13,8 +13,6 @@ paplot コマンド
                     [--remarks REMARKS]
                     input output_dir project_name
 
-|
-
 **必ず入力する項目**
 
 :subcommand:
@@ -69,7 +67,7 @@ paplot コマンド
     └ index.html             <--- このファイルをウェブブラウザで開いてください。
 
 
-出力ファイルを移動する場合は ``{output_dir}`` ごと移動してください。
+出力ファイルを移動する場合は ``{output_dir}`` ディレクトリごと移動してください。
 
 それぞれのグラフの使い方は `how to use graphs <./index.html#how-to-toc>`_ を参照してください。
 

@@ -2,13 +2,13 @@
 Mutaitonal Signature レポート
 =============================
 
-Mutaitonal Signature レポートでは検出した変異についてシグネチャとその集積を積み上げグラフで表示します。
+Mutaitonal Signature レポートでは検出した変異についての特徴的なパターン (変異シグネチャ) を表示します。
 
 :signature:
-  シグネチャを表示します。
+  変異シグネチャを表示します。
 
 :積み上げグラフ:
-  サンプルごとの変異について、シグネチャの割合を表示します。
+  サンプルごとの変異について、変異シグネチャの割合を表示します。
 
 .. image:: image/sig_dummy.PNG
   :scale: 100%
@@ -26,7 +26,7 @@ Mutaitonal Signature レポートでは検出した変異についてシグネ�
   view modeがintegralの場合のみ、ソート方法を選択できます。
 
 
-view mode 「integral」、sort by 「mutation count」の表示例
+「view mode」で「integral」を選択し、「sort by」で「mutation count」を選択した場合の表示例
 
 .. image:: image/sig_operation1.PNG
   :scale: 100%

@@ -3,7 +3,6 @@
 ************************
 
 | paplot は次のマシンで動作します。
-|
 
  * Linux 系サーバ (HGC スパコン含)、Linux ディストリビューション
  * MacOS X
@@ -11,7 +10,6 @@
 
 | paplot を実行するには python 2.7 もしくは python 3.5 が必要です。
 | ( python 2.6 は未検証)
-|
 
  * :ref:`Linux 系の場合 (HGC スパコン、cygwin 含) <linux>`
  * :ref:`MacOS X の場合 <macosx>`
@@ -83,12 +81,10 @@ MacOS X の場合
 ------------------------------------
 
 | paplotのサイトから最新版の ``Source code (zip)`` をダウンロードします。
-|
 
 https://github.com/Genomon-Project/paplot/releases/
 
 | ``git`` コマンドが使える方は ``git clone -b master https://github.com/Genomon-Project/paplot.git`` でもよいです。
-|
 
 2. paplot のインストール
 --------------------------
@@ -189,8 +185,6 @@ https://github.com/Genomon-Project/paplot/releases/
   
   | PATHの設定で入力したものと同じパスを入力してください。
   | 入力したら ``ESC`` キーを押して、編集モードから抜けます。その後、``:wq`` と入力して保存して終了します。
-  |
-  
 
 .. _windows:
 

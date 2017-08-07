@@ -154,7 +154,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 
 ここではpaplotコマンドを中心に解説します。
 
-データファイル (シグネチャ数は2)
+データファイル (変異シグネチャ数は2)
 
 .. code-block:: json
   :caption: example/pmsignature_minimal/data.json

@@ -12,7 +12,6 @@
 | paplot は python2.7 および python 3.5 で動作確認しています。
 | また、paplot は追加パッケージを必要としません。
 | より詳しいインストール手順は :doc:`install` を参照してください。
-|
 
 .. code-block:: bash
 
@@ -25,8 +24,6 @@
   python setup.py build install
 
 | 正しくインストールされたか確認します。
-|
-
 
 **インストールの確認**
 
@@ -55,7 +52,6 @@
 | 
 | 基本的な使い方次の通りです。
 | 詳細なオプションは :doc:`command` を参照してください。
-|
 
 .. code-block:: bash
 
@@ -119,13 +115,13 @@ HTML ファイルができていますか？
     ├ demo
     │   ├ graph_ca.html            <--- Chromosomal Aberration レポート
     │   ├ graph_mut.html           <--- Mutation Matrix レポート
-    │   ├ graph_pmsignature2.html  <--- pmsignature レポート (数字はシグネチャの数)
+    │   ├ graph_pmsignature2.html  <--- pmsignature レポート (数字は変異シグネチャの数)
     │   ├ graph_pmsignature3.html
     │   ├ graph_pmsignature4.html
     │   ├ graph_pmsignature5.html
     │   ├ graph_pmsignature6.html
     │   ├ graph_qc.html            <--- QC レポート
-    │   ├ graph_signature2.html    <--- Mutational Signature レポート (数字はシグネチャの数)
+    │   ├ graph_signature2.html    <--- Mutational Signature レポート (数字は変異シグネチャの数)
     │   ├ graph_signature3.html
     │   ├ graph_signature4.html
     │   ├ graph_signature5.html

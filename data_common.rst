@@ -23,7 +23,7 @@
   sept = " "
 
 ここでは Mutation Matrix を例にとりましたが、QC や Chromosomal Aberration の場合も同様です。
-QC、Chromosomal Aberration の場合、configは [result_format_qc]、[result_format_ca] セクションを変更してください。
+QC、Chromosomal Aberration の場合、設定ファイルは [result_format_qc]、[result_format_ca] セクションを変更してください。
 
 ----
 
@@ -51,7 +51,7 @@ QC、Chromosomal Aberration の場合、configは [result_format_qc]、[result_f
   comment = #
 
 ここでは Mutation Matrix を例にとりましたが、QC や Chromosomal Aberration の場合も同様です。
-QC、Chromosomal Aberration の場合、configは [result_format_qc]、[result_format_ca] セクションを変更してください。
+QC、Chromosomal Aberration の場合、設定ファイルは [result_format_qc]、[result_format_ca] セクションを変更してください。
 
 ----
 
@@ -129,7 +129,7 @@ suffixを指定すると、suffix手前までのファイル名をサンプル�
   --config_file {unzip_path}/example/mutation_split_file/paplot.cfg
 
 ここでは Mutation Matrix を例にとりましたが、QC や Chromosomal Aberration の場合も同様です。
-QC、Chromosomal Aberration の場合、configは [result_format_qc]、[result_format_ca] セクションを変更してください。
+QC、Chromosomal Aberration の場合、設定ファイルは [result_format_qc]、[result_format_ca] セクションを変更してください。
 
 .. _user_format:
 
