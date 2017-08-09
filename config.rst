@@ -16,44 +16,44 @@
 
   ###################### Mutation Matrix
   [mut]
-  # geneのサンプルに対する検出比(%) 
-  # 値より小さいgeneはplot対象から除外する
-  # 0の場合はすべて出力する
+  # 遺伝子のサンプルに対する検出比 (%)
+  # 値より小さい遺伝子はプロット対象から除外する
+  # 0 の場合はすべて出力する
   use_gene_rate = 0
 
-  # 入力されていた場合、そのgeneのみ出力する
-  # 未入力の場合、検出されたgeneすべて出力する
+  # 入力されていた場合、その遺伝子のみ出力する
+  # 未入力の場合、検出された遺伝子すべて出力する
   # , 区切りで複数指定可能
   #
-  # limited_genes = TP,TTN,APC,BRAF,CDH1,FLT3
-  limited_genes = 
+  # limited_gene = TP,TTN,APC,BRAF,CDH1,FLT3
+  limited_gene = 
   
-  # 入力されていた場合、そのgeneはplot対象から除外する
+  # 入力されていた場合、その遺伝子はプロット対象から除外する
   # , 区切りで複数指定可能
   #
-  # nouse_genes = NONE,MUC4
-  nouse_genes =
+  # nouse_gene = NONE,MUC4
+  nouse_gene =
 
-  # 入力されていた場合、その変異タイプ(func)のみ出力する
-  # 未入力の場合、検出されたfuncすべて出力する
+  # 入力されていた場合、その変異タイプ (group) のみ出力する
+  # 未入力の場合、検出された変異タイプすべて出力する
   # , 区切りで複数指定可能
   #
-  # limited_funcs = exome,splicing
-  limited_funcs = 
+  # limited_group = exome,splicing
+  limited_group = 
   
-  # 入力されていた場合、そのfuncはplot対象から除外する
+  # 入力されていた場合、その変異タイプはプロット対象から除外する
   # , 区切りで複数指定可能
   # 空白行を除去する場合、_blank_ と記入する
-  nouse_funcs = _blank_,unknown,synonymous_SNV
+  nouse_group = _blank_,unknown,synonymous_SNV
   
-  # funcのplot色を指定する。func名:(RGBもしくは色名)
+  # 変異タイプのプロット色を指定する。変異タイプ名:(RGBもしくは色名)
   # , 区切りで複数指定可能
-  # 未入力のfuncはデフォルト色を使用する
-  func_colors = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011,nonframeshift_deletion:#9CAEB7
+  # 未入力の変異タイプはデフォルト色を使用する
+  group_color = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011,nonframeshift_deletion:#9CAEB7
   
   # ポップアップウィンドウの表示内容
   # 詳細はページ下段の「ポップアップウィンドウの表示内容」に記載
-  tooltip_format_checker_title1 = ID:{id}, gene:{gene}, {#sum_item_value}
+  tooltip_format_checker_title1 = Sample:{id}, gene:{gene}, {#sum_item_value}
   tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -----> {alt}]
   tooltip_format_gene_title = gene:{gene}, {#sum_item_value}
   tooltip_format_gene_partial = func:{func}, {#item_value}
@@ -75,10 +75,10 @@
   # コメント行の先頭文字
   comment = #
   
-  # funcが1セルに複数入力されている場合の区切り文字
+  # 変異タイプが 1 行に複数入力されている場合の区切り文字
   sept_func = ";"
   
-  # geneが1セルに複数入力されている場合の区切り文字
+  # 遺伝子が 1 行に複数入力されている場合の区切り文字
   sept_gene = ";"
   
   ##################
@@ -88,7 +88,7 @@
   # func列
   col_func = Merge_Func
   
-  # gene列
+  # 遺伝子列
   col_gene = Gene.refGene
   
   ##################
@@ -174,9 +174,9 @@
 サブプロットとしてクリニカルデータを追加
 ----------------------------------------------
 
-| `view report <http://genomon-project.github.io/paplot/mutation/graph_subplot.html>`_ 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/mutation/graph_subplot.html>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot.zip?raw=true>`_ 
 
 変異以外のサンプルに関する情報（例えばクリニカルデータ）をサブプロットとして Mutation Matrix に追加することができます。
 

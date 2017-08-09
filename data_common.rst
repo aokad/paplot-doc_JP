@@ -74,8 +74,8 @@ paplotではサンプル名が必須ですが、以下の2通りで指定する�
 
 これまでのサンプルでは、case1について記述してきました。ここではcase2の入力方法を解説します。
 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_split_file>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_split_file.zip?raw=true>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_split_file>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_split_file.zip?raw=true>`_ 
 
 今回の例ではサンプル毎にデータが分かれています。
 

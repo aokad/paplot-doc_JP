@@ -16,7 +16,7 @@ Mutation Matrix レポート
  * `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal>`_ 
  * `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal.zip?raw=true>`_ 
 
-paplot で Mutation Matrix を作成するために最低限必要な項目はサンプルID (Sample)、gene名 (Gene)、変異タイプ (MutationType) の3つです。
+paplot で Mutation Matrix を作成するために最低限必要な項目はサンプルID (Sample)、遺伝子名 (Gene)、変異タイプ (MutationType) の3つです。
 
 データファイルから一部抜粋
 
@@ -37,7 +37,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   SAMPLE03,intronic,PIK3CA
   SAMPLE03,downstream,SEPT12
 
-今回の例では列名は Sample、MutationType、Gene としていますが、任意に設定できます。
+今回の例では列名は Sample, MutationType, Gene としていますが、任意に設定できます。
 
 設定ファイルの [result_format_mutation] セクションでデータの列名を次のように設定します。
 
@@ -46,11 +46,11 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 
   [result_format_mutation]
   # column index (required)
-  col_func = func
-  col_gene = gene
+  col_group = MutationType
+  col_gene = Gene
   
   # column index (option)
-  col_opt_id = ID
+  col_opt_id = Sample
 
 
 編集した設定ファイルを使用して ``paplot`` を実行します。
@@ -68,9 +68,9 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 2. ヘッダなし
 ==========================
 
-| `view report <http://genomon-project.github.io/paplot/mutation/graph_noheader.html>`_ 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_noheader>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_noheader.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/mutation/graph_noheader.html>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_noheader>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_noheader.zip?raw=true>`_ 
 
 データファイルから一部抜粋
 
@@ -94,14 +94,14 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 
 設定ファイルの [result_format_mutation] セクションでデータの列番号を次のように設定します。
 
-列番号は左から順に1始まりで数えます。
+列番号は左から順に 1 始まりで数えます。
 
 .. code-block:: cfg
   :caption: example/mutation_noheader/paplot.cfg
   
   [result_format_mutation]
   # column index (required)
-  col_func = 2
+  col_group = 2
   col_gene = 3
   
   # column index (option)
@@ -122,9 +122,9 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 3. ポップアップの情報追加
 ===================================
 
-| `view report <http://genomon-project.github.io/paplot/mutation/graph_option.html>`_ 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_option>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_option.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/mutation/graph_option.html>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_option>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_option.zip?raw=true>`_ 
 
 マウスオーバーで表示する情報をカスタマイズすることができます。
 
@@ -145,7 +145,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 .. code-block:: cfg
   :caption: example/mutation_option/data.csv
   
-  ID,Chr,Start,End,Ref,Alt,func,gene
+  Sample,Chr,Start,End,Ref,Alt,MutationType,Gene
   SAMPLE00,chr10,8114472,8114474,A,C,intronic,GATA3
   SAMPLE00,chr13,28644892,28644901,G,-,intronic,FLT3
   SAMPLE00,chr13,28664636,28664638,-,G,intronic,FLT3
@@ -158,8 +158,8 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   SAMPLE00,chr7,140619975,140619979,-,G,intronic,BRAF
   SAMPLE00,chr14,103320225,103320225,-,T,downstream,TRAF3
 
-今回の例では、必須項目であるサンプルID(ID)、gene名(gene)、変異タイプ(func) に加えて、
-染色体(Chr)、変異開始位置(Start)、変異終了位置(End)、リファレンスの塩基 (Ref)、変異の塩基(Alt) を追加しています。
+今回の例では、必須項目であるサンプルID (Sample)、遺伝子名 (Gene)、変異タイプ (MutationType) に加えて、
+染色体 (Chr)、変異開始位置 (Start)、変異終了位置 (End)、リファレンスの塩基 (Ref)、変異の塩基 (Alt) を追加しています。
 
 まず、追加した列名を設定ファイルに記載します。
 
@@ -187,9 +187,9 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   
   [mutation]
   # 最小構成での設定
-  # tooltip_format_checker_partial = type[{func}]
+  # tooltip_format_checker_partial = MutationType[{group}]
   # 次のように変更
-  tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -----> {alt}]
+  tooltip_format_checker_partial = MutationType[{group}], {chr}:{start}:{end}, [{ref} -> {alt}]
 
 編集した設定ファイルを使用して ``paplot`` を実行します。
 

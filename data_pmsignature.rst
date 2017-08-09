@@ -144,9 +144,9 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 2. 最小データセット
 ==========================
 
-| `view report <http://genomon-project.github.io/paplot/pmsignature/graph_pmsignature_minimal2.html>`_ 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_minimal>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_minimal.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/pmsignature/graph_pmsignature_minimal2.html>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_minimal>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_minimal.zip?raw=true>`_ 
 
 入力データ形式は :ref:`こちら <json_ind>` 参照。
 
@@ -229,7 +229,7 @@ pmsignature数はpaplot実行時に入力ファイル (data.json) から読み�
 3. 複数タイプのpmsignature
 ===================================
 
-| view report
+| このセクションで生成するレポートを見る
 
  - `pmsignature 2 <http://genomon-project.github.io/paplot/pmsignature/graph_multi_class2.html>`_ 
  - `pmsignature 3 <http://genomon-project.github.io/paplot/pmsignature/graph_multi_class3.html>`_ 
@@ -237,8 +237,8 @@ pmsignature数はpaplot実行時に入力ファイル (data.json) から読み�
  - `pmsignature 5 <http://genomon-project.github.io/paplot/pmsignature/graph_multi_class5.html>`_ 
  - `pmsignature 6 <http://genomon-project.github.io/paplot/pmsignature/graph_multi_class6.html>`_ 
 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_multi_class>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_multi_class.zip?raw=true>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_multi_class>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_multi_class.zip?raw=true>`_ 
 
 入力データ形式は :ref:`こちら <json_ind>` 参照。
 
@@ -316,7 +316,7 @@ pmsignature数はpaplot実行時に入力ファイル (data?.json) のデータ�
 4. 積算グラフ
 ==========================
 
-| view report
+| このセクションで生成するレポートを見る
 
  - `pmsignature 2 <http://genomon-project.github.io/paplot/pmsignature/graph_integral2.html>`_ 
  - `pmsignature 3 <http://genomon-project.github.io/paplot/pmsignature/graph_integral3.html>`_ 
@@ -324,8 +324,8 @@ pmsignature数はpaplot実行時に入力ファイル (data?.json) のデータ�
  - `pmsignature 5 <http://genomon-project.github.io/paplot/pmsignature/graph_integral5.html>`_ 
  - `pmsignature 6 <http://genomon-project.github.io/paplot/pmsignature/graph_integral6.html>`_ 
 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_integral>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_integral.zip?raw=true>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_integral>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_integral.zip?raw=true>`_ 
 
 レポートに変異の内訳グラフを追加します。 :ref:`こちら <json_ind>` で解説に使用しているデータで、:doc:`exec_pmsignature` の手順でデータの準備を行う場合に出力されるデータです。
 
@@ -341,9 +341,9 @@ pmsignature数はpaplot実行時に入力ファイル (data?.json) のデータ�
 5. Backgroundなし
 ==========================
 
-| `view report <http://genomon-project.github.io/paplot/pmsignature/graph_nobackground2.html>`_ 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_nobackground>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_nobackground.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/pmsignature/graph_nobackground2.html>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_nobackground>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_nobackground.zip?raw=true>`_ 
 
 :doc:`exec_pmsignature` の手順でデータの準備を行う場合、backgroundありでpmsignatureを作成しますが、backgroundなしでpmsignatureを出力することもできます。
 

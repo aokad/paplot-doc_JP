@@ -4,7 +4,7 @@ Chromosomal Aberration レポート
 
 ここでは、サンプルデータ (※) を基にして、Chromosomal Aberration レポートを出力するために必要な入力データを解説します。
 
-※ サンプルデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
+※ サンプルデータは paplot をダウンロードして解凍したディレクトリ中、example ディレクトリにあります。
 
 .. _ca_minimal:
 
@@ -12,18 +12,18 @@ Chromosomal Aberration レポート
 1. 最小データセット
 ==========================
 
-| `view report <http://genomon-project.github.io/paplot/ca/graph_minimal.html>`_ 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca/graph_minimal.html>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal.zip?raw=true>`_ 
 
-paplot で Chromosomal Aberration レポートを作成するために最低限必要な項目はサンプルID(ID)、ブレークポイント1の染色体 (Chr1) とposition (Break1)、ブレークポイント2の染色体 (Chr2) とposition(Break2) の5つです。
+paplot で Chromosomal Aberration レポートを作成するために最低限必要な項目はサンプルID (Sample)、切断点 1 の染色体 (Chr1) と位置 (Break1)、切断点 2 の染色体 (Chr2) と位置 (Break2) の 5 つです。
 
 データファイルから一部抜粋
 
 .. code-block:: cfg
   :caption: example/ca_minimal/data.csv
   
-  ID,Chr1,Break1,Chr2,Break2,
+  Sample,Chr1,Break1,Chr2,Break2,
   SAMPLE1,14,16019088,12,62784483,
   SAMPLE1,9,99412502,7,129302434,
   SAMPLE1,13,84663781,18,52991509,
@@ -48,7 +48,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   col_break2 = Break2
   
   # column index (option)
-  col_opt_id = ID
+  col_opt_id = Sample
 
 編集した設定ファイルを使用して ``paplot`` を実行します。
 
@@ -65,9 +65,9 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 2. ヘッダなし
 ==========================
 
-| `view report <http://genomon-project.github.io/paplot/ca/graph_noheader.html>`_ 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca/graph_noheader.html>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader.zip?raw=true>`_ 
 
 データファイルから一部抜粋
 
@@ -91,7 +91,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 
 設定ファイルの [result_format_ca] セクションでデータの列番号を次のように設定します。
 
-列番号は左から順に1始まりで数えます。
+列番号は左から順に 1 始まりで数えます。
 
 .. code-block:: cfg
   :caption: example/ca_noheader/paplot.cfg
@@ -120,11 +120,11 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 3. 変異のグルーピング
 ==========================
 
-| `view report <http://genomon-project.github.io/paplot/ca/graph_group.html>`_ 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca/graph_group.html>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group.zip?raw=true>`_ 
 
-最小構成で作成した変異には自動的にグループ機能が働いており、クロモソーム内の変異（緑）とクロモソーム間の変異（紫）に色分けされています。
+最小構成で作成した変異には自動的にグループ機能が働いており、染色体内の変異（緑）と染色体間の変異（紫）に色分けされています。
 
 ここでは、グループを手動で設定するように変更します。
 
@@ -133,7 +133,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 .. code-block:: cfg
   :caption: example/ca_group/data.csv
   
-  ID,Chr1,Break1,Chr2,Break2,type
+  Sample,Chr1,Break1,Chr2,Break2,Label
   SAMPLE1,14,16019088,12,62784483,C
   SAMPLE1,9,99412502,7,129302434,B
   SAMPLE1,13,84663781,18,52991509,A
@@ -147,9 +147,9 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   SAMPLE4,7,6037836,21,34855497,D
   SAMPLE4,7,109724564,14,106387943,A
 
-今回の例では、必須項目であるID、Chr1、Break1、Chr2、Break2 に加えて、type が追加してあります。
+今回の例では、必須項目である Sample, Chr1, Break1, Chr2, Break2 に加えて、Label が追加してあります。
 
-まず、グルーピングに使用する列名、type を設定ファイルに記載します。
+まず、グルーピングに使用する列名、Label を設定ファイルに記載します。
 
 設定ファイルの [result_format_ca] セクションでデータの列名を次のように設定します。
 
@@ -157,11 +157,11 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   :caption: example/ca_group/paplot.cfg
   
   [result_format_ca]
-  col_opt_group = type
+  col_opt_group = Label
 
 オプションの列名は通常任意に設定できますが、グルーピングにおいては ``col_opt_group`` 固定にしてください。
 
-これで ``type`` 列を使用してグルーピングされますが、追加で色も指定できます。
+これで ``Label`` 列を使用してグルーピングされますが、追加で色も指定できます。
 
 .. code-block:: cfg
   :caption: example/ca_group/paplot.cfg
@@ -192,9 +192,9 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 4. ポップアップの情報追加
 ===================================
 
-| `view report <http://genomon-project.github.io/paplot/ca/graph_option.html>`_ 
-| `view dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option>`_ 
-| `download dataset <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca/graph_option.html>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option.zip?raw=true>`_ 
 
 マウスオーバーで表示する情報をカスタマイズすることができます。
 
@@ -214,7 +214,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 .. code-block:: cfg
   :caption: example/ca_option/data.csv
   
-  ID,Chr1,Break1,Dir1,Chr2,Break2,Dir2,Ref,Alt,func,gene1,gene2
+  Sample,Chr1,Break1,Dir1,Chr2,Break2,Dir2,Ref,Alt,MutationType,Gene1,Gene2
   SAMPLE1,14,16019088,-,12,62784483,+,---,GACTC,deletion,LS7T1EG444,4GRRIO5AVR
   SAMPLE1,9,99412502,-,7,129302434,+,---,C-CT-,translocation,FQFW16UF5U,QP779MLPNV
   SAMPLE1,13,84663781,+,18,52991509,-,---,GTAAA,deletion,Q9VX1I9U3I,7XM09ETN40
@@ -225,17 +225,17 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   SAMPLE3,14,56600342,-,hs37d5,5744957,+,---,--CAA,deletion,UTLVCZ63SK,5I74M5NKDC
   SAMPLE3,Y,12191863,-,hs37d5,29189687,-,---,TG-G-,inversion,3PLD4C20IZ,BVYMBTIFKD
 
-今回の例では、必須項目であるID、Chr1、Break1、Chr2、Break2 に加えて、次の7つを追加してあります。
+今回の例では、必須項目である Sample, Chr1, Break1, Chr2, Break2 に加えて、次の7つを追加してあります。
 
  - リファレンスの塩基 (Ref)
  - 変異の塩基(Alt)
- - 変異タイプ(func)
- - ブレークポイント1の遺伝子名(gene1)
- - ブレークポイント2の遺伝子名(gene2)
+ - 変異タイプ(MutationType)
+ - ブレークポイント1の遺伝子名(Gene1)
+ - ブレークポイント2の遺伝子名(Gene2)
  - ブレークポイント1のDirection(Dir1)
  - ブレークポイント2のDirection(Dir2)
 
-このうち、変異タイプ (func) と遺伝子名 (gene1、gene2)、Direction (Dir1、Dir2) を使用します。
+このうち、変異タイプ (MutationType) と遺伝子名 (Gene1, Gene2)、Direction (Dir1, Dir2) を使用します。
 
 まず、ポップアップの情報として追加したい列名を設定ファイルに記載します。
 
@@ -245,9 +245,11 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   :caption: example/ca_option/paplot.cfg
   
   [result_format_ca]
-  col_opt_type = func
-  col_opt_gene_name1 = gene1
-  col_opt_gene_name2 = gene2
+  col_opt_dir1 = Dir1
+  col_opt_dir2 = Dir2
+  col_opt_type = MutationType
+  col_opt_gene_name1 = Gene1
+  col_opt_gene_name2 = Gene2
   col_opt_dir1 = Dir1
   col_opt_dir2 = Dir2
 
