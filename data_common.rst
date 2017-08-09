@@ -145,10 +145,10 @@ QC、Chromosomal Aberration の場合、設定ファイルは [result_format_qc]
 
 ::
 
-  tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -----> {alt}]
+  tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -> {alt}]
   
   表示例：
-  type[exome], chr1:2000:2001, [A -----> T]
+  type[exome], chr1:2000:2001, [A -> T]
 
 {}で囲った文字がキーワードで、実際の値に置き換えられます。
 キーワードとは設定ファイルで各データ列を設定した項目のうち、``col_`` もしくは ``col_opt_`` を除いた名前です。

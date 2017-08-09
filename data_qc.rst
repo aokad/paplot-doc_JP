@@ -127,11 +127,107 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 .. _qc_mplot:
 
 ==========================
-3. 2 つのグラフ
+3. 積み上げグラフ
 ==========================
 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc/graph_stack.html>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack.zip?raw=true>`_ 
 
-3-1. name_setの書き方
+最小構成では 1 つの棒グラフを作成しました。今回は積み上げグラフを作成します。
+
+データファイルから一部抜粋
+
+.. code-block:: cfg
+  :caption: example/qc_stack/data.csv
+  
+  Sample,AverageDepth,2xRatio,10xRatio,20xRatio,30xRatio
+  SAMPLE1,70.0474,0.9796,0.7680,0.6844,0.6747
+  SAMPLE2,65.7578,0.8489,0.7725,0.7655,0.6131
+  SAMPLE3,63.3750,0.9814,0.8236,0.6045,0.5889
+  SAMPLE4,70.9654,0.9047,0.8303,0.7032,0.6801
+  SAMPLE5,69.9653,0.9776,0.9452,0.6720,0.6518
+
+ここでは以下の構成でグラフを作成します。
+
+ - chart_1　[棒グラフ] AverageDepth (最小構成と同じ)
+ - chart_2　[積み上げグラフ] 2xRatio, 10xRatio, 20xRatio, 30xRatio
+
+完成したグラフはここ `view <http://genomon-project.github.io/paplot/qc/graph_stack.html>`_ を参照してください。
+
+まず、設定ファイルの [result_format_qc] セクションに入力データの列名を登録します。
+
+.. code-block:: cfg
+  :caption: example/qc_multi_plot/paplot.cfg
+  
+  [result_format_qc]
+  # column index (option)
+  col_opt_keyA1 = AverageDepth
+  col_opt_keyB1 = 30xRatio
+  col_opt_keyB2 = 20xRatio
+  col_opt_keyB3 = 10xRatio
+  col_opt_keyB4 = 2xRatio
+
+オプションの列名は次の形式で記述します。 ``col_opt_{key} = {columun name}`` 
+
+ - ``{key}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+ - ``{columun name}`` には実際の列名を記入します。
+ 
+次に、設定ファイルに [qc_chart_1]、[qc_chart_2] ... セクションを追加し、順番に設定します。
+
+| QC レポートは [qc_chart_1] → [qc_chart_2] → [qc_chart_3] の順番に表示し、必要な数だけ [qc_chart_*] セクションを増やすことができます。
+| ``*`` には 1 から始まる連番を入れてください。1 から順に表示します。
+
+完成した設定ファイルはここ `config <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack/paplot.cfg>`_ を参照してください。
+
+3-1. 単純な棒グラフ
+---------------------------
+
+chart_1 は単純な棒グラフです。
+
+記載方法は最小構成と同じですので、ここでは割愛します。
+
+3-2. 積み上げグラフ
+-----------------------
+
+chart_2 は積み上げグラフです。
+
+.. code-block:: cfg
+  :caption: example/qc_multi_plot/paplot.cfg
+  
+  [qc_chart_2]
+  
+  # 表示する文字列を設定します
+  title = Depth coverage
+  title_y = Coverage
+  
+  # グラフの積み上げ要素
+  # stack1 → 2 → 3 の順に下から表示します。stack1 を一番下に表示します。
+  stack1 = {keyB1}
+  stack2 = {keyB2}
+  stack3 = {keyB3}
+  stack4 = {keyB4}
+  
+  # 凡例の文字列と色を設定します
+  name_set = Ratio 30x:#2478B4, Ratio 20x:#FF7F0E, Ratio 10x:#2CA02C, Ratio  2x:#D62728
+  
+  # ポップアップの表示内容
+  tooltip_format1 = Sample:{id}
+  tooltip_format2 = Ratio  2x: {keyB4:.2}
+  tooltip_format3 = Ratio 10x: {keyB3:.2}
+  tooltip_format4 = Ratio 20x: {keyB2:.2}
+  tooltip_format5 = Ratio 30x: {keyB1:.2}
+
+編集した設定ファイルを使用して ``paplot`` を実行します。
+
+.. code-block:: bash
+
+  paplot qc {unzip_path}/example/qc_multi_plot/data.csv ./tmp qc_multi_plot \
+  --config_file {unzip_path}/example/qc_multi_plot/paplot.cfg
+
+----
+
+3-3. name_setの書き方
 ------------------------------
 
 凡例名と色を定義します。
@@ -149,8 +245,6 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 
 .. image:: image/default_color.PNG
   :scale: 100%
-
-
 
 ==========================
 4. 様々なグラフ
@@ -211,19 +305,19 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 
 次に、設定ファイルに [qc_chart_1]、[qc_chart_2]、[qc_chart_3] ... セクションを追加し、順番に設定します。
 
-| QC レポートは [qc_chart_1] -> [qc_chart_2] -> [qc_chart_3] の順番に表示し、必要な数だけ [qc_chart_*] セクションを増やすことができます。
+| QC レポートは [qc_chart_1] → [qc_chart_2] → [qc_chart_3] の順番に表示し、必要な数だけ [qc_chart_*] セクションを増やすことができます。
 | ``*`` には 1 から始まる連番を入れてください。1 から順に表示します。
 
 完成した設定ファイルはここ `config <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot/paplot.cfg>`_ を参照してください。
 
-3-1. 単純な棒グラフ
+4-1. 単純な棒グラフ
 ---------------------------
 
 chart_1 (Depth average) と chart_4 (Mean insert size) は単純な棒グラフです。
 
 記載方法は最小構成と同じですので、ここでは割愛します。
 
-3-2. 列同士の数値演算
+4-2. 列同士の数値演算
 -----------------------
 
 chart_3 (Mapped reads) と chart_5 (Duplicate reads) は列同士で計算（今回は割り算）させて出力します。
@@ -261,7 +355,7 @@ chart_3 (Mapped reads) と chart_5 (Duplicate reads) は列同士で計算（今
 | ポップアップウィンドウ記述方法詳細は  :ref:`ユーザ定義フォーマット <user_format>` を参照してください。
 |
 
-3-3. 積み上げグラフ　その１
+4-3. 積み上げグラフ　その１
 -------------------------------------
 
 chart_6 (Read length r1, Read length r2) は積み上げグラフです。
@@ -289,12 +383,13 @@ chart_6 (Read length r1, Read length r2) は積み上げグラフです。
 
 上記では、stack1 に read_length_r1 を、stack2 に read_length_r2 を記入しています。
 
-1 -> 2 -> 3 の順に下から表示します。1 を一番下に表示します。
+stack1 → 2 → 3 の順に下から表示します。stack1 を一番下に表示します。
 
-3-4. 積み上げグラフ　その２
+4-4. 積み上げグラフ　その２
 -------------------------------------
 
-chart_2 (Depth coverage) は積み上げグラフですが数値演算もしています。
+chart_2 (Depth coverage) は積み上げグラフです。
+前項目では単純に積み上げましたが、今回は数値演算を加えます。
 
 .. code-block:: cfg
   :caption: example/qc_multi_plot/paplot.cfg
@@ -321,7 +416,7 @@ chart_2 (Depth coverage) は積み上げグラフですが数値演算もして�
   tooltip_format4 = ratio_20x: {ratio_20x:.2}
   tooltip_format5 = ratio_30x: {ratio_30x:.2}
 
-上記では、stack1 に ratio_30x を、stack2 に ratio_20x から ratio_30x を引いたものを表示ししています。
+上記では、stack1 に ratio_30x を、stack2 に ratio_20x から ratio_30x を引いたものを表示しています。
 
 編集した設定ファイルを使用して ``paplot`` を実行します。
 

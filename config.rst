@@ -54,7 +54,7 @@
   # ポップアップウィンドウの表示内容
   # 詳細はページ下段の「ポップアップウィンドウの表示内容」に記載
   tooltip_format_checker_title1 = Sample:{id}, gene:{gene}, {#sum_item_value}
-  tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -----> {alt}]
+  tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -> {alt}]
   tooltip_format_gene_title = gene:{gene}, {#sum_item_value}
   tooltip_format_gene_partial = func:{func}, {#item_value}
   tooltip_format_id_title = ID:{id}, {#sum_item_value}
@@ -149,7 +149,7 @@
   tooltip_format_checker_title1 = ID:{ID}, gene:{gene}, {#sum_item_value}
   
   # グリッド - funcごと
-  tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -----> {alt}]
+  tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -> {alt}]
   
   # 遺伝子グラフ - タイトル
   tooltip_format_gene_title = gene:{gene}, {#sum_item_value}
@@ -790,12 +790,12 @@ mode = gradientの場合
 ================== ============================================================
 キーワード         解説                                                        
 ================== ============================================================
-{ca}               C->Aの値
-{cg}               C->Gの値
-{ct}               C->Tの値
-{ta}               T->Aの値
-{tc}               T->Cの値
-{tg}               T->Gの値
+{ca}               C → Aの値
+{cg}               C → Gの値
+{ct}               C → Tの値
+{ta}               T → Aの値
+{tc}               T → Cの値
+{tg}               T → Gの値
 ================== ============================================================
 
 **tooltip_format_strand**
