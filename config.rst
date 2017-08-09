@@ -447,12 +447,12 @@ mode = gradientの場合
   #
   limited_group = stopgain,frameshift_deletion,frameshift_insertion
   
-  # 入力されていた場合、そのgroupはplot対象から除外する
+  # 入力されていた場合、その group はプロット対象から除外する
   # , 区切りで複数指定可能
   # 空白行を除去する場合、_blank_ と記入する
   nouse_group = _blank_,unknown,synonymous_SNV
   
-  # groupのplot色を指定する。group名:(RGBもしくはカラー名)
+  # group のプロット色を指定する。group名:(RGBもしくはカラー名)
   # , 区切りで複数指定可能
   # 未入力のgroupはデフォルト色を使用する
   group_colors = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011
