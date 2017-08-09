@@ -15,18 +15,20 @@ Mutaitonal Signature レポートでは検出した変異についての特徴�
 
 また、積み上げグラフの下のリストボックスにより表示モードを切り替えることができます。
 
-:view mode:
-  - rate ... 変異の数を1としたときのsignatureの割合を % で表示します。
-  - integral ... 実際の変異数に対する割合を表示します。
+title: Signature contribution
+Y title: Rate, Count
 
-:sort by:
-  - sampleID ... サンプルID順
-  - mutation count ... 変異数の降順
+:View mode:
+  - Rate ... 変異の数を 1 としたときの変異シグネチャの割合を % で表示します。
+  - Count ... 実際の変異数に占める割合を表示します。
 
-  view modeがintegralの場合のみ、ソート方法を選択できます。
+:Sort by:
+  - Sample ID ... サンプルID順
+  - Mutation count ... 変異数の降順
 
+  View mode が Count の場合のみ、ソート方法を選択できます。
 
-「view mode」で「integral」を選択し、「sort by」で「mutation count」を選択した場合の表示例
+[View mode] で[Count] を選択し、[Sort by] で [Mutation count] を選択した場合の表示例
 
 .. image:: image/sig_operation1.PNG
   :scale: 100%

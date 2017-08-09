@@ -18,7 +18,7 @@ QC レポート
 
 paplot で QC レポートを作成するために最低限必要な情報はサンプルID (ID) と QC の値（最低 1 項目）です。
 
-今回の例では、depth-averageを使用していますが、ほかの値でも問題ありません。
+今回の例では、AverageDepth を使用していますが、ほかの値でも問題ありません。
 
 データファイルから一部抜粋
 
@@ -39,12 +39,12 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   
   [result_format_qc]
   # column index (option)
-  col_opt_average_depth = average_depth
+  col_opt_key1 = AverageDepth
   col_opt_id = ID
 
 オプションの列名は次の形式で記述します。 ``col_opt_{name} = {columun name}`` 
 
-``{name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+``{columun name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
 
 次に、設定ファイルに [qc_chart_1] セクションを追加し、次のように設定します。
 
@@ -54,22 +54,22 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   [qc_chart_1]
   
   # グラフのタイトル
-  title = Fepth average
+  title = Depth average
   
   # Y 軸のラベル
   title_y = Average of depth
   
   # 積み上げ要素（今回は 1 項目のみなので、通常の棒グラフとなる）
-  stack1 = {average_depth}
+  stack1 = {key1}
   
   # グラフの色と凡例 (欄外参照)
   name_set = Average depth:#2478B4
   
   # マウスオーバーで表示する情報のフォーマット
   tooltip_format1 = Sample:{id}
-  tooltip_format2 = {average_depth:.2}
+  tooltip_format2 = {key1:.2}
 
-ここで、 ``average_depth`` という値を変数のように使用していますが、これは [result_format_qc] セクションで指定した ``col_opt_average_depth`` 項目のうち、``col_opt_`` を除いた名前です。
+ここで、 ``{key1}`` という文字を変数のように使用していますが、これは [result_format_qc] セクションで指定した ``col_opt_average_depth`` 項目のうち、``col_opt_`` を除いた名前です。
 
 編集した設定ファイルを使用して ``paplot`` を実行します。
 
@@ -78,25 +78,6 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   paplot qc {unzip_path}/example/qc_minimal/data.csv ./tmp qc_minimal \
   --config_file {unzip_path}/example/qc_minimal/paplot.cfg
 
-
-1-1. name_setの書き方
-------------------------------
-
-凡例名と色を定義します。
-
-``{要素の凡例名}:{セルの色}`` を積み上げ要素ごとに記入します。セルの色は省略可能です。
-
-.. code-block:: cfg
-  
-  name_set = average_depth:#2478B4
-  
-  # 複数ある場合は , で区切って書きます
-  name_set = ratio_30x:#2478B4, ratio_20x:#FF7F0E, ratio_10x:#2CA02C, ratio_2x:#D62728
-  
-セルの色を省略した場合、以下の色を上から順に使用します。
-
-.. image:: image/default_color.PNG
-  :scale: 100%
 
 ----
 
@@ -146,7 +127,33 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 .. _qc_mplot:
 
 ==========================
-3. 複数グラフ
+3. 2 つのグラフ
+==========================
+
+
+3-1. name_setの書き方
+------------------------------
+
+凡例名と色を定義します。
+
+``{要素の凡例名}:{セルの色}`` を積み上げ要素ごとに記入します。セルの色は省略可能です。
+
+.. code-block:: cfg
+  
+  name_set = average_depth:#2478B4
+  
+  # 複数ある場合は , で区切って書きます
+  name_set = ratio_30x:#2478B4, ratio_20x:#FF7F0E, ratio_10x:#2CA02C, ratio_2x:#D62728
+  
+セルの色を省略した場合、以下の色を上から順に使用します。
+
+.. image:: image/default_color.PNG
+  :scale: 100%
+
+
+
+==========================
+4. 様々なグラフ
 ==========================
 
 | `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc/graph_multi_plot.html>`_ 
@@ -200,7 +207,7 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 
 オプションの列名は次の形式で記述します。 ``col_opt_{name} = {columun name}`` 
 
-``{name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+``{columun name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
 
 次に、設定ファイルに [qc_chart_1]、[qc_chart_2]、[qc_chart_3] ... セクションを追加し、順番に設定します。
 
