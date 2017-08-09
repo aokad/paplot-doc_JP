@@ -42,9 +42,10 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   col_opt_key1 = AverageDepth
   col_opt_id = ID
 
-オプションの列名は次の形式で記述します。 ``col_opt_{name} = {columun name}`` 
+オプションの列名は次の形式で記述します。 ``col_opt_{key} = {columun name}`` 
 
-``{columun name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+ - ``{key}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+ - ``{columun name}`` には実際の列名を記入します。
 
 次に、設定ファイルに [qc_chart_1] セクションを追加し、次のように設定します。
 
@@ -69,7 +70,7 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   tooltip_format1 = Sample:{id}
   tooltip_format2 = {key1:.2}
 
-ここで、 ``{key1}`` という文字を変数のように使用していますが、これは [result_format_qc] セクションで指定した ``col_opt_average_depth`` 項目のうち、``col_opt_`` を除いた名前です。
+ここで、 ``{key1}`` という文字を変数のように使用していますが、これは [result_format_qc] セクションで指定した ``col_opt_key1`` 項目のうち、``col_opt_`` を除いた名前です。
 
 編集した設定ファイルを使用して ``paplot`` を実行します。
 
@@ -299,9 +300,10 @@ chart_2 は積み上げグラフです。
   col_opt_read_length_r1 = ReadLengthR1
   col_opt_read_length_r2 = ReadLengthR2
 
-オプションの列名は次の形式で記述します。 ``col_opt_{name} = {columun name}`` 
+オプションの列名は次の形式で記述します。 ``col_opt_{key} = {columun name}`` 
 
-``{columun name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+ - ``{key}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+ - ``{columun name}`` には実際の列名を記入します。
 
 次に、設定ファイルに [qc_chart_1]、[qc_chart_2]、[qc_chart_3] ... セクションを追加し、順番に設定します。
 

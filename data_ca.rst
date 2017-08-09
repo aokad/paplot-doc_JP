@@ -253,9 +253,10 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   col_opt_dir1 = Dir1
   col_opt_dir2 = Dir2
 
-オプションの列名は次の形式で記述します。 ``col_opt_{name} = {columun name}`` 
+オプションの列名は次の形式で記述します。 ``col_opt_{key} = {columun name}`` 
 
-``{name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+ - ``{key}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+ - ``{columun name}`` には実際の列名を記入します。
 
 次に、ポップアップの表示内容を変更します。
 

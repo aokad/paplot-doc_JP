@@ -176,9 +176,10 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   col_opt_ref = Ref
   col_opt_alt = Alt
 
-オプションの列名は次の形式で記述します。 ``col_opt_{name} = {columun name}`` 
+オプションの列名は次の形式で記述します。 ``col_opt_{key} = {columun name}`` 
 
-``{name}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+ - ``{key}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+ - ``{columun name}`` には実際の列名を記入します。
 
 次に、ポップアップの表示内容を変更します。
 
