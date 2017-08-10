@@ -38,7 +38,7 @@ QC、Chromosomal Aberration の場合、設定ファイルは [result_format_qc]
   # This is comment.
   # Please skip this line.
   
-  ID,func,gene
+  ID,Type,Gene
   SAMPLE00,intronic,GATA3
   SAMPLE00,UTR3,CDH1
 
@@ -98,7 +98,7 @@ paplot ではサンプル名が必須ですが、以下の 2 通りで指定す�
 .. code-block:: cfg
   :caption: example/mutation_split_file/SAMPLE00.data.csv
 
-  func,gene
+  MutationType,Gene
   intronic,GATA3
   intronic,FLT3
   intronic,FLT3
@@ -137,7 +137,7 @@ QC、Chromosomal Aberration の場合、設定ファイルは [result_format_qc]
 4. ユーザ定義フォーマット
 ==============================
 
-マウスオーバーにより表示するポップアップのようにグラフそのものに影響を与えないような文字列はある程度変更することができます。
+マウスオーバーにより表示するポップアップの内容はある程度変更することができます。
 
 表示箇所ごとにそれぞれ設定しますが、書き方は同一です。
 

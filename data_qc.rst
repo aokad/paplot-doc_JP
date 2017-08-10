@@ -2,7 +2,7 @@
 QC レポート
 **************************
 
-ここでは、サンプルデータ (※) を基にして、QC レポートを出力するために必要な入力データを解説します。
+ここでは、サンプルデータ (※) を使用して、QC レポートを出力するために必要な入力データと設定方法を解説します。
 
 ※ サンプルデータは paplot をダウンロードして解凍したディレクトリ中、example ディレクトリにあります。
 
@@ -16,9 +16,9 @@ QC レポート
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal.zip?raw=true>`_ 
 
-paplot で QC レポートを作成するために最低限必要な情報はサンプルID (ID) と QC の値（最低 1 項目）です。
+paplot で QC レポートを作成するために最低限必要な情報はサンプルIDと QC の値（最低 1 項目）です。
 
-今回の例では、AverageDepth を使用していますが、ほかの値でも問題ありません。
+今回の例では、depth 平均値 (AverageDepth) を使用していますが、別の値でも問題ありません。
 
 データファイルから一部抜粋
 
@@ -38,17 +38,18 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   :caption: example/qc_minimal/paplot.cfg
   
   [result_format_qc]
-  # column index (option)
+  col_opt_id = Sample
   col_opt_key1 = AverageDepth
-  col_opt_id = ID
 
-オプションの列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
+列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
  - ``{キーワード}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
- - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" 以外は使用できません。
- - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
+ - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" のみ使用できます。
+ - ``col_opt_id`` は予約済みですので、サンプルID 以外の用途には使用できません。
   
 次に、設定ファイルに [qc_chart_1] セクションを追加し、次のように設定します。
+
+※ ここで使用している ``{key1}`` は [result_format_qc] セクションで入力した ``{キーワード}`` です。
 
 .. code-block:: cfg
   :caption: example/qc_minimal/paplot.cfg
@@ -64,15 +65,16 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   # 積み上げ要素（今回は 1 項目のみなので、通常の棒グラフとなる）
   stack1 = {key1}
   
-  # グラフの色と凡例 (欄外参照)
+  # グラフの色と凡例
   name_set = Average depth:#2478B4
   
   # マウスオーバーで表示する情報のフォーマット
   tooltip_format1 = Sample:{id}
   tooltip_format2 = {key1:.2}
 
-ここで、 ``{key1}`` という文字を変数のように使用していますが、これは [result_format_qc] セクションで指定した ``col_opt_key1`` 項目のうち、``col_opt_`` を除いた名前です。
-
+ - name_set の記入方法詳細は `name_set の書き方 <./data_qc.html#name-set>`_ を参照してください。
+ - tooltip_format の記入方法詳細は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
+  
 編集した設定ファイルを使用して ``paplot`` を実行します。
 
 .. code-block:: bash
@@ -113,8 +115,8 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   :caption: example/qc_noheader/paplot.cfg
   
   [result_format_qc]
-  col_opt_average_depth = 2
   col_opt_id = 1
+  col_opt_average_depth = 2
 
 編集した設定ファイルを使用して ``paplot`` を実行します。
 
@@ -162,17 +164,17 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   :caption: example/qc_multi_plot/paplot.cfg
   
   [result_format_qc]
-  # column index (option)
+  col_opt_id = Sample
   col_opt_keyA1 = AverageDepth
   col_opt_keyB1 = 30xRatio
   col_opt_keyB2 = 20xRatio
   col_opt_keyB3 = 10xRatio
   col_opt_keyB4 = 2xRatio
 
-オプションの列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
+列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
  - ``{キーワード}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
- - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" 以外は使用できません。
+ - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" のみ使用できます。
  - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
  
 次に、設定ファイルに [qc_chart_1]、[qc_chart_2] ... セクションを追加し、順番に設定します。
@@ -221,6 +223,9 @@ chart_2 は積み上げグラフです。
   tooltip_format4 = Ratio 20x: {keyB2:.2}
   tooltip_format5 = Ratio 30x: {keyB1:.2}
 
+ - name_set の記入方法詳細は `name_set の書き方 <./data_qc.html#name-set>`_ を参照してください。
+ - tooltip_format の記入方法詳細は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
+ 
 編集した設定ファイルを使用して ``paplot`` を実行します。
 
 .. code-block:: bash
@@ -230,7 +235,7 @@ chart_2 は積み上げグラフです。
 
 ----
 
-3-3. name_setの書き方
+3-3. name_set の書き方
 ------------------------------
 
 凡例名と色を定義します。
@@ -289,9 +294,8 @@ chart_2 は積み上げグラフです。
   :caption: example/qc_multi_plot/paplot.cfg
   
   [result_format_qc]
-  # column index (option)
-  col_opt_average_depth = AverageDepth
   col_opt_id = Sample
+  col_opt_average_depth = AverageDepth
   col_opt_duplicate_reads = DuplicateReads
   col_opt_mapped_reads = mapped_reads
   col_opt_total_reads = TotalReads
@@ -303,7 +307,7 @@ chart_2 は積み上げグラフです。
   col_opt_read_length_r1 = ReadLengthR1
   col_opt_read_length_r2 = ReadLengthR2
 
-オプションの列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
+列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
  - ``{キーワード}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
  - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" 以外は使用できません。
@@ -436,7 +440,7 @@ chart_2 (Depth coverage) は積み上げグラフです。
 .. _qc_brush:
 
 ==========================
-4. データ選択
+5. データ選択
 ==========================
 
 | `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc/graph_brush.html>`_ 
