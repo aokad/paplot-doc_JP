@@ -2,7 +2,7 @@
 Mutaitonal Signature レポート
 =============================
 
-Mutaitonal Signature レポートでは検出した変異についての特徴的なパターン (変異シグネチャ) を表示します。
+Mutaitonal Signature レポートは検出した変異についての特徴的なパターン (変異シグネチャ) を表示します。
 
 :上段 (Signature):
   変異シグネチャを表示します。

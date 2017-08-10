@@ -2,7 +2,7 @@
 Chromosomal Aberration レポート
 ==========================================
 
-| CA (Chromosomal Aberration) レポートではStructural Variation (SV) 等、染色体間の変異を円形のプロットで可視化し、棒グラフでその分布を表示します。
+| CA (Chromosomal Aberration) レポートはStructural Variation (SV) 等、染色体間の変異を円形のプロットで可視化し、棒グラフでその分布を表示します。
 
 * 棒グラフでは全サンプルで切断点を集計した数を表示します。
 * 円形のプロットでは、サンプルごとに切断点 1 と 2 を線でつないで表示します。

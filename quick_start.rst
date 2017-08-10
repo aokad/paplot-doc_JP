@@ -167,7 +167,7 @@ HTML ファイルができていますか？
 .. image:: image/pmsig_dummy.PNG
   :scale: 100%
 
-| それぞれのレポートの使い方は `how to use graphs <./index.html#how-to-toc>`_ を参照してください。
+| それぞれのレポートの使い方は `HOW TO USE GRAPHS <./index.html#how-to-toc>`_ を参照してください。
 |
 
 .. |new| image:: image/tab_001.gif

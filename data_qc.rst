@@ -16,8 +16,7 @@ QC レポート
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal.zip?raw=true>`_ 
 
-paplot で QC レポートを作成するために最低限必要な情報はサンプルIDと QC の値（最低 1 項目）です。
-
+paplot で QC レポートを作成するために最低限必要な情報はサンプルID (Sample) と QC の値（最低 1 項目）です。
 今回の例では、depth 平均値 (AverageDepth) を使用していますが、別の値でも問題ありません。
 
 データファイルから一部抜粋
@@ -49,8 +48,6 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   
 次に、設定ファイルに [qc_chart_1] セクションを追加し、次のように設定します。
 
-※ ここで使用している ``{key1}`` は [result_format_qc] セクションで入力した ``{キーワード}`` です。
-
 .. code-block:: cfg
   :caption: example/qc_minimal/paplot.cfg
   
@@ -71,6 +68,8 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   # マウスオーバーで表示する情報のフォーマット
   tooltip_format1 = Sample:{id}
   tooltip_format2 = {key1:.2}
+
+※ ここで使用している ``{key1}`` は [result_format_qc] セクションで入力した ``{キーワード}`` です。
 
  - name_set の記入方法詳細は `name_set の書き方 <./data_qc.html#name-set>`_ を参照してください。
  - tooltip_format の記入方法詳細は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。

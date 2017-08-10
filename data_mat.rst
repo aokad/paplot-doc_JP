@@ -133,7 +133,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 
 .. image:: image/data_mut1.png
 
-ここに情報を追加してポジションや変異内容を確認できるように変更します。
+情報を追加して変異の場所や内容を確認できるようにします。
 
 **変更後**
 
@@ -199,7 +199,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   paplot mutation {unzip_path}/example/mutation_option/data.csv ./tmp mutation_option \
   --config_file {unzip_path}/example/mutation_option/paplot.cfg
 
-今回はグリッド部分のポップアップを変更しました。その他のポップアップ設定項目は `ポップアップウィンドウの表示内容 <./config.html#mm_tooltip>`_ を参照してください。
+今回はグリッド部分のポップアップを変更しました。その他のポップアップ設定項目は `ポップアップウィンドウの表示内容 <./config.html#mm-tooltip>`_ を参照してください。
 
 また、記載方法に関するより詳細な解説は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
 
