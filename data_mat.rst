@@ -4,7 +4,7 @@ Mutation Matrix レポート
 
 ここでは、サンプルデータ (※) を基にして、Mutation Matrix レポートを出力するために必要な入力データを解説します。
 
-※ サンプルデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
+※ サンプルデータは paplot をダウンロードして解凍したディレクトリ中、example ディレクトリにあります。
 
 .. _mm_minimal:
 
@@ -91,10 +91,9 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   SAMPLE03,downstream,SEPT12
 
 データにヘッダ行がない場合、列名でなく列番号を設定します。
+列番号は左から順に 1 始まりで数えます。
 
 設定ファイルの [result_format_mutation] セクションでデータの列番号を次のように設定します。
-
-列番号は左から順に 1 始まりで数えます。
 
 .. code-block:: cfg
   :caption: example/mutation_noheader/paplot.cfg
@@ -176,11 +175,12 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   col_opt_ref = Ref
   col_opt_alt = Alt
 
-オプションの列名は次の形式で記述します。 ``col_opt_{key} = {columun name}`` 
+オプションの列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
- - ``{key}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
- - ``{columun name}`` には実際の列名を記入します。
-
+ - ``{キーワード}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+ - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" 以外は使用できません。
+ - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
+ 
 次に、ポップアップの表示内容を変更します。
 
 .. code-block:: cfg
@@ -188,9 +188,9 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   
   [mutation]
   # 最小構成での設定
-  # tooltip_format_checker_partial = MutationType[{group}]
+  # tooltip_format_checker_partial = Mutation Type[{group}]
   # 次のように変更
-  tooltip_format_checker_partial = MutationType[{group}], {chr}:{start}:{end}, [{ref} -> {alt}]
+  tooltip_format_checker_partial = Mutation Type[{group}], {chr}:{start}:{end}, [{ref} -> {alt}]
 
 編集した設定ファイルを使用して ``paplot`` を実行します。
 
@@ -201,6 +201,6 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 
 今回はグリッド部分のポップアップを変更しました。その他のポップアップ設定項目は `ポップアップウィンドウの表示内容 <./config.html#mm_tooltip>`_ を参照してください。
 
-また、記述方法詳細は  :ref:`ユーザ定義フォーマット <user_format>` を参照してください。
+また、記載方法に関するより詳細な解説は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
 
 .. |new| image:: image/tab_001.gif

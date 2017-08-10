@@ -13,10 +13,7 @@ Mutaitonal Signature レポートでは検出した変異についての特徴�
 .. image:: image/sig_dummy.PNG
   :scale: 100%
 
-また、積み上げグラフの下のリストボックスにより表示モードを切り替えることができます。
-
-title: Signature contribution
-Y title: Rate, Count
+また、最下段のリストボックスにより表示モード (View mode) を切り替えることができます。
 
 :View mode:
   - Rate ... 変異の数を 1 としたときの変異シグネチャの割合を % で表示します。
@@ -24,9 +21,7 @@ Y title: Rate, Count
 
 :Sort by:
   - Sample ID ... サンプルID順
-  - Mutation count ... 変異数の降順
-
-  View mode が Count の場合のみ、ソート方法を選択できます。
+  - Mutation count ... 変異数の降順 (View mode が Count の場合のみ選択可能)
 
 [View mode] で[Count] を選択し、[Sort by] で [Mutation count] を選択した場合の表示例
 

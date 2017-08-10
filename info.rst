@@ -50,7 +50,7 @@ v0.2.7
 ライセンス
 --------------------
 
-paplotは https://github.com/Genomon-Project/paplot/blob/devel/LICENSE のもとで配布されています。
+paplot は https://github.com/Genomon-Project/paplot/blob/devel/LICENSE のもとで配布されています。
 
 
 コンタクト
@@ -59,7 +59,7 @@ paplotは https://github.com/Genomon-Project/paplot/blob/devel/LICENSE のもと
 | ご質問やフィードバックなど，お気軽にご連絡ください．
 | genomon.devel@gmail.com
 | 
-| 対面形式，skypeでのアポイントはこちらで受け付けています．
+| 対面形式，skype でのアポイントはこちらで受け付けています．
 | Genomon Office Hour: https://genomon-office.youcanbook.me/
 | 
 

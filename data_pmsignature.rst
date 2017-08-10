@@ -4,7 +4,7 @@ pmsignature レポート
 
 ここでは、サンプルデータ (※) を基にして、pmsignature レポートを出力するために必要な入力データを解説します。
 
-※ サンプルデータはpaplotをダウンロードして解凍したディレクトリ中、exampleディレクトリにあります。
+※ サンプルデータは paplot をダウンロードして解凍したディレクトリ中、example ディレクトリにあります。
 
 :doc:`exec_pmsignature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。
 
@@ -76,11 +76,11 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 :alt:
   | pmsignatureのaltの値。
   | pmsignatureごとに16個の値を設定します。
-  | 横方向のサイズはref3 (base=5の場合。base=3であればref2、base=7であればref4) のACGTの各値に従うため、altAとaltGについては通常は0を設定します。
+  | 横方向のサイズは ref3 (base=5の場合。base=3であれば ref2、base=7 であれば ref4) の ACGT の各値に従うため、altA と altG については通常は 0 を設定します。
 
 :strand:
   | pmsignatureのstrandの値。
-  | pmsignatureごとにplus/minus2つの値をそれぞれ設定します。
+  | pmsignatureごとに plus/minus 2 つの値をそれぞれ設定します。
   | strandが無い場合は `[0,0]` を記入します。
 
 **積み上げグラフ描画データ**
@@ -109,7 +109,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 
 .. note::
 
-  key名は変更可能です。key名を変更した場合は設定ファイル ([result_format_pmsignature] key_*)を変更してください。
+  key 名は変更可能です。key 名を変更した場合は設定ファイル ([result_format_pmsignature] key_*) を変更してください。
 
   .. code-block:: cfg
     :caption:  paplot/example/pmsignature_integral/paplot.cfg
@@ -126,7 +126,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
             
 .. note::
 
-  jsonとしての形式の厳密さについては、paplotはpythonのjsonパッケージを使用しているため、次のコマンドで読めればOKです。
+  jsonとしての形式の厳密さについては、paplotはpythonのjsonパッケージを使用しているため、次のコマンドで読めれば OK です。
 
   python jsonパッケージを使用したファイル確認例 (ファイル名が "data2.json" の場合)
 
@@ -152,7 +152,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 
 :doc:`exec_pmsignature` に従いデータの準備を行う場合、設定ファイルの変更は必要ありません。
 
-ここではpaplotコマンドを中心に解説します。
+ここでは paplot コマンドを中心に解説します。
 
 データファイル (変異シグネチャ数は2)
 
@@ -207,7 +207,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 
 上記のコマンドを実行すると以下の場所にレポートが作成されます。
 
-ここで出力されるレポートは、graph_signature2.html と、pmsignature数がファイル名に反映されています。
+ここで出力されるレポートは、graph_signature2.html と、pmsignature 数がファイル名に反映されています。
 
 pmsignature数はpaplot実行時に入力ファイル (data.json) から読み取り、自動的に判定します。
 
@@ -219,7 +219,7 @@ pmsignature数はpaplot実行時に入力ファイル (data.json) から読み�
 
 .. note::
 
-  今回の例ではpmsignatureの出力にbackgroundを設定しているため、実際に出力されるpmsignatureは1少ない数（今回は1つだけ）が表示されます。
+  今回の例ではpmsignatureの出力にbackgroundを設定しているため、実際に出力される pmsignature は 1 少ない数（今回は 1 つだけ）が表示されます。
 
 ----
 
@@ -242,9 +242,9 @@ pmsignature数はpaplot実行時に入力ファイル (data.json) から読み�
 
 入力データ形式は :ref:`こちら <json_ind>` 参照。
 
-:doc:`exec_pmsignature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。ここではpaplotコマンドを中心に解説します。
+:doc:`exec_pmsignature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。ここでは paplot コマンドを中心に解説します。
 
-データファイルはpmsignatureタイプの数だけ用意し、設定ファイルは形式が同じであれば一つだけ用意します。
+データファイルは pmsignature タイプの数だけ用意し、設定ファイルは形式が同じであれば一つだけ用意します。
 
 今回の場合、以下のファイル構成になります。
 
@@ -292,7 +292,7 @@ pmsignature数はpaplot実行時に入力ファイル (data.json) から読み�
 
 ここで出力されるレポートは、graph_signature2.html と、pmsignature数がファイル名に反映されています。
 
-pmsignature数はpaplot実行時に入力ファイル (data?.json) のデータから読み取り、自動的に判定します。ファイル名称には依存しません。
+pmsignature 数は paplot 実行時に入力ファイル (data?.json) のデータから読み取り、自動的に判定します。ファイル名称には依存しません。
 
 ::
 
@@ -306,7 +306,7 @@ pmsignature数はpaplot実行時に入力ファイル (data?.json) のデータ�
 
 .. note::
 
-  今回の例ではpmsignatureの出力にbackgroundを設定しているため、実際に出力されるpmsignatureは1少ない数（今回は1つだけ）が表示されます。
+  今回の例では pmsignature の出力に background を設定しているため、実際に出力される pmsignature は1少ない数（今回は 1 つだけ）が表示されます。
 
 ----
 
@@ -345,11 +345,11 @@ pmsignature数はpaplot実行時に入力ファイル (data?.json) のデータ�
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_nobackground>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_nobackground.zip?raw=true>`_ 
 
-:doc:`exec_pmsignature` の手順でデータの準備を行う場合、backgroundありでpmsignatureを作成しますが、backgroundなしでpmsignatureを出力することもできます。
+:doc:`exec_pmsignature` の手順でデータの準備を行う場合、background ありで pmsignature を作成しますが、background なしで pmsignature を出力することもできます。
 
 手順詳細は :doc:`exec_pmsignature` を参照ください。
 
-1. pmsignatureをbackgroundなしで作成します。
+1. pmsignature を background なしで作成します。
 
 .. code-block:: R
 
@@ -359,12 +359,12 @@ pmsignature数はpaplot実行時に入力ファイル (data?.json) のデータ�
   inputFile <- system.file("extdata/Nik_Zainal_2012.mutationPositionFormat.txt.gz", package="pmsignature")
   G <- readMPFile(inputFile, numBases = 5, trDir = TRUE)
   
-  # backgroundを使用する場合
+  # background を使用する場合
   # BG_prob <- readBGFile(G)
   # Param <- getPMSignature(G, K = 3, BG = BG_prob)
   # Boot <- bootPMSignature(G, Param0 = Param, bootNum = 100, BG = BG_prob)
 
-  # backgroundを使用しない場合
+  # background を使用しない場合
   Param <- getPMSignature(G, K = 3)
   Boot <- bootPMSignature(G, Param0 = Param, bootNum = 100)
   
@@ -372,13 +372,13 @@ pmsignature数はpaplot実行時に入力ファイル (data?.json) のデータ�
   resultForSave <- list(Param, Boot)
   save(resultForSave, file="pmsignature_ind3.Rdata")
 
-2. 作成したRdataをjsonに変換します。
+2. 作成した Rdata を json に変換します。
 
 .. code-block:: bash
 
   R --vanilla --slave --args ./pmsignature_ind3.Rdata ./pmsignature_ind3.json < {path to genomon_Rscripts}/pmsignature/convert_toJson_ind.R
 
-3. 設定ファイルでbackgroundオプションをFalseに設定します。
+3. 設定ファイルで background オプションを False に設定します。
 
 .. code-block:: cfg
   :caption: example/pmsignature_nobackground/paplot.cfg

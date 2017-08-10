@@ -80,7 +80,7 @@ MacOS X の場合
 1. ソースファイルのダウンロード
 ------------------------------------
 
-| paplotのサイトから最新版の ``Source code (zip)`` をダウンロードします。
+| paplot のサイトから最新版の ``Source code (zip)`` をダウンロードします。
 
 https://github.com/Genomon-Project/paplot/releases/
 

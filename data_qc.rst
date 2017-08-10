@@ -42,11 +42,12 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   col_opt_key1 = AverageDepth
   col_opt_id = ID
 
-オプションの列名は次の形式で記述します。 ``col_opt_{key} = {columun name}`` 
+オプションの列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
- - ``{key}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
- - ``{columun name}`` には実際の列名を記入します。
-
+ - ``{キーワード}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+ - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" 以外は使用できません。
+ - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
+  
 次に、設定ファイルに [qc_chart_1] セクションを追加し、次のように設定します。
 
 .. code-block:: cfg
@@ -78,7 +79,6 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 
   paplot qc {unzip_path}/example/qc_minimal/data.csv ./tmp qc_minimal \
   --config_file {unzip_path}/example/qc_minimal/paplot.cfg
-
 
 ----
 
@@ -135,7 +135,7 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack.zip?raw=true>`_ 
 
-最小構成では 1 つの棒グラフを作成しました。今回は積み上げグラフを作成します。
+最小構成では 1 つの棒グラフを作成しました。今回はさらに積み上げグラフを追加します。
 
 データファイルから一部抜粋
 
@@ -154,7 +154,7 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
  - chart_1　[棒グラフ] AverageDepth (最小構成と同じ)
  - chart_2　[積み上げグラフ] 2xRatio, 10xRatio, 20xRatio, 30xRatio
 
-完成したグラフはここ `view <http://genomon-project.github.io/paplot/qc/graph_stack.html>`_ を参照してください。
+完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc/graph_stack.html>`_ を参照してください。
 
 まず、設定ファイルの [result_format_qc] セクションに入力データの列名を登録します。
 
@@ -169,17 +169,18 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   col_opt_keyB3 = 10xRatio
   col_opt_keyB4 = 2xRatio
 
-オプションの列名は次の形式で記述します。 ``col_opt_{key} = {columun name}`` 
+オプションの列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
- - ``{key}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
- - ``{columun name}`` には実際の列名を記入します。
+ - ``{キーワード}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+ - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" 以外は使用できません。
+ - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
  
 次に、設定ファイルに [qc_chart_1]、[qc_chart_2] ... セクションを追加し、順番に設定します。
 
 | QC レポートは [qc_chart_1] → [qc_chart_2] → [qc_chart_3] の順番に表示し、必要な数だけ [qc_chart_*] セクションを増やすことができます。
 | ``*`` には 1 から始まる連番を入れてください。1 から順に表示します。
 
-完成した設定ファイルはここ `config <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack/paplot.cfg>`_ を参照してください。
+完成した設定ファイルは `ここ <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack/paplot.cfg>`_ を参照してください。
 
 3-1. 単純な棒グラフ
 ---------------------------
@@ -203,13 +204,14 @@ chart_2 は積み上げグラフです。
   title_y = Coverage
   
   # グラフの積み上げ要素
-  # stack1 → 2 → 3 の順に下から表示します。stack1 を一番下に表示します。
+  # stack1 → 2 → 3 の順に下から表示します。stack1 を一番下に表示します
   stack1 = {keyB1}
   stack2 = {keyB2}
   stack3 = {keyB3}
   stack4 = {keyB4}
   
   # 凡例の文字列と色を設定します
+  # stack1 → 2 → 3 の順に , で区切って書きます
   name_set = Ratio 30x:#2478B4, Ratio 20x:#FF7F0E, Ratio 10x:#2CA02C, Ratio  2x:#D62728
   
   # ポップアップの表示内容
@@ -240,9 +242,10 @@ chart_2 は積み上げグラフです。
   name_set = average_depth:#2478B4
   
   # 複数ある場合は , で区切って書きます
+  # stack1 → 2 → 3 の順に stack の数だけ書きます
   name_set = ratio_30x:#2478B4, ratio_20x:#FF7F0E, ratio_10x:#2CA02C, ratio_2x:#D62728
   
-セルの色を省略した場合、以下の色を上から順に使用します。
+セルの色を省略した場合、以下の色を上から順にローテーションで使用します。
 
 .. image:: image/default_color.PNG
   :scale: 100%
@@ -278,7 +281,7 @@ chart_2 は積み上げグラフです。
  - chart_5　[棒グラフ] DuplicateReads を TotalReads で割る
  - chart_6　[積み上げグラフ] ReadLengthR1, ReadLengthR2
 
-完成したグラフはここ `view <http://genomon-project.github.io/paplot/qc/graph_multi_plot.html>`_ を参照してください。
+完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc/graph_multi_plot.html>`_ を参照してください。
 
 まず、設定ファイルの [result_format_qc] セクションに入力データの列名を登録します。
 
@@ -300,17 +303,18 @@ chart_2 は積み上げグラフです。
   col_opt_read_length_r1 = ReadLengthR1
   col_opt_read_length_r2 = ReadLengthR2
 
-オプションの列名は次の形式で記述します。 ``col_opt_{key} = {columun name}`` 
+オプションの列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
- - ``{key}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
- - ``{columun name}`` には実際の列名を記入します。
-
+ - ``{キーワード}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
+ - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" 以外は使用できません。
+ - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
+ 
 次に、設定ファイルに [qc_chart_1]、[qc_chart_2]、[qc_chart_3] ... セクションを追加し、順番に設定します。
 
 | QC レポートは [qc_chart_1] → [qc_chart_2] → [qc_chart_3] の順番に表示し、必要な数だけ [qc_chart_*] セクションを増やすことができます。
 | ``*`` には 1 から始まる連番を入れてください。1 から順に表示します。
 
-完成した設定ファイルはここ `config <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot/paplot.cfg>`_ を参照してください。
+完成した設定ファイルは `ここ <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot/paplot.cfg>`_ を参照してください。
 
 4-1. 単純な棒グラフ
 ---------------------------
@@ -441,7 +445,7 @@ chart_2 (Depth coverage) は積み上げグラフです。
 
 前章で作成した複数のグラフに対し、領域選択用のグラフを追加します。
 
-完成したグラフはここ `view <http://genomon-project.github.io/paplot/qc/graph_brush.html>`_ を参照してください。
+完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc/graph_brush.html>`_ を参照してください。
 
 データ列は AverageDepth を使用します。
 

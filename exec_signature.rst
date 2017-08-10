@@ -6,20 +6,20 @@ Mutaitonal Signature 実行手順
 
 .. note::
 
-  | 実行前にRの環境構築とpmsignatureおよび関連パッケージのインストールが必要です。
+  | 実行前に R の環境構築と pmsignature および関連パッケージのインストールが必要です。
   | インストールおよび、実行コマンドの詳しい解説は `pmsignature <https://github.com/friend1ws/pmsignature/>`_ を参照ください。
   |
-  | 別のツールを用いてシグネチャ解析を行った場合は、 `仕様 <./data_signature.html#json>`_ に準拠するjsonファイルを別途準備ください。
+  | 別のツールを用いてシグネチャ解析を行った場合は、 `仕様 <./data_signature.html#json>`_ に準拠する json ファイルを別途準備ください。
 
 .. _pre:
 
 1. 結果ファイルの整形
 -----------------------------
 
-pmsignatureに入力する変異のデータファイルは以下のフォーマットである必要があります。
+pmsignature に入力する変異のデータファイルは以下のフォーマットである必要があります。
 
  - ヘッダなし、コメント行なし
- - 左から、サンプルID、染色体（chr必要）、posision、リファレンスの塩基、変異の塩基
+ - 左から、サンプルID、染色体（chr必要）、位置、リファレンスの塩基、変異の塩基
  - タブ区切り
 
 余分なデータ列は取り除いてください。
@@ -55,9 +55,9 @@ pmsignatureに入力する変異のデータファイルは以下のフォーマ
 2. pmsignatureの実行
 -----------------------------
 
-pmsignatureを ``type="full"`` で実行してパラメータを出力します。
+pmsignature を ``type="full"`` で実行してパラメータを出力します。
 
-今回の例では、pmsignatureのサンプルデータを使用しているため .txt.gz 形式ですが、1の結果ファイルを入力する場合は圧縮する必要はありません。
+今回の例では、pmsignature のサンプルデータを使用しているため .txt.gz 形式ですが、1 の結果ファイルを入力する場合は圧縮する必要はありません。
 
 .. code-block:: R
   :caption: R console
@@ -75,10 +75,10 @@ pmsignatureを ``type="full"`` で実行してパラメータを出力します�
   resultForSave <- list(Param, Boot)
   save(resultForSave, file="pmsignature_full3.Rdata")
 
-3. paplotで使用できるようにRdataを変換する
+3. paplot で使用できるように Rdata を変換する
 -----------------------------------------------------
 
-2で作成した"pmsignature_full3.Rdata" ファイルをpaplotで読み込めるように.json形式に変換します。
+2 で作成した "pmsignature_full3.Rdata" ファイルを paplot で読み込めるように .json 形式に変換します。
 
 変換スクリプトを用意していますので、以下より最新版をダウンロードし、適切な場所に解凍してください。
 インストールの必要はありません。
@@ -93,14 +93,14 @@ https://github.com/Genomon-Project/genomon_Rscripts/releases
   < {path to genomon_Rscripts}/pmsignature/convert_toJson_full.R
 
 
-※ Rパッケージ "rjson" が必要です。ロードエラーが発生した場合はインストールしてください。
+※ R パッケージ "rjson" が必要です。ロードエラーが発生した場合はインストールしてください。
 
-3. paplotの実行
+3. paplot の実行
 -----------------------------
 
-2で作成した"pmsignature_full3.json" ファイルを使用して、paplot を実行します。上述の方法で実行した場合、設定ファイルの変更は必要ありません。
+2 で作成した "pmsignature_full3.json" ファイルを使用して、paplot を実行します。上述の方法で実行した場合、設定ファイルの変更は必要ありません。
 
-paplot実行例
+paplot 実行例
 
 .. code-block:: bash
 
