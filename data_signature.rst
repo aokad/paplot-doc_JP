@@ -18,12 +18,12 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
 
 ここでは、paplotが使用する変異シグネチャのデータフォーマットについて解説します。
 
-`example/signature_integral/data2.json` ファイルをテキストエディタで開くと次のようになっています。
+`example/signature_stack/data2.json` ファイルをテキストエディタで開くと次のようになっています。
 
 (長いため一部省略しています)
 
 .. code-block:: python
-  :caption: example/signature_integral/data2.json
+  :caption: example/signature_stack/data2.json
 
   {
     "signature":[
@@ -84,11 +84,11 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
   TGRAA,TGRAC,TGRAG,TGRAT,TGRCA,TGRCC,TGRCG,TGRCT,TGRGA,TGRGC,TGRGG,TGRGT,TGRTA,TGRTC,TGRTG,TGRTT,
   TTRAA,TTRAC,TTRAG,TTRAT,TTRCA,TTRCC,TTRCG,TTRCT,TTRGA,TTRGC,TTRGG,TTRGT,TTRTA,TTRTC,TTRTG,TTRTT
 
-**積み上げグラフ描画データ**
+**寄与度グラフ描画データ**
 
 この項目はオプションです。
 
-設定するとサンプル毎に変異シグネチャの積算グラフ ( `例 <http://genomon-project.github.io/paplot/signature/graph_integral2.html>`_ ) を作成します。
+設定するとサンプル毎に変異シグネチャの寄与度グラフ ( `例 <http://genomon-project.github.io/paplot/signature/graph_stack2.html>`_ ) を作成します。
 
 :id:
   | サンプル名リスト
@@ -112,7 +112,7 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
   key名は変更可能です。key名を変更した場合は設定ファイル ([result_format_signature] key_*)を変更してください。
 
   .. code-block:: cfg
-    :caption:  paplot/example/signature_integral/paplot.cfg
+    :caption:  paplot/example/signature_stack/paplot.cfg
     
     [result_format_signature]
     # jsonファイルのkey名
@@ -309,22 +309,22 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
 
 ----
 
-.. _sig_integral:
+.. _sig_stack:
 
 ==========================
-4. 積算グラフ
+4. 寄与度グラフ
 ==========================
 
 | このセクションで生成するレポートを見る
 
- - `signature 2 <http://genomon-project.github.io/paplot/signature/graph_integral2.html>`_ 
- - `signature 3 <http://genomon-project.github.io/paplot/signature/graph_integral3.html>`_ 
- - `signature 4 <http://genomon-project.github.io/paplot/signature/graph_integral4.html>`_ 
- - `signature 5 <http://genomon-project.github.io/paplot/signature/graph_integral5.html>`_ 
- - `signature 6 <http://genomon-project.github.io/paplot/signature/graph_integral6.html>`_ 
+ - `signature 2 <http://genomon-project.github.io/paplot/signature/graph_stack2.html>`_ 
+ - `signature 3 <http://genomon-project.github.io/paplot/signature/graph_stack3.html>`_ 
+ - `signature 4 <http://genomon-project.github.io/paplot/signature/graph_stack4.html>`_ 
+ - `signature 5 <http://genomon-project.github.io/paplot/signature/graph_stack5.html>`_ 
+ - `signature 6 <http://genomon-project.github.io/paplot/signature/graph_stack6.html>`_ 
 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/signature_integral>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/signature_integral.zip?raw=true>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/signature_stack>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/signature_stack.zip?raw=true>`_ 
 
 レポートに変異の内訳グラフを追加します。 :ref:`こちら <json_full>` で解説に使用しているデータであり、:doc:`exec_signature` によりデータの準備を行う場合に出力されるデータです。
 

@@ -22,7 +22,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 (長いため一部省略しています)
 
 .. code-block:: python
-  :caption: example/pmsignature_integral/data2.json
+  :caption: example/pmsignature_stack/data2.json
 
   {
     "ref":[
@@ -83,11 +83,11 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
   | pmsignatureごとに plus/minus 2 つの値をそれぞれ設定します。
   | strandが無い場合は `[0,0]` を記入します。
 
-**積み上げグラフ描画データ**
+**寄与度グラフ描画データ**
 
 この項目はオプションです。
 
-設定するとサンプル毎にpmsignatureの積算グラフ ( `例 <http://genomon-project.github.io/paplot/pmsignature/graph_integral2.html>`_ ) を作成します。
+設定するとサンプル毎にpmsignatureの寄与度グラフ ( `例 <http://genomon-project.github.io/paplot/pmsignature/graph_stack2.html>`_ ) を作成します。
 
 :id:
   | サンプル名リスト
@@ -112,7 +112,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
   key 名は変更可能です。key 名を変更した場合は設定ファイル ([result_format_pmsignature] key_*) を変更してください。
 
   .. code-block:: cfg
-    :caption:  paplot/example/pmsignature_integral/paplot.cfg
+    :caption:  paplot/example/pmsignature_stack/paplot.cfg
     
     [result_format_pmsignature]
     format = json
@@ -310,22 +310,22 @@ pmsignature 数は paplot 実行時に入力ファイル (data?.json) のデー�
 
 ----
 
-.. _pm_integral:
+.. _pm_stack:
 
 ==========================
-4. 積算グラフ
+4. 寄与度グラフ
 ==========================
 
 | このセクションで生成するレポートを見る
 
- - `pmsignature 2 <http://genomon-project.github.io/paplot/pmsignature/graph_integral2.html>`_ 
- - `pmsignature 3 <http://genomon-project.github.io/paplot/pmsignature/graph_integral3.html>`_ 
- - `pmsignature 4 <http://genomon-project.github.io/paplot/pmsignature/graph_integral4.html>`_ 
- - `pmsignature 5 <http://genomon-project.github.io/paplot/pmsignature/graph_integral5.html>`_ 
- - `pmsignature 6 <http://genomon-project.github.io/paplot/pmsignature/graph_integral6.html>`_ 
+ - `pmsignature 2 <http://genomon-project.github.io/paplot/pmsignature/graph_stack2.html>`_ 
+ - `pmsignature 3 <http://genomon-project.github.io/paplot/pmsignature/graph_stack3.html>`_ 
+ - `pmsignature 4 <http://genomon-project.github.io/paplot/pmsignature/graph_stack4.html>`_ 
+ - `pmsignature 5 <http://genomon-project.github.io/paplot/pmsignature/graph_stack5.html>`_ 
+ - `pmsignature 6 <http://genomon-project.github.io/paplot/pmsignature/graph_stack6.html>`_ 
 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_integral>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_integral.zip?raw=true>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_stack>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_stack.zip?raw=true>`_ 
 
 レポートに変異の内訳グラフを追加します。 :ref:`こちら <json_ind>` で解説に使用しているデータで、:doc:`exec_pmsignature` の手順でデータの準備を行う場合に出力されるデータです。
 

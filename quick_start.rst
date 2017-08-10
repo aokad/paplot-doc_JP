@@ -98,10 +98,10 @@
   paplot mutation example/mutation_option/data.csv ./tmp demo
 
   # Mutational Signatureレポート
-  paplot signature "example/signature_integral/data*.json" ./tmp demo
+  paplot signature "example/signature_stack/data*.json" ./tmp demo
 
   # pmsignature レポート
-  paplot pmsignature "example/pmsignature_integral/data*.json" ./tmp demo
+  paplot pmsignature "example/pmsignature_stack/data*.json" ./tmp demo
 
 
 3. 結果ファイルを表示
