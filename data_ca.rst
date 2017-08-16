@@ -16,8 +16,12 @@ Chromosomal Aberration レポート
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal.zip?raw=true>`_ 
 
-paplot で Chromosomal Aberration レポートを作成するために最低限必要な項目はサンプルID (Sample)、切断点 1 の染色体 (Chr1) と位置 (Break1)、切断点 2 の染色体 (Chr2) と位置 (Break2) の 5 つです。
+paplot で Chromosomal Aberration レポートを作成するために最低限必要な項目は次の 5 つです。
 
+ - サンプルID (Sample)
+ - 切断点 1 の染色体 (Chr1) と位置 (Break1)
+ - 切断点 2 の染色体 (Chr2) と位置 (Break2) 
+ 
 データファイルから一部抜粋
 
 .. code-block:: cfg
@@ -128,14 +132,12 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group.zip?raw=true>`_ 
 
-最小構成で作成した変異には自動的にグループ機能が働いており、染色体内の変異（緑）と染色体間の変異（紫）に色分けされています。
+最小構成で作成した変異には自動的にグルーピングされており、染色体内の変異（緑）と染色体間の変異（紫）に色分けされています。
 
 ここでは、グループを手動で設定するように変更します。
 
-データファイルから一部抜粋
-
 .. code-block:: cfg
-  :caption: example/ca_group/data.csv
+  :caption: データファイルから一部抜粋 (example/ca_group/data.csv)
   
   Sample,Chr1,Break1,Chr2,Break2,Label
   SAMPLE1,14,16019088,12,62784483,C
@@ -151,9 +153,9 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   SAMPLE4,7,6037836,21,34855497,D
   SAMPLE4,7,109724564,14,106387943,A
 
-今回の例では、必須項目である Sample, Chr1, Break1, Chr2, Break2 に加えて、Label が追加してあります。
+今回の例では、必須項目である Sample, Chr1, Break1, Chr2, Break2 列に加えて、Label 列が追加してあります。
 
-まず、グルーピングに使用する列名、Label を設定ファイルに記載します。
+まず、グルーピングに使用する列名 ``Label`` を設定ファイルに追加します。
 
 設定ファイルの [result_format_ca] セクションでデータの列名を次のように設定します。
 
@@ -172,6 +174,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 
   [ca]
   # グループの色指定
+  # {値}:{色名もしくは RGB 値} をグループの数だけ , 区切りで記入する
   group_colors = A:#66C2A5,B:#FC8D62,C:#8DA0CB,D:#E78AC3
 
   # 指定したグループのみ表示する
