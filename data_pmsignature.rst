@@ -81,7 +81,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 :strand:
   | pmsignature の strand の値。
   | pmsignature ごとに plus/minus 2 つの値をそれぞれ設定します。
-  | strand が無い場合は `[0,0]` を記入します。
+  | strand が無い場合は ``[0,0]`` を記入します。
 
 **寄与度グラフ描画データ**
 
@@ -154,7 +154,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 
 ここでは paplot コマンドを中心に解説します。
 
-データファイル (pmsignature 数は2)
+データファイル (pmsignature 数は 2)
 
 .. code-block:: json
   :caption: example/pmsignature_minimal/data.json

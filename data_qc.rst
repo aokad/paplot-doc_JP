@@ -65,7 +65,7 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   # グラフの色と凡例
   name_set = Average depth:#2478B4
   
-  # マウスオーバーで表示する情報のフォーマット
+  # ポップアップのフォーマット
   tooltip_format1 = Sample:{id}
   tooltip_format2 = {key1:.2}
 
@@ -114,6 +114,9 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   :caption: example/qc_noheader/paplot.cfg
   
   [result_format_qc]
+  # ヘッダオプションを False に設定する
+  header = False
+
   col_opt_id = 1
   col_opt_average_depth = 2
 
@@ -256,7 +259,6 @@ chart_2 は積み上げグラフです。
 セルの色を省略した場合、以下の色を上から順にローテーションで使用します。
 
 .. image:: image/default_color.PNG
-  :scale: 100%
 
 .. _qc_mplot
 
@@ -268,7 +270,7 @@ chart_2 は積み上げグラフです。
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot.zip?raw=true>`_ 
 
-最小構成では 1 つのグラフを作成しました。今回は複数のグラフを作成します。
+前章では 1 つの棒グラフと積み上げグラフを作成しました。今回は複数のグラフを作成します。
 
 データファイルから一部抜粋
 
@@ -361,13 +363,13 @@ chart_3 (Mapped reads) と chart_5 (Duplicate reads) は列同士で計算（今
 | 上記では、 ``stack1 = {mapped_reads/total_reads}`` と記入しています。
 | ここで ``{mapped_reads-total_reads}`` と書くと引き算に、 ``{mapped_reads+total_reads}`` と書くと足し算させることができます。
 | 
-| なお、ポップアップウィンドウでも同様に数値演算させています。
+| なお、ポップアップでも同様に数値演算させています。
 | ``tooltip_format2 = {mapped_reads/total_reads:.2}``
 | 
-| もし、ポップアップウィンドウではそれぞれの値を表示したい場合は
+| もし、ポップアップではそれぞれの値を表示したい場合は
 | ``tooltip_format2 = Mapped: {mapped_reads}, Total: {total_reads}`` 等と書くとそれぞれの値が表示されます。
 |
-| ポップアップウィンドウ記述方法詳細は  :ref:`ユーザ定義フォーマット <user_format>` を参照してください。
+| ポップアップ記述方法詳細は  :ref:`ユーザ定義フォーマット <user_format>` を参照してください。
 |
 
 4-3. 積み上げグラフ　その１
@@ -445,14 +447,14 @@ chart_2 (Depth coverage) は積み上げグラフです。
 .. _qc_brush:
 
 ==========================
-5. データ選択
+5. 範囲選択用
 ==========================
 
 | `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_brush/graph_brush.html>`_ 
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_brush>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_brush.zip?raw=true>`_ 
 
-前章で作成した複数のグラフに対し、領域選択用のグラフを追加します。
+前章で作成した複数のグラフに対し、範囲選択用のグラフを追加します。
 
 完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc_brush/graph_brush.html>`_ を参照してください。
 
@@ -460,7 +462,7 @@ chart_2 (Depth coverage) は積み上げグラフです。
 
 もし、新しいデータ列を使用する場合は設定ファイルの [result_format_qc] セクションに col_opt_{name} として登録してください。
 
-領域選択用のグラフは [qc_chart_brush] というセクション名で一つだけ追加することができます。
+範囲選択用のグラフは [qc_chart_brush] というセクション名で一つだけ追加することができます。
 
 .. code-block:: cfg
   :caption: example/qc_brush/paplot.cfg

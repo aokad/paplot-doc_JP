@@ -23,7 +23,7 @@
   sept = " "
 
 ここでは Mutation Matrix を例にとりましたが、QC や Chromosomal Aberration の場合も同様です。
-QC、Chromosomal Aberration の場合、設定ファイルは [result_format_qc]、[result_format_ca] セクションを変更してください。
+QC の場合は [result_format_qc] セクション、Chromosomal Aberration の場合は [result_format_ca] セクションを変更してください。
 
 ----
 
@@ -43,7 +43,7 @@ QC、Chromosomal Aberration の場合、設定ファイルは [result_format_qc]
   SAMPLE00,UTR3,CDH1
 
 このようにデータファイルにコメント行がある場合、次のようにコメント行の開始文字を設定することで、読み飛ばしできます。
-開始文字がない場合は読み飛ばしできませんので、手動で削除してください。
+開始文字が統一されていない場合は読み飛ばしできませんので、手動で削除してください。
 
 .. code-block:: cfg
   
@@ -51,7 +51,7 @@ QC、Chromosomal Aberration の場合、設定ファイルは [result_format_qc]
   comment = #
 
 ここでは Mutation Matrix を例にとりましたが、QC や Chromosomal Aberration の場合も同様です。
-QC、Chromosomal Aberration の場合、設定ファイルは [result_format_qc]、[result_format_ca] セクションを変更してください。
+QC の場合は [result_format_qc] セクション、Chromosomal Aberration の場合は [result_format_ca] セクションを変更してください。
 
 ----
 
@@ -65,12 +65,12 @@ paplot ではサンプル名が必須ですが、以下の 2 通りで指定す�
 
  - case1: マージされたファイルを入力する
  
-   複数サンプルの結果が、1 ファイルにすべてまとめられていると想定しています。サンプル名となる列を ``col_opt_ID`` で必ず指定してください。
+   複数サンプルの結果が、1 ファイルにすべてまとめられていると想定しています。サンプル名となる列を ``col_opt_id`` で必ず指定してください。
 
  - case2: サンプルごとに分かれた複数のファイルを入力し、データ中にサンプル名となるものはない。
  
    ファイル名の一部をサンプル名として使用します。 ``suffix`` を必ず指定してください。
-   サンプル名となる列がある場合は ``col_opt_ID`` で指定することもできます。
+   サンプル名となる列がある場合は ``col_opt_id`` で指定することもできます。
 
 これまでのサンプルでは、case1 について記述してきました。ここでは case2 の入力方法を解説します。
 
@@ -129,7 +129,7 @@ suffix を指定すると、suffix 手前までのファイル名をサンプル
   --config_file {unzip_path}/example/mutation_split_file/paplot.cfg
 
 ここでは Mutation Matrix を例にとりましたが、QC や Chromosomal Aberration の場合も同様です。
-QC、Chromosomal Aberration の場合、設定ファイルは [result_format_qc]、[result_format_ca] セクションを変更してください。
+QC の場合は [result_format_qc] セクション、Chromosomal Aberration の場合は [result_format_ca] セクションを変更してください。
 
 .. _user_format:
 
@@ -137,7 +137,7 @@ QC、Chromosomal Aberration の場合、設定ファイルは [result_format_qc]
 4. ユーザ定義フォーマット
 ==============================
 
-マウスオーバーにより表示するポップアップの内容はある程度変更することができます。
+マウスカーソルを乗せた時に表示する情報 (ポップアップ) の内容はある程度変更することができます。
 
 表示箇所ごとにそれぞれ設定しますが、書き方は同一です。
 

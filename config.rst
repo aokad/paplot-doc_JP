@@ -51,8 +51,8 @@
   # 未入力の変異タイプはデフォルト色を使用する
   group_color = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011,nonframeshift_deletion:#9CAEB7
   
-  # ポップアップウィンドウの表示内容
-  # 詳細は次項目「ポップアップウィンドウの表示内容」に記載
+  # ポップアップの表示内容
+  # 詳細は次項目「ポップアップの表示内容」に記載
   tooltip_format_checker_title1 = Sample:{id}, Gene:{gene}, {#sum_item_value}
   tooltip_format_checker_partial = Mutation Type[{group}]
   tooltip_format_gene_title = Gene:{gene}, {#sum_item_value}
@@ -96,7 +96,7 @@
   ##################
   
   # サンプル ID の列名
-  col_opt_ID = Sample
+  col_opt_id = Sample
   
   # 出力フォーマット
   # 通常、変更する必要はありません。
@@ -109,7 +109,7 @@
 .. _mm_tooltip:
 
 ----------------------------------------------------------
-ポップアップウィンドウの表示内容
+ポップアップの表示内容
 ----------------------------------------------------------
 
 表示箇所ごとに6種類設定しますが、書き方は同一です。
@@ -342,7 +342,7 @@ mode = gradient の場合
 .. _qc_tooltip:
 
 ----------------------------------------
-ポップアップウィンドウの表示内容
+ポップアップの表示内容
 ----------------------------------------
 
 | 記載方法は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
@@ -522,7 +522,7 @@ mode = gradient の場合
 .. _ca_tooltip:
 
 ----------------------------------------
-ポップアップウィンドウの表示内容
+ポップアップの表示内容
 ----------------------------------------
 
 | 記載方法は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
@@ -546,7 +546,7 @@ mode = gradient の場合
   ###################### Mutational Signature
   [signature]
 
-  # ポップアップウィンドウの表示内容
+  # ポップアップの表示内容
   tooltip_format_signature_title = {sig}
   tooltip_format_signature_partial = {route}: {#sum_item_value:6.2}
   tooltip_format_mutation_title = {id}
@@ -583,7 +583,7 @@ mode = gradient の場合
 .. _sig_tooltip:
 
 ----------------------------------------------------------
-ポップアップウィンドウの表示内容
+ポップアップの表示内容
 ----------------------------------------------------------
 
 | 記載方法は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
@@ -665,7 +665,7 @@ mode = gradient の場合
   ###################### pmsignature
   [pmsignature]
 
-  # ポップアップウィンドウの表示内容
+  # ポップアップの表示内容
   tooltip_format_ref1 = A: {a:.2}
   tooltip_format_ref2 = C: {c:.2}
   tooltip_format_ref3 = G: {g:.2}
@@ -710,7 +710,7 @@ mode = gradient の場合
 .. _pm_tooltip:
 
 ----------------------------------------------------------
-ポップアップウィンドウの表示内容
+ポップアップの表示内容
 ----------------------------------------------------------
 
 | 記載方法は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。

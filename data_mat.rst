@@ -99,6 +99,9 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   :caption: example/mutation_noheader/paplot.cfg
   
   [result_format_mutation]
+  # ヘッダオプションを False に設定する
+  header = False
+  
   # column index (required)
   col_group = 2
   col_gene = 3
@@ -125,7 +128,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_option>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_option.zip?raw=true>`_ 
 
-マウスオーバーで表示する情報をカスタマイズすることができます。
+マウスカーソルを乗せた時に表示する情報 (ポップアップ) をカスタマイズすることができます。
 
 最小構成で表示するポップアップ（グリッド部分）はこのようになっています。
 
@@ -199,7 +202,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   paplot mutation {unzip_path}/example/mutation_option/data.csv ./tmp mutation_option \
   --config_file {unzip_path}/example/mutation_option/paplot.cfg
 
-今回はグリッド部分のポップアップを変更しました。その他のポップアップ設定項目は `ポップアップウィンドウの表示内容 <./config.html#mm-tooltip>`_ を参照してください。
+今回はグリッド部分のポップアップを変更しました。その他のポップアップ設定項目は `ポップアップの表示内容 <./config.html#mm-tooltip>`_ を参照してください。
 
 また、記載方法に関するより詳細な解説は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
 

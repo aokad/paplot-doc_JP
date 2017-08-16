@@ -96,6 +96,10 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 .. code-block:: cfg
   :caption: example/ca_noheader/paplot.cfg
   
+  [result_format_ca]
+  # ヘッダオプションを False に設定する
+  header = False
+
   # column index (required)
   col_chr1 = 2
   col_break1 = 3
@@ -196,7 +200,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option.zip?raw=true>`_ 
 
-マウスオーバーで表示する情報をカスタマイズすることができます。
+マウスカーソルを乗せた時に表示する情報 (ポップアップ) をカスタマイズすることができます。
 
 最小構成で表示するポップアップはこのようになっています。
 
