@@ -151,10 +151,8 @@
 
 example では別ファイルとして以下のデータファイルを用意しています。
 
-データファイルから一部抜粋
-
 .. code-block:: cfg
-  :caption: example/mutation_subplot/data_subplot.csv
+  :caption: データファイルから一部抜粋 (example/mutation_subplot/data_subplot.csv)
   
   Sample,Gender,Age,BMI
   SAMPLE00,F,30,40

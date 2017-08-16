@@ -18,10 +18,8 @@ Mutation Matrix レポート
 
 paplot で Mutation Matrix を作成するために最低限必要な項目はサンプルID (Sample)、遺伝子名 (Gene)、変異タイプ (MutationType) の3つです。
 
-データファイルから一部抜粋
-
 .. code-block:: cfg
-  :caption: example/mutation_minimal/data.csv
+  :caption: データファイルから一部抜粋 (example/mutation_minimal/data.csv)
   
   Sample,MutationType,Gene
   SAMPLE00,intronic,GATA3
@@ -72,10 +70,8 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_noheader>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_noheader.zip?raw=true>`_ 
 
-データファイルから一部抜粋
-
 .. code-block:: cfg
-  :caption: example/mutation_noheader/data.csv
+  :caption: データファイルから一部抜粋 (example/mutation_noheader/data.csv)
 
   SAMPLE00,intronic,GATA3
   SAMPLE00,UTR3,CDH1
@@ -142,10 +138,8 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 
 .. image:: image/data_mut2.png
 
-データファイルから一部抜粋
-
 .. code-block:: cfg
-  :caption: example/mutation_option/data.csv
+  :caption: データファイルから一部抜粋 (example/mutation_option/data.csv)
   
   Sample,Chr,Start,End,Ref,Alt,MutationType,Gene
   SAMPLE00,chr10,8114472,8114474,A,C,intronic,GATA3

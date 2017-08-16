@@ -93,10 +93,8 @@ paplot ではサンプル名が必須ですが、以下の 2 通りで指定す�
      # 設定ファイル
     ┗ paplot.cfg
 
-データファイルから一部抜粋
-
 .. code-block:: cfg
-  :caption: example/mutation_split_file/SAMPLE00.data.csv
+  :caption: データファイルから一部抜粋 (example/mutation_split_file/SAMPLE00.data.csv)
 
   MutationType,Gene
   intronic,GATA3

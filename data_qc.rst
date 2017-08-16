@@ -19,10 +19,8 @@ QC レポート
 paplot で QC レポートを作成するために最低限必要な情報はサンプルID (Sample) と QC の値（最低 1 項目）です。
 今回の例では、depth 平均値 (AverageDepth) を使用していますが、別の値でも問題ありません。
 
-データファイルから一部抜粋
-
 .. code-block:: cfg
-  :caption: example/qc_minimal/data.csv
+  :caption: データファイルから一部抜粋 (example/qc_minimal/data.csv)
   
   Sample,AverageDepth
   SAMPLE1,70.0474
@@ -93,10 +91,8 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_noheader>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_noheader.zip?raw=true>`_ 
 
-データファイルから一部抜粋
-
 .. code-block:: cfg
-  :caption: example/qc_noheader/data.csv
+  :caption: データファイルから一部抜粋 (example/qc_noheader/data.csv)
   
   SAMPLE1,70.0474
   SAMPLE2,65.7578
@@ -141,10 +137,8 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 
 最小構成では 1 つの棒グラフを作成しました。今回はさらに積み上げグラフを追加します。
 
-データファイルから一部抜粋
-
 .. code-block:: cfg
-  :caption: example/qc_stack/data.csv
+  :caption: データファイルから一部抜粋 (example/qc_stack/data.csv)
   
   Sample,AverageDepth,2xRatio,10xRatio,20xRatio,30xRatio
   SAMPLE1,70.0474,0.9796,0.7680,0.6844,0.6747
@@ -272,10 +266,8 @@ chart_2 は積み上げグラフです。
 
 前章では 1 つの棒グラフと積み上げグラフを作成しました。今回は複数のグラフを作成します。
 
-データファイルから一部抜粋
-
 .. code-block:: cfg
-  :caption: example/qc_multi_plot/data.csv
+  :caption: データファイルから一部抜粋 (example/qc_multi_plot/data.csv)
   
   ID,average_depth,read_length_r1,read_length_r2,total_reads,mapped_reads,mean_insert_size,duplicate_reads,2x_rt,10x_rt,20x_rt,30x_rt
   SAMPLE1,70.0474,265,270,94315157,56262203,343.92,7964009,0.9796,0.7680,0.6844,0.6747

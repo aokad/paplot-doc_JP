@@ -21,11 +21,9 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
  - サンプルID (Sample)
  - 切断点 1 の染色体 (Chr1) と位置 (Break1)
  - 切断点 2 の染色体 (Chr2) と位置 (Break2) 
- 
-データファイルから一部抜粋
 
 .. code-block:: cfg
-  :caption: example/ca_minimal/data.csv
+  :caption: データファイルから一部抜粋 (example/ca_minimal/data.csv)
   
   Sample,Chr1,Break1,Chr2,Break2,
   SAMPLE1,14,16019088,12,62784483,
@@ -73,10 +71,8 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader.zip?raw=true>`_ 
 
-データファイルから一部抜粋
-
 .. code-block:: cfg
-  :caption: example/ca_noheader/data.csv
+  :caption: データファイルから一部抜粋 (example/ca_noheader/data.csv)
   
   SAMPLE00,intronic,GATA3
   SAMPLE00,UTR3,CDH1
@@ -215,11 +211,8 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 
 .. image:: image/data_ca2.png
 
-
-データファイルから一部抜粋
-
 .. code-block:: cfg
-  :caption: example/ca_option/data.csv
+  :caption: データファイルから一部抜粋 (example/ca_option/data.csv)
   
   Sample,Chr1,Break1,Dir1,Chr2,Break2,Dir2,Ref,Alt,MutationType,Gene1,Gene2
   SAMPLE1,14,16019088,-,12,62784483,+,---,GACTC,deletion,LS7T1EG444,4GRRIO5AVR
