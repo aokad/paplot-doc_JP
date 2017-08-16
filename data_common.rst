@@ -184,7 +184,7 @@ QC、Chromosomal Aberration の場合、設定ファイルは [result_format_qc]
 
  - 半角英数字 (1-9, a-z, A-Z) および "_" 以外は使用できません。
  - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
- - signature、pmsignatureは追加できません
+ - signature、pmsignature は追加できません
 
 4-2. 数値計算
 ----------------------------

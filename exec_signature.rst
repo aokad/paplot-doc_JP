@@ -52,12 +52,12 @@ pmsignature に入力する変異のデータファイルは以下のフォー�
   # 先頭1行がヘッダなので取り除く例
   tail -n +2 $input_file > tmp1.txt
 
-2. pmsignatureの実行
+2. pmsignature の実行
 -----------------------------
 
 pmsignature を ``type="full"`` で実行してパラメータを出力します。
 
-今回の例では、pmsignature のサンプルデータを使用しているため .txt.gz 形式ですが、1 の結果ファイルを入力する場合は圧縮する必要はありません。
+今回の例では、pmsignature のサンプルデータを使用しているため .txt.gz 形式ですが、1. の結果ファイルを入力する場合は圧縮する必要はありません。
 
 .. code-block:: R
   :caption: R console
@@ -78,7 +78,7 @@ pmsignature を ``type="full"`` で実行してパラメータを出力します
 3. paplot で使用できるように Rdata を変換する
 -----------------------------------------------------
 
-2 で作成した "pmsignature_full3.Rdata" ファイルを paplot で読み込めるように .json 形式に変換します。
+2. で作成した "pmsignature_full3.Rdata" ファイルを paplot で読み込めるように .json 形式に変換します。
 
 変換スクリプトを用意していますので、以下より最新版をダウンロードし、適切な場所に解凍してください。
 インストールの必要はありません。
@@ -95,10 +95,10 @@ https://github.com/Genomon-Project/genomon_Rscripts/releases
 
 ※ R パッケージ "rjson" が必要です。ロードエラーが発生した場合はインストールしてください。
 
-3. paplot の実行
+4. paplot の実行
 -----------------------------
 
-2 で作成した "pmsignature_full3.json" ファイルを使用して、paplot を実行します。上述の方法で実行した場合、設定ファイルの変更は必要ありません。
+3. で作成した "pmsignature_full3.json" ファイルを使用して、paplot を実行します。上述の方法で実行した場合、設定ファイルの変更は必要ありません。
 
 paplot 実行例
 

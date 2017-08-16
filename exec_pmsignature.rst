@@ -21,7 +21,7 @@ pmsignature 実行手順
 
 pmsignature を ``type="independent"`` (default) で実行したのち、パラメータを `.Rdata` ファイルに出力します。
 
-今回の例では、pmsignatureのサンプルデータを使用しているため .txt.gz 形式ですが、1の結果ファイルを入力する場合は圧縮する必要はありません。
+今回の例では、pmsignature のサンプルデータを使用しているため .txt.gz 形式ですが、1. の結果ファイルを入力する場合は圧縮する必要はありません。
 
 .. code-block:: R
 
@@ -44,7 +44,7 @@ pmsignature を ``type="independent"`` (default) で実行したのち、パラ�
 3. paplot で使用できるように Rdata を変換する
 -----------------------------------------------------
 
-4で作成した"pmsignature_ind3.Rdata" ファイルをpaplotで読み込めるように .json 形式に変換します。
+2. で作成した"pmsignature_ind3.Rdata" ファイルをpaplotで読み込めるように .json 形式に変換します。
 
 変換スクリプトを用意していますので、以下より最新版をダウンロードし、適切な場所に解凍してください。
 インストールの必要はありません。
@@ -59,10 +59,10 @@ https://github.com/Genomon-Project/genomon_Rscripts/releases
   < {path to genomon_Rscripts}/pmsignature/convert_toJson_ind.R
 
 
-4. paplotの実行
+4. paplot の実行
 -----------------------------
 
-2で作成した "pmsignature_ind3.json" ファイルを使用して、paplot を実行します。上述の方法で実行した場合、設定ファイルの変更は必要ありません。
+4. で作成した "pmsignature_ind3.json" ファイルを使用して、paplot を実行します。上述の方法で実行した場合、設定ファイルの変更は必要ありません。
 
 paplot 実行例
 

@@ -88,7 +88,7 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
 
 この項目はオプションです。
 
-設定するとサンプル毎に変異シグネチャの寄与度グラフ ( `例 <http://genomon-project.github.io/paplot/signature/graph_stack2.html>`_ ) を作成します。
+設定するとサンプル毎に変異シグネチャの寄与度グラフ ( `例 <http://genomon-project.github.io/paplot/signature_stack/graph_stack2.html>`_ ) を作成します。
 
 :id:
   | サンプル名リスト
@@ -141,7 +141,7 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
 2. 最小データセット
 ==========================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/signature/graph_signature_minimal2.html>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/signature_minimal/graph_signature_minimal2.html>`_ 
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal.zip?raw=true>`_ 
 
@@ -234,11 +234,11 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
 
 | このセクションで生成するレポートを見る
 
- - `signature 2 <http://genomon-project.github.io/paplot/signature/graph_multi_class2.html>`_ 
- - `signature 3 <http://genomon-project.github.io/paplot/signature/graph_multi_class3.html>`_ 
- - `signature 4 <http://genomon-project.github.io/paplot/signature/graph_multi_class4.html>`_ 
- - `signature 5 <http://genomon-project.github.io/paplot/signature/graph_multi_class5.html>`_ 
- - `signature 6 <http://genomon-project.github.io/paplot/signature/graph_multi_class6.html>`_ 
+ - `signature 2 <http://genomon-project.github.io/paplot/signature_multi_class/graph_multi_class2.html>`_ 
+ - `signature 3 <http://genomon-project.github.io/paplot/signature_multi_class/graph_multi_class3.html>`_ 
+ - `signature 4 <http://genomon-project.github.io/paplot/signature_multi_class/graph_multi_class4.html>`_ 
+ - `signature 5 <http://genomon-project.github.io/paplot/signature_multi_class/graph_multi_class5.html>`_ 
+ - `signature 6 <http://genomon-project.github.io/paplot/signature_multi_class/graph_multi_class6.html>`_ 
 
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/signature_multi_class>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/signature_multi_class.zip?raw=true>`_ 
@@ -317,11 +317,11 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
 
 | このセクションで生成するレポートを見る
 
- - `signature 2 <http://genomon-project.github.io/paplot/signature/graph_stack2.html>`_ 
- - `signature 3 <http://genomon-project.github.io/paplot/signature/graph_stack3.html>`_ 
- - `signature 4 <http://genomon-project.github.io/paplot/signature/graph_stack4.html>`_ 
- - `signature 5 <http://genomon-project.github.io/paplot/signature/graph_stack5.html>`_ 
- - `signature 6 <http://genomon-project.github.io/paplot/signature/graph_stack6.html>`_ 
+ - `signature 2 <http://genomon-project.github.io/paplot/signature_stack/graph_stack2.html>`_ 
+ - `signature 3 <http://genomon-project.github.io/paplot/signature_stack/graph_stack3.html>`_ 
+ - `signature 4 <http://genomon-project.github.io/paplot/signature_stack/graph_stack4.html>`_ 
+ - `signature 5 <http://genomon-project.github.io/paplot/signature_stack/graph_stack5.html>`_ 
+ - `signature 6 <http://genomon-project.github.io/paplot/signature_stack/graph_stack6.html>`_ 
 
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/signature_stack>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/signature_stack.zip?raw=true>`_ 

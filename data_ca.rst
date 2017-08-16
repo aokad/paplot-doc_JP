@@ -12,7 +12,7 @@ Chromosomal Aberration レポート
 1. 最小データセット
 ==========================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca/graph_minimal.html>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca_minimal/graph_minimal.html>`_ 
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal.zip?raw=true>`_ 
 
@@ -65,7 +65,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 2. ヘッダなし
 ==========================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca/graph_noheader.html>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca_noheader/graph_noheader.html>`_ 
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader.zip?raw=true>`_ 
 
@@ -120,7 +120,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 3. 変異のグルーピング
 ==========================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca/graph_group.html>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca_group/graph_group.html>`_ 
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group.zip?raw=true>`_ 
 
@@ -192,7 +192,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 4. ポップアップの情報追加
 ===================================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca/graph_option.html>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca_option/graph_option.html>`_ 
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option.zip?raw=true>`_ 
 

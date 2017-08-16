@@ -46,19 +46,19 @@
   # 空白行を除去する場合、_blank_ と記入する
   nouse_group = _blank_,unknown,synonymous_SNV
   
-  # 変異タイプのプロット色を指定する。変異タイプ名:(RGBもしくは色名)
+  # 変異タイプのプロット色を指定する。変異タイプ名:(RGB もしくは色名)
   # , 区切りで複数指定可能
   # 未入力の変異タイプはデフォルト色を使用する
   group_color = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011,nonframeshift_deletion:#9CAEB7
   
   # ポップアップウィンドウの表示内容
-  # 詳細はページ下段の「ポップアップウィンドウの表示内容」に記載
-  tooltip_format_checker_title1 = Sample:{id}, gene:{gene}, {#sum_item_value}
-  tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -> {alt}]
-  tooltip_format_gene_title = gene:{gene}, {#sum_item_value}
-  tooltip_format_gene_partial = func:{func}, {#item_value}
-  tooltip_format_id_title = ID:{id}, {#sum_item_value}
-  tooltip_format_id_partial = func:{func}, {#item_value}
+  # 詳細は次項目「ポップアップウィンドウの表示内容」に記載
+  tooltip_format_checker_title1 = Sample:{id}, Gene:{gene}, {#sum_item_value}
+  tooltip_format_checker_partial = Mutation Type[{group}]
+  tooltip_format_gene_title = Gene:{gene}, {#sum_item_value}
+  tooltip_format_gene_partial = Mutation Type:{group}, {#item_value}
+  tooltip_format_id_title = Sample:{id}, {#sum_item_value}
+  tooltip_format_id_partial = Mutation Type:{group}, {#item_value}
   
   # 入力フォーマット (自分のデータに合わせて変更する)
   [result_format_mutation]
@@ -85,36 +85,24 @@
   # Column index (required)
   ##################
 
-  # func列
-  col_func = Merge_Func
+  # グループ化するデータの列名 (ここでは変異タイプを使用する)
+  col_group = MutationType
   
-  # 遺伝子列
-  col_gene = Gene.refGene
+  # 遺伝子の列名
+  col_gene = Gene
   
   ##################
   # column index (option)
   ##################
   
-  # 染色体
-  col_opt_chr = Chr
-  # 開始位置
-  col_opt_start = Start
-  # 終了位置
-  col_opt_end = End
-  # リファレンスの塩基配列
-  col_opt_ref = Ref
-  # 対象の塩基配列
-  col_opt_alt = Alt
-  # id (sample) 列
-  col_opt_ID = id
+  # サンプル ID の列名
+  col_opt_ID = Sample
   
   # 出力フォーマット
   # 通常、変更する必要はありません。
   [merge_format_mutation]
   # カラムがない場合、何で埋めるか
   lack_column_complement = NA
-  # データ区切り
-  sept = ,
 
 ----
 
@@ -153,7 +141,7 @@
 サブプロットとしてクリニカルデータを追加
 ----------------------------------------------
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/mutation/graph_subplot.html>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/mutation_subplot/graph_subplot.html>`_ 
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot.zip?raw=true>`_ 
 
@@ -184,6 +172,8 @@ example では別ファイルとして以下のデータファイルを用意し
 
 設定ファイルにサブプロットの設定を追加します。
 
+**重要** : path にサブプロットデータファイルのパスを記入してください。
+
 [mutation_subplot_type1_1] セクションを追加し、次のように設定します。
 
 .. code-block:: cfg
@@ -210,8 +200,8 @@ example では別ファイルとして以下のデータファイルを用意し
   # 列名（ヘッダがない場合は列番号）
   col_value = Gender
 
-  # サンプルIDの列名（ヘッダがない場合は列番号）
-  col_id = ID
+  # サンプル ID の列名（ヘッダがない場合は列番号）
+  col_id = Sample
   
   # 表示形式 (欄外参照)
   # fix/range/gradient から選択
@@ -245,7 +235,7 @@ name_set の書き方
 
 サブプロットの色と凡例を定義します。
 
-``{値}:{表示文字列}:{セルの色}`` を各値ごとに記入します。セルの色は省略可能です。
+``{値}:{表示文字列}:{セルの色}`` を各値ごとに記入します。``{セルの色}`` は省略可能です。
 
 mode = fix の場合
 
@@ -255,7 +245,7 @@ mode = fix の場合
 
 mode = range の場合
 
-値には範囲開始の値を記入します。
+``{値}`` には範囲開始の値を記入します。
 
 .. code-block:: cfg
   
@@ -263,7 +253,7 @@ mode = range の場合
 
 mode = gradient の場合
 
-最初と最後の値を記入します。MIN/MAX を使用すると、データから自動的に設定します。
+最初と最後の値を記入します。``{値}`` に MIN/MAX を使用すると、データから自動的に設定します。
 
 .. code-block:: cfg
 
@@ -308,7 +298,7 @@ mode = gradient の場合
   # データ区切り
   sept = ,
   
-  # ヘッダ有り無し（ない場合はFalse)
+  # ヘッダ有り無し (ない場合は False)
   header = True
   
   # コメント行の先頭文字
@@ -324,49 +314,28 @@ mode = gradient の場合
   # Column index (option)
   ##################
   
-  col_opt_duplicate_reads = duplicate_reads
-  col_opt_mapped_reads = mapped_reads
-  col_opt_total_reads = total_reads
-  col_opt_average_depth = average_depth
-  col_opt_mean_insert_size = mean_insert_size
-  col_opt_ratio_2x = 2x_rt
-  col_opt_ratio_10x = 10x_rt
-  col_opt_ratio_20x = 20x_rt
-  col_opt_ratio_30x = 30x_rt
-  col_opt_read_length_r1 = read_length_r1
-  col_opt_read_length_r2 = read_length_r2
-  col_opt_id = file_name
+  col_opt_id = Sample
+  col_opt_key1 = AverageDepth
   
   # 出力フォーマット
   # 通常、変更する必要はありません。
   [merge_format_qc]
   # カラムがない場合、何で埋めるか
   lack_column_complement = NA
-  # データ区切り
-  sept = ,
   
   # 領域選択用のグラフ設定
   [qc_chart_brush]
-  title = 
-  title_y = 
-  stack = {average_depth}
-  name_set = average:#E3E5E9
-  tooltip_format = 
+  stack = {key1}
+  name_set = Average depth:#E3E5E9
   
-  # グラフ設定(グラフごとに用意する)
+  # グラフ設定 (グラフごとに用意する)
   [qc_chart_1]
-  title = depth coverage
-  title_y = coverage
-  stack1 = {ratio_30x}
-  stack2 = {ratio_20x-ratio_30x}
-  stack3 = {ratio_10x-ratio_20x}
-  stack4 = {ratio_2x-ratio_10x}
-  name_set = ratio_30x:#2478B4, ratio_20x:#FF7F0E, ratio_10x:#2CA02C, ratio_2x:#D62728
-  tooltip_format1 = ID:{id}
-  tooltip_format2 = ratio_2x: {ratio_2x:.2}
-  tooltip_format3 = ratio_10x: {ratio_10x:.2}
-  tooltip_format4 = ratio_20x: {ratio_20x:.2}
-  tooltip_format5 = ratio_30x: {ratio_30x:.2}
+  title = Depth average
+  title_y = Average of depth
+  stack1 = {key1}
+  name_set = Average depth:#2478B4
+  tooltip_format1 = Sample:{id}
+  tooltip_format2 = {key1:.2}
 
 ----
 
@@ -408,8 +377,8 @@ mode = gradient の場合
   # 使用する染色体 (, で区切る)
   use_chrs = 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X,Y
   
-  # if setting label-text & color
-  # use_chrs = 1:Chr1:crimson, 2:Chr2:lightpink, 3:Chr3:mediumvioletred, 4:Chr4:violet, 5:Chr5:darkmagenta, 6:Chr6:mediumpurple
+  # 円形のプロットにて染色体の色を指定する場合、次のようにします (色名もしくは RGB 値が使用可能です)
+  # use_chrs = 1:Chr1:crimson, 2:Chr2:lightpink, 3:Chr3:mediumvioletred, 4:Chr4:violet, 5:Chr5:darkmagenta, 6:Chr6:#F39600
   
   # 積み上げグラフの染色体分割サイズ (bps)
   selector_split_size = 5000000
@@ -419,21 +388,24 @@ mode = gradient の場合
   # [result_format_ca] col_opt_group が設定されている場合のみ有効
   ##################
   
-  # 入力されていた場合、そのgroupのみ出力する
-  # 未入力の場合、検出されたgroupすべて出力する
+  # 入力されていた場合、そのグループのみ出力する
+  # 未入力の場合、検出されたグループすべて出力する
   # , 区切りで複数指定可能
   #
   limited_group = stopgain,frameshift_deletion,frameshift_insertion
   
-  # 入力されていた場合、その group はプロット対象から除外する
+  # 入力されていた場合、そのグループはプロット対象から除外する
   # , 区切りで複数指定可能
   # 空白行を除去する場合、_blank_ と記入する
   nouse_group = _blank_,unknown,synonymous_SNV
   
-  # group のプロット色を指定する。group名:(RGBもしくはカラー名)
+  # グループのプロット色を指定する。グループ名:(色名もしくは RGB 値)
   # , 区切りで複数指定可能
-  # 未入力のgroupはデフォルト色を使用する
+  # 未入力のグループはデフォルト色を使用する
   group_colors = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011
+  
+  # 円形プロットのポップアップ表示内容
+  tooltip_format = [{chr1}] {break1:,}; [{chr2}] {break2:,}
   
   # 入力フォーマット (自分のデータに合わせて変更する)
   [result_format_ca]
@@ -463,12 +435,9 @@ mode = gradient の場合
   # Column index (option)
   ##################
   
-  col_opt_dir1 = Dir_1
-  col_opt_dir2 = Dir_2
-  col_opt_type = Variant_Type
-  col_opt_gene_name1 = Gene_1
-  col_opt_gene_name2 = Gene_2
+  # グループ化するデータの列名
   col_opt_group = 
+  # サンプル ID の列名
   col_opt_id =
   
   # 出力フォーマット
@@ -664,16 +633,16 @@ mode = gradient の場合
 
 .. code-block:: cfg
 
-  # signature - タイトル
+  # 変異シグネチャ - タイトル
   tooltip_format_signature_title = {sig}
   
-  # signature - 各項目
+  # 変異シグネチャ - 各項目
   tooltip_format_signature_partial = {route}: {#sum_item_value:6.2}
   
-  # 積み上げグラフ - タイトル
+  # 寄与度グラフ - タイトル
   tooltip_format_mutation_title = {id}
   
-  # 積み上げグラフ - 変異シグネチャごと
+  # 寄与度グラフ - 変異シグネチャごと
   tooltip_format_mutation_partial = {sig}: {#sum_item_value:.2}
   
 .. image:: image/conf_sig1.PNG
@@ -728,7 +697,7 @@ mode = gradient の場合
   # background を使用しているかどうか
   background = True
 
-  # jsonファイルのkey名
+  # json ファイルの key 名
   key_id = id
   key_mutation = mutation
   key_ref = ref
@@ -822,10 +791,10 @@ mode = gradient の場合
   # pmsignature - strand
   tooltip_format_strand = + {plus:.2} - {minus:.2}
   
-  # 積み上げグラフ - タイトル
+  # 寄与度グラフ - タイトル
   tooltip_format_mutation_title = {id}
   
-  # 積み上げグラフ - 変異シグネチャごと
+  # 寄与度グラフ - 変異シグネチャごと
   tooltip_format_mutation_partial = {sig}: {#sum_item_value:.2}
   
 .. image:: image/conf_pmsig1.PNG

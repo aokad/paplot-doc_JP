@@ -12,7 +12,7 @@ Mutation Matrix レポート
 1. 最小データセット
 ==========================
 
- * `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/mutation/graph_minimal.html>`_ 
+ * `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/mutation_minimal/graph_minimal.html>`_ 
  * `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal>`_ 
  * `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_minimal.zip?raw=true>`_ 
 
@@ -68,7 +68,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 2. ヘッダなし
 ==========================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/mutation/graph_noheader.html>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/mutation_noheader/graph_noheader.html>`_ 
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_noheader>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_noheader.zip?raw=true>`_ 
 
@@ -121,7 +121,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 3. ポップアップの情報追加
 ===================================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/mutation/graph_option.html>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/mutation_option/graph_option.html>`_ 
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_option>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_option.zip?raw=true>`_ 
 
