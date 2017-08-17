@@ -2,9 +2,9 @@
 QC レポート
 **************************
 
-ここでは、サンプルデータ (※) を使用して、QC レポートを出力するために必要な入力データと設定方法を解説します。
+ここでは、サンプルデータ [*]_ を使用して、QC レポートを出力するために必要な入力データと設定方法を解説します。
 
-※ サンプルデータは paplot をダウンロードして解凍したディレクトリ中、example ディレクトリにあります。
+.. [*] サンプルデータは paplot をダウンロードして解凍したディレクトリ中、example ディレクトリにあります。
 
 .. _qc_minimal:
 
@@ -68,7 +68,9 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   tooltip_format1 = Sample:{id}
   tooltip_format2 = {key1:.2}
 
-※ ここで使用している ``{key1}`` は [result_format_qc] セクションで入力した ``{キーワード}`` です。
+.. note::
+
+  ここで使用している ``{key1}`` は [result_format_qc] セクションで入力した ``{キーワード}`` です。
 
  - name_set の記入方法詳細は `name_set の書き方 <./data_qc.html#qc-nameset>`_ を参照してください。
  - tooltip_format の記入方法詳細は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
@@ -220,7 +222,9 @@ chart_2 は積み上げグラフです。
   tooltip_format4 = Ratio 20x: {keyB2:.2}
   tooltip_format5 = Ratio 30x: {keyB1:.2}
 
-※ ここで使用している ``{key*}`` は [result_format_qc] セクションで入力した ``{キーワード}`` です。
+.. note::
+
+  ここで使用している ``{key*}`` は [result_format_qc] セクションで入力した ``{キーワード}`` です。
 
  - name_set の記入方法詳細は `name_set の書き方 <./data_qc.html#qc-nameset>`_ を参照してください。
  - tooltip_format の記入方法詳細は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。

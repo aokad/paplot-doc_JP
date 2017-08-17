@@ -93,7 +93,9 @@ https://github.com/Genomon-Project/genomon_Rscripts/releases
   < {path to genomon_Rscripts}/pmsignature/convert_toJson_full.R
 
 
-※ R パッケージ "rjson" が必要です。ロードエラーが発生した場合はインストールしてください。
+.. important::
+
+  R パッケージ "rjson" が必要です。ロードエラーが発生した場合はインストールしてください。
 
 4. paplot の実行
 -----------------------------
