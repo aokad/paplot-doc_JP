@@ -4,20 +4,34 @@ Mutation Matrix レポート
 
 Mutation Matrix レポートは検出した変異について縦軸を遺伝子(Gene)、横軸をサンプル(Sample) として、変異タイプ別に表示します。
 
-:横長の棒グラフ (Sample):
+**横長の棒グラフ (Sample)**
   サンプルごとに検出された変異の数を表示します。
 
-:縦長の棒グラフ (Gene):
+**縦長の棒グラフ (Gene)**
   遺伝子ごとの変異数をサンプル数における割合 (%) で表示します。
 
   - 同一のサンプルが同じ遺伝子に対して複数の変異を持っていた場合、変異数を 1 としてカウントします。
   - 同一のサンプルが同じ遺伝子に対して複数の変異タイプを持っていた場合、優先順位の高い変異タイプにカウントします。
 
-:Mutation type:
+**Mutation type**
   変異タイプ別に色分けして表示します。表示したくない変異タイプがある場合、Mutation type のチェックを外すことで除外できます。
 
-:Subplot:
+**Subplot**
   変異データとは別にサンプルに対するデータがある場合、サブプロットとして表示することができます。このファイルは ``paplot`` コマンド実行前に設定ファイルに記入しておく必要があります。
+
+
+
+:Date: 2001-08-16
+:Version: 1
+:Authors: - Me
+          - Myself
+          - I
+:Indentation: Since the field marker may be quite long, the second
+   and subsequent lines of the field body do not have to line up
+   with the first line, but they must be indented relative to the
+   field name marker, and they must line up with each other.
+:Parameter i: integer
+
 
 .. image:: image/mut_operation1.PNG
   :scale: 100%
@@ -81,7 +95,7 @@ Mutation Matrix レポートは検出した変異について縦軸を遺伝子(
 |
 | いくつかのサンプルだけ飛びぬけて変異数が多く、他はそれほど変異がないような場合、この機能を使用することで、グラフが見やすくなることがあります。
 | 表示したい最大値を横のエディットボックスに入力したのち、[Update filter] ボタンをクリックしてください。
-| 空白にすると、すべてを表示します。（初期値）
+| 空白にすると、すべてを表示します。(初期値)
 |
 
 **フィルター適用前と適用後**
@@ -98,7 +112,7 @@ Mutation Matrix レポートは検出した変異について縦軸を遺伝子(
 
 縦軸に表示する遺伝子に対してフィルタを設定します。
 
-:Rate: 検出された遺伝子のサンプル数における割合 (%)。初期値は 0%（フィルタリングなし）です。
+:Rate: 検出された遺伝子のサンプル数における割合 (%)。初期値は 0% (フィルタリングなし) です。
 :Display maximum: 表示する遺伝子の最大数。
 
 いずれも横のエディットボックスに入力したのち、[Update filter] ボタンをクリックしてください。

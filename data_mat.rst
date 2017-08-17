@@ -35,7 +35,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   SAMPLE03,intronic,PIK3CA
   SAMPLE03,downstream,SEPT12
 
-今回の例では列名は Sample, MutationType, Gene としていますが、任意に設定できます。
+今回の例では列名を Sample, MutationType, Gene としていますが、任意に設定できます。
 
 設定ファイルの [result_format_mutation] セクションでデータの列名を次のように設定します。
 
@@ -43,11 +43,8 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   :caption: example/mutation_minimal/paplot.cfg
 
   [result_format_mutation]
-  # column index (required)
   col_group = MutationType
   col_gene = Gene
-  
-  # column index (option)
   col_opt_id = Sample
 
 
@@ -98,11 +95,8 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   # ヘッダオプションを False に設定する
   header = False
   
-  # column index (required)
   col_group = 2
   col_gene = 3
-  
-  # column index (option)
   col_opt_id = 1
 
 編集した設定ファイルを使用して ``paplot`` を実行します。
@@ -126,13 +120,13 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 
 マウスカーソルを乗せた時に表示する情報 (ポップアップ) をカスタマイズすることができます。
 
-最小構成で表示するポップアップ（グリッド部分）はこのようになっています。
+最小構成で表示するポップアップ (グリッド部分) は以下の通りサンプル、遺伝子、変異タイプが表示されています。
 
 **変更前**
 
 .. image:: image/data_mut1.png
 
-情報を追加して変異の場所や内容を確認できるようにします。
+情報を追加して変異の場所と変異の内容を確認できるようにします。
 
 **変更後**
 
@@ -154,8 +148,13 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   SAMPLE00,chr7,140619975,140619979,-,G,intronic,BRAF
   SAMPLE00,chr14,103320225,103320225,-,T,downstream,TRAF3
 
-今回の例では、必須項目であるサンプルID (Sample)、遺伝子名 (Gene)、変異タイプ (MutationType) に加えて、
-染色体 (Chr)、変異開始位置 (Start)、変異終了位置 (End)、リファレンスの塩基 (Ref)、変異の塩基 (Alt) を追加しています。
+今回の例では、必須項目であるサンプルID (Sample)、遺伝子名 (Gene)、変異タイプ (MutationType) に加えて、以下の 5 項目を追加しています。
+
+ - 染色体 (Chr)
+ - 変異開始位置 (Start)
+ - 変異終了位置 (End)
+ - リファレンスの塩基 (Ref)
+ - 変異の塩基 (Alt) 
 
 まず、追加した列名を設定ファイルに記載します。
 
@@ -165,7 +164,6 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   :caption: example/mutation_option/paplot.cfg
   
   [result_format_mutation]
-  # column index (option)
   col_opt_chr = Chr
   col_opt_start = Start
   col_opt_end = End
@@ -175,7 +173,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 オプションの列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
  - ``{キーワード}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
- - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" 以外は使用できません。
+ - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" のみ使用できます。
  - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
  
 次に、ポップアップの表示内容を変更します。

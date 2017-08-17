@@ -16,8 +16,8 @@ QC レポート
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal.zip?raw=true>`_ 
 
-paplot で QC レポートを作成するために最低限必要な情報はサンプルID (Sample) と QC の値（最低 1 項目）です。
-今回の例では、depth 平均値 (AverageDepth) を使用していますが、別の値でも問題ありません。
+paplot で QC レポートを作成するために最低限必要な情報はサンプルID (Sample) と QC の値 (最低 1 項目) です。
+今回の例では、QC の値に depth 平均値 (AverageDepth) を使用していますが、別の値でも問題ありません。
 
 .. code-block:: cfg
   :caption: データファイルから一部抜粋 (example/qc_minimal/data.csv)
@@ -57,7 +57,8 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   # Y 軸のラベル
   title_y = Average of depth
   
-  # 積み上げ要素（今回は 1 項目のみなので、通常の棒グラフとなる）
+  # 積み上げ要素
+  # 今回は 1 項目のみなので、通常の棒グラフとして表現されます
   stack1 = {key1}
   
   # グラフの色と凡例
@@ -314,7 +315,7 @@ col_opt_ratio_30x = 30xRatio
 列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
  - ``{キーワード}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
- - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" 以外は使用できません。
+ - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" のみ使用できます。
  - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
  
 次に、設定ファイルに [qc_chart_1]、[qc_chart_2]、[qc_chart_3] ... セクションを追加し、順番に設定します。
@@ -341,7 +342,7 @@ chart_2 (Read length) は積み上げグラフです。
 4-3. 列同士の数値演算 (棒グラフ)
 --------------------------------------
 
-chart_3 (Mapped reads) は列同士で計算（今回は割り算）させて出力します。
+chart_3 (Mapped reads) は列同士で計算 (今回は割り算) させて出力します。
 
 .. code-block:: cfg
   :caption: example/qc_variation/paplot.cfg

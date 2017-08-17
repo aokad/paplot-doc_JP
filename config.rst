@@ -69,7 +69,7 @@
   # データ区切り
   sept = \t
   
-  # ヘッダ有り無し（ない場合はFalse)
+  # ヘッダ有り無し (ない場合はFalse)
   header = True
   
   # コメント行の先頭文字
@@ -145,7 +145,7 @@
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_subplot.zip?raw=true>`_ 
 
-変異以外のサンプルに関する情報（例えばクリニカルデータ）をサブプロットとして Mutation Matrix に追加することができます。
+クリニカルデータのような変異以外のサンプルに関する情報をサブプロットとして Mutation Matrix に追加することができます。
 
 .. image:: image/data_mut3.PNG
 
@@ -189,16 +189,16 @@ example では別ファイルとして以下のデータファイルを用意し
   # データ区切り
   sept = ,
 
-  # ヘッダ有り無し（ない場合はFalse)
+  # ヘッダ有り無し (ヘッダがない場合は False)
   header = True
 
   # コメント行の先頭文字
   comment = 
 
-  # 列名（ヘッダがない場合は列番号）
+  # 列名 (ヘッダがない場合は列番号)
   col_value = Gender
 
-  # サンプル ID の列名（ヘッダがない場合は列番号）
+  # サンプル ID の列名 (ヘッダがない場合は列番号)
   col_id = Sample
   
   # 表示形式 (欄外参照)
@@ -414,7 +414,7 @@ mode = gradient の場合
   # データ区切り
   sept = \t
   
-  # ヘッダ有り無し（ない場合はFalse)
+  # ヘッダ有り無し (ヘッダがない場合は False)
   header = True
   
   # コメント行の先頭文字
@@ -506,8 +506,9 @@ mode = gradient の場合
 .. code-block:: cfg
 
   [genome]
-  # ゲノムサイズのファイル（CSV形式）（初期値は hg19 で 標準ファイルは paplot インストールディレクトリ配下の genome ディレクトリにあります）
-  #
+  # ゲノムサイズのファイル (CSV 形式)
+  # 初期値は hg19 で 標準ファイルは paplot インストールディレクトリ配下の genome ディレクトリにあります
+  # 
   # for example.
   # (linux)
   # path = ~/tmp/genome/hg19.csv

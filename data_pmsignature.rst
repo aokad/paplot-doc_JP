@@ -219,7 +219,7 @@ pmsignature 数は paplot 実行時に入力ファイル (data.json) から読�
 
 .. note::
 
-  今回の例では pmsignature の出力にbackgroundを設定しているため、実際に出力される pmsignature は 1 少ない数（今回は 1 つだけ）が表示されます。
+  この例では pmsignature の出力に background を設定しているため、実際に出力される pmsignature は 1 少ない数が表示されます。
 
 ----
 
@@ -306,7 +306,7 @@ pmsignature 数は paplot 実行時に入力ファイル (data?.json) のデー�
 
 .. note::
 
-  今回の例では pmsignature の出力に background を設定しているため、実際に出力される pmsignature は1少ない数（今回は 1 つだけ）が表示されます。
+  この例では pmsignature の出力に background を設定しているため、実際に出力される pmsignature は 1 少ない数が表示されます。
 
 ----
 
