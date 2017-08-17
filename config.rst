@@ -81,20 +81,13 @@
   # 遺伝子が 1 行に複数入力されている場合の区切り文字
   sept_gene = ";"
   
-  ##################
-  # Column index (required)
-  ##################
-
+  # -----------------------
+  # 使用する列名を定義
+  # -----------------------
   # グループ化するデータの列名 (ここでは変異タイプを使用する)
   col_group = MutationType
-  
   # 遺伝子の列名
   col_gene = Gene
-  
-  ##################
-  # column index (option)
-  ##################
-  
   # サンプル ID の列名
   col_opt_id = Sample
   
@@ -195,11 +188,13 @@ example では別ファイルとして以下のデータファイルを用意し
   # コメント行の先頭文字
   comment = 
 
-  # 列名 (ヘッダがない場合は列番号)
-  col_value = Gender
-
+  # -----------------------
+  # 使用する列名を定義
+  # -----------------------
   # サンプル ID の列名 (ヘッダがない場合は列番号)
   col_id = Sample
+  # データの列名
+  col_value = Gender
   
   # 表示形式 (欄外参照)
   # fix/range/gradient から選択
@@ -302,16 +297,7 @@ mode = gradient の場合
   # コメント行の先頭文字
   comment = #
   
-  ##################
-  # Column index (required)
-  ##################
-  
-  # (none)
-  
-  ##################
-  # Column index (option)
-  ##################
-  
+  # 使用する列名を定義
   col_opt_id = Sample
   col_opt_key1 = AverageDepth
   
@@ -420,21 +406,25 @@ mode = gradient の場合
   # コメント行の先頭文字
   comment = #
   
-  ##################
-  # Column index (required)
-  ##################
+  # -----------------------
+  # 使用する列名を定義
+  # -----------------------
   
+  # 切断点 1 の染色体
   col_chr1 = Chr_1
-  col_break1 = Pos_1
-  col_chr2 = Chr_2
-  col_break2 = Pos_2
   
-  ##################
-  # Column index (option)
-  ##################
+  # 切断点 1 の位置
+  col_break1 = Pos_1
+  
+  # 切断点 2 の染色体
+  col_chr2 = Chr_2
+  
+  # 切断点 2 の位置
+  col_break2 = Pos_2
   
   # グループ化するデータの列名
   col_opt_group = 
+  
   # サンプル ID の列名
   col_opt_id =
   
@@ -460,7 +450,7 @@ mode = gradient の場合
 
   [ca]
   # 使用する染色体 (, で区切る)
-  # default
+  # 初期値
   # use_chrs = 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X,Y
   
   # 染色体 1、5、7 を使用する場合
