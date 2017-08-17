@@ -6,7 +6,7 @@ Mutational Signature レポート
 
 .. [*] サンプルデータは paplot をダウンロードして解凍したディレクトリ中、example ディレクトリにあります。
 
-:doc:`exec_signature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。
+:doc:`exec_signature` に従いデータを準備する場合、設定ファイルの変更は必要ありません。
 
 .. _json:
 
@@ -20,10 +20,8 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
 
 `example/signature_stack/data2.json` ファイルをテキストエディタで開くと次のようになっています。
 
-(長いため一部省略しています)
-
 .. code-block:: python
-  :caption: example/signature_stack/data2.json
+  :caption: 長いため一部省略 (example/signature_stack/data2.json)
 
   {
     "signature":[

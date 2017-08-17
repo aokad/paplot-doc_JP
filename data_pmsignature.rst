@@ -19,10 +19,9 @@ paplot で pmsignature レポートを作成するためには Mutation Matrix �
 ここでは、paplot が使用する pmsignature データのフォーマットについて解説します。
 
 exampleのデータファイルをテキストエディタで開くと次のようになっています。
-(長いため一部省略しています)
 
 .. code-block:: python
-  :caption: example/pmsignature_stack/data2.json
+  :caption: 長いため一部省略 (example/pmsignature_stack/data2.json)
 
   {
     "ref":[

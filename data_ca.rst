@@ -43,13 +43,10 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   :caption: example/ca_minimal/paplot.cfg
   
   [result_format_ca]
-  # column index (required)
   col_chr1 = Chr1
   col_break1 = Break1
   col_chr2 = Chr2
   col_break2 = Break2
-  
-  # column index (option)
   col_opt_id = Sample
 
 編集した設定ファイルを使用して ``paplot`` を実行します。
@@ -100,13 +97,10 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   # ヘッダオプションを False に設定する
   header = False
 
-  # column index (required)
   col_chr1 = 2
   col_break1 = 3
   col_chr2 = 4
   col_break2 = 5
-  
-  # column index (option)
   col_opt_id = 1
 
 編集した設定ファイルを使用して ``paplot`` を実行します。

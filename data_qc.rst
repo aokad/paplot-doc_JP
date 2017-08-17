@@ -71,10 +71,10 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 .. note::
 
   ここで使用している ``{key1}`` は [result_format_qc] セクションで入力した ``{キーワード}`` です。
-
- - name_set の記入方法詳細は `name_set の書き方 <./data_qc.html#qc-nameset>`_ を参照してください。
- - tooltip_format の記入方法詳細は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
   
+  - name_set の記入方法詳細は `name_set の書き方 <./data_qc.html#qc-nameset>`_ を参照してください。
+  - tooltip_format の記入方法詳細は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
+
 編集した設定ファイルを使用して ``paplot`` を実行します。
 
 .. code-block:: bash
@@ -226,8 +226,8 @@ chart_2 は積み上げグラフです。
 
   ここで使用している ``{key*}`` は [result_format_qc] セクションで入力した ``{キーワード}`` です。
 
- - name_set の記入方法詳細は `name_set の書き方 <./data_qc.html#qc-nameset>`_ を参照してください。
- - tooltip_format の記入方法詳細は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
+  - name_set の記入方法詳細は `name_set の書き方 <./data_qc.html#qc-nameset>`_ を参照してください。
+  - tooltip_format の記入方法詳細は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
  
 編集した設定ファイルを使用して ``paplot`` を実行します。
 
