@@ -143,17 +143,17 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 .. code-block:: cfg
   :caption: データファイルから一部抜粋 (example/qc_stack/data.csv)
   
-  Sample,AverageDepth,2xRatio,10xRatio,20xRatio,30xRatio
-  SAMPLE1,70.0474,0.9796,0.7680,0.6844,0.6747
-  SAMPLE2,65.7578,0.8489,0.7725,0.7655,0.6131
-  SAMPLE3,63.3750,0.9814,0.8236,0.6045,0.5889
-  SAMPLE4,70.9654,0.9047,0.8303,0.7032,0.6801
-  SAMPLE5,69.9653,0.9776,0.9452,0.6720,0.6518
+  Sample,AverageDepth,ReadLengthR1,ReadLengthR2
+  SAMPLE1,70.0474,265,270
+  SAMPLE2,65.7578,140,200
+  SAMPLE3,63.375,120,175
+  SAMPLE4,70.9654,120,140
+  SAMPLE5,69.9653,230,110
 
 ここでは以下の構成でグラフを作成します。
 
  - chart_1　[棒グラフ] AverageDepth (最小構成と同じ)
- - chart_2　[積み上げグラフ] 2xRatio, 10xRatio, 20xRatio, 30xRatio
+ - chart_2　[積み上げグラフ] ReadLengthR1, ReadLengthR2
 
 完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc_stack/graph_stack.html>`_ を参照してください。
 
@@ -164,11 +164,13 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   
   [result_format_qc]
   col_opt_id = Sample
+  
+  # chart_1 で使用するデータ
   col_opt_keyA1 = AverageDepth
-  col_opt_keyB1 = 30xRatio
-  col_opt_keyB2 = 20xRatio
-  col_opt_keyB3 = 10xRatio
-  col_opt_keyB4 = 2xRatio
+  
+  # chart_2 で使用するデータ
+  col_opt_keyB1 = ReadLengthR1
+  col_opt_keyB2 = ReadLengthR2
 
 列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
@@ -201,34 +203,30 @@ chart_2 は積み上げグラフです。
   [qc_chart_2]
   
   # 表示する文字列を設定します
-  title = Depth coverage
-  title_y = Coverage
-  
+  title = Read length
+  title_y = Read length
+
   # グラフの積み上げ要素
-  # stack1 → 2 → 3 の順に下から表示します。stack1 を一番下に表示します
+  # stack1 → 2 → ... の順に下から表示します。stack1 を一番下に表示します
   stack1 = {keyB1}
   stack2 = {keyB2}
-  stack3 = {keyB3}
-  stack4 = {keyB4}
   
   # 凡例の文字列と色を設定します
-  # stack1 → 2 → 3 の順に , で区切って書きます
-  name_set = Ratio 30x:#2478B4, Ratio 20x:#FF7F0E, Ratio 10x:#2CA02C, Ratio  2x:#D62728
+  # stack1 → 2 → ... の順に , で区切って書きます
+  name_set = Read length r1:#2478B4, Read length r2:#FF7F0E
   
   # ポップアップの表示内容
   tooltip_format1 = Sample:{id}
-  tooltip_format2 = Ratio  2x: {keyB4:.2}
-  tooltip_format3 = Ratio 10x: {keyB3:.2}
-  tooltip_format4 = Ratio 20x: {keyB2:.2}
-  tooltip_format5 = Ratio 30x: {keyB1:.2}
+  tooltip_format2 = Read1: {keyB1: ,}
+  tooltip_format3 = Read2: {keyB2: ,}
 
 .. note::
 
   ここで使用している ``{key*}`` は [result_format_qc] セクションで入力した ``{キーワード}`` です。
-
+  
   - name_set の記入方法詳細は `name_set の書き方 <./data_qc.html#qc-nameset>`_ を参照してください。
   - tooltip_format の記入方法詳細は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
- 
+
 編集した設定ファイルを使用して ``paplot`` を実行します。
 
 .. code-block:: bash
@@ -252,64 +250,70 @@ chart_2 は積み上げグラフです。
   name_set = average_depth:#2478B4
   
   # 複数ある場合は , で区切って書きます
-  # stack1 → 2 → 3 の順に stack の数だけ書きます
-  name_set = ratio_30x:#2478B4, ratio_20x:#FF7F0E, ratio_10x:#2CA02C, ratio_2x:#D62728
+  # stack1 → 2 → ... の順に stack の数だけ書きます
+  name_set = Read length r1:#2478B4, Read length r2:#FF7F0E
   
 セルの色を省略した場合、以下の色を上から順にローテーションで使用します。
 
 .. image:: image/default_color.PNG
 
-.. _qc_mplot
+----
 
-==========================
+.. _qc_variation:
+
+=================================
 4. 様々なグラフ
-==========================
+=================================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_multi_plot/graph_multi_plot.html>`_ 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_variation/graph_variationt.html>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_variation>`_ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_variation.zip?raw=true>`_ 
 
 前章では 1 つの棒グラフと積み上げグラフを作成しました。今回は複数のグラフを作成します。
 
 .. code-block:: cfg
-  :caption: データファイルから一部抜粋 (example/qc_multi_plot/data.csv)
+  :caption: データファイルから一部抜粋 (example/qc_variation/data.csv)
   
-  ID,average_depth,read_length_r1,read_length_r2,total_reads,mapped_reads,mean_insert_size,duplicate_reads,2x_rt,10x_rt,20x_rt,30x_rt
-  SAMPLE1,70.0474,265,270,94315157,56262203,343.92,7964009,0.9796,0.7680,0.6844,0.6747
-  SAMPLE2,65.7578,140,200,50340277,33860998,351.23,5297450,0.8489,0.7725,0.7655,0.6131
-  SAMPLE3,63.3750,120,175,90635480,88010999,496.34,8347508,0.9814,0.8236,0.6045,0.5889
-  SAMPLE4,70.9654,120,140,72885114,89163960,696.23,6726021,0.9047,0.8303,0.7032,0.6801
-  SAMPLE5,69.9653,230,110,92572101,28793615,731.98,9794813,0.9776,0.9452,0.6720,0.6518
+  Sample,AverageDepth,ReadLengthR1,ReadLengthR2,TotalReads,MappedReads,2xRatio,10xRatio,20xRatio,30xRatio
+  SAMPLE1,70.0474,265,270,94315157,56262203,0.9796,0.768,0.6844,0.6747
+  SAMPLE2,65.7578,140,200,50340277,33860998,0.8489,0.7725,0.7655,0.6131
+  SAMPLE3,63.375,120,175,90635480,88010999,0.9814,0.8236,0.6045,0.5889
+  SAMPLE4,70.9654,120,140,72885114,89163960,0.9047,0.8303,0.7032,0.6801
+  SAMPLE5,69.9653,230,110,92572101,28793615,0.9776,0.9452,0.672,0.6518
 
 ここでは以下の構成でグラフを作成します。
 
  - chart_1　[棒グラフ] AverageDepth (最小構成と同じ)
- - chart_2　[積み上げグラフ] 2xRatio, 10xRatio, 20xRatio, 30xRatio
+ - chart_2　[積み上げグラフ] ReadLengthR1, ReadLengthR2 (前章と同じ)
  - chart_3　[棒グラフ] MappedReads を TotalReads で割る
- - chart_4　[棒グラフ] MeanInsertSize
- - chart_5　[棒グラフ] DuplicateReads を TotalReads で割る
- - chart_6　[積み上げグラフ] ReadLengthR1, ReadLengthR2
+ - chart_4　[積み上げグラフ] 2xRatio, 10xRatio, 20xRatio, 30xRatio (下段の値を引く)
 
-完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc_multi_plot/graph_multi_plot.html>`_ を参照してください。
+完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc_variation/graph_variation.html>`_ を参照してください。
 
 まず、設定ファイルの [result_format_qc] セクションに入力データの列名を登録します。
 
 .. code-block:: cfg
-  :caption: example/qc_multi_plot/paplot.cfg
+  :caption: example/qc_variation/paplot.cfg
   
   [result_format_qc]
-  col_opt_id = Sample
-  col_opt_average_depth = AverageDepth
-  col_opt_duplicate_reads = DuplicateReads
-  col_opt_mapped_reads = mapped_reads
-  col_opt_total_reads = TotalReads
-  col_opt_mean_insert_size = MeanInsertSize
-  col_opt_ratio_2x = 2xRatio
-  col_opt_ratio_10x = 10xRatio
-  col_opt_ratio_20x = 20xRatio
-  col_opt_ratio_30x = 30xRatio
-  col_opt_read_length_r1 = ReadLengthR1
-  col_opt_read_length_r2 = ReadLengthR2
+col_opt_id = Sample
+
+# chart_1 で使用するデータ
+col_opt_average_depth = AverageDepth
+
+# chart_2 で使用するデータ
+col_opt_read_length_r1 = ReadLengthR1
+col_opt_read_length_r2 = ReadLengthR2
+
+# chart_3 で使用するデータ
+col_opt_mapped_reads = MappedReads
+col_opt_total_reads = TotalReads
+
+# chart_4 で使用するデータ
+col_opt_ratio_2x = 2xRatio
+col_opt_ratio_10x = 10xRatio
+col_opt_ratio_20x = 20xRatio
+col_opt_ratio_30x = 30xRatio
 
 列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
@@ -322,22 +326,29 @@ chart_2 は積み上げグラフです。
 | QC レポートは [qc_chart_1] → [qc_chart_2] → [qc_chart_3] の順番に表示し、必要な数だけ [qc_chart_*] セクションを増やすことができます。
 | ``*`` には 1 から始まる連番を入れてください。1 から順に表示します。
 
-完成した設定ファイルは `ここ <https://github.com/Genomon-Project/paplot/blob/master/example/qc_multi_plot/paplot.cfg>`_ を参照してください。
+完成した設定ファイルは `ここ <https://github.com/Genomon-Project/paplot/blob/master/example/qc_variation/paplot.cfg>`_ を参照してください。
 
 4-1. 単純な棒グラフ
 ---------------------------
 
-chart_1 (Depth average) と chart_4 (Mean insert size) は単純な棒グラフです。
+chart_1 (Depth average) は単純な棒グラフです。
 
 記載方法は最小構成と同じですので、ここでは割愛します。
 
-4-2. 列同士の数値演算
------------------------
+4-2. 単純な積み上げグラフ
+-------------------------------------
 
-chart_3 (Mapped reads) と chart_5 (Duplicate reads) は列同士で計算 (今回は割り算) させて出力します。
+chart_2 (Read length) は積み上げグラフです。
+
+記載方法は前章と同じですので、ここでは割愛します。
+
+4-3. 列同士の数値演算 (棒グラフ)
+--------------------------------------
+
+chart_3 (Mapped reads) は列同士で計算 (今回は割り算) させて出力します。
 
 .. code-block:: cfg
-  :caption: example/qc_multi_plot/paplot.cfg
+  :caption: example/qc_variation/paplot.cfg
 
   [qc_chart_3]
   
@@ -369,44 +380,15 @@ chart_3 (Mapped reads) と chart_5 (Duplicate reads) は列同士で計算 (今�
 | ポップアップ記述方法詳細は  :ref:`ユーザ定義フォーマット <user_format>` を参照してください。
 |
 
-4-3. 積み上げグラフ　その１
--------------------------------------
+4-4. 列同士の数値演算 (積み上げグラフ)
+-----------------------------------------------
 
-chart_6 (Read length r1, Read length r2) は積み上げグラフです。
+chart_4 (Depth coverage) は積み上げグラフです。
 
-.. code-block:: cfg
-  :caption: example/qc_multi_plot/paplot.cfg
-  
-  [qc_chart_6]
-  
-  # 表示する文字列を設定します
-  title = Read length r1, Read length r2
-  title_y = Read length
-
-  # 凡例の文字列と色を設定します
-  name_set = Read length r1:#2478B4, Read length r2:#FF7F0E
-  
-  # グラフの値
-  stack1 = {read_length_r1}
-  stack2 = {read_length_r2}
-  
-  # ポップアップの表示内容
-  tooltip_format1 = Sample:{id}
-  tooltip_format2 = Read1: {read_length_r1: ,}
-  tooltip_format3 = Read2: {read_length_r2: ,}
-
-上記では、stack1 に read_length_r1 を、stack2 に read_length_r2 を記入しています。
-
-stack1 → 2 → 3 の順に下から表示します。stack1 を一番下に表示します。
-
-4-4. 積み上げグラフ　その２
--------------------------------------
-
-chart_2 (Depth coverage) は積み上げグラフです。
-前項目では単純に積み上げましたが、今回は数値演算を加えます。
+単純に積み上げず、数値演算を加えて前段の値を引き算します。
 
 .. code-block:: cfg
-  :caption: example/qc_multi_plot/paplot.cfg
+  :caption: example/qc_variation/paplot.cfg
   
   [qc_chart_2]
   
@@ -436,8 +418,8 @@ chart_2 (Depth coverage) は積み上げグラフです。
 
 .. code-block:: bash
 
-  paplot qc {unzip_path}/example/qc_multi_plot/data.csv ./tmp qc_multi_plot \
-  --config_file {unzip_path}/example/qc_multi_plot/paplot.cfg
+  paplot qc {unzip_path}/example/qc_variation/data.csv ./tmp qc_variation \
+  --config_file {unzip_path}/example/qc_variation/paplot.cfg
 
 ----
 

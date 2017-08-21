@@ -37,7 +37,6 @@ Contents:
    
    data_mat.rst
    data_qc.rst
-   data_qc2.rst
    data_ca.rst
    data_signature.rst
    data_pmsignature.rst
