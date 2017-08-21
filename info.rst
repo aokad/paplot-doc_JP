@@ -3,15 +3,26 @@
 
 .. attention::
 
-  | バージョン間でのconfigファイルの互換性は基本的にありません。
-  | バージョンアップの際は、お手数ですが最新のconfigを変更してご使用ください
+  | バージョン間で設定ファイルの互換性はありません。
+  | バージョンアップの際は、お手数ですが最新の設定ファイルを変更してご使用ください
 
-v0.5.0
+v0.5.4
 ====================
 
-| グラフ追加
-| ● signature graph
-| ● pmsignature graph
+| サンプルデータ追加
+| 設定ファイルの項目見直し
+
+v0.5.3
+====================
+
+| フォントサイズに関するオプションを変更可能にする
+
+v0.5.2
+====================
+
+| サブコマンド追加
+| ● signature
+| ● pmsignature
 
 | サブコマンド変更
 | ● sv -> ca
@@ -26,13 +37,13 @@ v0.4.0
 v0.3.1
 ====================
 
-| mutation-matrix graphについて、不具合修正
+| Mutation Matrix レポートについて、不具合修正
 
 v0.3.0
 ====================
 
-| グラフ追加
-| ● mutation-matrix graph
+| サブコマンド追加
+| ● mutation
 
 v0.2.8
 ====================
@@ -43,14 +54,14 @@ v0.2.7
 ====================
 
 | 新規作成
-| ● QC graph
-| ● SV graph
+| ● qc
+| ● sv
 
 
 ライセンス
 --------------------
 
-paplotは https://github.com/Genomon-Project/paplot/blob/devel/LICENSE のもとで配布されています。
+paplot は https://github.com/Genomon-Project/paplot/blob/devel/LICENSE のもとで配布されています。
 
 
 コンタクト
@@ -59,7 +70,7 @@ paplotは https://github.com/Genomon-Project/paplot/blob/devel/LICENSE のもと
 | ご質問やフィードバックなど，お気軽にご連絡ください．
 | genomon.devel@gmail.com
 | 
-| 対面形式，skypeでのアポイントはこちらで受け付けています．
+| 対面形式，skype でのアポイントはこちらで受け付けています．
 | Genomon Office Hour: https://genomon-office.youcanbook.me/
 | 
 

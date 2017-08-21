@@ -13,12 +13,10 @@ paplot コマンド
                     [--remarks REMARKS]
                     input output_dir project_name
 
-|
-
-**必須**
+**必ず入力する項目**
 
 :subcommand:
-  paplotのサブコマンドです。いづれかを選択します。
+  paplot のサブコマンドです。いずれかを選択します。
   
   - qc
   - ca
@@ -27,54 +25,34 @@ paplot コマンド
   - pmsignature
 
 :input:
-  入力ファイルです。ワイルドカード (``*``, ``?``) を使用して複数指定することができます。その場合、最初と最後に ``"`` をつけてください。
+  入力ファイルです。複数ファイルを使用する場合は `データファイルが分かれている場合 <./data_common.html#suffix>`_ も参照してください。
 
 .. code-block:: bash
 
   # 1ファイルだけ入力する場合
-  paplot qc example/qc/SAMPLE1.qc ./test multi1 --config_file example/example.cfg
+  paplot mutation {unzip_path}/example/mutation_minimal/data.csv ./tmp mutation_minimal \
+  --config_file {unzip_path}/example/mutation_minimal/paplot.cfg
   
-  # 複数ファイルを入力する場合 (, で区切る)
-  paplot qc "example/qc/SAMPLE1.qc.csv,example/qc/SAMPLE2.qc.csv" ./test multi1 --config_file example/example.cfg
-  
-  # 複数ファイルを入力する場合 (* 使用)
-  paplot qc "example/qc/*.csv" ./multi multi1 --config_file example/example.cfg
+  # 複数ファイル指定する場合は , で区切る
+  paplot mutation \
+  {unzip_path}/example/mutation_split_file/SAMPLE00.data.csv,{unzip_path}/example/mutation_split_file/SAMPLE01.data.csv \
+  ./tmp mutation_split_file1 --config_file {unzip_path}/example/mutation_split_file/paplot.cfg
 
+  # ワイルドカードを使用して、まとめて指定することも可能
+  # 最初と最後に " を付けること
+  paplot mutation "{unzip_path}/example/mutation_split_file/*.csv" ./tmp mutation_split_file2 \
+  --config_file {unzip_path}/example/mutation_split_file/paplot.cfg
 
 :output_dir:
-  出力ディレクトリを指定します。ディレクトリ構成は :ref:`3. 出力ディレクトリ <output>` を参照してください。
+  出力ディレクトリを指定します。ディレクトリ構成は :ref:`2. 出力ディレクトリ <output>` を参照してください。
 
 :project_name:
   プロジェクト名です。出力ファイルのタイトルに使用します。
 
-------------------------
-2. コマンドオプション 
-------------------------
-
-次の項目をオプションで変更することができます。
-
---config_file        設定ファイルです。未指定の場合、デフォルトを使用します。
---title              グラフのタイトル
---ellipsis           グラフの短縮名。グラフのファイル名になるため、同一ディレクトリに複数ファイルを出力する際に設定すると便利です。
---overview           index.htmlに表示するグラフの概要。
---remarks            index.htmlの備考欄に出力するテキストです。未指定の場合、設定ファイル ([style] remarks) の値を使用します。
-
-デフォルト値は次の通りです。
-
-=============== =================== ============ ============================================= ==============
-subcommand      title               ellipsis     overview                                      remarks
-=============== =================== ============ ============================================= ==============
-qc              QC graphs           qc           Quality Control of bam.                       なし
-ca              CA graphs           ca           Chromosomal Aberration.                       なし
-mutation        Mutation matrix     mutation     Gene-sample mutational profiles.              なし
-signature       Signature           signature    Mutational signatures.                        なし
-pmsignature     PMSignature         pmsignature  Express mutational signatures in pmsignature. なし
-=============== =================== ============ ============================================= ==============
-
 .. _output:
 
 ---------------------
-3. 出力ディレクトリ
+2. 出力ディレクトリ
 ---------------------
 
 ``output_dir`` オプションで指定した場所に次の構成でファイルを出力します。
@@ -90,11 +68,37 @@ pmsignature     PMSignature         pmsignature  Express mutational signatures i
     ├ lib
     ├ style
     │
-    └ index.html             <--- このファイルを web ブラウザで開いてください。
+    └ index.html             <--- このファイルをウェブブラウザで開いてください。
 
 
-出力ファイルを移動する場合は ``{output_dir}`` ごと移動してください。
+出力ファイルを移動する場合は ``{output_dir}`` ディレクトリごと移動してください。
 
-それぞれのグラフの使い方は `how to use graphs <./index.html#how-to-toc>`_ を参照してください。
+それぞれのグラフの使い方は `HOW TO USE GRAPHS <./index.html#how-to-toc>`_ を参照してください。
+
+.. _option:
+
+------------------------
+3. コマンドオプション 
+------------------------
+
+次の項目をオプションで変更することができます。
+
+--config_file        設定ファイルです。未指定の場合、デフォルトを使用します。
+--title              グラフのタイトル
+--ellipsis           グラフの短縮名。グラフのファイル名になるため、同一ディレクトリに複数ファイルを出力する際に設定すると便利です。
+--overview           index.htmlに表示するグラフの概要。
+--remarks            index.htmlの備考欄に出力するテキストです。未指定の場合、設定ファイル [style] セクション中、remarks オプションの値を使用します。
+
+デフォルト値は次の通りです。
+
+=============== =================== ============ ============================================= ==============
+subcommand      title               ellipsis     overview                                      remarks
+=============== =================== ============ ============================================= ==============
+qc              QC graphs           qc           Quality Control of bam.                       なし
+ca              CA graphs           ca           Chromosomal Aberration.                       なし
+mutation        Mutation Matrix     mutation     Gene-sample mutational profiles.              なし
+signature       Signature           signature    Mutational Signatures.                        なし
+pmsignature     PMSignature         pmsignature  Express mutational signatures in pmsignature. なし
+=============== =================== ============ ============================================= ==============
 
 .. |new| image:: image/tab_001.gif

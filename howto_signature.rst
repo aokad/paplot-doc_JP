@@ -1,32 +1,29 @@
-========================
-signature グラフ |new|
-========================
+=============================
+Mutaitonal Signature レポート
+=============================
 
-signature グラフでは検出したmutation についてsignatureとその集積を積み上げグラフで表示します。
+Mutaitonal Signature レポートは検出した変異についての特徴的なパターン (変異シグネチャ) を表示します。
 
-:signature:
-  signatureを表示します。
+:上段 (Signature):
+  | 変異シグネチャを表示します。
 
-:積み上げグラフ:
-  サンプルごとmutationについて、signatureの割合を表示します。
+:下段 (寄与度グラフ):
+  | サンプルごとの変異について、変異シグネチャの寄与度を表示します。
 
 .. image:: image/sig_dummy.PNG
   :scale: 100%
 
-また、積み上げグラフの下のリストボックスにより表示モードを切り替えることができます。
+また、最下段のリストボックスにより表示モード (View mode) を切り替えることができます。
 
-:view mode:
-  - rate ... mutationの数を1としたときのsignatureの割合を % で表示します。
-  - integral ... 実際のmutation数に対する割合を表示します。
+:View mode:
+  | - Rate ... 変異の数を 1 としたときの変異シグネチャの割合を % で表示します。
+  | - Count ... 実際の変異数に占める割合を表示します。
 
-:sort by:
-  - sampleID ... サンプルID順
-  - mutation count ... mutation数の降順
+:Sort by:
+  | - Sample ID ... サンプルID順
+  | - Mutation count ... 変異数の降順 (View mode が Count の場合のみ選択可能)
 
-  view modeがintegralの場合のみ、ソート方法を選択できます。
-
-
-view mode 「integral」, sort by 「mutation count」の表示例
+[View mode] で [Count] を選択し、[Sort by] で [Mutation count] を選択した場合の表示例
 
 .. image:: image/sig_operation1.PNG
   :scale: 100%
