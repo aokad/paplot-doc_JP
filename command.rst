@@ -25,7 +25,7 @@ paplot コマンド
   - pmsignature
 
 :input:
-  入力ファイルです。複数ファイルを入力する場合の入力方法は `データファイルが分かれている場合 <./data_common.html#suffix>`_ を参照してください。
+  入力ファイルです。複数ファイルを使用する場合は `データファイルが分かれている場合 <./data_common.html#suffix>`_ も参照してください。
 
 .. code-block:: bash
 
