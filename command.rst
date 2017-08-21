@@ -25,19 +25,23 @@ paplot コマンド
   - pmsignature
 
 :input:
-  入力ファイルです。ワイルドカード (``*``, ``?``) を使用して複数指定することができます。その場合、最初と最後に ``"`` をつけてください。
+  入力ファイルです。複数ファイルを入力する場合の入力方法は `データファイルが分かれている場合 <./data_common.html#suffix>`_ を参照してください。
 
 .. code-block:: bash
 
   # 1ファイルだけ入力する場合
-  paplot qc example/qc/SAMPLE1.qc ./test multi1 --config_file example/example.cfg
+  paplot mutation {unzip_path}/example/mutation_minimal/data.csv ./tmp mutation_minimal \
+  --config_file {unzip_path}/example/mutation_minimal/paplot.cfg
   
-  # 複数ファイルを入力する場合 (, で区切る)
-  paplot qc "example/qc/SAMPLE1.qc.csv,example/qc/SAMPLE2.qc.csv" ./test multi1 --config_file example/example.cfg
-  
-  # 複数ファイルを入力する場合 (* 使用)
-  paplot qc "example/qc/*.csv" ./multi multi1 --config_file example/example.cfg
+  # 複数ファイル指定する場合は , で区切る
+  paplot mutation \
+  {unzip_path}/example/mutation_split_file/SAMPLE00.data.csv,{unzip_path}/example/mutation_split_file/SAMPLE01.data.csv \
+  ./tmp mutation_split_file1 --config_file {unzip_path}/example/mutation_split_file/paplot.cfg
 
+  # ワイルドカードを使用して、まとめて指定することも可能
+  # 最初と最後に " を付けること
+  paplot mutation "{unzip_path}/example/mutation_split_file/*.csv" ./tmp mutation_split_file2 \
+  --config_file {unzip_path}/example/mutation_split_file/paplot.cfg
 
 :output_dir:
   出力ディレクトリを指定します。ディレクトリ構成は :ref:`2. 出力ディレクトリ <output>` を参照してください。

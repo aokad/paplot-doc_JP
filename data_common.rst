@@ -123,6 +123,12 @@ suffix を指定すると、suffix 手前までのファイル名をサンプル
 
 .. code-block:: bash
 
+  # 複数ファイル指定する場合は , で区切る
+  paplot mutation {unzip_path}/example/mutation_split_file/SAMPLE00.data.csv,{unzip_path}/example/mutation_split_file/SAMPLE01.data.csv ./tmp mutation_split_file \
+  --config_file {unzip_path}/example/mutation_split_file/paplot.cfg
+
+  # ワイルドカードを使用して、まとめて指定することも可能
+  # 最初と最後に " を付けること
   paplot mutation "{unzip_path}/example/mutation_split_file/*.csv" ./tmp mutation_split_file \
   --config_file {unzip_path}/example/mutation_split_file/paplot.cfg
 
