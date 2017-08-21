@@ -73,9 +73,9 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
   | 今回の例では base の数が 5 ですが、3 や 7 など奇数の数値であれば変更可能です。
 
 :alt:
-  | pmsignatureの alt の値。
-  | pmsignatureごとに 16 個の値を設定します。
-  | 横方向のサイズは ref3 (base=5の場合。base=3であれば ref2、base=7 であれば ref4) の ACGT の各値に従うため、altA と altG については通常は 0 を設定します。
+  | pmsignature の alt の値。
+  | pmsignature ごとに 16 個の値を設定します。
+  | 横方向のサイズは ref3 (base=5 の場合。base=3 であれば ref2、base=7 であれば ref4) の ACGT の各値に従うため、altA と altG については通常は 0 を設定します。
 
 :strand:
   | pmsignature の strand の値。
@@ -108,7 +108,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 
 .. note::
 
-  key 名は変更可能です。key 名を変更した場合は設定ファイル ([result_format_pmsignature] key_*) を変更してください。
+  キーは変更可能です。キーを変更した場合は設定ファイル ([result_format_pmsignature] key_*) を変更してください。
 
   .. code-block:: cfg
     :caption:  paplot/example/pmsignature_stack/paplot.cfg
@@ -125,7 +125,9 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
             
 .. note::
 
-  json としての形式の厳密さについては、paplot は python の json パッケージを使用しているため、次のコマンドで読めれば OK です。
+  json ファイルの確認
+  
+  paplot は python の json パッケージを使用しているため、次のコマンドで読めれば OK です。
 
   json パッケージを使用したファイル確認例 (ファイル名が "data2.json" の場合)
 

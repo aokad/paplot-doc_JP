@@ -12,12 +12,17 @@
 | グラフのバーの色や凡例、ポップアップの文字列のように入力データに依存する要素は設定ファイルで設定します。
 | 設定ファイルの記入例は以下を参照ください。
 
- - :doc:`config`
+[入門編]
+
  - :doc:`data_mat` 
  - :doc:`data_qc` 
  - :doc:`data_ca` 
  - :doc:`data_signature` 
  - :doc:`data_pmsignature` 
+
+[上級者向け]
+
+ - :doc:`config`
 
 | 2 つ目は style ファイルです。
 | 入力データに依存しない要素を設定します。

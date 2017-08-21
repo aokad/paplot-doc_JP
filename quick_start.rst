@@ -5,6 +5,7 @@
 #. paplot をインストール
 #. サンプルデータでコマンドを実行
 #. 結果ファイルを表示
+#. 設定ファイルを編集して自分のデータを使用する
 
 1. paplot をインストール
 ---------------------------
@@ -86,7 +87,7 @@
 
 .. code-block:: bash
 
-  cd {paplotをインストールしたディレクトリ}
+  cd {paplot を解凍したディレクトリ}
 
   # QC レポート
   paplot qc example/qc_brush/data.csv ./tmp demo
@@ -170,6 +171,23 @@ HTML ファイルができていますか？
   :scale: 100%
 
 | それぞれのレポートの使い方は `HOW TO USE GRAPHS <./index.html#how-to-toc>`_ を参照してください。
-|
+
+
+4. 設定ファイルを編集して自分のデータを使用する
+------------------------------------------------------
+
+| データと設定ファイルの記述方法は以下を参照してください。
+| 
+| [入門編]
+
+ - :doc:`data_mat` 
+ - :doc:`data_qc` 
+ - :doc:`data_ca` 
+ - :doc:`data_signature` 
+ - :doc:`data_pmsignature` 
+
+| [上級者向け]
+
+ - :doc:`config`
 
 .. |new| image:: image/tab_001.gif

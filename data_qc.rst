@@ -265,7 +265,7 @@ chart_2 は積み上げグラフです。
 4. 様々なグラフ
 =================================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_variation/graph_variationt.html>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_variation/graph_variation.html>`_ 
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_variation>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_variation.zip?raw=true>`_ 
 
@@ -296,24 +296,24 @@ chart_2 は積み上げグラフです。
   :caption: example/qc_variation/paplot.cfg
   
   [result_format_qc]
-col_opt_id = Sample
-
-# chart_1 で使用するデータ
-col_opt_average_depth = AverageDepth
-
-# chart_2 で使用するデータ
-col_opt_read_length_r1 = ReadLengthR1
-col_opt_read_length_r2 = ReadLengthR2
-
-# chart_3 で使用するデータ
-col_opt_mapped_reads = MappedReads
-col_opt_total_reads = TotalReads
-
-# chart_4 で使用するデータ
-col_opt_ratio_2x = 2xRatio
-col_opt_ratio_10x = 10xRatio
-col_opt_ratio_20x = 20xRatio
-col_opt_ratio_30x = 30xRatio
+  col_opt_id = Sample
+  
+  # chart_1 で使用するデータ
+  col_opt_average_depth = AverageDepth
+  
+  # chart_2 で使用するデータ
+  col_opt_read_length_r1 = ReadLengthR1
+  col_opt_read_length_r2 = ReadLengthR2
+  
+  # chart_3 で使用するデータ
+  col_opt_mapped_reads = MappedReads
+  col_opt_total_reads = TotalReads
+  
+  # chart_4 で使用するデータ
+  col_opt_ratio_2x = 2xRatio
+  col_opt_ratio_10x = 10xRatio
+  col_opt_ratio_20x = 20xRatio
+  col_opt_ratio_30x = 30xRatio
 
 列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
@@ -426,7 +426,7 @@ chart_4 (Depth coverage) は積み上げグラフです。
 .. _qc_brush:
 
 ==========================
-5. 範囲選択用
+5. 範囲選択
 ==========================
 
 | `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_brush/graph_brush.html>`_ 
