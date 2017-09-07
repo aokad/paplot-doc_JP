@@ -29,7 +29,7 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   SAMPLE4,70.9654
   SAMPLE5,69.9653
 
-まず、設定ファイルの [result_format_qc] セクションに入力データの列名を登録します。
+まず、設定ファイルの ``[result_format_qc]`` セクションに入力データの列名を登録します。
 
 .. code-block:: cfg
   :caption: example/qc_minimal/paplot.cfg
@@ -40,11 +40,9 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 
 列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
- - ``{キーワード}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
- - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" のみ使用できます。
- - ``col_opt_id`` は予約済みですので、サンプルID 以外の用途には使用できません。
+`キーワードとは <./data_common.html#keyword>`_ 
   
-次に、設定ファイルに [qc_chart_1] セクションを追加し、次のように設定します。
+次に、設定ファイルに ``[qc_chart_1]`` セクションを追加し、次のように設定します。
 
 .. code-block:: cfg
   :caption: example/qc_minimal/paplot.cfg
@@ -70,12 +68,12 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 
 .. note::
 
-  ここで使用している ``{key1}`` は [result_format_qc] セクションで入力した ``{キーワード}`` です。
+  ここで使用している ``{key1}`` は ``[result_format_qc]`` セクションで入力した ``{キーワード}`` です。
   
   - name_set の記入方法詳細は `name_set の書き方 <./data_qc.html#qc-nameset>`_ を参照してください。
   - tooltip_format の記入方法詳細は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
 
-編集した設定ファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して paplot を実行します。
 
 .. code-block:: bash
 
@@ -105,7 +103,7 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 
 データにヘッダ行がない場合、列名でなく列番号を設定します。
 
-設定ファイルの [result_format_qc] セクションでデータの列番号を次のように設定します。
+設定ファイルの ``[result_format_qc]`` セクションでデータの列番号を次のように設定します。
 
 列番号は左から順に 1 始まりで数えます。
 
@@ -119,7 +117,7 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   col_opt_id = 1
   col_opt_average_depth = 2
 
-編集した設定ファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して paplot を実行します。
 
 .. code-block:: bash
 
@@ -157,7 +155,7 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 
 完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc_stack/graph_stack.html>`_ を参照してください。
 
-まず、設定ファイルの [result_format_qc] セクションに入力データの列名を登録します。
+まず、設定ファイルの ``[result_format_qc]`` セクションに入力データの列名を登録します。
 
 .. code-block:: cfg
   :caption: example/qc_multi_plot/paplot.cfg
@@ -174,13 +172,11 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 
 列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
- - ``{キーワード}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
- - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" のみ使用できます。
- - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
- 
-次に、設定ファイルに [qc_chart_1]、[qc_chart_2] ... セクションを追加し、順番に設定します。
+`キーワードとは <./data_common.html#keyword>`_ 
 
-| QC レポートは [qc_chart_1] → [qc_chart_2] → [qc_chart_3] の順番に表示し、必要な数だけ [qc_chart_*] セクションを増やすことができます。
+次に、設定ファイルに ``[qc_chart_1]``、``[qc_chart_2]`` ... セクションを追加し、順番に設定します。
+
+| QC レポートは ``[qc_chart_1]`` → ``[qc_chart_2]`` → ``[qc_chart_3]`` の順番に表示し、必要な数だけ ``[qc_chart_*]`` セクションを増やすことができます。
 | ``*`` には 1 から始まる連番を入れてください。1 から順に表示します。
 
 完成した設定ファイルは `ここ <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack/paplot.cfg>`_ を参照してください。
@@ -222,12 +218,12 @@ chart_2 は積み上げグラフです。
 
 .. note::
 
-  ここで使用している ``{key*}`` は [result_format_qc] セクションで入力した ``{キーワード}`` です。
+  ここで使用している ``{key*}`` は ``[result_format_qc]`` セクションで入力した ``{キーワード}`` です。
   
   - name_set の記入方法詳細は `name_set の書き方 <./data_qc.html#qc-nameset>`_ を参照してください。
   - tooltip_format の記入方法詳細は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
 
-編集した設定ファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して paplot を実行します。
 
 .. code-block:: bash
 
@@ -290,7 +286,7 @@ chart_2 は積み上げグラフです。
 
 完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc_variation/graph_variation.html>`_ を参照してください。
 
-まず、設定ファイルの [result_format_qc] セクションに入力データの列名を登録します。
+まず、設定ファイルの ``[result_format_qc]`` セクションに入力データの列名を登録します。
 
 .. code-block:: cfg
   :caption: example/qc_variation/paplot.cfg
@@ -317,13 +313,11 @@ chart_2 は積み上げグラフです。
 
 列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
- - ``{キーワード}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
- - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" のみ使用できます。
- - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
- 
-次に、設定ファイルに [qc_chart_1]、[qc_chart_2]、[qc_chart_3] ... セクションを追加し、順番に設定します。
+`キーワードとは <./data_common.html#keyword>`_ 
 
-| QC レポートは [qc_chart_1] → [qc_chart_2] → [qc_chart_3] の順番に表示し、必要な数だけ [qc_chart_*] セクションを増やすことができます。
+次に、設定ファイルに ``[qc_chart_1]``、``[qc_chart_2]``、``[qc_chart_3]`` ... セクションを追加し、順番に設定します。
+
+| QC レポートは ``[qc_chart_1]`` → ``[qc_chart_2]`` → ``[qc_chart_3]`` の順番に表示し、必要な数だけ ``[qc_chart_*]`` セクションを増やすことができます。
 | ``*`` には 1 から始まる連番を入れてください。1 から順に表示します。
 
 完成した設定ファイルは `ここ <https://github.com/Genomon-Project/paplot/blob/master/example/qc_variation/paplot.cfg>`_ を参照してください。
@@ -414,7 +408,7 @@ chart_4 (Depth coverage) は積み上げグラフです。
 
 上記では、stack1 に ratio_30x を、stack2 に ratio_20x から ratio_30x を引いたものを表示しています。
 
-編集した設定ファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して paplot を実行します。
 
 .. code-block:: bash
 
@@ -439,9 +433,9 @@ chart_4 (Depth coverage) は積み上げグラフです。
 
 データ列は AverageDepth を使用します。
 
-もし、新しいデータ列を使用する場合は設定ファイルの [result_format_qc] セクションに col_opt_{name} として登録してください。
+もし、新しいデータ列を使用する場合は設定ファイルの ``[result_format_qc]`` セクションに ``col_opt_{name}`` として登録してください。
 
-範囲選択用のグラフは [qc_chart_brush] というセクション名で一つだけ追加することができます。
+範囲選択用のグラフは ``[qc_chart_brush]`` というセクション名で一つだけ追加することができます。
 
 .. code-block:: cfg
   :caption: example/qc_brush/paplot.cfg
@@ -450,7 +444,7 @@ chart_4 (Depth coverage) は積み上げグラフです。
   stack = {average_depth}
   name_set = average:#E3E5E9
 
-編集した設定ファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して paplot を実行します。
 
 .. code-block:: bash
 

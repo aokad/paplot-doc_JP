@@ -30,10 +30,10 @@ Linux 系の場合 (cygwin 含)
 .. code-block:: bash
 
   cd {インストールしたいディレクトリ}
-  # v0.5.3の場合
-  wget https://github.com/Genomon-Project/paplot/archive/v0.5.3.zip
-  unzip v0.5.3.zip
-  cd paplot-0.5.3/
+  # v0.5.4 の場合
+  wget https://github.com/Genomon-Project/paplot/archive/v0.5.4.zip
+  unzip v0.5.4.zip
+  cd paplot-0.5.4/
 
   python setup.py build install
   
@@ -46,12 +46,9 @@ Linux 系の場合 (cygwin 含)
 
 .. code-block:: bash
 
-  paplot conf
-  **********************
-     hello paplot !!!
-  **********************
+  paplot --version
+  paplot-0.5.4
 
-  (デフォルト設定値が表示される)
 
 | このような表示が出れば成功です。
 | 
@@ -59,11 +56,11 @@ Linux 系の場合 (cygwin 含)
 
 .. note::
   
-  PATH設定を忘れないようにする
+  PATH 設定を忘れないようにする
   
-  | ↑でexport設定したPATHとLD_LIBRARY_PATHはログアウトすると忘れてしまいます。
+  | ↑で export 設定した PATH と LD_LIBRARY_PATH はログアウトすると忘れてしまいます。
   | 再ログイン時に再設定されるよう設定ファイルに記入しておくことをお勧めします。
-  | ``~/.bashrc`` もしくは ``~/.bash_profile`` ファイルに次の2行を記入してください。
+  | ``~/.bashrc`` もしくは ``~/.bash_profile`` ファイルに次の 2 行を記入してください。
 
   .. code-block:: bash
   
@@ -113,7 +110,7 @@ https://github.com/Genomon-Project/paplot/releases/
 3. PATH の設定
 ----------------
 
-| このままではターミナルは ``paplot`` がどこにあるかわからないので、インストールされている場所を PATH という環境変数に設定します。
+| このままではターミナルは paplot がどこにあるかわからないので、インストールされている場所を PATH という環境変数に設定します。
 | 大抵、ここにあります。
 
 ``/Users/<user name>/Library/Python/2.7/bin``
@@ -148,12 +145,8 @@ https://github.com/Genomon-Project/paplot/releases/
 
 .. code-block:: bash
 
-  paplot conf
-  **********************
-     hello paplot !!!
-  **********************
-
-  (デフォルト設定値が表示される)
+  paplot --version
+  paplot-0.5.4
 
 | このような表示が出れば成功です。
 |
@@ -238,12 +231,8 @@ https://github.com/Genomon-Project/paplot/releases/
 
 .. code-block:: bash
 
-  > C:\WinPython-64bit-2.7.10.3\python-2.7.10.amd64\python.exe paplot conf
-  **********************
-     hello paplot !!!
-  **********************
-
-  (デフォルト設定値が表示される)
+  > C:\WinPython-64bit-2.7.10.3\python-2.7.10.amd64\python.exe paplot --version
+  paplot-0.5.4
 
 | このような表示が出れば成功です。
 |

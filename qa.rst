@@ -26,16 +26,16 @@
   (省略)
   pkg_resources.DistributionNotFound: The 'paplot===0.2.7devel' distribution was not found and is required by the application
 
-| ``paplot`` ファイルがない場合はインストールが成功していない可能性があります。
-| 成功した場合は最後の3行がこのように表示されます。
-| paplot-0.2.7の数字はバージョンによって変化します。
+| paplot ファイルがない場合はインストールが成功していない可能性があります。
+| 成功した場合は最後の 3 行がこのように表示されます。
+| paplot-0.2.7 の数字はバージョンによって変化します。
 |
 
 .. code-block:: bash
 
   $ python setup.py build install
 
-  (最後の3行)
+  (最後の 3 行)
   Installed /usr/lib/python2.7/site-packages/paplot-0.2.7devel-py2.7.egg
   Processing dependencies for paplot===0.2.7devel
   Finished processing dependencies for paplot===0.2.7devel
@@ -58,7 +58,7 @@
 | 出力フォーマット
 |
 
- - SVG ... タグで記載されたテキストファイルです。SVG対応の画像編集ソフトウェアのほか、各種ウェブブラウザでも表示できます。
+ - SVG ... タグで記載されたテキストファイルです。SVG 対応の画像編集ソフトウェアのほか、各種ウェブブラウザでも表示できます。
  - PNG ... 画像ファイルです。背景透過処理を施しています。
  
 | なお、1 プロットのみ保存したい場合は、それぞれのプロットの上で右クリックで保存することも可能です。

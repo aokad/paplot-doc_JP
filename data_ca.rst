@@ -37,7 +37,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   SAMPLE4,7,6037836,21,34855497,
   SAMPLE4,7,109724564,14,106387943,
 
-設定ファイルの [result_format_ca] セクションでデータの列名を次のように設定します。
+設定ファイルの ``[result_format_ca]`` セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/ca_minimal/paplot.cfg
@@ -49,7 +49,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   col_break2 = Break2
   col_opt_id = Sample
 
-編集した設定ファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して paplot を実行します。
 
 .. code-block:: bash
 
@@ -86,7 +86,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 
 データにヘッダ行がない場合、列名でなく列番号を設定します。
 
-設定ファイルの [result_format_ca] セクションでデータの列番号を次のように設定します。
+設定ファイルの ``[result_format_ca]`` セクションでデータの列番号を次のように設定します。
 
 列番号は左から順に 1 始まりで数えます。
 
@@ -103,7 +103,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   col_break2 = 5
   col_opt_id = 1
 
-編集した設定ファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して paplot を実行します。
 
 .. code-block:: bash
 
@@ -147,15 +147,13 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 
 まず、グルーピングに使用する列名 ``Label`` を設定ファイルに追加します。
 
-設定ファイルの [result_format_ca] セクションでデータの列名を次のように設定します。
+設定ファイルの ``[result_format_ca]`` セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/ca_group/paplot.cfg
   
   [result_format_ca]
   col_opt_group = Label
-
-オプションの列名は通常任意に設定できますが、グルーピングにおいては ``col_opt_group`` 固定にしてください。
 
 これで ``Label`` 列を使用してグルーピングされますが、追加で色も指定できます。
 
@@ -174,7 +172,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   nouse_group = 
 
 
-編集した設定ファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して paplot を実行します。
 
 .. code-block:: bash
 
@@ -208,32 +206,36 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 .. code-block:: cfg
   :caption: データファイルから一部抜粋 (example/ca_option/data.csv)
   
-  Sample,Chr1,Break1,Dir1,Chr2,Break2,Dir2,Ref,Alt,MutationType,Gene1,Gene2
-  SAMPLE1,14,16019088,-,12,62784483,+,---,GACTC,deletion,LS7T1EG444,4GRRIO5AVR
-  SAMPLE1,9,99412502,-,7,129302434,+,---,C-CT-,translocation,FQFW16UF5U,QP779MLPNV
-  SAMPLE1,13,84663781,+,18,52991509,-,---,GTAAA,deletion,Q9VX1I9U3I,7XM09ETN40
-  SAMPLE2,11,101374238,+,22,26701405,+,---,TGGGT,translocation,FZ7LOS66RD,9WYBJR57E0
-  SAMPLE2,2,121708638,-,7,137424167,-,---,G-TGA,translocation,5655M5E46B,HB14VJXDHV
-  SAMPLE2,16,43027789,+,22,23791492,-,---,CCTCA,inversion,REFSIL0H2M,L5EA31R8U0
-  SAMPLE3,22,34268355,+,10,19871820,+,---,TC-GT,tandem_duplication,9SVRQCFVCO,2BEWSO91FZ
-  SAMPLE3,14,56600342,-,hs37d5,5744957,+,---,--CAA,deletion,UTLVCZ63SK,5I74M5NKDC
-  SAMPLE3,Y,12191863,-,hs37d5,29189687,-,---,TG-G-,inversion,3PLD4C20IZ,BVYMBTIFKD
+  Sample,Chr1,Break1,Dir1,Chr2,Break2,Dir2,MutationType,Gene1,Gene2
+  SAMPLE1,14,16019088,-,12,62784483,+,deletion,LS7T1EG444,4GRRIO5AVR
+  SAMPLE1,9,99412502,-,7,129302434,+,translocation,FQFW16UF5U,QP779MLPNV
+  SAMPLE1,13,84663781,+,18,52991509,-,deletion,Q9VX1I9U3I,7XM09ETN40
+  SAMPLE1,1,153160367,+,22,33751554,+,inversion,CEE2SPV1R1,PVYYQIVS8G
+  SAMPLE1,18,12249358,-,3,146222593,+,translocation,HH9OL7CK6G,XD80LI4E6Q
+  SAMPLE1,21,8658030,+,X,133492043,-,tandem_duplication,I20EVP15ZM,WPE8O5H237
+  SAMPLE1,12,120178477,+,1,155354923,-,deletion,IMYXD3TCA4,3MNN5J0MDN
+  SAMPLE2,11,101374238,+,22,26701405,+,translocation,FZ7LOS66RD,9WYBJR57E0
+  SAMPLE2,2,121708638,-,7,137424167,-,translocation,5655M5E46B,HB14VJXDHV
+  SAMPLE2,16,43027789,+,22,23791492,-,inversion,REFSIL0H2M,L5EA31R8U0
+  SAMPLE2,19,3862589,-,16,37135239,+,deletion,1IRWHVZLH8,6FUR9YMZOH
+  SAMPLE2,20,50294222,+,1,164250235,-,inversion,DOH5G0YRQ9,9TWYMR5CZ2
+  SAMPLE2,X,67392415,+,15,3327412,+,translocation,EM36MRX9B3,G4FPLN527D
+  SAMPLE3,22,34268355,+,10,19871820,+,tandem_duplication,9SVRQCFVCO,2BEWSO91FZ
 
-今回の例では、必須項目である Sample, Chr1, Break1, Chr2, Break2 に加えて、次の7つを追加してあります。
 
- - リファレンスの塩基 (Ref)
- - 変異の塩基(Alt)
- - 変異タイプ(MutationType)
- - ブレークポイント1の遺伝子名(Gene1)
- - ブレークポイント2の遺伝子名(Gene2)
- - ブレークポイント1のDirection(Dir1)
- - ブレークポイント2のDirection(Dir2)
+今回の例では、必須項目である Sample, Chr1, Break1, Chr2, Break2 に加えて、次の 5 つを追加してあります。
+
+ - 変異タイプ (MutationType)
+ - ブレークポイント 1 の遺伝子名 (Gene1)
+ - ブレークポイント 2 の遺伝子名 (Gene2)
+ - ブレークポイント 1 の Direction (Dir1)
+ - ブレークポイント 2 の Direction (Dir2)
 
 このうち、変異タイプ (MutationType) と遺伝子名 (Gene1, Gene2)、Direction (Dir1, Dir2) を使用します。
 
 まず、ポップアップの情報として追加したい列名を設定ファイルに記載します。
 
-設定ファイルの [result_format_ca] セクションでデータの列名を次のように設定します。
+設定ファイルの ``[result_format_ca]`` セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/ca_option/paplot.cfg
@@ -249,9 +251,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 
 オプションの列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
- - ``{キーワード}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
- - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" のみ使用できます。
- - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
+`キーワードとは <./data_common.html#keyword>`_ 
  
 次に、ポップアップの表示内容を変更します。
 
@@ -264,7 +264,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   # 次のように変更
   tooltip_format = [{chr1}] {break1:,} ({dir1}) {gene_name1}; [{chr2}] {break2:,} ({dir2}) {gene_name2}; {type}
 
-編集した設定ファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して paplot を実行します。
 
 .. code-block:: bash
 

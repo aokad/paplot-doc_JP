@@ -23,7 +23,7 @@
   sept = " "
 
 ここでは Mutation Matrix を例にとりましたが、QC や Chromosomal Aberration の場合も同様です。
-QC の場合は [result_format_qc] セクション、Chromosomal Aberration の場合は [result_format_ca] セクションを変更してください。
+QC の場合は ``[result_format_qc]`` セクション、Chromosomal Aberration の場合は ``[result_format_ca]`` セクションを変更してください。
 
 ----
 
@@ -51,7 +51,7 @@ QC の場合は [result_format_qc] セクション、Chromosomal Aberration の�
   comment = #
 
 ここでは Mutation Matrix を例にとりましたが、QC や Chromosomal Aberration の場合も同様です。
-QC の場合は [result_format_qc] セクション、Chromosomal Aberration の場合は [result_format_ca] セクションを変更してください。
+QC の場合は ``[result_format_qc]`` セクション、Chromosomal Aberration の場合は ``[result_format_ca]`` セクションを変更してください。
 
 ----
 
@@ -70,7 +70,6 @@ paplot ではサンプル名が必須ですが、以下の 2 通りで指定す�
  - case2: サンプルごとに分かれた複数のファイルを入力し、データ中にサンプル名となるものはない。
  
    ファイル名の一部をサンプル名として使用します。 ``suffix`` を必ず指定してください。
-   サンプル名となる列がある場合は ``col_opt_id`` で指定することもできます。
 
 これまでのサンプルでは、case1 について記述してきました。ここでは case2 の入力方法を解説します。
 
@@ -119,7 +118,7 @@ suffix を指定すると、suffix 手前までのファイル名をサンプル
 .. image:: image/id_suffix.PNG
   :scale: 100%
 
-編集した設定ファイルを使用して ``paplot`` を実行します
+編集した設定ファイルを使用して paplot を実行します。
 
 .. code-block:: bash
 
@@ -133,28 +132,13 @@ suffix を指定すると、suffix 手前までのファイル名をサンプル
   --config_file {unzip_path}/example/mutation_split_file/paplot.cfg
 
 ここでは Mutation Matrix を例にとりましたが、QC や Chromosomal Aberration の場合も同様です。
-QC の場合は [result_format_qc] セクション、Chromosomal Aberration の場合は [result_format_ca] セクションを変更してください。
+QC の場合は ``[result_format_qc]`` セクション、Chromosomal Aberration の場合は ``[result_format_ca]`` セクションを変更してください。
 
-.. _user_format:
+.. _keyword:
 
 ==============================
-4. ユーザ定義フォーマット
+4. キーワード
 ==============================
-
-マウスカーソルを乗せた時に表示する情報 (ポップアップ) の内容はある程度変更することができます。
-
-表示箇所ごとにそれぞれ設定しますが、書き方は同一です。
-
-**設定例**
-
-::
-
-  tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -> {alt}]
-  
-  表示例：
-  type[exome], chr1:2000:2001, [A -> T]
-
-{} で囲った文字がキーワードで、実際の値に置き換えられます。
 
 4-1. キーワードとは
 ----------------------------
@@ -187,10 +171,34 @@ QC の場合は [result_format_qc] セクション、Chromosomal Aberration の�
 キーワードは任意で増やすことができますが、以下の点にご注意ください。
 
  - 半角英数字 (1-9, a-z, A-Z) および "_" 以外は使用できません。
- - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
  - signature、pmsignature は追加できません
+ - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
+ - Mutation Matrix と Chromosomal Aberration においては ``col_opt_group`` も予約済みですので、グループ化以外の用途には使用できません。
 
-4-2. 数値計算
+.. _user_format:
+
+==============================
+5. ユーザ定義フォーマット
+==============================
+
+マウスカーソルを乗せた時に表示する情報 (ポップアップ) の内容はある程度変更することができます。
+
+表示箇所ごとにそれぞれ設定しますが、書き方は同一です。
+
+**設定例**
+
+::
+
+  tooltip_format_checker_partial = type[{func}], {chr}:{start}:{end}, [{ref} -> {alt}]
+  
+  表示例：
+  type[exome], chr1:2000:2001, [A -> T]
+
+{} で囲った文字がキーワードで、実際の値に置き換えられます。
+
+`キーワードとは <./data_common.html#keyword>`_ 
+
+5-1. 数値計算
 ----------------------------
 
 キーワードを 1 つ以上使用して数値計算させることもできます。その場合、計算式を {} で囲います。

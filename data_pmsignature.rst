@@ -108,7 +108,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 
 .. note::
 
-  キーは変更可能です。キーを変更した場合は設定ファイル ([result_format_pmsignature] key_*) を変更してください。
+  キーは変更可能です。キーを変更した場合は設定ファイル (``[result_format_pmsignature]`` セクションの ``key_*`` オプション) を変更してください。
 
   .. code-block:: cfg
     :caption:  paplot/example/pmsignature_stack/paplot.cfg
@@ -198,7 +198,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
   key_alt = alt
   key_strand = strand
 
-``paplot`` を実行します。
+paplot を実行します。
 
 .. code-block:: bash
 
@@ -263,7 +263,7 @@ pmsignature 数は paplot 実行時に入力ファイル (data.json) から読�
      # 設定ファイル
     ┗ paplot.cfg
 
-``paplot`` を実行します。
+paplot を実行します。
 
 .. code-block:: bash
 
@@ -387,7 +387,7 @@ pmsignature 数は paplot 実行時に入力ファイル (data?.json) のデー�
   [result_format_pmsignature]
   background = False
 
-4. ``paplot`` を実行します。
+4. paplot を実行します。
 
 .. code-block:: bash
 

@@ -17,10 +17,10 @@
 .. code-block:: bash
 
   cd {インストールしたいディレクトリ}
-  # v0.5.3の場合
-  wget https://github.com/Genomon-Project/paplot/archive/v0.5.3.zip
-  unzip v0.5.3.zip
-  cd paplot-0.5.3/
+  # v0.5.4 の場合
+  wget https://github.com/Genomon-Project/paplot/archive/v0.5.4.zip
+  unzip v0.5.4.zip
+  cd paplot-0.5.4/
 
   python setup.py build install
 
@@ -32,18 +32,13 @@
 
 .. code-block:: bash
 
-  paplot conf
+  paplot --version
 
-| このように表示されればインストール成功です。
+| このように表示されればインストール成功です。(インストールしたバージョンが表示されます)
 
 .. code-block:: bash
 
-  **********************
-     hello paplot !!!
-  **********************
-  
-  config file:/usr/lib/python2.7/site-packages/{paplot-versoion}-py2.7.egg/config/paplot.cfg
-  (このあとにデフォルト設定の内容が表示されます)
+  paplot-0.5.4
 
 
 2. サンプルデータでコマンドを実行

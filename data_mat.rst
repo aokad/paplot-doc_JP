@@ -37,7 +37,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 
 今回の例では列名を Sample, MutationType, Gene としていますが、任意に設定できます。
 
-設定ファイルの [result_format_mutation] セクションでデータの列名を次のように設定します。
+設定ファイルの ``[result_format_mutation]`` セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/mutation_minimal/paplot.cfg
@@ -48,7 +48,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   col_opt_id = Sample
 
 
-編集した設定ファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して paplot を実行します。
 
 .. code-block:: bash
 
@@ -86,7 +86,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 データにヘッダ行がない場合、列名でなく列番号を設定します。
 列番号は左から順に 1 始まりで数えます。
 
-設定ファイルの [result_format_mutation] セクションでデータの列番号を次のように設定します。
+設定ファイルの ``[result_format_mutation]`` セクションでデータの列番号を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/mutation_noheader/paplot.cfg
@@ -99,7 +99,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   col_gene = 3
   col_opt_id = 1
 
-編集した設定ファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して paplot を実行します。
 
 .. code-block:: bash
 
@@ -158,7 +158,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 
 まず、追加した列名を設定ファイルに記載します。
 
-設定ファイルの [result_format_mutation] セクションでデータの列名を次のように設定します。
+設定ファイルの ``[result_format_mutation]`` セクションでデータの列名を次のように設定します。
 
 .. code-block:: cfg
   :caption: example/mutation_option/paplot.cfg
@@ -172,9 +172,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 
 オプションの列名は次の形式で記述します。 ``col_opt_{キーワード} = {実際の列名}`` 
 
- - ``{キーワード}`` の部分は任意に設定できますが、 ``col_opt_`` を必ず先頭につけてください。
- - ``{キーワード}`` には半角英数字 (1-9, a-z, A-Z) および "_" のみ使用できます。
- - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
+`キーワードとは <./data_common.html#keyword>`_ 
  
 次に、ポップアップの表示内容を変更します。
 
@@ -187,7 +185,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   # 次のように変更
   tooltip_format_checker_partial = Mutation Type[{group}], {chr}:{start}:{end}, [{ref} -> {alt}]
 
-編集した設定ファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して paplot を実行します。
 
 .. code-block:: bash
 

@@ -15,7 +15,7 @@
 .. code-block:: cfg
 
   ###################### Mutation Matrix
-  [mut]
+  [mutation]
   # 遺伝子のサンプルに対する検出比 (%)
   # 値より小さい遺伝子はプロット対象から除外する
   # 0 の場合はすべて出力する
@@ -117,7 +117,7 @@
 データ列とは別に以下も特殊キーワードとして使用することができます。
 
  Mutation Matrixの集計について
- limited_funcs や nouse_funcs 等のオプションを使用して変異を限定した場合、使用しなかった変異はカウントしません。
+ ``limited_group`` や ``nouse_group`` 等のオプションを使用して変異を限定した場合、使用しなかった変異はカウントしません。
 
 :{#number_id}:      サンプル数
 :{#number_gene}:    遺伝子数
@@ -165,7 +165,7 @@ example では別ファイルとして以下のデータファイルを用意し
 
 **重要** : path にサブプロットデータファイルのパスを記入してください。
 
-[mutation_subplot_type1_1] セクションを追加し、次のように設定します。
+``[mutation_subplot_type1_1]`` セクションを追加し、次のように設定します。
 
 .. code-block:: cfg
   :caption: example/mutation_subplot/paplot.cfg
@@ -209,9 +209,9 @@ example では別ファイルとして以下のデータファイルを用意し
 
 サブプロットの表示位置は 2 つあり、type1 はサンプルグラフの下に、type2 は最後に表示します。
 
-type1 を表示する場合はセクション名を [mut_subplot_type1_*] とします。
+type1 を表示する場合はセクション名を ``[mut_subplot_type1_*]`` とします。
 
-type2 を表示する場合はセクション名を [mut_subplot_type2_*] とします。
+type2 を表示する場合はセクション名を ``[mut_subplot_type2_*]`` とします。
 
 ``*`` には 1 から始まる連番を入れてください。1 から順に上から下へ表示します。
 
@@ -257,7 +257,7 @@ mode = gradient の場合
   name_set = 0:min (0), 40:max (40)
   
 
-編集した設定ファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して paplot を実行します。
 
 .. code-block:: bash
 

@@ -25,9 +25,9 @@ Contents:
    :caption: how to use graphs
    :name: how_to_toc
    
-   howto_mat.rst
    howto_qc.rst
-   howto_ca.rst   
+   howto_ca.rst
+   howto_mat.rst
    howto_signature.rst
 
 .. toctree:: 
@@ -35,9 +35,9 @@ Contents:
    :caption: dataformat
    :name: dataformat_toc
    
-   data_mat.rst
    data_qc.rst
    data_ca.rst
+   data_mat.rst
    data_signature.rst
    data_pmsignature.rst
    data_common.rst
