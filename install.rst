@@ -218,7 +218,7 @@ https://github.com/Genomon-Project/paplot/releases/
 | Windowsの場合、1．による python のインストール作業では環境変数 (PATH) が設定されていません。
 | ここでは python をパスごと指定していますが、システム環境変数の PATH に登録することで省略することもできます。
 
-.. caution::
+.. attention::
 
   以下、python のパスは WinPython-64bit-2.7.10.3 を標準インストールしたときのものです。
   実際の環境に合わせてください。
