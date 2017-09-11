@@ -153,8 +153,6 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 
 :doc:`exec_pmsignature` に従いデータの準備を行う場合、設定ファイルの変更は必要ありません。
 
-ここでは paplot コマンドを中心に解説します。
-
 データファイル (pmsignature 数は 2)
 
 .. code-block:: json
@@ -243,7 +241,7 @@ pmsignature 数は paplot 実行時に入力ファイル (data.json) から読�
 
 入力データ形式は :ref:`こちら <json_ind>` 参照。
 
-:doc:`exec_pmsignature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。ここでは paplot コマンドを中心に解説します。
+:doc:`exec_pmsignature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。
 
 データファイルは pmsignature タイプの数だけ用意し、設定ファイルは形式が同じであれば一つだけ用意します。
 
@@ -328,11 +326,18 @@ pmsignature 数は paplot 実行時に入力ファイル (data?.json) のデー�
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_stack>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_stack.zip?raw=true>`_ 
 
-レポートに変異の内訳グラフを追加します。 :ref:`こちら <json_ind>` で解説に使用しているデータで、:doc:`exec_pmsignature` の手順でデータの準備を行う場合に出力されるデータです。
+レポートに変異の内訳グラフを追加します。 :doc:`exec_pmsignature` の手順でデータの準備を行う場合、あらかじめ出力するように設定しています。
 
 データフォーマットは :ref:`こちら <json_ind>` 参照。
 
 複数データ実行方法は :ref:`こちら <pm_mclass>` 参照。
+
+paplot を実行します。
+
+.. code-block:: bash
+  
+  paplot pmsignature "pmsignature_stack/data*.json" ./tmp pmsignature_stack \
+  --config_file ./pmsignature_stack/paplot.cfg
 
 ----
 
@@ -346,7 +351,7 @@ pmsignature 数は paplot 実行時に入力ファイル (data?.json) のデー�
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_nobackground>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_nobackground.zip?raw=true>`_ 
 
-:doc:`exec_pmsignature` の手順でデータの準備を行う場合、background ありで pmsignature を作成しますが、background なしで pmsignature を出力することもできます。
+通常、pmsignature は background ありで作成しますが、background なしで作成することもできます。
 
 手順詳細は :doc:`exec_pmsignature` を参照ください。
 

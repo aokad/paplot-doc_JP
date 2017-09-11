@@ -150,8 +150,6 @@ paplotで Mutational Signature レポートを作成するためにはこれま�
 
 :doc:`exec_signature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。
 
-ここでは paplot コマンドを中心に解説します。
-
 データファイル (変異シグネチャ数は 2)
 
 .. code-block:: python
@@ -246,7 +244,7 @@ paplot を実行します。
 
 入力データ形式は :ref:`こちら <json>` 参照。
 
-:doc:`exec_signature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。ここでは paplot コマンドを中心に解説します。
+:doc:`exec_signature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。
 
 データファイルは変異シグネチャクラスの数だけ用意し、設定ファイルは形式が同じであれば一つだけ用意します。
 
@@ -289,7 +287,7 @@ paplot を実行します。
 
 .. code-block:: bash
 
-  paplot "signature signature_multi_class/data*.json" ./tmp signature_multi_class \
+  paplot signature "signature_multi_class/data*.json" ./tmp signature_multi_class \
   --config_file ./signature_multi_class/paplot.cfg
 
 上記のコマンドを実行すると以下の場所にレポートが作成されます。
@@ -327,10 +325,17 @@ paplot を実行します。
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/signature_stack>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/signature_stack.zip?raw=true>`_ 
 
-レポートに変異の内訳グラフを追加します。 :ref:`こちら <json_full>` で解説に使用しているデータであり、:doc:`exec_signature` によりデータの準備を行う場合に出力されるデータです。
+レポートに変異の内訳グラフを追加します。 :doc:`exec_signature` によりデータの準備を行う場合、あらかじめ出力するように設定しています。
 
 データフォーマットは :ref:`こちら <json>` 参照。
 
 複数データ実行方法は :ref:`こちら <sig_mclass>` 参照。
+
+paplot を実行します。
+
+.. code-block:: bash
+  
+  paplot signature "signature_stack/data*.json" ./tmp signature_stack \
+  --config_file ./signature_stack/paplot.cfg
 
 .. |new| image:: image/tab_001.gif
