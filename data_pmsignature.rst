@@ -14,7 +14,7 @@ pmsignature レポート
 1. jsonフォーマット
 ==========================
 
-paplot で pmsignature レポートを作成するためには Mutation Matrix や Chromosomal Aberration、QC とは異なり、json ファイル形式で pmsignature データを用意する必要があります。
+paplot で pmsignature レポートを作成するためには Mutation Matrix レポートや Chromosomal Aberration レポート、QC レポートとは異なり、json ファイル形式で pmsignature データを用意する必要があります。
 
 ここでは、paplot が使用する pmsignature データのフォーマットについて解説します。
 
@@ -65,46 +65,46 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 
 .. image:: image/exec_pmsig1.PNG
 
-**pmsignature データフォーマット**
+**pmsignature レポートを作成するためのデータ要素**
 
 :ref:
-  | pmsignature の各リファレンスの値。
-  | pmsignature ごと、リファレンスごとに A → C → G → T の順に値を記述します。描画時に再計算しますので、合計して 1 になる必要はありません。
-  | 今回の例では base の数が 5 ですが、3 や 7 など奇数の数値であれば変更可能です。
+  | 各 pmsignature のリファレンス塩基 (A → C → G → T の順) の値です。
+  | paplot が再計算しますので、合計して 1 になる必要はありません。
+  | 今回の例では base の数が 5 ですが、3 や 7 など奇数であれば変更可能です。
 
 :alt:
-  | pmsignature の alt の値。
-  | pmsignature ごとに 16 個の値を設定します。
-  | 横方向のサイズは ref3 (base=5 の場合。base=3 であれば ref2、base=7 であれば ref4) の ACGT の各値に従うため、altA と altG については通常は 0 を設定します。
+  | 各 pmsignature の alternative 塩基 (各中央のリファレンス塩基に対して A → C → G → T の順) の値です。
+  | 各リファレンス塩基 A, C, G, Tの 4 つの値を A → C → G → T の順に記入します。したがって、各 pmsignature には合計 16 の値が必要です。
+  | 通常、中央の塩基は C または T に固定されているため、参照塩基が A または G の値はゼロに設定できます。
 
 :strand:
-  | pmsignature の strand の値。
-  | pmsignature ごとに plus/minus 2 つの値をそれぞれ設定します。
+  | 各 pmsignature の strand (plus → minus の順) の値です。
   | strand が無い場合は ``[0,0]`` を記入します。
 
 **寄与度グラフ描画データ**
 
 この項目はオプションです。
 
-設定するとサンプル毎に pmsignature の寄与度グラフ ( `例 <http://genomon-project.github.io/paplot/pmsignature_stack/graph_stack2.html>`_ ) を作成します。
+寄与度グラフは、各 pmsignature に関連づけられている変異はどれくらいの数かを示す積み上げグラフです。
+入力 json ファイルに **id**, **mutation**, **mutation_count** が設定されている場合、サンプル毎に pmsignature の寄与度グラフ ( `例 <http://genomon-project.github.io/paplot/pmsignature_stack/graph_stack2.html>`__ ) を作成します。
 
 :id:
-  | サンプル名リスト
+  | サンプル名のリストです。
 
 :mutation_count:
-  | サンプルごとの変異数
+  | サンプルごとの変異数です。
   | 上記の例の場合、PD3851a の変異数=702、PD3890a の変異数=2312、PD3904a の変異数=2096 となります。
 
 :mutation:
   | サンプルごと、pmsignature ごとの割合を設定します。 
   | [sample index, pmsignature index, value] の順に記載します。
   |
-  | サンプルの index は id で記載した順に 0 からカウントします。
-  | 上記の例の場合、PD3851a=0、PD3890a=1、PD3904a=2 となります。
+  | ``sample index`` は ``id`` で記載した順に 0 からカウントします。
+  | 上記の例の場合の ``sample index`` は PD3851a=0、PD3890a=1、PD3904a=2 となります。
   |
-  | pmsignature の index も ref で記載した順に 0 からカウントします。
+  | ``pmsignature index`` は ``ref`` で記載した順に 0 からカウントします。
   | background を使用する場合、signature1, signature2, ..., background の順にカウントします。
-  | 上記の例の場合、signature1 = 0、signature2 = 1、background = 2 となります。
+  | 上記の例の場合の ``pmsignature index`` は signature1 = 0、signature2 = 1、background = 2 となります。
 
 .. note::
 
@@ -145,9 +145,9 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 2. 最小データセット
 ==========================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/pmsignature_minimal/graph_pmsignature_minimal2.html>`_ 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_minimal>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_minimal.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/pmsignature_minimal/graph_pmsignature_minimal2.html>`__ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_minimal>`__ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_minimal.zip?raw=true>`__ 
 
 入力データ形式は :ref:`こちら <json_ind>` 参照。
 
@@ -167,7 +167,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 設定ファイル
 
 .. code-block:: cfg
-  :caption: example/signature_minimal/paplot.cfg
+  :caption: example/pmsignature_minimal/paplot.cfg
   
   [pmsignature]
   tooltip_format_ref1 = A: {a:.2}
@@ -206,9 +206,9 @@ paplot を実行します。
 
 上記のコマンドを実行すると以下の場所にレポートが作成されます。
 
-ここで出力されるレポートは、graph_signature2.html と、pmsignature 数がファイル名に反映されています。
+ここで出力されるレポートファイルの名称 ``graph_pmsignature2.html`` には pmsignature 数が反映されています。
 
-pmsignature 数は paplot 実行時に入力ファイル (data.json) から読み取り、自動的に判定します。
+pmsignature 数は paplot 実行時に入力データ (data.json) から paplot が読み取ります。
 
 ::
 
@@ -218,32 +218,35 @@ pmsignature 数は paplot 実行時に入力ファイル (data.json) から読�
 
 .. note::
 
-  この例では pmsignature の出力に background を設定しているため、実際に出力される pmsignature は 1 少ない数が表示されます。
+  この例では pmsignature の出力に background を設定しています。
+  そのため、1 つの pmsignature に background signature を割り当てていますので、実際に表示されている pmsignature は 1 つ少ないように見えますがこれで正しい表示です。
 
 ----
 
 .. _pm_mclass:
 
 ===================================
-3. 複数タイプの pmsignature
+3. 複数データファイルの pmsignature
 ===================================
 
 | このセクションで生成するレポートを見る
 
- - `pmsignature 2 <http://genomon-project.github.io/paplot/pmsignature_multi_class/graph_multi_class2.html>`_ 
- - `pmsignature 3 <http://genomon-project.github.io/paplot/pmsignature_multi_class/graph_multi_class3.html>`_ 
- - `pmsignature 4 <http://genomon-project.github.io/paplot/pmsignature_multi_class/graph_multi_class4.html>`_ 
- - `pmsignature 5 <http://genomon-project.github.io/paplot/pmsignature_multi_class/graph_multi_class5.html>`_ 
- - `pmsignature 6 <http://genomon-project.github.io/paplot/pmsignature_multi_class/graph_multi_class6.html>`_ 
+ - `pmsignature 2 <http://genomon-project.github.io/paplot/pmsignature_multi_class/graph_multi_class2.html>`__ 
+ - `pmsignature 3 <http://genomon-project.github.io/paplot/pmsignature_multi_class/graph_multi_class3.html>`__ 
+ - `pmsignature 4 <http://genomon-project.github.io/paplot/pmsignature_multi_class/graph_multi_class4.html>`__ 
+ - `pmsignature 5 <http://genomon-project.github.io/paplot/pmsignature_multi_class/graph_multi_class5.html>`__ 
+ - `pmsignature 6 <http://genomon-project.github.io/paplot/pmsignature_multi_class/graph_multi_class6.html>`__ 
 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_multi_class>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_multi_class.zip?raw=true>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_multi_class>`__ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_multi_class.zip?raw=true>`__ 
 
 入力データ形式は :ref:`こちら <json_ind>` 参照。
 
 :doc:`exec_pmsignature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。
 
-データファイルは pmsignature タイプの数だけ用意し、設定ファイルは形式が同じであれば一つだけ用意します。
+pmsignature 解析においては、クラスタリング数を 2 や 3 などに固定せず、2 ～ 6 など幅を持たせた数で試験的に解析を行い、結果をみて適切なクラスタ数を決定することが一般的です。
+
+したがって今回のセクションでは、pmsignature のデータファイルを複数使用します。
 
 今回の場合、以下のファイル構成になります。
 
@@ -261,7 +264,7 @@ pmsignature 数は paplot 実行時に入力ファイル (data.json) から読�
      # 設定ファイル
     ┗ paplot.cfg
 
-paplot を実行します。
+pmsignature のデータファイルごとに paplot を実行します。
 
 .. code-block:: bash
 
@@ -280,7 +283,7 @@ paplot を実行します。
   paplot pmsignature pmsignature_multi_class/data6.json ./tmp pmsignature_multi_class \
   --config_file ./pmsignature_multi_class/paplot.cfg
 
-上記のように一つずつ実行してもよいですが、下記のようにまとめて実行することもできます。
+下記のようにまとめて実行することもできます。
 
 .. code-block:: bash
 
@@ -289,9 +292,9 @@ paplot を実行します。
 
 上記のコマンドを実行すると以下の場所にレポートが作成されます。
 
-ここで出力されるレポートは、graph_signature2.html と、pmsignature 数がファイル名に反映されています。
+ここで出力されるレポートファイルの名称 ``graph_signature2.html`` には pmsignature 数が反映されています。
 
-pmsignature 数は paplot 実行時に入力ファイル (data?.json) のデータから読み取り、自動的に判定します。ファイル名称には依存しません。
+pmsignature 数は paplot 実行時に入力データ (data.json) から paplot が読み取ります。
 
 ::
 
@@ -305,7 +308,9 @@ pmsignature 数は paplot 実行時に入力ファイル (data?.json) のデー�
 
 .. note::
 
-  この例では pmsignature の出力に background を設定しているため、実際に出力される pmsignature は 1 少ない数が表示されます。
+  この例では pmsignature の出力に background を設定しています。
+  そのため、1 つの pmsignature に background signature を割り当てていますので、実際に表示されている pmsignature は 1 つ少ないように見えますがこれで正しい表示です。
+
 
 ----
 
@@ -317,14 +322,14 @@ pmsignature 数は paplot 実行時に入力ファイル (data?.json) のデー�
 
 | このセクションで生成するレポートを見る
 
- - `pmsignature 2 <http://genomon-project.github.io/paplot/pmsignature_stack/graph_stack2.html>`_ 
- - `pmsignature 3 <http://genomon-project.github.io/paplot/pmsignature_stack/graph_stack3.html>`_ 
- - `pmsignature 4 <http://genomon-project.github.io/paplot/pmsignature_stack/graph_stack4.html>`_ 
- - `pmsignature 5 <http://genomon-project.github.io/paplot/pmsignature_stack/graph_stack5.html>`_ 
- - `pmsignature 6 <http://genomon-project.github.io/paplot/pmsignature_stack/graph_stack6.html>`_ 
+ - `pmsignature 2 <http://genomon-project.github.io/paplot/pmsignature_stack/graph_stack2.html>`__ 
+ - `pmsignature 3 <http://genomon-project.github.io/paplot/pmsignature_stack/graph_stack3.html>`__ 
+ - `pmsignature 4 <http://genomon-project.github.io/paplot/pmsignature_stack/graph_stack4.html>`__ 
+ - `pmsignature 5 <http://genomon-project.github.io/paplot/pmsignature_stack/graph_stack5.html>`__ 
+ - `pmsignature 6 <http://genomon-project.github.io/paplot/pmsignature_stack/graph_stack6.html>`__ 
 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_stack>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_stack.zip?raw=true>`_ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_stack>`__ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_stack.zip?raw=true>`__ 
 
 レポートに変異の内訳グラフを追加します。 :doc:`exec_pmsignature` の手順でデータの準備を行う場合、あらかじめ出力するように設定しています。
 
@@ -339,6 +344,10 @@ paplot を実行します。
   paplot pmsignature "pmsignature_stack/data*.json" ./tmp pmsignature_stack \
   --config_file ./pmsignature_stack/paplot.cfg
 
+.. note::
+
+  この例では pmsignature の出力に background を設定しているため、実際に出力される pmsignature は 1 少ない数が表示されます。 (寄与度グラフの最後の pmsignature は background シグネチャです)
+
 ----
 
 .. _pm_nobackground:
@@ -347,9 +356,9 @@ paplot を実行します。
 5. Backgroundなし
 ==========================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/pmsignature_nobackground/graph_nobackground2.html>`_ 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_nobackground>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_nobackground.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/pmsignature_nobackground/graph_nobackground2.html>`__ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_nobackground>`__ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_nobackground.zip?raw=true>`__ 
 
 通常、pmsignature は background ありで作成しますが、background なしで作成することもできます。
 

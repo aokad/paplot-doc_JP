@@ -12,11 +12,11 @@ QC レポート
 1. 最小データセット
 ==========================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_minimal/graph_minimal.html>`_ 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_minimal/graph_minimal.html>`__ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal>`__ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_minimal.zip?raw=true>`__ 
 
-paplot で QC レポートを作成するために最低限必要な情報はサンプルID (Sample) と QC の値 (最低 1 項目) です。
+paplot で QC レポートを作成するために最低限必要な情報はサンプル名 (Sample) と QC の値 (最低 1 項目) です。
 今回の例では、QC の値に depth 平均値 (AverageDepth) を使用していますが、別の値でも問題ありません。
 
 .. code-block:: cfg
@@ -33,6 +33,7 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 
 .. code-block:: cfg
   :caption: example/qc_minimal/paplot.cfg
+  :name: example/qc_minimal/paplot.cfg_1
   
   [result_format_qc]
   col_opt_id = Sample
@@ -46,6 +47,7 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 
 .. code-block:: cfg
   :caption: example/qc_minimal/paplot.cfg
+  :name: example/qc_minimal/paplot.cfg_2
   
   [qc_chart_1]
   
@@ -88,9 +90,9 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 2. ヘッダなし
 ==========================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_noheader/graph_noheader.html>`_ 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_noheader>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_noheader.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_noheader/graph_noheader.html>`__ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_noheader>`__ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_noheader.zip?raw=true>`__ 
 
 .. code-block:: cfg
   :caption: データファイルから一部抜粋 (example/qc_noheader/data.csv)
@@ -111,7 +113,7 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   :caption: example/qc_noheader/paplot.cfg
   
   [result_format_qc]
-  # ヘッダオプションを False に設定する
+  # ヘッダオプションを False に設定
   header = False
 
   col_opt_id = 1
@@ -132,9 +134,9 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 3. 積み上げグラフ
 ==========================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_stack/graph_stack.html>`_ 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_stack/graph_stack.html>`__ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack>`__ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack.zip?raw=true>`__ 
 
 最小構成では 1 つの棒グラフを作成しました。今回はさらに積み上げグラフを追加します。
 
@@ -159,14 +161,15 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 
 .. code-block:: cfg
   :caption: example/qc_multi_plot/paplot.cfg
+  :name: example/qc_multi_plot/paplot.cfg_1
   
   [result_format_qc]
   col_opt_id = Sample
   
-  # chart_1 で使用するデータ
+  # chart_1 で使用するデータ列
   col_opt_keyA1 = AverageDepth
   
-  # chart_2 で使用するデータ
+  # chart_2 で使用するデータ列
   col_opt_keyB1 = ReadLengthR1
   col_opt_keyB2 = ReadLengthR2
 
@@ -174,12 +177,12 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 
 `キーワードとは <./data_common.html#keyword>`_ 
 
-次に、設定ファイルに ``[qc_chart_1]``、``[qc_chart_2]`` ... セクションを追加し、順番に設定します。
+次に、設定ファイルに ``[qc_chart_1]``、``[qc_chart_2]`` ... セクションを追加し、順番にその中の項目を記入します。
 
 | QC レポートは ``[qc_chart_1]`` → ``[qc_chart_2]`` → ``[qc_chart_3]`` の順番に表示し、必要な数だけ ``[qc_chart_*]`` セクションを増やすことができます。
 | ``*`` には 1 から始まる連番を入れてください。1 から順に表示します。
 
-完成した設定ファイルは `ここ <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack/paplot.cfg>`_ を参照してください。
+完成した設定ファイルは `ここ <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack/paplot.cfg>`__ を参照してください。
 
 3-1. 単純な棒グラフ
 ---------------------------
@@ -191,10 +194,11 @@ chart_1 は単純な棒グラフです。
 3-2. 積み上げグラフ
 -----------------------
 
-chart_2 は積み上げグラフです。
+chart_2 はリード長 (R1, R2) の積み上げグラフです。
 
 .. code-block:: cfg
   :caption: example/qc_multi_plot/paplot.cfg
+  :name: example/qc_multi_plot/paplot.cfg_2
   
   [qc_chart_2]
   
@@ -261,9 +265,9 @@ chart_2 は積み上げグラフです。
 4. 様々なグラフ
 =================================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_variation/graph_variation.html>`_ 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_variation>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_variation.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_variation/graph_variation.html>`__ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_variation>`__ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_variation.zip?raw=true>`__ 
 
 前章では 1 つの棒グラフと積み上げグラフを作成しました。今回は複数のグラフを作成します。
 
@@ -284,12 +288,13 @@ chart_2 は積み上げグラフです。
  - chart_3　[棒グラフ] MappedReads を TotalReads で割る
  - chart_4　[積み上げグラフ] 2xRatio, 10xRatio, 20xRatio, 30xRatio (下段の値を引く)
 
-完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc_variation/graph_variation.html>`_ を参照してください。
+完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc_variation/graph_variation.html>`__ を参照してください。
 
 まず、設定ファイルの ``[result_format_qc]`` セクションに入力データの列名を登録します。
 
 .. code-block:: cfg
   :caption: example/qc_variation/paplot.cfg
+  :name: example/qc_variation/paplot.cfg_1
   
   [result_format_qc]
   col_opt_id = Sample
@@ -315,12 +320,12 @@ chart_2 は積み上げグラフです。
 
 `キーワードとは <./data_common.html#keyword>`_ 
 
-次に、設定ファイルに ``[qc_chart_1]``、``[qc_chart_2]``、``[qc_chart_3]`` ... セクションを追加し、順番に設定します。
+次に、設定ファイルに ``[qc_chart_1]``、``[qc_chart_2]``、``[qc_chart_3]`` ... セクションを追加し、順番にその中の項目を記入します。
 
 | QC レポートは ``[qc_chart_1]`` → ``[qc_chart_2]`` → ``[qc_chart_3]`` の順番に表示し、必要な数だけ ``[qc_chart_*]`` セクションを増やすことができます。
 | ``*`` には 1 から始まる連番を入れてください。1 から順に表示します。
 
-完成した設定ファイルは `ここ <https://github.com/Genomon-Project/paplot/blob/master/example/qc_variation/paplot.cfg>`_ を参照してください。
+完成した設定ファイルは `ここ <https://github.com/Genomon-Project/paplot/blob/master/example/qc_variation/paplot.cfg>`__ を参照してください。
 
 4-1. 単純な棒グラフ
 ---------------------------
@@ -336,14 +341,15 @@ chart_2 (Read length) は積み上げグラフです。
 
 記載方法は前章と同じですので、ここでは割愛します。
 
-4-3. 列同士の数値演算 (棒グラフ)
+4-3. 棒グラフ (列同士の数値演算)
 --------------------------------------
 
-chart_3 (Mapped reads) は列同士で計算 (今回は割り算) させて出力します。
+chart_3 (Mapped reads) はマップ率の棒グラフです。今回はマップリード数をリード総数で割り算させて出力します。
 
 .. code-block:: cfg
   :caption: example/qc_variation/paplot.cfg
-
+  :name: example/qc_variation/paplot.cfg_2
+  
   [qc_chart_3]
   
   # 表示する文字列を設定します
@@ -374,15 +380,16 @@ chart_3 (Mapped reads) は列同士で計算 (今回は割り算) させて出�
 | ポップアップ記述方法詳細は  :ref:`ユーザ定義フォーマット <user_format>` を参照してください。
 |
 
-4-4. 列同士の数値演算 (積み上げグラフ)
+4-4. 積み上げグラフ (列同士の数値演算)
 -----------------------------------------------
 
-chart_4 (Depth coverage) は積み上げグラフです。
+chart_4 (Depth coverage) はカバレッジの積み上げグラフです。
 
 単純に積み上げず、数値演算を加えて前段の値を引き算します。
 
 .. code-block:: cfg
   :caption: example/qc_variation/paplot.cfg
+  :name: example/qc_variation/paplot.cfg_3
   
   [qc_chart_2]
   
@@ -423,17 +430,17 @@ chart_4 (Depth coverage) は積み上げグラフです。
 5. 範囲選択
 ==========================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_brush/graph_brush.html>`_ 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_brush>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_brush.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/qc_brush/graph_brush.html>`__ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/qc_brush>`__ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_brush.zip?raw=true>`__ 
 
 前章で作成した複数のグラフに対し、範囲選択用のグラフを追加します。
 
-完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc_brush/graph_brush.html>`_ を参照してください。
+完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc_brush/graph_brush.html>`__ を参照してください。
 
 データ列は AverageDepth を使用します。
 
-もし、新しいデータ列を使用する場合は設定ファイルの ``[result_format_qc]`` セクションに ``col_opt_{name}`` として登録してください。
+もし、別のデータ列を使用する場合は設定ファイルの ``[result_format_qc]`` セクションに ``col_opt_{name}`` として登録してください。
 
 範囲選択用のグラフは ``[qc_chart_brush]`` というセクション名で一つだけ追加することができます。
 

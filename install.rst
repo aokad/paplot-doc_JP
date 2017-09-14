@@ -50,9 +50,7 @@ Linux 系の場合 (cygwin 含)
   paplot-0.5.4
 
 
-| このような表示が出れば成功です。
-| 
-| インストールが終わったら、:doc:`quick_start` をお試しください。
+| このようにバージョンが表示されれば成功です。 :doc:`quick_start` をお試しください。
 
 .. note::
   
@@ -148,9 +146,7 @@ https://github.com/Genomon-Project/paplot/releases/
   paplot --version
   paplot-0.5.4
 
-| このような表示が出れば成功です。
-|
-| インストールが終わったら、:doc:`quick_start` をお試しください。
+| このようにバージョンが表示されれば成功です。 :doc:`quick_start` をお試しください。
 
 .. note::
   
@@ -234,9 +230,7 @@ https://github.com/Genomon-Project/paplot/releases/
   > C:\WinPython-64bit-2.7.10.3\python-2.7.10.amd64\python.exe paplot --version
   paplot-0.5.4
 
-| このような表示が出れば成功です。
-|
-| インストールが終わったら、:doc:`quick_start` をお試しください。
+| このようにバージョンが表示されれば成功です。 :doc:`quick_start` をお試しください。
 |
 
 .. |new| image:: image/tab_001.gif

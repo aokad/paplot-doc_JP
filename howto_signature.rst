@@ -20,7 +20,7 @@ Mutaitonal Signature レポートは検出した変異についての特徴的�
   | - Count ... 実際の変異数に占める割合を表示します。
 
 :Sort by:
-  | - Sample ID ... サンプルID順
+  | - Sample ID ... サンプル名順
   | - Mutation count ... 変異数の降順 (View mode が Count の場合のみ選択可能)
 
 [View mode] で [Count] を選択し、[Sort by] で [Mutation count] を選択した場合の表示例

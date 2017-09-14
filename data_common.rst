@@ -15,14 +15,14 @@
 データファイルがタブ区切りであった場合、次のように設定します。
 
 .. code-block:: cfg
-  
+
+  # For the case of Mutation Matrix Report
   [result_format_mutation]
   sept = \t
 
   # スペース区切りの場合
   sept = " "
 
-ここでは Mutation Matrix を例にとりましたが、QC や Chromosomal Aberration の場合も同様です。
 QC の場合は ``[result_format_qc]`` セクション、Chromosomal Aberration の場合は ``[result_format_ca]`` セクションを変更してください。
 
 ----
@@ -46,12 +46,13 @@ QC の場合は ``[result_format_qc]`` セクション、Chromosomal Aberration 
 開始文字が統一されていない場合は読み飛ばしできませんので、手動で削除してください。
 
 .. code-block:: cfg
-  
+
+  # For the case of Mutation Matrix Report
   [result_format_mutation]
   comment = #
 
-ここでは Mutation Matrix を例にとりましたが、QC や Chromosomal Aberration の場合も同様です。
 QC の場合は ``[result_format_qc]`` セクション、Chromosomal Aberration の場合は ``[result_format_ca]`` セクションを変更してください。
+
 
 ----
 
@@ -61,22 +62,25 @@ QC の場合は ``[result_format_qc]`` セクション、Chromosomal Aberration 
 3. データファイルが分かれている場合
 ======================================
 
-paplot ではサンプル名が必須ですが、以下の 2 通りで指定することができます。
+多くの場合、がんゲノム研究においては複数のシーケンスデータを使用します。paplot が生成するレポートも複数のサンプルの情報で構成されています。
+paplot で複数のサンプルを使用して入力データを準備するには、次の2つの方法があります。
+
 
  - case1: マージされたファイルを入力する
  
-   複数サンプルの結果が、1 ファイルにすべてまとめられていると想定しています。サンプル名となる列を ``col_opt_id`` で必ず指定してください。
+   この場合、サンプル名となる列があるはずです。 ``col_opt_id`` で指定してください。
 
- - case2: サンプルごとに分かれた複数のファイルを入力し、データ中にサンプル名となるものはない。
+ - case2: サンプルごとに分かれたファイルを入力する
  
    ファイル名の一部をサンプル名として使用します。 ``suffix`` を必ず指定してください。
 
+   
 これまでのサンプルでは、case1 について記述してきました。ここでは case2 の入力方法を解説します。
 
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_split_file>`_ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/mutation_split_file.zip?raw=true>`_ 
 
-今回の例ではサンプル毎にデータが分かれています。
+今回の例では以下のようにサンプル毎にデータが分かれています。
 
 ::
 
@@ -102,7 +106,7 @@ paplot ではサンプル名が必須ですが、以下の 2 通りで指定す�
   UTR3,CDH1
   exonic,GATA3
 
-設定ファイルで suffix を設定します。
+設定ファイルで ``suffix`` を設定します。
 
 .. code-block:: cfg
   :caption: example/mutation_split_file/paplot.cfg
@@ -110,10 +114,10 @@ paplot ではサンプル名が必須ですが、以下の 2 通りで指定す�
    [result_format_mutation]
    suffix = .data.csv
    
-   # id設定は削除する
+   # 今回は col_opt_id は使用しません
    col_opt_id = 
 
-suffix を指定すると、suffix 手前までのファイル名をサンプル名として使用します。
+``suffix`` を指定すると、``suffix`` 手前までのファイル名をサンプル名として使用します。
 
 .. image:: image/id_suffix.PNG
   :scale: 100%
@@ -122,6 +126,8 @@ suffix を指定すると、suffix 手前までのファイル名をサンプル
 
 .. code-block:: bash
 
+  # For the case of Mutation Matrix Reprot
+  
   # 複数ファイル指定する場合は , で区切る
   paplot mutation {unzip_path}/example/mutation_split_file/SAMPLE00.data.csv,{unzip_path}/example/mutation_split_file/SAMPLE01.data.csv ./tmp mutation_split_file \
   --config_file {unzip_path}/example/mutation_split_file/paplot.cfg
@@ -131,7 +137,6 @@ suffix を指定すると、suffix 手前までのファイル名をサンプル
   paplot mutation "{unzip_path}/example/mutation_split_file/*.csv" ./tmp mutation_split_file \
   --config_file {unzip_path}/example/mutation_split_file/paplot.cfg
 
-ここでは Mutation Matrix を例にとりましたが、QC や Chromosomal Aberration の場合も同様です。
 QC の場合は ``[result_format_qc]`` セクション、Chromosomal Aberration の場合は ``[result_format_ca]`` セクションを変更してください。
 
 .. _keyword:
@@ -165,15 +170,13 @@ paplot では設定ファイルに記入した各データ列をキーワード�
 
 ``col_{key} = {実際の列名}`` もしくは ``col_opt_{key} = {実際の列名}`` と記入した項目のうち、``{key}`` がキーワードになります。
 
-大文字と小文字の区別はありません。
-たとえば、CHR、Chr、chr はすべて同一とみなしますので、ご注意ください。
-
 キーワードは任意で増やすことができますが、以下の点にご注意ください。
 
+ - 大文字と小文字の区別はありません。たとえば、CHR、Chr、chr はすべて同一とみなしますので、ご注意ください。
  - 半角英数字 (1-9, a-z, A-Z) および "_" 以外は使用できません。
- - signature、pmsignature は追加できません
- - ``col_opt_id`` は予約済みですので、サンプルID以外の用途には使用できません。
- - Mutation Matrix と Chromosomal Aberration においては ``col_opt_group`` も予約済みですので、グループ化以外の用途には使用できません。
+ - ``col_opt_id`` は予約済みですので、サンプル名以外の用途には使用できません。
+ - Mutation Matrix レポートと Chromosomal Aberration レポートにおいては ``col_opt_group`` も予約済みですので、グループ化以外の用途には使用できません。
+ - Mutational Signature レポートと pmsignature レポートには追加できません。
 
 .. _user_format:
 

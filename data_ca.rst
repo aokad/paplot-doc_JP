@@ -12,15 +12,17 @@ Chromosomal Aberration レポート
 1. 最小データセット
 ==========================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca_minimal/graph_minimal.html>`_ 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca_minimal/graph_minimal.html>`__ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal>`__ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_minimal.zip?raw=true>`__ 
 
 paplot で Chromosomal Aberration レポートを作成するために最低限必要な項目は次の 5 つです。
 
- - サンプルID (Sample)
- - 切断点 1 の染色体 (Chr1) と位置 (Break1)
- - 切断点 2 の染色体 (Chr2) と位置 (Break2) 
+ - サンプル名 (Sample)
+ - 切断点 1 の染色体 (Chr1)
+ - 切断点 1 の位置 (Break1)
+ - 切断点 2 の染色体 (Chr2)
+ - 切断点 2 の位置 (Break2) 
 
 .. code-block:: cfg
   :caption: データファイルから一部抜粋 (example/ca_minimal/data.csv)
@@ -64,9 +66,9 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 2. ヘッダなし
 ==========================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca_noheader/graph_noheader.html>`_ 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca_noheader/graph_noheader.html>`__ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader>`__ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_noheader.zip?raw=true>`__ 
 
 .. code-block:: cfg
   :caption: データファイルから一部抜粋 (example/ca_noheader/data.csv)
@@ -94,7 +96,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   :caption: example/ca_noheader/paplot.cfg
   
   [result_format_ca]
-  # ヘッダオプションを False に設定する
+  # ヘッダオプションを False に設定
   header = False
 
   col_chr1 = 2
@@ -118,9 +120,9 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 3. 変異のグルーピング
 ==========================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca_group/graph_group.html>`_ 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca_group/graph_group.html>`__ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group>`__ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_group.zip?raw=true>`__ 
 
 最小構成で作成した変異には自動的にグルーピングされており、染色体内の変異 (緑) と染色体間の変異 (紫) に色分けされています。
 
@@ -151,6 +153,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 
 .. code-block:: cfg
   :caption: example/ca_group/paplot.cfg
+  :name: example/ca_group/paplot.cfg_1
   
   [result_format_ca]
   col_opt_group = Label
@@ -159,7 +162,8 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 
 .. code-block:: cfg
   :caption: example/ca_group/paplot.cfg
-
+  :name: example/ca_group/paplot.cfg_2
+  
   [ca]
   # グループの色指定
   # {値}:{色名もしくは RGB 値} をグループの数だけ , 区切りで記入する
@@ -187,9 +191,9 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 4. ポップアップの情報追加
 ===================================
 
-| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca_option/graph_option.html>`_ 
-| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option>`_ 
-| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option.zip?raw=true>`_ 
+| `このセクションで生成するレポートを見る <http://genomon-project.github.io/paplot/ca_option/graph_option.html>`__ 
+| `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option>`__ 
+| `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/ca_option.zip?raw=true>`__ 
 
 マウスカーソルを乗せた時に表示する情報 (ポップアップ) をカスタマイズすることができます。
 
@@ -239,6 +243,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 
 .. code-block:: cfg
   :caption: example/ca_option/paplot.cfg
+  :name: example/ca_option/paplot.cfg_1
   
   [result_format_ca]
   col_opt_dir1 = Dir1
@@ -257,6 +262,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 
 .. code-block:: cfg
   :caption: example/ca_option/paplot.cfg
+  :name: example/ca_option/paplot.cfg_2
   
   [ca]
   # 最小構成での設定
