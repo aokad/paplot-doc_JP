@@ -12,7 +12,7 @@ Contents:
 
 .. toctree:: 
    :maxdepth: 2
-   :caption: start up guide
+   :caption: start-up guide
    :name: quick_start_toc
    
    about.rst
@@ -32,7 +32,7 @@ Contents:
 
 .. toctree:: 
    :maxdepth: 2
-   :caption: dataformat
+   :caption: data format
    :name: dataformat_toc
    
    data_qc.rst

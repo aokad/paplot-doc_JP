@@ -16,14 +16,14 @@
 
 .. code-block:: cfg
 
-  # For the case of Mutation Matrix Report
+  # Mutation Matrix レポートの場合
   [result_format_mutation]
   sept = \t
 
   # スペース区切りの場合
   sept = " "
 
-QC の場合は ``[result_format_qc]`` セクション、Chromosomal Aberration の場合は ``[result_format_ca]`` セクションを変更してください。
+QC レポートの場合は ``[result_format_qc]`` セクション、Chromosomal Aberration レポートの場合は ``[result_format_ca]`` セクションを変更してください。
 
 ----
 
@@ -47,11 +47,11 @@ QC の場合は ``[result_format_qc]`` セクション、Chromosomal Aberration 
 
 .. code-block:: cfg
 
-  # For the case of Mutation Matrix Report
+  # Mutation Matrix レポートの場合
   [result_format_mutation]
   comment = #
 
-QC の場合は ``[result_format_qc]`` セクション、Chromosomal Aberration の場合は ``[result_format_ca]`` セクションを変更してください。
+QC レポートの場合は ``[result_format_qc]`` セクション、Chromosomal Aberration レポートの場合は ``[result_format_ca]`` セクションを変更してください。
 
 
 ----
@@ -68,7 +68,7 @@ paplot で複数のサンプルを使用して入力データを準備するに�
 
  - case1: マージされたファイルを入力する
  
-   この場合、サンプル名となる列があるはずです。 ``col_opt_id`` で指定してください。
+   この場合、サンプル名が記述されたデータ列があるはずです。 ``col_opt_id`` で指定してください。
 
  - case2: サンプルごとに分かれたファイルを入力する
  
@@ -126,7 +126,7 @@ paplot で複数のサンプルを使用して入力データを準備するに�
 
 .. code-block:: bash
 
-  # For the case of Mutation Matrix Reprot
+  # Mutation Matrix レポートの場合
   
   # 複数ファイル指定する場合は , で区切る
   paplot mutation {unzip_path}/example/mutation_split_file/SAMPLE00.data.csv,{unzip_path}/example/mutation_split_file/SAMPLE01.data.csv ./tmp mutation_split_file \
@@ -137,7 +137,7 @@ paplot で複数のサンプルを使用して入力データを準備するに�
   paplot mutation "{unzip_path}/example/mutation_split_file/*.csv" ./tmp mutation_split_file \
   --config_file {unzip_path}/example/mutation_split_file/paplot.cfg
 
-QC の場合は ``[result_format_qc]`` セクション、Chromosomal Aberration の場合は ``[result_format_ca]`` セクションを変更してください。
+QC レポートの場合は ``[result_format_qc]`` セクション、Chromosomal Aberration レポートの場合は ``[result_format_ca]`` セクションを変更してください。
 
 .. _keyword:
 
@@ -221,5 +221,25 @@ paplot では設定ファイルに記入した各データ列をキーワード�
   
   表示例：
   3.33%
+
+5-2. 桁区切り
+----------------------------
+
+数値に桁区切りを付けて表示したい場合、キーワードの後に ``:,`` と書きます。
+
+::
+  
+  {key1}%
+  
+  表示例：
+  123456789
+
+::
+
+  {key1:,}%
+  
+  表示例：
+  123,456,789
+
 
 .. |new| image:: image/tab_001.gif

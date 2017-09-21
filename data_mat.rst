@@ -185,7 +185,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   # 変更前 (最小構成の設定)
   # tooltip_format_checker_partial = Mutation Type[{group}]
   # 次のように変更
-  tooltip_format_checker_partial = Mutation Type[{group}], {chr}:{start}:{end}, [{ref} -> {alt}]
+  tooltip_format_checker_partial = Mutation Type[{group}], {chr}:{start:,}:{end:,}, [{ref} -> {alt}]
 
 編集した設定ファイルを使用して paplot を実行します。
 

@@ -152,8 +152,8 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 
 ここでは以下の構成でグラフを作成します。
 
- - chart_1　[棒グラフ] AverageDepth (最小構成と同じ)
- - chart_2　[積み上げグラフ] ReadLengthR1, ReadLengthR2
+ - chart_1: [棒グラフ] AverageDepth (最小構成と同じ)
+ - chart_2: [積み上げグラフ] ReadLengthR1, ReadLengthR2
 
 完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc_stack/graph_stack.html>`_ を参照してください。
 
@@ -217,8 +217,8 @@ chart_2 はリード長 (R1, R2) の積み上げグラフです。
   
   # ポップアップの表示内容
   tooltip_format1 = Sample:{id}
-  tooltip_format2 = Read1: {keyB1: ,}
-  tooltip_format3 = Read2: {keyB2: ,}
+  tooltip_format2 = Read1: {keyB1:,}
+  tooltip_format3 = Read2: {keyB2:,}
 
 .. note::
 
@@ -283,10 +283,10 @@ chart_2 はリード長 (R1, R2) の積み上げグラフです。
 
 ここでは以下の構成でグラフを作成します。
 
- - chart_1　[棒グラフ] AverageDepth (最小構成と同じ)
- - chart_2　[積み上げグラフ] ReadLengthR1, ReadLengthR2 (前章と同じ)
- - chart_3　[棒グラフ] MappedReads を TotalReads で割る
- - chart_4　[積み上げグラフ] 2xRatio, 10xRatio, 20xRatio, 30xRatio (下段の値を引く)
+ - chart_1: [棒グラフ] AverageDepth (最小構成と同じ)
+ - chart_2: [積み上げグラフ] ReadLengthR1, ReadLengthR2 (前章と同じ)
+ - chart_3: [棒グラフ] MappedReads を TotalReads で割る
+ - chart_4: [積み上げグラフ] 2xRatio, 10xRatio, 20xRatio, 30xRatio (下段の値を引く)
 
 完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc_variation/graph_variation.html>`__ を参照してください。
 

@@ -203,7 +203,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
 
 ここにもう少し情報を追加して変異の詳細を確認できるように変更します。
 
-変更後
+**変更後**
 
 .. image:: image/data_ca2.png
 
@@ -277,6 +277,6 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   paplot ca {unzip_path}/example/ca_option/data.csv ./tmp ca_option \
   --config_file {unzip_path}/example/ca_option/paplot.cfg
 
-ポップアップ ( ``tooltip_format`` ) 記述方法詳細は  :ref:`ユーザ定義フォーマット <user_format>` を参照してください。
+ポップアップ (``tooltip_format``) 記述方法詳細は  :ref:`ユーザ定義フォーマット <user_format>` を参照してください。
 
 .. |new| image:: image/tab_001.gif
