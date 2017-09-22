@@ -9,59 +9,59 @@
 v0.5.4
 ====================
 
-| サンプルデータ追加
-| 設定ファイルの項目見直し
+ * サンプルデータ追加
+ * 設定ファイルの項目見直し
 
 v0.5.3
 ====================
 
-| フォントサイズに関するオプションを変更可能にする
+フォントサイズに関するオプションを変更可能にする
 
 v0.5.2
 ====================
 
-| サブコマンド追加
-| ● signature
-| ● pmsignature
-
-| サブコマンド変更
-| ● sv -> ca
-|    オプションは変更ありません。
+ * サブコマンド新規追加 signature, pmsignature
+ * サブコマンド名称変更 sv -> ca
 
 v0.4.0
 ====================
 
-| 画像保存機能追加
+画像保存機能追加
 
 
 v0.3.1
 ====================
 
-| Mutation Matrix レポートについて、不具合修正
+Mutation Matrix レポートについて、不具合修正
 
 v0.3.0
 ====================
 
-| サブコマンド追加
-| ● mutation
+サブコマンド新規追加 mutation
 
 v0.2.8
 ====================
 
-| 結果ファイルマージ機能について仕様変更
+結果ファイルマージ機能について仕様変更
 
 v0.2.7
 ====================
 
-| 新規作成
-| ● qc
-| ● sv
+新規作成 qc, sv
 
 
 ライセンス
 --------------------
 
-paplot は https://github.com/Genomon-Project/paplot/blob/devel/LICENSE のもとで配布されています。
+paplot is licensed under the MIT License
+
+| Copyright (c) 2017 Ai Okada and Yuichi Shiraishi
+
+| Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+| 
+| The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+| 
+| THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 コンタクト

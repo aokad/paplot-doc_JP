@@ -2,6 +2,8 @@
 クイックスタート
 *****************
 
+このセクションでは以下の内容について解説します。
+
 #. paplot をインストール
 #. サンプルデータでコマンドを実行
 #. 結果ファイルを表示
@@ -17,10 +19,10 @@
 .. code-block:: bash
 
   cd {インストールしたいディレクトリ}
-  # v0.5.3の場合
-  wget https://github.com/Genomon-Project/paplot/archive/v0.5.3.zip
-  unzip v0.5.3.zip
-  cd paplot-0.5.3/
+  # v0.5.4 の場合
+  wget https://github.com/Genomon-Project/paplot/archive/v0.5.4.zip
+  unzip v0.5.4.zip
+  cd paplot-0.5.4/
 
   python setup.py build install
 
@@ -32,18 +34,13 @@
 
 .. code-block:: bash
 
-  paplot conf
+  paplot --version
 
-| このように表示されればインストール成功です。
+| このように表示されればインストール成功です。(インストールしたバージョンが表示されます)
 
 .. code-block:: bash
 
-  **********************
-     hello paplot !!!
-  **********************
-  
-  config file:/usr/lib/python2.7/site-packages/{paplot-versoion}-py2.7.egg/config/paplot.cfg
-  (このあとにデフォルト設定の内容が表示されます)
+  paplot-0.5.4
 
 
 2. サンプルデータでコマンドを実行
@@ -137,7 +134,7 @@ HTML ファイルができていますか？
 
 
 | index.html ファイルをウェブブラウザで開いてください。
-|
+
 .. note::
 
    HGC スパコン等、サーバ上で実行した場合はファイルをローカルに転送するか、NoMachime 等サーバ上の仮想ウィンドウで表示してください。
@@ -171,18 +168,13 @@ HTML ファイルができていますか？
   :scale: 100%
 
 | それぞれのレポートの使い方は `HOW TO USE GRAPHS <./index.html#how-to-toc>`_ を参照してください。
-
-
-4. 設定ファイルを編集して自分のデータを使用する
-------------------------------------------------------
-
 | データと設定ファイルの記述方法は以下を参照してください。
 | 
 | [入門編]
 
- - :doc:`data_mat` 
  - :doc:`data_qc` 
  - :doc:`data_ca` 
+ - :doc:`data_mat` 
  - :doc:`data_signature` 
  - :doc:`data_pmsignature` 
 

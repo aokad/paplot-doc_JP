@@ -15,7 +15,7 @@
 .. code-block:: cfg
 
   ###################### Mutation Matrix
-  [mut]
+  [mutation]
   # 遺伝子のサンプルに対する検出比 (%)
   # 値より小さい遺伝子はプロット対象から除外する
   # 0 の場合はすべて出力する
@@ -88,7 +88,7 @@
   col_group = MutationType
   # 遺伝子の列名
   col_gene = Gene
-  # サンプル ID の列名
+  # サンプル名の列名
   col_opt_id = Sample
   
   # 出力フォーマット
@@ -117,11 +117,11 @@
 データ列とは別に以下も特殊キーワードとして使用することができます。
 
  Mutation Matrixの集計について
- limited_funcs や nouse_funcs 等のオプションを使用して変異を限定した場合、使用しなかった変異はカウントしません。
+ ``limited_group`` や ``nouse_group`` 等のオプションを使用して変異を限定した場合、使用しなかった変異はカウントしません。
 
 :{#number_id}:      サンプル数
 :{#number_gene}:    遺伝子数
-:{#number_mutaion}: 変異の数(同一サンプルが同一遺伝子で複数回検出されても1としてカウントする)
+:{#number_mutaion}: 変異の数 (同一サンプルが同一遺伝子で複数回検出されても1としてカウントする)
 :{#sum_mutaion}:    検出した変異の総数
 :{#item_value}:     積み上げグラフの1項目の値
 :{#sum_item_value}: 積み上げグラフの合計値
@@ -145,7 +145,7 @@
 example では別ファイルとして以下のデータファイルを用意しています。
 
 .. code-block:: cfg
-  :caption: データファイルから一部抜粋 (example/mutation_subplot/data_subplot.csv)
+  :caption: example/mutation_subplot/data_subplot.csv
   
   Sample,Gender,Age,BMI
   SAMPLE00,F,30,40
@@ -158,14 +158,14 @@ example では別ファイルとして以下のデータファイルを用意し
   SAMPLE07,M,54,22
   SAMPLE08,F,55,35
 
-今回の例では、Sample、Gender、Age、BMIを用意していますが、そのうち、必須項目は Sample (サンプルID) です。
-変異のファイルとサブデータのファイルがサンプルID で紐づけられることが重要です。
+今回の例では、Sample、Gender、Age、BMIを用意していますが、そのうち、必須項目は Sample (サンプル名) です。
+変異のファイルとサブデータのファイルがサンプル名で紐づけられることが重要です。
 
 設定ファイルにサブプロットの設定を追加します。
 
 **重要** : path にサブプロットデータファイルのパスを記入してください。
 
-[mutation_subplot_type1_1] セクションを追加し、次のように設定します。
+``[mutation_subplot_type1_1]`` セクションを追加し、次のように設定します。
 
 .. code-block:: cfg
   :caption: example/mutation_subplot/paplot.cfg
@@ -191,7 +191,7 @@ example では別ファイルとして以下のデータファイルを用意し
   # -----------------------
   # 使用する列名を定義
   # -----------------------
-  # サンプル ID の列名 (ヘッダがない場合は列番号)
+  # サンプル名の列名 (ヘッダがない場合は列番号)
   col_id = Sample
   # データの列名
   col_value = Gender
@@ -209,9 +209,9 @@ example では別ファイルとして以下のデータファイルを用意し
 
 サブプロットの表示位置は 2 つあり、type1 はサンプルグラフの下に、type2 は最後に表示します。
 
-type1 を表示する場合はセクション名を [mut_subplot_type1_*] とします。
+type1 を表示する場合はセクション名を ``[mut_subplot_type1_*]`` とします。
 
-type2 を表示する場合はセクション名を [mut_subplot_type2_*] とします。
+type2 を表示する場合はセクション名を ``[mut_subplot_type2_*]`` とします。
 
 ``*`` には 1 から始まる連番を入れてください。1 から順に上から下へ表示します。
 
@@ -257,7 +257,7 @@ mode = gradient の場合
   name_set = 0:min (0), 40:max (40)
   
 
-編集した設定ファイルを使用して ``paplot`` を実行します。
+編集した設定ファイルを使用して paplot を実行します。
 
 .. code-block:: bash
 
@@ -425,7 +425,7 @@ mode = gradient の場合
   # グループ化するデータの列名
   col_opt_group = 
   
-  # サンプル ID の列名
+  # サンプル名の列名
   col_opt_id =
   
   # 出力フォーマット

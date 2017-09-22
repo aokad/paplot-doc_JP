@@ -21,14 +21,14 @@
 作成できるレポートの種類
 ----------------------------
 
-1. QC (Quality Control) レポート
+1. Quality Control (QC) レポート
 
 アライメント率やカバレッジ率など、シーケンスデータの品質を表示します。
 
 .. image:: image/qc_dummy.PNG
   :scale: 100%
 
-2. CA (Chromosomal Aberration) レポート
+2. Chromosomal Aberration (CA) レポート
 
 構造異常や融合遺伝子など、染色体間の変異を円形のプロットで可視化し、棒グラフでその分布を表示します。
 

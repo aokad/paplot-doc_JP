@@ -12,7 +12,7 @@ Contents:
 
 .. toctree:: 
    :maxdepth: 2
-   :caption: start up guide
+   :caption: start-up guide
    :name: quick_start_toc
    
    about.rst
@@ -25,19 +25,19 @@ Contents:
    :caption: how to use graphs
    :name: how_to_toc
    
-   howto_mat.rst
    howto_qc.rst
-   howto_ca.rst   
+   howto_ca.rst
+   howto_mat.rst
    howto_signature.rst
 
 .. toctree:: 
    :maxdepth: 2
-   :caption: dataformat
+   :caption: data format
    :name: dataformat_toc
    
-   data_mat.rst
    data_qc.rst
    data_ca.rst
+   data_mat.rst
    data_signature.rst
    data_pmsignature.rst
    data_common.rst
@@ -61,7 +61,7 @@ Contents:
 
 .. toctree:: 
    :maxdepth: 1
-   :caption: infomation
+   :caption: information
    :name: info_toc
    
    info.rst
