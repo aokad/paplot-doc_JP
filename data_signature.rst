@@ -8,7 +8,7 @@ Mutational Signature レポート
 
 :doc:`exec_signature` に従いデータを準備する場合、設定ファイルの変更は必要ありません。
 
-.. _json:
+.. _json_full:
 
 ==========================
 1. jsonフォーマット
@@ -18,10 +18,10 @@ paplotで Mutational Signature レポートを作成するためには Mutation 
 
 ここでは、paplotが使用する変異シグネチャのデータフォーマットについて解説します。
 
-`example/signature_stack/data2.json` ファイルをテキストエディタで開くと次のようになっています。
+exampleのデータファイルをテキストエディタで開くと次のようになっています。(長いため一部省略しています)
 
 .. code-block:: python
-  :caption: 長いため一部省略 (example/signature_stack/data2.json)
+  :caption: example/signature_stack/data2.json
 
   {
     "signature":[
@@ -110,7 +110,7 @@ paplotで Mutational Signature レポートを作成するためには Mutation 
   キーは変更可能です。キーを変更した場合は設定ファイル (``[result_format_signature]`` セクションの ``key_*`` オプション) を変更してください。
 
   .. code-block:: cfg
-    :caption:  paplot/example/signature_stack/paplot.cfg
+    :caption:  example/signature_stack/paplot.cfg
     
     [result_format_signature]
     # json ファイルのキー
@@ -145,7 +145,7 @@ paplotで Mutational Signature レポートを作成するためには Mutation 
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal>`__ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/signature_minimal.zip?raw=true>`__ 
 
-入力データ形式は :ref:`こちら <json>` 参照。
+入力データ形式は :ref:`1. jsonフォーマット <json_full>` 参照。
 
 :doc:`exec_signature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。
 
@@ -226,9 +226,9 @@ paplot を実行します。
 
 .. _sig_mclass:
 
-===================================
-3. 複数タイプの変異シグネチャ
-===================================
+==========================================
+3. 複数データファイルの変異シグネチャ
+==========================================
 
 | このセクションで生成するレポートを見る
 
@@ -241,7 +241,7 @@ paplot を実行します。
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/signature_multi_class>`__ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/signature_multi_class.zip?raw=true>`__ 
 
-入力データ形式は :ref:`こちら <json>` 参照。
+入力データ形式は :ref:`1. jsonフォーマット <json_full>` 参照。
 
 :doc:`exec_signature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。
 
@@ -328,9 +328,9 @@ paplot を実行します。
 
 レポートに変異の内訳グラフを追加します。 :doc:`exec_signature` によりデータの準備を行う場合、あらかじめ出力するように設定しています。
 
-データフォーマットは :ref:`こちら <json>` 参照。
+入力データ形式は :ref:`1. jsonフォーマット <json_full>` 参照。
 
-複数データ実行方法は :ref:`こちら <sig_mclass>` 参照。
+複数データ実行方法は :ref:`3. 複数タイプの変異シグネチャ <sig_mclass>` 参照。
 
 paplot を実行します。
 

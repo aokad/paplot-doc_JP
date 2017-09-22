@@ -155,8 +155,6 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
  - chart_1: [棒グラフ] AverageDepth (最小構成と同じ)
  - chart_2: [積み上げグラフ] ReadLengthR1, ReadLengthR2
 
-完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc_stack/graph_stack.html>`_ を参照してください。
-
 まず、設定ファイルの ``[result_format_qc]`` セクションに入力データの列名を登録します。
 
 .. code-block:: cfg
@@ -182,7 +180,7 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
 | QC レポートは ``[qc_chart_1]`` → ``[qc_chart_2]`` → ``[qc_chart_3]`` の順番に表示し、必要な数だけ ``[qc_chart_*]`` セクションを増やすことができます。
 | ``*`` には 1 から始まる連番を入れてください。1 から順に表示します。
 
-完成した設定ファイルは `ここ <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack/paplot.cfg>`__ を参照してください。
+完成した設定ファイルは `example/qc_stack/paplot.cfg <https://github.com/Genomon-Project/paplot/blob/master/example/qc_stack/paplot.cfg>`__ を参照してください。
 
 3-1. 単純な棒グラフ
 ---------------------------
@@ -288,8 +286,6 @@ chart_2 はリード長 (R1, R2) の積み上げグラフです。
  - chart_3: [棒グラフ] MappedReads を TotalReads で割る
  - chart_4: [積み上げグラフ] 2xRatio, 10xRatio, 20xRatio, 30xRatio (下段の値を引く)
 
-完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc_variation/graph_variation.html>`__ を参照してください。
-
 まず、設定ファイルの ``[result_format_qc]`` セクションに入力データの列名を登録します。
 
 .. code-block:: cfg
@@ -325,7 +321,7 @@ chart_2 はリード長 (R1, R2) の積み上げグラフです。
 | QC レポートは ``[qc_chart_1]`` → ``[qc_chart_2]`` → ``[qc_chart_3]`` の順番に表示し、必要な数だけ ``[qc_chart_*]`` セクションを増やすことができます。
 | ``*`` には 1 から始まる連番を入れてください。1 から順に表示します。
 
-完成した設定ファイルは `ここ <https://github.com/Genomon-Project/paplot/blob/master/example/qc_variation/paplot.cfg>`__ を参照してください。
+完成した設定ファイルは `example/qc_variation/paplot.cfg <https://github.com/Genomon-Project/paplot/blob/master/example/qc_variation/paplot.cfg>`__ を参照してください。
 
 4-1. 単純な棒グラフ
 ---------------------------
@@ -366,10 +362,8 @@ chart_3 (Mapped reads) はマップ率の棒グラフです。今回はマップ
   tooltip_format1 = Sample:{id}
   tooltip_format2 = {mapped_reads/total_reads:.2}
 
-グラフの要素について
-
-| 上記では、 ``stack1 = {mapped_reads/total_reads}`` と記入しています。
-| ここで ``{mapped_reads-total_reads}`` と書くと引き算に、 ``{mapped_reads+total_reads}`` と書くと足し算させることができます。
+| 上記では、 ``stack1 = {mapped_reads/total_reads}`` と記入することで、マップリード数をリード総数で割り算しています。
+| ここで ``{mapped_reads-total_reads}`` と書くと引き算に、 ``{mapped_reads+total_reads}`` と書くと足し算にすることができます。
 | 
 | なお、ポップアップでも同様に数値演算させています。
 | ``tooltip_format2 = {mapped_reads/total_reads:.2}``
@@ -435,8 +429,6 @@ chart_4 (Depth coverage) はカバレッジの積み上げグラフです。
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/qc_brush.zip?raw=true>`__ 
 
 前章で作成した複数のグラフに対し、範囲選択用のグラフを追加します。
-
-完成したグラフは `ここ <http://genomon-project.github.io/paplot/qc_brush/graph_brush.html>`__ を参照してください。
 
 データ列は AverageDepth を使用します。
 

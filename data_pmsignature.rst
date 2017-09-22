@@ -18,10 +18,10 @@ paplot で pmsignature レポートを作成するためには Mutation Matrix �
 
 ここでは、paplot が使用する pmsignature データのフォーマットについて解説します。
 
-exampleのデータファイルをテキストエディタで開くと次のようになっています。
+exampleのデータファイルをテキストエディタで開くと次のようになっています。(長いため一部省略しています)
 
 .. code-block:: python
-  :caption: 長いため一部省略 (example/pmsignature_stack/data2.json)
+  :caption: example/pmsignature_stack/data2.json
 
   {
     "ref":[
@@ -111,7 +111,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
   キーは変更可能です。キーを変更した場合は設定ファイル (``[result_format_pmsignature]`` セクションの ``key_*`` オプション) を変更してください。
 
   .. code-block:: cfg
-    :caption:  paplot/example/pmsignature_stack/paplot.cfg
+    :caption:  example/pmsignature_stack/paplot.cfg
     
     [result_format_pmsignature]
     format = json
@@ -149,7 +149,7 @@ exampleのデータファイルをテキストエディタで開くと次のよ�
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_minimal>`__ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_minimal.zip?raw=true>`__ 
 
-入力データ形式は :ref:`こちら <json_ind>` 参照。
+入力データ形式は :ref:`1. jsonフォーマット <json_ind>` 参照。
 
 :doc:`exec_pmsignature` に従いデータの準備を行う場合、設定ファイルの変更は必要ありません。
 
@@ -240,7 +240,7 @@ pmsignature 数は paplot 実行時に入力データ (data.json) から paplot 
 | `このセクションで使用するデータセットを見る <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_multi_class>`__ 
 | `このセクションで使用するデータセットをダウンロードする <https://github.com/Genomon-Project/paplot/blob/master/example/pmsignature_multi_class.zip?raw=true>`__ 
 
-入力データ形式は :ref:`こちら <json_ind>` 参照。
+入力データ形式は :ref:`1. jsonフォーマット <json_ind>` 参照。
 
 :doc:`exec_pmsignature` の手順でデータの準備を行う場合、設定ファイルの変更は必要ありません。
 
@@ -333,9 +333,9 @@ pmsignature 数は paplot 実行時に入力データ (data.json) から paplot 
 
 レポートに変異の内訳グラフを追加します。 :doc:`exec_pmsignature` の手順でデータの準備を行う場合、あらかじめ出力するように設定しています。
 
-データフォーマットは :ref:`こちら <json_ind>` 参照。
+入力データ形式は :ref:`1. jsonフォーマット <json_ind>` 参照。
 
-複数データ実行方法は :ref:`こちら <pm_mclass>` 参照。
+複数データ実行方法は :ref:`3. 複数データファイルの pmsignature <pm_mclass>` 参照。
 
 paplot を実行します。
 

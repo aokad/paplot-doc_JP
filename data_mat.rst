@@ -135,24 +135,20 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
 .. code-block:: cfg
   :caption: データファイルから一部抜粋 (example/mutation_option/data.csv)
   
-  Sample,Chr,Start,End,Ref,Alt,MutationType,Gene
-  SAMPLE00,chr10,8114472,8114474,A,C,intronic,GATA3
-  SAMPLE00,chr13,28644892,28644901,G,-,intronic,FLT3
-  SAMPLE00,chr13,28664636,28664638,-,G,intronic,FLT3
-  SAMPLE00,chr16,68795521,68795530,-,T,UTR3,CDH1
-  SAMPLE00,chr10,8117068,8117069,G,T,exonic,GATA3
-  SAMPLE00,chr3,178906688,178906688,G,A,intronic,PIK3CA
-  SAMPLE00,chr13,28603715,28603715,G,-,intergenic,FLT3
-  SAMPLE00,chr14,103368263,103368270,G,C,intronic,TRAF3
-  SAMPLE00,chr1,26505548,26505557,T,C,exonic,CNKSR1
-  SAMPLE00,chr7,140619975,140619979,-,G,intronic,BRAF
-  SAMPLE00,chr14,103320225,103320225,-,T,downstream,TRAF3
+  Sample,Chr,Start,Ref,Alt,MutationType,Gene
+  SAMPLE00,chr10,8114472,A,C,intronic,GATA3
+  SAMPLE00,chr13,28644892,G,-,intronic,FLT3
+  SAMPLE00,chr13,28664636,-,G,intronic,FLT3
+  SAMPLE00,chr16,68795521,-,T,UTR3,CDH1
+  SAMPLE00,chr10,8117068,G,T,exonic,GATA3
+  SAMPLE00,chr3,178906688,G,A,intronic,PIK3CA
+  SAMPLE00,chr13,28603715,G,-,intergenic,FLT3
+  SAMPLE00,chr14,103368263,G,C,intronic,TRAF3
 
-今回の例では、必須項目であるサンプル名 (Sample)、遺伝子名 (Gene)、変異タイプ (MutationType) に加えて、以下の 5 項目を追加しています。
+今回の例では、必須項目であるサンプル名 (Sample)、遺伝子名 (Gene)、変異タイプ (MutationType) に加えて、以下の 4 項目を追加しています。
 
  - 染色体 (Chr)
  - 変異開始位置 (Start)
- - 変異終了位置 (End)
  - リファレンスの塩基 (Ref)
  - 変異の塩基 (Alt) 
 
@@ -167,7 +163,6 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   [result_format_mutation]
   col_opt_chr = Chr
   col_opt_start = Start
-  col_opt_end = End
   col_opt_ref = Ref
   col_opt_alt = Alt
 
@@ -185,7 +180,7 @@ paplot で Mutation Matrix を作成するために最低限必要な項目は�
   # 変更前 (最小構成の設定)
   # tooltip_format_checker_partial = Mutation Type[{group}]
   # 次のように変更
-  tooltip_format_checker_partial = Mutation Type[{group}], {chr}:{start:,}:{end:,}, [{ref} -> {alt}]
+  tooltip_format_checker_partial = Mutation Type[{group}] {chr}:{start:,} [{ref} -> {alt}]
 
 編集した設定ファイルを使用して paplot を実行します。
 

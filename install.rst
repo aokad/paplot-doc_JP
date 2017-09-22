@@ -9,7 +9,7 @@
  * Windows
 
 | paplot を実行するには python 2.7 もしくは python 3.5 が必要です。
-| ( python 2.6 は未検証)
+| (python 2.6 は未検証)
 
  * :ref:`Linux 系の場合 (HGC スパコン、cygwin 含) <linux>`
  * :ref:`MacOS X の場合 <macosx>`

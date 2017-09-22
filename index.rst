@@ -61,7 +61,7 @@ Contents:
 
 .. toctree:: 
    :maxdepth: 1
-   :caption: infomation
+   :caption: information
    :name: info_toc
    
    info.rst
