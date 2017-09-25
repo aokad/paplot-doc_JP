@@ -278,7 +278,7 @@ pmsignature のデータファイルごとに paplot を実行します。
   paplot pmsignature pmsignature_multi_class/data4.json ./tmp pmsignature_multi_class \
   --config_file ./pmsignature_multi_class/paplot.cfg
 
-  paplot pmsignature pmsignature_multi_class/data5.json ./tmp signature_multi_class \
+  paplot pmsignature pmsignature_multi_class/data5.json ./tmp pmsignature_multi_class \
   --config_file ./pmsignature_multi_class/paplot.cfg
 
   paplot pmsignature pmsignature_multi_class/data6.json ./tmp pmsignature_multi_class \

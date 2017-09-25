@@ -167,7 +167,7 @@ paplot で Chromosomal Aberration レポートを作成するために最低限�
   [ca]
   # グループの色指定
   # {値}:{色名もしくは RGB 値} をグループの数だけ , 区切りで記入する
-  group_colors = A:#66C2A5,B:#FC8D62,C:#8DA0CB,D:#E78AC3
+  group_color = A:#66C2A5,B:#FC8D62,C:#8DA0CB,D:#E78AC3
 
   # 指定したグループのみ表示する
   limited_group = 

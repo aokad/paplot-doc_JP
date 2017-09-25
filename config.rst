@@ -386,7 +386,7 @@ mode = gradient の場合
   # グループのプロット色を指定する。グループ名:(色名もしくは RGB 値)
   # , 区切りで複数指定可能
   # 未入力のグループはデフォルト色を使用する
-  group_colors = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011
+  group_color = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011
   
   # 円形プロットのポップアップ表示内容
   tooltip_format = [{chr1}] {break1:,}; [{chr2}] {break2:,}

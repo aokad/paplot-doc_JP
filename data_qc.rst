@@ -52,7 +52,7 @@ paplot で QC レポートを作成するために最低限必要な情報はサ
   [qc_chart_1]
   
   # グラフのタイトル
-  title = Depth average
+  title = Average depth
   
   # Y 軸のラベル
   title_y = Average of depth
@@ -201,7 +201,7 @@ chart_2 はリード長 (R1, R2) の積み上げグラフです。
   [qc_chart_2]
   
   # 表示する文字列を設定します
-  title = Read length
+  title = Chart 2: Read length
   title_y = Read length
 
   # グラフの積み上げ要素
