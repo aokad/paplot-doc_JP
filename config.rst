@@ -2,11 +2,265 @@
 設定ファイル解説
 *******************************
 
-.. _conf_mm:
+.. _conf_qc:
 
 =======================
-1. Mutation Matrix
+QC レポート
 =======================
+
+---------------------------------
+全設定項目
+---------------------------------
+
+.. code-block:: cfg
+  
+  ###################### qc
+  [qc]
+  # (none)
+  
+  # 入力フォーマット (自分のデータに合わせて変更する)
+  [result_format_qc]
+  
+  # 複数入力時に使用
+  suffix = .qc.csv
+  
+  # データ区切り
+  sept = ,
+  
+  # ヘッダ有り無し (ない場合は False)
+  header = True
+  
+  # コメント行の先頭文字
+  comment = #
+  
+  # 使用する列名を定義
+  col_opt_id = Sample
+  col_opt_key1 = AverageDepth
+  
+  # 出力フォーマット
+  # 通常、変更する必要はありません。
+  [merge_format_qc]
+  # カラムがない場合、何で埋めるか
+  lack_column_complement = NA
+  
+  # 領域選択用のグラフ設定
+  [qc_chart_brush]
+  stack = {key1}
+  name_set = Average depth:#E3E5E9
+  
+  # グラフ設定 (グラフごとに用意する)
+  [qc_chart_1]
+  title = Depth average
+  title_y = Average of depth
+  stack1 = {key1}
+  name_set = Average depth:#2478B4
+  tooltip_format1 = Sample:{id}
+  tooltip_format2 = {key1:.2}
+
+----
+
+.. _qc_tooltip:
+
+----------------------------------------
+ポップアップの表示内容
+----------------------------------------
+
+| 記載方法は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
+
+----
+
+.. _conf_ca:
+
+==================================
+Chromosomal Aberration レポート
+==================================
+
+---------------------------------
+全設定項目
+---------------------------------
+
+.. code-block:: cfg
+  
+  ###################### sv
+  [genome]
+  # ゲノムサイズを羅列したファイル (CSV形式)
+  # 初期値は hg19 で 標準ファイルは paplot インストールディレクトリ配下の genome ディレクトリにあります
+  #
+  # for example.
+  # (linux)
+  # path = ~/tmp/genome/hg19.csv
+  # (windows)
+  # path = C:\genome\hg19_part.csv
+  path = 
+  
+  [ca]
+  # 使用する染色体 (, で区切る)
+  use_chrs = 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X,Y
+  
+  # 円形のプロットにて染色体の色を指定する場合、次のようにします (色名もしくは RGB 値が使用可能です)
+  # use_chrs = 1:Chr1:crimson, 2:Chr2:lightpink, 3:Chr3:mediumvioletred, 4:Chr4:violet, 5:Chr5:darkmagenta, 6:Chr6:#F39600
+  
+  # 積み上げグラフの染色体分割サイズ (bps)
+  selector_split_size = 5000000
+  
+  ##################
+  # group setting
+  # [result_format_ca] col_opt_group が設定されている場合のみ有効
+  ##################
+  
+  # 入力されていた場合、そのグループのみ出力する
+  # 未入力の場合、検出されたグループすべて出力する
+  # , 区切りで複数指定可能
+  #
+  limited_group = stopgain,frameshift_deletion,frameshift_insertion
+  
+  # 入力されていた場合、そのグループはプロット対象から除外する
+  # , 区切りで複数指定可能
+  # 空白行を除去する場合、_blank_ と記入する
+  nouse_group = _blank_,unknown,synonymous_SNV
+  
+  # グループのプロット色を指定する。グループ名:(色名もしくは RGB 値)
+  # , 区切りで複数指定可能
+  # 未入力のグループはデフォルト色を使用する
+  group_color = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011
+  
+  # 円形プロットのポップアップ表示内容
+  tooltip_format = [{chr1}] {break1:,}; [{chr2}] {break2:,}
+  
+  # 入力フォーマット (自分のデータに合わせて変更する)
+  [result_format_ca]
+  
+  # 複数入力時に使用
+  suffix = .result.txt
+  
+  # データ区切り
+  sept = \t
+  
+  # ヘッダ有り無し (ヘッダがない場合は False)
+  header = True
+  
+  # コメント行の先頭文字
+  comment = #
+  
+  # -----------------------
+  # 使用する列名を定義
+  # -----------------------
+  
+  # 切断点 1 の染色体
+  col_chr1 = Chr_1
+  
+  # 切断点 1 の位置
+  col_break1 = Pos_1
+  
+  # 切断点 2 の染色体
+  col_chr2 = Chr_2
+  
+  # 切断点 2 の位置
+  col_break2 = Pos_2
+  
+  # グループ化するデータの列名
+  col_opt_group = 
+  
+  # サンプル名の列名
+  col_opt_id =
+  
+  # 出力フォーマット
+  # 通常、変更する必要はありません。
+  [merge_format_ca]
+  # カラムがない場合、何で埋めるか
+  lack_column_complement = NA
+  # データ区切り
+  sept = ,
+
+----
+
+.. _ca_usechrs:
+
+---------------------------------
+表示する染色体を限定する
+---------------------------------
+
+設定ファイルで次の項目を編集してください。
+
+.. code-block:: cfg
+
+  [ca]
+  # 使用する染色体 (, で区切る)
+  # 初期値
+  # use_chrs = 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X,Y
+  
+  # 染色体 1、5、7 を使用する場合
+  use_chrs = 1,5,7
+
+編集した設定ファイルは次のようにしてコマンドから指定します。
+
+``paplot {input files} {output directory} {title} --config_file {config file}``
+
+----
+
+.. _ca_genome:
+
+-------------------------------
+ヒト以外のゲノムを使用する
+-------------------------------
+
+ゲノムサイズが入力されたファイルが必要です。
+
+先頭列に染色体名、2 列目にサイズをカンマ ``,`` もしくはタブ区切りで入力してください。
+
+.. code-block:: cfg
+  
+  1,249250621
+  2,243199373
+  3,198022430
+  7,159138663
+  8,146364022
+  X,141213431
+  Y,135534747
+  9_gl000201_random,36148
+  11_gl000202_random,40103
+  17_gl000204_random,81310
+  17_gl000205_random,174588
+  Un_gl000214,137718
+
+染色体名は分析したいファイルの Chr1、Chr2 で使用されている名称と同じでなければなりません。
+
+.. image:: image/qa_genome_size.PNG
+
+用意したゲノムサイズのファイルを設定ファイルに指定してください。
+
+.. code-block:: cfg
+
+  [genome]
+  # ゲノムサイズのファイル (CSV 形式)
+  # 初期値は hg19 で 標準ファイルは paplot インストールディレクトリ配下の genome ディレクトリにあります
+  # 
+  # for example.
+  # (linux)
+  # path = ~/tmp/genome/hg19.csv
+  # (windows)
+  # path = C:\genome\hg19_part.csv
+  path = {ここにゲノムサイズのファイルのパスを指定する}
+
+----
+
+.. _ca_tooltip:
+
+----------------------------------------
+ポップアップの表示内容
+----------------------------------------
+
+| 記載方法は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
+| SV には Mutation Matrix のような特殊キーワードはありません。
+|
+
+----
+
+.. _conf_mm:
+
+================================
+Mutation Matrix レポート
+================================
 
 ----------------------------------------------------------
 全設定項目
@@ -266,264 +520,10 @@ mode = gradient の場合
 
 ----
 
-.. _conf_qc:
-
-=======================
-2. QC
-=======================
-
----------------------------------
-全設定項目
----------------------------------
-
-.. code-block:: cfg
-  
-  ###################### qc
-  [qc]
-  # (none)
-  
-  # 入力フォーマット (自分のデータに合わせて変更する)
-  [result_format_qc]
-  
-  # 複数入力時に使用
-  suffix = .qc.csv
-  
-  # データ区切り
-  sept = ,
-  
-  # ヘッダ有り無し (ない場合は False)
-  header = True
-  
-  # コメント行の先頭文字
-  comment = #
-  
-  # 使用する列名を定義
-  col_opt_id = Sample
-  col_opt_key1 = AverageDepth
-  
-  # 出力フォーマット
-  # 通常、変更する必要はありません。
-  [merge_format_qc]
-  # カラムがない場合、何で埋めるか
-  lack_column_complement = NA
-  
-  # 領域選択用のグラフ設定
-  [qc_chart_brush]
-  stack = {key1}
-  name_set = Average depth:#E3E5E9
-  
-  # グラフ設定 (グラフごとに用意する)
-  [qc_chart_1]
-  title = Depth average
-  title_y = Average of depth
-  stack1 = {key1}
-  name_set = Average depth:#2478B4
-  tooltip_format1 = Sample:{id}
-  tooltip_format2 = {key1:.2}
-
-----
-
-.. _qc_tooltip:
-
-----------------------------------------
-ポップアップの表示内容
-----------------------------------------
-
-| 記載方法は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
-
-----
-
-.. _conf_ca:
-
-==================================
-3. Chromosomal Aberration
-==================================
-
----------------------------------
-全設定項目
----------------------------------
-
-.. code-block:: cfg
-  
-  ###################### sv
-  [genome]
-  # ゲノムサイズを羅列したファイル (CSV形式)
-  # 初期値は hg19 で 標準ファイルは paplot インストールディレクトリ配下の genome ディレクトリにあります
-  #
-  # for example.
-  # (linux)
-  # path = ~/tmp/genome/hg19.csv
-  # (windows)
-  # path = C:\genome\hg19_part.csv
-  path = 
-  
-  [ca]
-  # 使用する染色体 (, で区切る)
-  use_chrs = 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X,Y
-  
-  # 円形のプロットにて染色体の色を指定する場合、次のようにします (色名もしくは RGB 値が使用可能です)
-  # use_chrs = 1:Chr1:crimson, 2:Chr2:lightpink, 3:Chr3:mediumvioletred, 4:Chr4:violet, 5:Chr5:darkmagenta, 6:Chr6:#F39600
-  
-  # 積み上げグラフの染色体分割サイズ (bps)
-  selector_split_size = 5000000
-  
-  ##################
-  # group setting
-  # [result_format_ca] col_opt_group が設定されている場合のみ有効
-  ##################
-  
-  # 入力されていた場合、そのグループのみ出力する
-  # 未入力の場合、検出されたグループすべて出力する
-  # , 区切りで複数指定可能
-  #
-  limited_group = stopgain,frameshift_deletion,frameshift_insertion
-  
-  # 入力されていた場合、そのグループはプロット対象から除外する
-  # , 区切りで複数指定可能
-  # 空白行を除去する場合、_blank_ と記入する
-  nouse_group = _blank_,unknown,synonymous_SNV
-  
-  # グループのプロット色を指定する。グループ名:(色名もしくは RGB 値)
-  # , 区切りで複数指定可能
-  # 未入力のグループはデフォルト色を使用する
-  group_color = stopgain:#E85299,frameshift_deletion:#F39600,frameshift_insertion:#E60011
-  
-  # 円形プロットのポップアップ表示内容
-  tooltip_format = [{chr1}] {break1:,}; [{chr2}] {break2:,}
-  
-  # 入力フォーマット (自分のデータに合わせて変更する)
-  [result_format_ca]
-  
-  # 複数入力時に使用
-  suffix = .result.txt
-  
-  # データ区切り
-  sept = \t
-  
-  # ヘッダ有り無し (ヘッダがない場合は False)
-  header = True
-  
-  # コメント行の先頭文字
-  comment = #
-  
-  # -----------------------
-  # 使用する列名を定義
-  # -----------------------
-  
-  # 切断点 1 の染色体
-  col_chr1 = Chr_1
-  
-  # 切断点 1 の位置
-  col_break1 = Pos_1
-  
-  # 切断点 2 の染色体
-  col_chr2 = Chr_2
-  
-  # 切断点 2 の位置
-  col_break2 = Pos_2
-  
-  # グループ化するデータの列名
-  col_opt_group = 
-  
-  # サンプル名の列名
-  col_opt_id =
-  
-  # 出力フォーマット
-  # 通常、変更する必要はありません。
-  [merge_format_ca]
-  # カラムがない場合、何で埋めるか
-  lack_column_complement = NA
-  # データ区切り
-  sept = ,
-
-----
-
-.. _ca_usechrs:
-
----------------------------------
-表示する染色体を限定する
----------------------------------
-
-設定ファイルで次の項目を編集してください。
-
-.. code-block:: cfg
-
-  [ca]
-  # 使用する染色体 (, で区切る)
-  # 初期値
-  # use_chrs = 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X,Y
-  
-  # 染色体 1、5、7 を使用する場合
-  use_chrs = 1,5,7
-
-編集した設定ファイルは次のようにしてコマンドから指定します。
-
-``paplot {input files} {output directory} {title} --config_file {config file}``
-
-----
-
-.. _ca_genome:
-
--------------------------------
-ヒト以外のゲノムを使用する
--------------------------------
-
-ゲノムサイズが入力されたファイルが必要です。
-
-先頭列に染色体名、2 列目にサイズをカンマ ``,`` もしくはタブ区切りで入力してください。
-
-.. code-block:: cfg
-  
-  1,249250621
-  2,243199373
-  3,198022430
-  7,159138663
-  8,146364022
-  X,141213431
-  Y,135534747
-  9_gl000201_random,36148
-  11_gl000202_random,40103
-  17_gl000204_random,81310
-  17_gl000205_random,174588
-  Un_gl000214,137718
-
-染色体名は分析したいファイルの Chr1、Chr2 で使用されている名称と同じでなければなりません。
-
-.. image:: image/qa_genome_size.PNG
-
-用意したゲノムサイズのファイルを設定ファイルに指定してください。
-
-.. code-block:: cfg
-
-  [genome]
-  # ゲノムサイズのファイル (CSV 形式)
-  # 初期値は hg19 で 標準ファイルは paplot インストールディレクトリ配下の genome ディレクトリにあります
-  # 
-  # for example.
-  # (linux)
-  # path = ~/tmp/genome/hg19.csv
-  # (windows)
-  # path = C:\genome\hg19_part.csv
-  path = {ここにゲノムサイズのファイルのパスを指定する}
-
-----
-
-.. _ca_tooltip:
-
-----------------------------------------
-ポップアップの表示内容
-----------------------------------------
-
-| 記載方法は `ユーザ定義フォーマット <./data_common.html#user-format>`_ を参照してください。
-| SV には Mutation Matrix のような特殊キーワードはありません。
-|
-
-----
-
 .. _conf_signature:
 
 ===============================
-4. Mutational Signature
+Mutational Signature レポート
 ===============================
 
 ----------------------------------------------------------
@@ -642,7 +642,7 @@ mode = gradient の場合
 .. _conf_pmsignature:
 
 =======================
-5. pmsignature
+pmsignature レポート
 =======================
 
 ----------------------------------------------------------
