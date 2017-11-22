@@ -11,6 +11,9 @@ Mutaitonal Signature 実行手順
   |
   | 別のツールを用いてシグネチャ解析を行った場合は、 `仕様 <./data_signature.html#json>`_ に準拠する json ファイルを別途準備ください。
 
+試験的にdocker imageを公開しています。
+https://hub.docker.com/r/aokad/pmsignature/
+
 .. _pre:
 
 1. 結果ファイルの整形

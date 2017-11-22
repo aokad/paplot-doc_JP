@@ -10,7 +10,10 @@ pmsignature 実行手順
   | インストールおよび、実行コマンドの詳しい解説は `pmsignature <https://github.com/friend1ws/pmsignature/>`_ を参照ください。
   |
   | 別のツールを用いて pmsignature 解析を行った場合は、 `仕様 <./data_pmsignature.html#json-ind>`_ に準拠する json ファイルを別途準備ください。
-  
+
+試験的にdocker imageを公開しています。
+https://hub.docker.com/r/aokad/pmsignature/
+
 1. 結果ファイルの整形
 -----------------------------
 

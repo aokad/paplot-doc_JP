@@ -2,9 +2,6 @@
 はじめに
 ************************
 
-Automatic generation of cancer genome interactive report via paplot
-------------------------------------------------------------------------
-
 | paplot はゲノム解析結果を自動でグラフ化するツールです。
 
 .. image:: image/mutation_list.PNG
